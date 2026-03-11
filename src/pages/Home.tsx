@@ -330,7 +330,7 @@ function Future() {
                 <picture className="w-full h-full">
                     <source media="(min-width: 768px)" srcSet="/images/future-desktop.jpg" />
                     <img
-                        src="/images/future-mobile.jpg"
+                        src="/images/future-mobile-2.png"
                         alt="Future Direction"
                         className="w-full h-full object-cover object-center md:object-right"
                     />
