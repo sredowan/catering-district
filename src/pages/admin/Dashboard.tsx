@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSiteData } from '../../context/SiteContext';
 import type { SiteData } from '../../context/SiteContext';
-import { Save, LogOut, Check, Image as ImageIcon, Briefcase, Phone, Plus, Trash2, Upload, LayoutDashboard, Type, GripVertical, Eye, X, ChevronUp, ChevronDown, AlertTriangle } from 'lucide-react';
+import { Save, LogOut, Check, Image as ImageIcon, Briefcase, Phone, Plus, Trash2, Upload, LayoutDashboard, Type, GripVertical, Eye, X, ChevronUp, ChevronDown, AlertTriangle, Pencil } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 // Compress image via canvas to fit within localStorage limits
@@ -45,7 +45,36 @@ export default function AdminDashboard() {
     const galleryUploadRef = useRef<HTMLInputElement>(null);
     const heroUploadRef = useRef<HTMLInputElement>(null);
 
+    const [editingCategory, setEditingCategory] = useState<string | null>(null);
+    const [editCategoryName, setEditCategoryName] = useState('');
+
     const [formData, setFormData] = useState<SiteData>(siteData);
+
+    const handleUpdateCategory = (oldName: string) => {
+        const trimmed = editCategoryName.trim();
+        if (!trimmed || trimmed === oldName) {
+            setEditingCategory(null);
+            return;
+        }
+        
+        const currentCategories = formData.galleryCategories || ['Events', 'Dining', 'Venues'];
+        if (currentCategories.includes(trimmed)) {
+            alert('A category with this name already exists.');
+            return;
+        }
+
+        const newCategories = currentCategories.map(c => c === oldName ? trimmed : c);
+        const newImages = formData.galleryImages.map(img => 
+            img.category === oldName ? { ...img, category: trimmed } : img
+        );
+
+        setFormData({
+            ...formData,
+            galleryCategories: newCategories,
+            galleryImages: newImages
+        });
+        setEditingCategory(null);
+    };
 
     useEffect(() => {
         if (localStorage.getItem('isAdmin') !== 'true') {
@@ -355,23 +384,55 @@ export default function AdminDashboard() {
                                 </div>
                                 <div className="flex flex-wrap gap-2">
                                     {(formData.galleryCategories || ['Events', 'Dining', 'Venues']).map((cat) => (
-                                        <div key={cat} className="flex items-center space-x-2 bg-[#f5f2ed] px-3 py-1.5 rounded-full text-sm">
-                                            <span>{cat}</span>
-                                            <button 
-                                                onClick={() => {
-                                                    const isUsed = formData.galleryImages?.some(img => img.category === cat);
-                                                    if (isUsed) {
-                                                        alert(`Cannot delete category "${cat}" because it is currently assigned to one or more photos.`);
-                                                    } else {
-                                                        setFormData({ ...formData, galleryCategories: (formData.galleryCategories || []).filter(c => c !== cat) });
-                                                    }
-                                                }}
-                                                className="text-[#1a1a1a]/40 hover:text-red-500 transition-colors"
-                                                title="Delete Category"
-                                            >
-                                                <X className="w-3 h-3" />
-                                            </button>
-                                        </div>
+                                        editingCategory === cat ? (
+                                            <div key={cat} className="flex items-center space-x-2 bg-white border border-[#5A5A40] px-2 py-1 rounded-full text-sm">
+                                                <input 
+                                                    type="text"
+                                                    value={editCategoryName}
+                                                    onChange={(e) => setEditCategoryName(e.target.value)}
+                                                    className="bg-transparent border-none outline-none text-sm w-32 px-1 py-0.5"
+                                                    autoFocus
+                                                    onKeyDown={(e) => {
+                                                        if (e.key === 'Enter') handleUpdateCategory(cat);
+                                                        if (e.key === 'Escape') setEditingCategory(null);
+                                                    }}
+                                                />
+                                                <button onClick={() => handleUpdateCategory(cat)} className="text-green-600 hover:text-green-700 p-0.5">
+                                                    <Check className="w-3.5 h-3.5" />
+                                                </button>
+                                                <button onClick={() => setEditingCategory(null)} className="text-red-500 hover:text-red-600 p-0.5">
+                                                    <X className="w-3.5 h-3.5" />
+                                                </button>
+                                            </div>
+                                        ) : (
+                                            <div key={cat} className="flex items-center space-x-2 bg-[#f5f2ed] px-3 py-1.5 rounded-full text-sm group">
+                                                <span>{cat}</span>
+                                                <button 
+                                                    onClick={() => {
+                                                        setEditingCategory(cat);
+                                                        setEditCategoryName(cat);
+                                                    }}
+                                                    className="text-[#1a1a1a]/40 hover:text-[#5A5A40] transition-colors ml-1 opacity-0 group-hover:opacity-100"
+                                                    title="Edit Category Name"
+                                                >
+                                                    <Pencil className="w-3 h-3" />
+                                                </button>
+                                                <button 
+                                                    onClick={() => {
+                                                        const isUsed = formData.galleryImages?.some(img => img.category === cat);
+                                                        if (isUsed) {
+                                                            alert(`Cannot delete category "${cat}" because it is currently assigned to one or more photos.`);
+                                                        } else {
+                                                            setFormData({ ...formData, galleryCategories: (formData.galleryCategories || []).filter(c => c !== cat) });
+                                                        }
+                                                    }}
+                                                    className="text-[#1a1a1a]/40 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+                                                    title="Delete Category"
+                                                >
+                                                    <X className="w-3 h-3" />
+                                                </button>
+                                            </div>
+                                        )
                                     ))}
                                 </div>
                             </div>
