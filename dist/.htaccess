@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Redirect all traffic starting with /api to the PHP proxy file located in the same root
+  RewriteRule ^api/(.*)$ /api/index.php [L,QSA]
+</IfModule>
