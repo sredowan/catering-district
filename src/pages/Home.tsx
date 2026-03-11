@@ -330,7 +330,7 @@ function Future() {
                 <img
                     src="/images/home-cafe-2.jpg"
                     alt="Team communication"
-                    className="w-full h-full object-cover object-right"
+                    className="w-full h-full object-cover object-[35%_center] md:object-right"
                 />
             </div>
 

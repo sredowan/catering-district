@@ -1,22 +1,70 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Instagram, Facebook, Twitter, Mail, Phone, MapPin, Menu, X } from 'lucide-react';
 
 function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
+
+    // Close menu when route changes
+    useEffect(() => {
+        setIsOpen(false);
+    }, [location.pathname]);
+
+    // Prevent scrolling when menu is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
+
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6 mix-blend-difference text-white">
-            <div className="max-w-7xl mx-auto flex justify-between items-center">
-                <Link to="/" className="font-serif text-2xl tracking-wide">CD.</Link>
+        <nav className={`fixed top-0 left-0 right-0 z-50 text-white transition-all duration-300 ${isOpen ? 'bg-[#1a1a1a] mix-blend-normal' : 'mix-blend-difference'}`}>
+            <div className="px-6 py-6 max-w-7xl mx-auto flex justify-between items-center relative z-50">
+                <Link to="/" className="font-serif text-2xl tracking-wide" onClick={() => setIsOpen(false)}>CD.</Link>
+                
+                {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-8 text-xs uppercase tracking-[0.15em]">
                     <Link to="/about" className="hover:opacity-70 transition-opacity">About</Link>
                     <Link to="/services" className="hover:opacity-70 transition-opacity">Services</Link>
                     <Link to="/gallery" className="hover:opacity-70 transition-opacity">Gallery</Link>
                     <Link to="/contact" className="hover:opacity-70 transition-opacity">Contact</Link>
                 </div>
+
+                {/* Mobile Menu Button */}
+                <button 
+                    className="md:hidden p-2 -mr-2 text-white hover:opacity-70 transition-opacity"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle menu"
+                >
+                    {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            <div 
+                className={`fixed inset-0 bg-[#1a1a1a] flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${
+                    isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                }`}
+            >
+                <div className="flex flex-col items-center space-y-10 text-xl tracking-[0.2em] uppercase font-light">
+                    <Link to="/" className="hover:text-[#5A5A40] transition-colors" onClick={() => setIsOpen(false)}>Home</Link>
+                    <Link to="/about" className="hover:text-[#5A5A40] transition-colors" onClick={() => setIsOpen(false)}>About</Link>
+                    <Link to="/services" className="hover:text-[#5A5A40] transition-colors" onClick={() => setIsOpen(false)}>Services</Link>
+                    <Link to="/gallery" className="hover:text-[#5A5A40] transition-colors" onClick={() => setIsOpen(false)}>Gallery</Link>
+                    <Link to="/contact" className="hover:text-[#5A5A40] transition-colors" onClick={() => setIsOpen(false)}>Contact</Link>
+                </div>
             </div>
         </nav>
     );
 }
 
-import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+// Removed duplicate lucide-react import
 import { useSiteData } from '../context/SiteContext';
 
 function Footer() {
