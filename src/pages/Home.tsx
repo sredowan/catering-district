@@ -327,11 +327,14 @@ function Future() {
     return (
         <section className="py-32 bg-[#f5f2ed] relative overflow-hidden flex items-center min-h-[80vh]">
             <div className="absolute inset-0 z-0">
-                <img
-                    src="/images/home-cafe-2.jpg"
-                    alt="Team communication"
-                    className="w-full h-full object-cover object-[35%_center] md:object-right"
-                />
+                <picture className="w-full h-full">
+                    <source media="(min-width: 768px)" srcSet="/images/future-desktop.jpg" />
+                    <img
+                        src="/images/future-mobile.jpg"
+                        alt="Future Direction"
+                        className="w-full h-full object-cover object-center md:object-right"
+                    />
+                </picture>
             </div>
 
             {/* Exactly recreating the masking linear gradient effect requested */}
