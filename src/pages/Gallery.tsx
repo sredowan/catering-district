@@ -3,11 +3,10 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight, ZoomIn, Grid3X3, LayoutGrid } from 'lucide-react';
 import { useSiteData } from '../context/SiteContext';
 
-const categories = ["All", "Events", "Dining", "Venues"];
-
 export default function Gallery() {
     const { siteData } = useSiteData();
     const galleryData = siteData.galleryImages;
+    const dynamicCategories = ["All", ...(siteData.galleryCategories || ["Events", "Dining", "Venues"])];
 
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -18,7 +17,7 @@ export default function Gallery() {
         : galleryData.filter(item => item.category === selectedCategory);
 
     // Category counts
-    const categoryCounts = categories.reduce((acc, cat) => {
+    const categoryCounts = dynamicCategories.reduce((acc, cat) => {
         acc[cat] = cat === "All" ? galleryData.length : galleryData.filter(i => i.category === cat).length;
         return acc;
     }, {} as Record<string, number>);
@@ -100,7 +99,7 @@ export default function Gallery() {
                         <div className="mt-8 flex items-center justify-center space-x-6 text-[#f5f2ed]/40 text-sm font-light">
                             <span><strong className="text-[#f5f2ed]/80 font-medium">{galleryData.length}</strong> Photos</span>
                             <span className="w-1 h-1 rounded-full bg-[#f5f2ed]/30" />
-                            <span><strong className="text-[#f5f2ed]/80 font-medium">{categories.length - 1}</strong> Categories</span>
+                            <span><strong className="text-[#f5f2ed]/80 font-medium">{dynamicCategories.length - 1}</strong> Categories</span>
                         </div>
                     </motion.div>
                 </div>
@@ -111,7 +110,7 @@ export default function Gallery() {
                 <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
                     {/* Filter pills */}
                     <div className="flex flex-wrap gap-2">
-                        {categories.map((category) => (
+                        {dynamicCategories.map((category) => (
                             <button
                                 key={category}
                                 onClick={() => setSelectedCategory(category)}

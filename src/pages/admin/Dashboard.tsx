@@ -93,7 +93,7 @@ export default function AdminDashboard() {
             Array.from(files).map(async (file, i) => ({
                 id: Date.now() + i,
                 src: await compressImage(file),
-                category: 'Events',
+                category: formData.galleryCategories?.[0] || 'Events',
                 title: file.name.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ')
             }))
         );
@@ -318,6 +318,64 @@ export default function AdminDashboard() {
                     {/* ───── GALLERY TAB ───── */}
                     {activeTab === 'gallery' && (
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
+                            {/* Category Management */}
+                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-6 shadow-sm mb-6">
+                                <h3 className="text-xl font-serif mb-4">Manage Categories</h3>
+                                <div className="flex gap-2 mb-4">
+                                    <input 
+                                        type="text" 
+                                        id="new-category-input"
+                                        placeholder="New Category Name" 
+                                        className="flex-1 bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-2 text-sm outline-none border"
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter') {
+                                                const val = e.currentTarget.value.trim();
+                                                const currentCategories = formData.galleryCategories || ['Events', 'Dining', 'Venues'];
+                                                if (val && !currentCategories.includes(val)) {
+                                                    setFormData({ ...formData, galleryCategories: [...currentCategories, val] });
+                                                    e.currentTarget.value = '';
+                                                }
+                                            }
+                                        }}
+                                    />
+                                    <button 
+                                        onClick={() => {
+                                            const input = document.getElementById('new-category-input') as HTMLInputElement;
+                                            const val = input.value.trim();
+                                            const currentCategories = formData.galleryCategories || ['Events', 'Dining', 'Venues'];
+                                            if (val && !currentCategories.includes(val)) {
+                                                setFormData({ ...formData, galleryCategories: [...currentCategories, val] });
+                                                input.value = '';
+                                            }
+                                        }}
+                                        className="bg-[#1a1a1a] text-white px-4 py-2 rounded-lg text-xs font-medium"
+                                    >
+                                        Add
+                                    </button>
+                                </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {(formData.galleryCategories || ['Events', 'Dining', 'Venues']).map((cat) => (
+                                        <div key={cat} className="flex items-center space-x-2 bg-[#f5f2ed] px-3 py-1.5 rounded-full text-sm">
+                                            <span>{cat}</span>
+                                            <button 
+                                                onClick={() => {
+                                                    const isUsed = formData.galleryImages?.some(img => img.category === cat);
+                                                    if (isUsed) {
+                                                        alert(`Cannot delete category "${cat}" because it is currently assigned to one or more photos.`);
+                                                    } else {
+                                                        setFormData({ ...formData, galleryCategories: (formData.galleryCategories || []).filter(c => c !== cat) });
+                                                    }
+                                                }}
+                                                className="text-[#1a1a1a]/40 hover:text-red-500 transition-colors"
+                                                title="Delete Category"
+                                            >
+                                                <X className="w-3 h-3" />
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
                             {/* Upload Area */}
                             <div className="bg-white rounded-xl border-2 border-dashed border-[#5A5A40]/30 hover:border-[#5A5A40] transition-colors p-8 shadow-sm text-center cursor-pointer" onClick={() => galleryUploadRef.current?.click()}>
                                 <input ref={galleryUploadRef} type="file" accept="image/*" multiple onChange={handleGalleryUpload} className="hidden" />
@@ -365,9 +423,9 @@ export default function AdminDashboard() {
                                                         newImgs[index].category = e.target.value;
                                                         setFormData({ ...formData, galleryImages: newImgs });
                                                     }} className="w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#5A5A40]">
-                                                        <option value="Events">Events</option>
-                                                        <option value="Dining">Dining</option>
-                                                        <option value="Venues">Venues</option>
+                                                        {(formData.galleryCategories || ['Events', 'Dining', 'Venues']).map(cat => (
+                                                            <option key={cat} value={cat}>{cat}</option>
+                                                        ))}
                                                     </select>
                                                 </div>
                                                 <div>

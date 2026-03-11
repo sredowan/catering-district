@@ -42,6 +42,7 @@ export type SiteData = {
     contactDetails: ContactDetails;
     services: ServiceItem[];
     galleryImages: GalleryImage[];
+    galleryCategories: string[];
     hero: HeroData;
     about: AboutData;
 };
@@ -86,6 +87,7 @@ const defaultData: SiteData = {
             items: ["Activating underutilised venues", "Managing hospitality operations", "Designing experience-driven programs", "Building community engagement"]
         }
     ],
+    galleryCategories: ["Events", "Dining", "Venues"],
     galleryImages: [
         { id: 1, src: "/images/1.jpeg", category: "Events", title: "Corporate Gathering" },
         { id: 2, src: "/images/2.jpeg", category: "Dining", title: "Culinary Excellence" },
