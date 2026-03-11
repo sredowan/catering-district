@@ -1,6 +1,6 @@
 import express from "express";
-import { TransactionService } from "../services/TransactionService";
-import { auth } from "../../lib/auth";
+import { TransactionService } from "../services/TransactionService.js";
+import { auth } from "../../lib/auth.js";
 
 export const transactionRouter = express.Router();
 

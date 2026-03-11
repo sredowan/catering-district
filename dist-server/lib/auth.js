@@ -11,8 +11,8 @@ var __assign = (this && this.__assign) || function () {
 };
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { db } from "../db";
-import * as schema from "../db/schema";
+import { db } from "../db/index.js";
+import * as schema from "../db/schema.js";
 export var auth = betterAuth({
     database: drizzleAdapter(db, {
         provider: "mysql",

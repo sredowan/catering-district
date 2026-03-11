@@ -1,6 +1,6 @@
 import express from "express";
-import { CategoryService } from "../services/CategoryService";
-import { auth } from "../../lib/auth";
+import { CategoryService } from "../services/CategoryService.js";
+import { auth } from "../../lib/auth.js";
 
 export const categoryRouter = express.Router();
 

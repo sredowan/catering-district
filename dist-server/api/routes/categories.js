@@ -35,8 +35,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import express from "express";
-import { CategoryService } from "../services/CategoryService";
-import { auth } from "../../lib/auth";
+import { CategoryService } from "../services/CategoryService.js";
+import { auth } from "../../lib/auth.js";
 export var categoryRouter = express.Router();
 var requireAuth = function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
     var session, e_1;

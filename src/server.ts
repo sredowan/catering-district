@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { auth } from './lib/auth';
+import { auth } from './lib/auth.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -18,8 +18,8 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-import { transactionRouter } from './api/routes/transactions';
-import { categoryRouter } from './api/routes/categories';
+import { transactionRouter } from './api/routes/transactions.js';
+import { categoryRouter } from './api/routes/categories.js';
 
 // Better Auth API routes handling
 app.all("/api/auth/*", (req, res, next) => {

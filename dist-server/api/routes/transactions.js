@@ -35,8 +35,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import express from "express";
-import { TransactionService } from "../services/TransactionService";
-import { auth } from "../../lib/auth";
+import { TransactionService } from "../services/TransactionService.js";
+import { auth } from "../../lib/auth.js";
 export var transactionRouter = express.Router();
 // Middleware to protect routes - assumes `auth.api.getSession` or similar is used,
 // but for an Express app interacting with Better Auth, we can check headers directly using the auth instance

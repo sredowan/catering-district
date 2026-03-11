@@ -1,5 +1,5 @@
-import { db } from "../../db";
-import { transactions } from "../../db/schema";
+import { db } from "../../db/index.js";
+import { transactions } from "../../db/schema.js";
 import { eq, and } from "drizzle-orm";
 
 export class TransactionService {

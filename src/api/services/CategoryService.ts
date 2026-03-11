@@ -1,5 +1,5 @@
-import { db } from "../../db";
-import { categories } from "../../db/schema";
+import { db } from "../../db/index.js";
+import { categories } from "../../db/schema.js";
 import { eq, or, and } from "drizzle-orm";
 
 export class CategoryService {
