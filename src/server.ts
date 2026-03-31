@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 import { transactionRouter } from './api/routes/transactions.js';
 import { categoryRouter } from './api/routes/categories.js';
+import { bookingRouter } from './api/routes/bookings.js';
 
 // Better Auth API routes handling
 app.all("/api/auth/*", (req, res, next) => {
@@ -31,6 +32,7 @@ app.all("/api/auth/*", (req, res, next) => {
 // App API routes
 app.use('/api/transactions', transactionRouter);
 app.use('/api/categories', categoryRouter);
+app.use('/api/bookings', bookingRouter);
 
 // Hello world endpoint for testing
 app.get('/api/health', (req, res) => {

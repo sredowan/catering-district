@@ -81,17 +81,6 @@ function Footer() {
                     <p className="text-sm text-[#f5f2ed]/60 font-light leading-relaxed mb-8 pr-4">
                         Hospitality Experiences & Club Operations across Australia. Elevating community spaces through premium management.
                     </p>
-                    <div className="flex space-x-5">
-                        <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-[#f5f2ed]/60 hover:text-white transition-colors" aria-label="Instagram">
-                            <Instagram className="w-5 h-5" />
-                        </a>
-                        <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-[#f5f2ed]/60 hover:text-white transition-colors" aria-label="Facebook">
-                            <Facebook className="w-5 h-5" />
-                        </a>
-                        <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-[#f5f2ed]/60 hover:text-white transition-colors" aria-label="Twitter">
-                            <Twitter className="w-5 h-5" />
-                        </a>
-                    </div>
                 </div>
 
                 {/* Quick Links Column */}
@@ -109,7 +98,7 @@ function Footer() {
                 {/* Contact Column */}
                 <div className="md:col-span-2">
                     <h4 className="text-xs uppercase tracking-[0.2em] font-medium text-[#5A5A40] mb-6">Get in Touch</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm font-light text-[#f5f2ed]/70">
+                    <div className="grid grid-cols-1 gap-6 text-sm font-light text-[#f5f2ed]/70">
                         <div className="space-y-4">
                             <a href={`mailto:${contactDetails.email}`} className="flex items-center space-x-3 hover:text-white transition-colors group">
                                 <Mail className="w-4 h-4 text-[#5A5A40] group-hover:text-white transition-colors" />
@@ -119,12 +108,6 @@ function Footer() {
                                 <Phone className="w-4 h-4 text-[#5A5A40] group-hover:text-white transition-colors" />
                                 <span>{contactDetails.phone}</span>
                             </a>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                            <MapPin className="w-4 h-4 text-[#5A5A40] mt-0.5 shrink-0" />
-                            <span className="leading-relaxed whitespace-pre-line">
-                                {contactDetails.address}
-                            </span>
                         </div>
                     </div>
                 </div>

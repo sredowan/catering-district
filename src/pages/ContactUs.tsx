@@ -56,27 +56,6 @@ export default function ContactUs() {
                                         </a>
                                     </div>
                                 </li>
-
-                                <li className="flex items-start space-x-4">
-                                    <MapPin className="w-6 h-6 text-[#5A5A40] mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h4 className="text-sm uppercase tracking-widest text-[#1a1a1a]/50 font-medium mb-1">Address</h4>
-                                        <p className="text-lg text-[#1a1a1a]">
-                                            31 George Street<br />
-                                            Clyde NSW 2142
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li className="flex items-start space-x-4">
-                                    <Globe className="w-6 h-6 text-[#5A5A40] mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h4 className="text-sm uppercase tracking-widest text-[#1a1a1a]/50 font-medium mb-1">Website</h4>
-                                        <a href="https://cateringdistrict.com.au" target="_blank" rel="noopener noreferrer" className="text-lg text-[#1a1a1a] hover:text-[#5A5A40] transition-colors">
-                                            cateringdistrict.com.au
-                                        </a>
-                                    </div>
-                                </li>
                             </ul>
                         </div>
                     </motion.div>

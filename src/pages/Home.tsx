@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Users, Utensils, Building, Check, ArrowRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useSiteData } from '../context/SiteContext';
+import BookingModal from '../components/BookingModal';
 
 function Hero() {
     const { siteData } = useSiteData();
     const heroImages = siteData.hero.images;
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isBookingOpen, setIsBookingOpen] = useState(false);
 
     useEffect(() => {
         if (heroImages.length === 0) return;
@@ -52,18 +54,20 @@ function Hero() {
                     <p className="text-lg md:text-2xl max-w-2xl mx-auto font-light text-[#f5f2ed]/90 mb-12">
                         {siteData.hero.subheading}
                     </p>
-                    <motion.a
-                        href="#about"
+                    <motion.button
+                        onClick={() => setIsBookingOpen(true)}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 1 }}
-                        className="inline-flex items-center space-x-3 border border-[#f5f2ed]/30 rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] text-[#f5f2ed] hover:bg-[#f5f2ed] hover:text-[#1a1a1a] transition-all duration-500"
+                        className="inline-flex items-center space-x-3 border border-[#f5f2ed]/30 rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] text-[#1a1a1a] bg-[#f5f2ed] hover:bg-transparent hover:text-[#f5f2ed] transition-all duration-500"
                     >
-                        <span>Discover Our Vision</span>
+                        <span>Book Now</span>
                         <ArrowRight className="w-4 h-4" />
-                    </motion.a>
+                    </motion.button>
                 </motion.div>
             </div>
+            
+            <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
         </section>
     );
 }

@@ -68,3 +68,20 @@ export const transactions = mysqlTable('transaction', {
     createdAt: timestamp('createdAt').default(sql`CURRENT_TIMESTAMP`).notNull(),
     updatedAt: timestamp('updatedAt').default(sql`CURRENT_TIMESTAMP`).onUpdateNow().notNull()
 });
+
+export const bookings = mysqlTable('booking', {
+    id: varchar('id', { length: 255 }).primaryKey(),
+    name: text('name').notNull(),
+    email: varchar('email', { length: 255 }).notNull(),
+    phone: text('phone'),
+    date: varchar('date', { length: 255 }).notNull(),
+    time: text('time').notNull(),
+    guests: text('guests').notNull(),
+    type: mysqlEnum('type', ['lunch', 'dinner', 'other']).notNull(),
+    specialReqs: text('specialReqs'), // JSON stringified array of reqs
+    agreedToUpdates: varchar('agreedToUpdates', { length: 10 }), // true/false
+    agreedToTerms: varchar('agreedToTerms', { length: 10 }), // true/false
+    status: mysqlEnum('status', ['pending', 'replied']).default('pending').notNull(),
+    createdAt: timestamp('createdAt').default(sql`CURRENT_TIMESTAMP`).notNull(),
+    updatedAt: timestamp('updatedAt').default(sql`CURRENT_TIMESTAMP`).onUpdateNow().notNull()
+});

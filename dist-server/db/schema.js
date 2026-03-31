@@ -66,4 +66,20 @@ export var transactions = mysqlTable('transaction', {
     createdAt: timestamp('createdAt').default(sql(templateObject_5 || (templateObject_5 = __makeTemplateObject(["CURRENT_TIMESTAMP"], ["CURRENT_TIMESTAMP"])))).notNull(),
     updatedAt: timestamp('updatedAt').default(sql(templateObject_6 || (templateObject_6 = __makeTemplateObject(["CURRENT_TIMESTAMP"], ["CURRENT_TIMESTAMP"])))).onUpdateNow().notNull()
 });
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6;
+export var bookings = mysqlTable('booking', {
+    id: varchar('id', { length: 255 }).primaryKey(),
+    name: text('name').notNull(),
+    email: varchar('email', { length: 255 }).notNull(),
+    phone: text('phone'),
+    date: varchar('date', { length: 255 }).notNull(),
+    time: text('time').notNull(),
+    guests: text('guests').notNull(),
+    type: mysqlEnum('type', ['lunch', 'dinner', 'other']).notNull(),
+    specialReqs: text('specialReqs'), // JSON stringified array of reqs
+    agreedToUpdates: varchar('agreedToUpdates', { length: 10 }), // true/false
+    agreedToTerms: varchar('agreedToTerms', { length: 10 }), // true/false
+    status: mysqlEnum('status', ['pending', 'replied']).default('pending').notNull(),
+    createdAt: timestamp('createdAt').default(sql(templateObject_7 || (templateObject_7 = __makeTemplateObject(["CURRENT_TIMESTAMP"], ["CURRENT_TIMESTAMP"])))).notNull(),
+    updatedAt: timestamp('updatedAt').default(sql(templateObject_8 || (templateObject_8 = __makeTemplateObject(["CURRENT_TIMESTAMP"], ["CURRENT_TIMESTAMP"])))).onUpdateNow().notNull()
+});
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;

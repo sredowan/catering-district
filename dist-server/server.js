@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 import { transactionRouter } from './api/routes/transactions.js';
 import { categoryRouter } from './api/routes/categories.js';
+import { bookingRouter } from './api/routes/bookings.js';
 // Better Auth API routes handling
 app.all("/api/auth/*", function (req, res, next) {
     // Forward to better-auth
@@ -24,6 +25,7 @@ app.all("/api/auth/*", function (req, res, next) {
 // App API routes
 app.use('/api/transactions', transactionRouter);
 app.use('/api/categories', categoryRouter);
+app.use('/api/bookings', bookingRouter);
 // Hello world endpoint for testing
 app.get('/api/health', function (req, res) {
     res.json({ status: 'ok', message: 'Backend is running via Proxy' });

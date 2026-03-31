@@ -21,5 +21,6 @@ export var auth = betterAuth({
     emailAndPassword: {
         enabled: true
     },
+    baseURL: process.env.BETTER_AUTH_URL || process.env.FRONTEND_URL || "https://cateringdistrict.com.au",
     trustedOrigins: [process.env.FRONTEND_URL || "http://localhost:3000", "https://cateringdistrict.com.au"]
 });

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSiteData } from '../../context/SiteContext';
 import type { SiteData } from '../../context/SiteContext';
-import { Save, LogOut, Check, Image as ImageIcon, Briefcase, Phone, Plus, Trash2, Upload, LayoutDashboard, Type, GripVertical, Eye, X, ChevronUp, ChevronDown, AlertTriangle, Pencil } from 'lucide-react';
+import { Save, LogOut, Check, Image as ImageIcon, Briefcase, Phone, Plus, Trash2, Upload, LayoutDashboard, Type, GripVertical, Eye, X, ChevronUp, ChevronDown, AlertTriangle, Pencil, Calendar, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 // Compress image via canvas to fit within localStorage limits
@@ -33,7 +33,7 @@ function compressImage(file: File, maxWidth = 800, quality = 0.7): Promise<strin
     });
 }
 
-type TabType = 'overview' | 'hero' | 'about' | 'gallery' | 'services' | 'contact';
+type TabType = 'overview' | 'bookings' | 'hero' | 'about' | 'gallery' | 'services' | 'contact';
 
 export default function AdminDashboard() {
     const navigate = useNavigate();
@@ -75,6 +75,26 @@ export default function AdminDashboard() {
         });
         setEditingCategory(null);
     };
+
+    const [bookings, setBookings] = useState<any[]>([]);
+    const [isLoadingBookings, setIsLoadingBookings] = useState(false);
+    const [replyToBooking, setReplyToBooking] = useState<string | null>(null);
+    const [replyMessage, setReplyMessage] = useState('');
+    const [isSendingReply, setIsSendingReply] = useState(false);
+
+    useEffect(() => {
+        if (activeTab === 'bookings') {
+            setIsLoadingBookings(true);
+            fetch('/api/bookings')
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        setBookings(data.bookings);
+                    }
+                })
+                .finally(() => setIsLoadingBookings(false));
+        }
+    }, [activeTab]);
 
     useEffect(() => {
         if (localStorage.getItem('isAdmin') !== 'true') {
@@ -165,6 +185,7 @@ export default function AdminDashboard() {
 
     const tabs: { id: TabType; label: string; icon: React.ReactNode }[] = [
         { id: 'overview', label: 'Dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
+        { id: 'bookings', label: 'Booking Requests', icon: <Calendar className="w-4 h-4" /> },
         { id: 'hero', label: 'Hero Section', icon: <Type className="w-4 h-4" /> },
         { id: 'about', label: 'About Section', icon: <Eye className="w-4 h-4" /> },
         { id: 'gallery', label: 'Gallery Photos', icon: <ImageIcon className="w-4 h-4" /> },
@@ -271,6 +292,115 @@ export default function AdminDashboard() {
                                         <span>View Live Site</span>
                                     </a>
                                 </div>
+                            </div>
+                        </motion.div>
+                    )}
+
+                    {/* ───── BOOKINGS TAB ───── */}
+                    {activeTab === 'bookings' && (
+                        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
+                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-6 shadow-sm">
+                                <div className="flex items-center justify-between mb-6">
+                                    <h3 className="text-xl font-serif">Booking Requests</h3>
+                                </div>
+                                {isLoadingBookings ? (
+                                    <div className="text-center py-12 text-[#1a1a1a]/40">Loading bookings...</div>
+                                ) : bookings.length === 0 ? (
+                                    <div className="text-center py-12 text-[#1a1a1a]/40">
+                                        <Calendar className="w-12 h-12 mx-auto mb-3 opacity-30" />
+                                        <p className="text-sm">No bookings yet.</p>
+                                    </div>
+                                ) : (
+                                    <div className="space-y-4">
+                                        {bookings.map((booking) => (
+                                            <div key={booking.id} className="p-5 border border-[#1a1a1a]/10 rounded-xl bg-white shadow-sm">
+                                                <div className="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-4">
+                                                    <div>
+                                                        <h4 className="text-lg font-bold">{booking.name} <span className="text-sm font-normal text-gray-500 ml-2">{booking.email} {booking.phone && `• ${booking.phone}`}</span></h4>
+                                                        <div className="flex items-center space-x-3 text-sm text-[#1a1a1a]/70 mt-1">
+                                                            <span className="font-semibold">{new Date(booking.date).toLocaleDateString()} at {booking.time}</span>
+                                                            <span>• {booking.guests} Guests</span>
+                                                            <span className="capitalize">• {booking.type}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span className={`px-3 py-1 text-xs uppercase tracking-widest rounded-full font-bold ${booking.status === 'replied' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                                                            {booking.status}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                {booking.specialReqs && booking.specialReqs !== 'null' && (
+                                                    <div className="mb-4">
+                                                        <span className="text-xs uppercase tracking-widest text-[#1a1a1a]/50 font-bold block mb-1">Special Requirements:</span>
+                                                        <p className="text-sm text-[#1a1a1a]/80">
+                                                            {Object.entries(JSON.parse(booking.specialReqs)).filter(([K,v])=>v).map(([k])=>k).join(', ') || 'None'}
+                                                        </p>
+                                                    </div>
+                                                )}
+                                                
+                                                {replyToBooking === booking.id ? (
+                                                    <div className="mt-4 bg-[#f5f2ed] p-4 rounded-xl border border-[#1a1a1a]/10">
+                                                        <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Your Reply Email</label>
+                                                        <textarea 
+                                                            rows={4}
+                                                            value={replyMessage}
+                                                            onChange={(e) => setReplyMessage(e.target.value)}
+                                                            className="w-full bg-white border border-[#1a1a1a]/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#5A5A40]"
+                                                            placeholder="Type your reply here. It will be sent via email to the customer."
+                                                        />
+                                                        <div className="flex items-center space-x-3 mt-4">
+                                                            <button 
+                                                                disabled={isSendingReply || !replyMessage.trim()}
+                                                                onClick={async () => {
+                                                                    setIsSendingReply(true);
+                                                                    try {
+                                                                        const res = await fetch(`/api/bookings/${booking.id}/reply`, {
+                                                                            method: 'POST',
+                                                                            headers: { 'Content-Type': 'application/json' },
+                                                                            body: JSON.stringify({ replyMessage })
+                                                                        });
+                                                                        const data = await res.json();
+                                                                        if (data.success) {
+                                                                            setBookings(bookings.map(b => b.id === booking.id ? { ...b, status: 'replied' } : b));
+                                                                            setReplyToBooking(null);
+                                                                            setReplyMessage('');
+                                                                        } else {
+                                                                            alert('Failed to send reply');
+                                                                        }
+                                                                    } catch (err) {
+                                                                        alert('Error sending reply');
+                                                                    } finally {
+                                                                        setIsSendingReply(false);
+                                                                    }
+                                                                }}
+                                                                className="bg-[#1a1a1a] text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 disabled:opacity-50"
+                                                            >
+                                                                <span>{isSendingReply ? 'Sending...' : 'Send Reply'}</span>
+                                                                <Send className="w-3 h-3" />
+                                                            </button>
+                                                            <button 
+                                                                onClick={() => { setReplyToBooking(null); setReplyMessage(''); }}
+                                                                className="text-[#1a1a1a]/60 hover:text-[#1a1a1a] text-sm font-medium"
+                                                            >
+                                                                Cancel
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                ) : booking.status === 'pending' && (
+                                                    <button 
+                                                        onClick={() => {
+                                                            setReplyToBooking(booking.id);
+                                                            setReplyMessage('');
+                                                        }}
+                                                        className="mt-2 text-[#5A5A40] border border-[#5A5A40] px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:bg-[#5A5A40] hover:text-white transition-colors"
+                                                    >
+                                                        Reply via Email
+                                                    </button>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </motion.div>
                     )}
