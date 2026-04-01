@@ -54,7 +54,7 @@ const defaultData: SiteData = {
         twitter: "https://twitter.com",
     },
     contactDetails: {
-        email: "connect@cateringdistrict.com.au",
+        email: "contact@cateringdistrict.com.au",
         phone: "0432 591 795",
         address: "31 George Street\nClyde NSW 2142\nAustralia",
     },
