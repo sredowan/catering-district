@@ -332,9 +332,9 @@ function Future() {
         <section className="py-32 bg-[#f5f2ed] relative overflow-hidden flex items-center min-h-[80vh]">
             <div className="absolute inset-0 z-0">
                 <picture className="w-full h-full">
-                    <source media="(min-width: 768px)" srcSet="/images/future-desktop.jpg" />
+                    <source media="(min-width: 768px)" srcSet="/images/future-new.jpg" />
                     <img
-                        src="/images/future-mobile-2.png"
+                        src="/images/future-new.jpg"
                         alt="Future Direction"
                         className="w-full h-full object-cover object-center md:object-right"
                     />

@@ -41,8 +41,8 @@ export default function ContactUs() {
                                     <Mail className="w-6 h-6 text-[#5A5A40] mt-1 flex-shrink-0" />
                                     <div>
                                         <h4 className="text-sm uppercase tracking-widest text-[#1a1a1a]/50 font-medium mb-1">Email</h4>
-                                        <a href="mailto:connect@cateringdistrict.com.au" className="text-lg text-[#1a1a1a] hover:text-[#5A5A40] transition-colors overflow-wrap break-word">
-                                            connect@cateringdistrict.com.au
+                                        <a href="mailto:contact@cateringdistrict.com.au" className="text-lg text-[#1a1a1a] hover:text-[#5A5A40] transition-colors overflow-wrap break-word">
+                                            contact@cateringdistrict.com.au
                                         </a>
                                     </div>
                                 </li>

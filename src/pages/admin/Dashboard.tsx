@@ -217,6 +217,9 @@ export default function AdminDashboard() {
                                 </motion.div>
                             )}
                         </AnimatePresence>
+                        <button onClick={() => window.location.reload()} className="bg-blue-500/20 text-blue-400 border border-blue-500/50 hover:bg-blue-500/30 px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 transition-colors">
+                            <span>Update Cache</span>
+                        </button>
                         <button onClick={handleSave} disabled={isSaving} className="bg-[#5A5A40] text-white px-5 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 hover:bg-[#6b6b4d] transition-colors disabled:opacity-50">
                             <Save className="w-4 h-4" />
                             <span>{isSaving ? 'Saving...' : 'Save All'}</span>
