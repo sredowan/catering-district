@@ -126,7 +126,7 @@ export default function AboutUs() {
             {/* ─── Full-Width Parallax Image Section ─── */}
             <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
                 <img
-                    src="/images/chef-kitchen.jpg"
+                    src="/images/future-new.jpg"
                     alt="Culinary excellence"
                     className="absolute inset-0 w-full h-full object-cover object-top"
                 />
