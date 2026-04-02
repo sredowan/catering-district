@@ -21,21 +21,21 @@ function Hero() {
 
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-[#19355e]">
+            <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#0c1a2e] to-[#19355e]">
                 <AnimatePresence>
                     <motion.img
                         key={currentImageIndex}
                         src={heroImages[currentImageIndex]}
                         alt="Hospitality"
                         initial={{ opacity: 0, scale: 1.05 }}
-                        animate={{ opacity: 0.4, scale: 1 }}
+                        animate={{ opacity: 0.90, scale: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 1.5, ease: "easeInOut" }}
                         className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity"
                         referrerPolicy="no-referrer"
                     />
                 </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#19355e]/50 to-[#19355e]"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#050a14]/90 via-[#19355e]/70 to-[#19355e]"></div>
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-20">
@@ -44,10 +44,7 @@ function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    <div className="flex items-center justify-center space-x-2 mb-8 text-[#ffffff] opacity-80">
-                        <MapPin className="w-4 h-4" />
-                        <p className="text-xs uppercase tracking-[0.2em] font-medium">Australia</p>
-                    </div>
+
                     <h1 className="text-7xl md:text-9xl font-serif font-light leading-none mb-6 tracking-tight text-[#ffffff]">
                         {siteData.hero.heading.includes(' ') ? (<>{siteData.hero.heading.split(' ').slice(0, -1).join(' ')} <span className="italic">{siteData.hero.heading.split(' ').slice(-1)[0]}</span></>) : siteData.hero.heading}
                     </h1>
@@ -396,7 +393,7 @@ function WhyUs() {
     ];
 
     return (
-        <section className="py-24 px-6 bg-[#ffda8d] text-[#ffffff]">
+        <section className="py-24 px-6 bg-[#19355e] text-[#ffffff]">
             <div className="max-w-5xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-serif font-light mb-12">
                     Why Work With <span className="italic">Catering District</span>
@@ -404,7 +401,7 @@ function WhyUs() {
                 <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                     {reasons.map((reason, index) => (
                         <div key={index} className="flex items-center space-x-2 bg-white/10 rounded-full px-6 py-3 backdrop-blur-sm border border-white/5">
-                            <Check className="w-4 h-4 text-[#ffffff]/70" />
+                            <Check className="w-4 h-4 text-[#ffda8d]" />
                             <span className="text-sm tracking-wide">{reason}</span>
                         </div>
                     ))}

@@ -24,23 +24,23 @@ function Navbar() {
     }, [isOpen]);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 text-white transition-all duration-300 ${isOpen ? 'bg-[#19355e] mix-blend-normal' : 'mix-blend-difference'}`}>
-            <div className="px-6 py-6 max-w-7xl mx-auto flex justify-between items-center relative z-50">
-                <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-                    <img src="/logo.png" alt="Catering District" className="h-16 w-auto object-contain bg-white/90 p-1 rounded drop-shadow-sm" />
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#ffffff] text-[#19355e] shadow-md border-b border-[#19355e]/10 transition-all duration-300 h-[60px] md:h-[70px]">
+            <div className="px-5 h-full md:px-8 max-w-7xl mx-auto flex justify-between items-center relative z-50">
+                <Link to="/" className="flex items-center h-full py-2" onClick={() => setIsOpen(false)}>
+                    <img src="/logo-wide.png" alt="Catering District" className="w-auto h-full max-h-[40px] md:max-h-[50px] object-contain drop-shadow-sm" />
                 </Link>
                 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex space-x-8 text-xs uppercase tracking-[0.15em]">
-                    <Link to="/about" className="hover:opacity-70 transition-opacity">About</Link>
-                    <Link to="/services" className="hover:opacity-70 transition-opacity">Services</Link>
-                    <Link to="/gallery" className="hover:opacity-70 transition-opacity">Gallery</Link>
-                    <Link to="/contact" className="hover:opacity-70 transition-opacity">Contact</Link>
+                <div className="hidden md:flex space-x-8 text-xs uppercase tracking-[0.15em] font-medium">
+                    <Link to="/about" className="hover:text-[#ffda8d] transition-colors">About</Link>
+                    <Link to="/services" className="hover:text-[#ffda8d] transition-colors">Services</Link>
+                    <Link to="/gallery" className="hover:text-[#ffda8d] transition-colors">Gallery</Link>
+                    <Link to="/contact" className="hover:text-[#ffda8d] transition-colors">Contact</Link>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <button 
-                    className="md:hidden p-2 -mr-2 text-white hover:opacity-70 transition-opacity"
+                    className="md:hidden p-2 -mr-2 text-[#19355e] hover:text-[#ffda8d] transition-colors"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
                 >
