@@ -66,7 +66,7 @@ function Hero() {
                     </motion.button>
                 </motion.div>
             </div>
-            
+
             <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
         </section>
     );
@@ -123,7 +123,7 @@ function About() {
                         transition={{ delay: 0.6, duration: 0.8 }}
                         className="absolute -bottom-8 -left-8 bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/20 max-w-xs"
                     >
-                        <div className="text-4xl font-serif mb-2 text-[#5A5A40]">4+ Years</div>
+                        <div className="text-4xl font-serif mb-2 text-[#5A5A40]">18+ Years</div>
                         <p className="text-sm font-light text-[#1a1a1a]/70">Of transforming spaces into vibrant community hubs.</p>
                     </motion.div>
                 </motion.div>

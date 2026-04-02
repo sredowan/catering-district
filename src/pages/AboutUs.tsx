@@ -6,7 +6,7 @@ const stats = [
     { value: '50+', label: 'Events Hosted' },
     { value: '12+', label: 'Venues Managed' },
     { value: '10K+', label: 'Happy Guests' },
-    { value: '4+', label: 'Years Experience' },
+    { value: '18+', label: 'Years Experience' },
 ];
 
 const values = [
