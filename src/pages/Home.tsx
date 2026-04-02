@@ -120,7 +120,7 @@ function About() {
                         transition={{ delay: 0.6, duration: 0.8 }}
                         className="absolute -bottom-8 -left-8 bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/20 max-w-xs"
                     >
-                        <div className="text-4xl font-serif mb-2 text-[#64620B]">18+ Years</div>
+                        <div className="text-4xl font-serif mb-2 text-[#64620B]">19+ Years</div>
                         <p className="text-sm font-light text-[#19355e]/70">Of transforming spaces into vibrant community hubs.</p>
                     </motion.div>
                 </motion.div>

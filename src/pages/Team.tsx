@@ -73,7 +73,7 @@ export default function Team() {
                                 </div>
 
                                 <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-4">
-                                    With a career that spans over 18+ years in the hospitality and catering
+                                    With a career that spans over 19+ years in the hospitality and catering
                                     industry, Maz is the visionary behind Catering District Pty Ltd. His
                                     extensive experience in kitchen management, event coordination, and
                                     large-scale catering services has established the company as a trusted
@@ -89,7 +89,7 @@ export default function Team() {
                                 {/* Key highlights */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     {[
-                                        { icon: <Calendar className="w-4 h-4" />, text: '18+ Years in Hospitality' },
+                                        { icon: <Calendar className="w-4 h-4" />, text: '19+ Years in Hospitality' },
                                         { icon: <Building2 className="w-4 h-4" />, text: 'Five Dock RSL, Crossroads Hotel' },
                                         { icon: <Award className="w-4 h-4" />, text: 'Kitchen Management Expert' },
                                         { icon: <Users className="w-4 h-4" />, text: 'Team Leadership & Training' },
