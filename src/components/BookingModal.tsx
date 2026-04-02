@@ -130,7 +130,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                     animate={{ opacity: 1, scale: 1 }}
                                     className="p-12 text-center flex flex-col items-center justify-center min-h-[400px]"
                                 >
-                                    <div className="w-20 h-20 bg-[#ffda8d]/10 rounded-full flex items-center justify-center mb-6 text-[#ffda8d]">
+                                    <div className="w-20 h-20 bg-[#64620B]/10 rounded-full flex items-center justify-center mb-6 text-[#64620B]">
                                         <Check className="w-10 h-10" />
                                     </div>
                                     <h3 className="text-3xl font-serif mb-4">Reservation Requested</h3>
@@ -139,7 +139,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                     </p>
                                     <button 
                                         onClick={onClose}
-                                        className="bg-[#19355e] text-[#ffffff] px-8 py-3 text-xs uppercase tracking-[0.15em] hover:bg-[#ffda8d] transition-colors"
+                                        className="bg-[#19355e] text-[#ffffff] px-8 py-3 text-xs uppercase tracking-[0.15em] hover:bg-[#64620B] transition-colors"
                                     >
                                         Close Window
                                     </button>
@@ -155,14 +155,14 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
                                     {/* Personal Info */}
                                     <div>
-                                        <h3 className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-4">Your Details</h3>
+                                        <h3 className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-4">Your Details</h3>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                             <div className="relative">
                                                 <User className="absolute left-4 top-3.5 w-4 h-4 text-[#19355e]/40" />
                                                 <input 
                                                     type="text" required placeholder="Full Name"
                                                     value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})}
-                                                    className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#ffda8d] focus:ring-1 focus:ring-[#ffda8d] transition-all"
+                                                    className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#64620B] focus:ring-1 focus:ring-[#64620B] transition-all"
                                                 />
                                             </div>
                                             <div className="relative">
@@ -170,7 +170,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                                 <input 
                                                     type="email" required placeholder="Email Address"
                                                     value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})}
-                                                    className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#ffda8d] focus:ring-1 focus:ring-[#ffda8d] transition-all"
+                                                    className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#64620B] focus:ring-1 focus:ring-[#64620B] transition-all"
                                                 />
                                             </div>
                                             <div className="relative sm:col-span-2">
@@ -178,7 +178,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                                 <input 
                                                     type="tel" placeholder="Phone Number (Optional)"
                                                     value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})}
-                                                    className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#ffda8d] focus:ring-1 focus:ring-[#ffda8d] transition-all"
+                                                    className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#64620B] focus:ring-1 focus:ring-[#64620B] transition-all"
                                                 />
                                             </div>
                                         </div>
@@ -186,14 +186,14 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
                                     {/* Booking Details */}
                                     <div>
-                                        <h3 className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-4">Reservation Details</h3>
+                                        <h3 className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-4">Reservation Details</h3>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                             <div className="relative">
                                                 <Calendar className="absolute left-4 top-3.5 w-4 h-4 text-[#19355e]/40" />
                                                 <input 
                                                     type="date" required min={new Date().toISOString().split('T')[0]}
                                                     value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})}
-                                                    className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#ffda8d] focus:ring-1 focus:ring-[#ffda8d] transition-all text-[#19355e]/80"
+                                                    className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#64620B] focus:ring-1 focus:ring-[#64620B] transition-all text-[#19355e]/80"
                                                 />
                                                 <label className="absolute -top-2 left-4 px-1 text-[10px] uppercase font-bold text-[#19355e]/40 bg-white">Date</label>
                                             </div>
@@ -203,7 +203,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                                     <input 
                                                         type="number" required min="1" max="50"
                                                         value={formData.guests} onChange={e => setFormData({...formData, guests: e.target.value})}
-                                                        className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#ffda8d] focus:ring-1 focus:ring-[#ffda8d] transition-all text-[#19355e]/80"
+                                                        className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#64620B] focus:ring-1 focus:ring-[#64620B] transition-all text-[#19355e]/80"
                                                     />
                                                     <label className="absolute -top-2 left-4 px-1 text-[10px] uppercase font-bold text-[#19355e]/40 bg-white">Guests</label>
                                                 </div>
@@ -211,7 +211,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                                     <select 
                                                         required
                                                         value={formData.type} onChange={e => setFormData({...formData, type: e.target.value})}
-                                                        className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 px-4 text-sm focus:outline-none focus:border-[#ffda8d] focus:ring-1 focus:ring-[#ffda8d] transition-all text-[#19355e]/80 appearance-none"
+                                                        className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 px-4 text-sm focus:outline-none focus:border-[#64620B] focus:ring-1 focus:ring-[#64620B] transition-all text-[#19355e]/80 appearance-none"
                                                     >
                                                         <option value="lunch">Lunch</option>
                                                         <option value="dinner">Dinner</option>
@@ -225,7 +225,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                                 <input 
                                                     type="time" required
                                                     value={formData.time} onChange={e => setFormData({...formData, time: e.target.value})}
-                                                    className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#ffda8d] focus:ring-1 focus:ring-[#ffda8d] transition-all text-[#19355e]/80"
+                                                    className="w-full bg-white border border-[#19355e]/10 rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-[#64620B] focus:ring-1 focus:ring-[#64620B] transition-all text-[#19355e]/80"
                                                 />
                                                 <label className="absolute -top-2 left-4 px-1 text-[10px] uppercase font-bold text-[#19355e]/40 bg-white">Time</label>
                                             </div>
@@ -234,22 +234,22 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
                                     {/* Special Requirements */}
                                     <div>
-                                        <h3 className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-4">Special Requirements</h3>
+                                        <h3 className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-4">Special Requirements</h3>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-white p-5 rounded-xl border border-[#19355e]/10">
                                             <label className="flex items-center space-x-3 cursor-pointer group">
-                                                <input type="checkbox" checked={specialReqs.highchair} onChange={(e) => setSpecialReqs({...specialReqs, highchair: e.target.checked})} className="w-4 h-4 rounded text-[#ffda8d] focus:ring-[#ffda8d] accent-[#ffda8d]" />
+                                                <input type="checkbox" checked={specialReqs.highchair} onChange={(e) => setSpecialReqs({...specialReqs, highchair: e.target.checked})} className="w-4 h-4 rounded text-[#64620B] focus:ring-[#64620B] accent-[#64620B]" />
                                                 <span className="text-sm text-[#19355e]/80 group-hover:text-[#19355e] transition-colors">Highchair (subject to availability)</span>
                                             </label>
                                             <label className="flex items-center space-x-3 cursor-pointer group">
-                                                <input type="checkbox" checked={specialReqs.pram} onChange={(e) => setSpecialReqs({...specialReqs, pram: e.target.checked})} className="w-4 h-4 rounded text-[#ffda8d] focus:ring-[#ffda8d] accent-[#ffda8d]" />
+                                                <input type="checkbox" checked={specialReqs.pram} onChange={(e) => setSpecialReqs({...specialReqs, pram: e.target.checked})} className="w-4 h-4 rounded text-[#64620B] focus:ring-[#64620B] accent-[#64620B]" />
                                                 <span className="text-sm text-[#19355e]/80 group-hover:text-[#19355e] transition-colors">Pram Space Required</span>
                                             </label>
                                             <label className="flex items-center space-x-3 cursor-pointer group">
-                                                <input type="checkbox" checked={specialReqs.wheelchair} onChange={(e) => setSpecialReqs({...specialReqs, wheelchair: e.target.checked})} className="w-4 h-4 rounded text-[#ffda8d] focus:ring-[#ffda8d] accent-[#ffda8d]" />
+                                                <input type="checkbox" checked={specialReqs.wheelchair} onChange={(e) => setSpecialReqs({...specialReqs, wheelchair: e.target.checked})} className="w-4 h-4 rounded text-[#64620B] focus:ring-[#64620B] accent-[#64620B]" />
                                                 <span className="text-sm text-[#19355e]/80 group-hover:text-[#19355e] transition-colors">Wheelchair / Walker Space</span>
                                             </label>
                                             <label className="flex items-center space-x-3 cursor-pointer group">
-                                                <input type="checkbox" checked={specialReqs.business} onChange={(e) => setSpecialReqs({...specialReqs, business: e.target.checked})} className="w-4 h-4 rounded text-[#ffda8d] focus:ring-[#ffda8d] accent-[#ffda8d]" />
+                                                <input type="checkbox" checked={specialReqs.business} onChange={(e) => setSpecialReqs({...specialReqs, business: e.target.checked})} className="w-4 h-4 rounded text-[#64620B] focus:ring-[#64620B] accent-[#64620B]" />
                                                 <span className="text-sm text-[#19355e]/80 group-hover:text-[#19355e] transition-colors">Business Meal</span>
                                             </label>
                                         </div>
@@ -259,7 +259,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                     <div className="space-y-4 pt-2">
                                         <label className="flex items-start space-x-3 cursor-pointer group">
                                             <div className="flex-shrink-0 mt-0.5">
-                                                <input type="checkbox" checked={agreedToUpdates} onChange={(e) => setAgreedToUpdates(e.target.checked)} className="w-4 h-4 rounded text-[#ffda8d] focus:ring-[#ffda8d] accent-[#ffda8d]" />
+                                                <input type="checkbox" checked={agreedToUpdates} onChange={(e) => setAgreedToUpdates(e.target.checked)} className="w-4 h-4 rounded text-[#64620B] focus:ring-[#64620B] accent-[#64620B]" />
                                             </div>
                                             <span className="text-sm text-[#19355e]/70 group-hover:text-[#19355e] transition-colors leading-relaxed">
                                                 I agree to receive special invitations and updates from Catering District.
@@ -267,11 +267,11 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                         </label>
                                         <div className="flex items-start space-x-3 group">
                                             <div className="flex-shrink-0 mt-0.5 cursor-pointer">
-                                                <input type="checkbox" checked={agreedToTerms} onChange={(e) => setAgreedToTerms(e.target.checked)} className="w-4 h-4 rounded text-[#ffda8d] focus:ring-[#ffda8d] accent-[#ffda8d] cursor-pointer" />
+                                                <input type="checkbox" checked={agreedToTerms} onChange={(e) => setAgreedToTerms(e.target.checked)} className="w-4 h-4 rounded text-[#64620B] focus:ring-[#64620B] accent-[#64620B] cursor-pointer" />
                                             </div>
                                             <span className="text-sm text-[#19355e]/70 leading-relaxed">
                                                 I agree to the booking{' '}
-                                                <button type="button" onClick={() => setShowTerms(true)} className="text-[#ffda8d] border-b border-[#ffda8d]/30 hover:border-[#ffda8d] transition-colors font-medium">Terms and Conditions</button>.
+                                                <button type="button" onClick={() => setShowTerms(true)} className="text-[#64620B] border-b border-[#64620B]/30 hover:border-[#64620B] transition-colors font-medium">Terms and Conditions</button>.
                                             </span>
                                         </div>
                                     </div>
@@ -280,7 +280,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                     <button 
                                         type="submit" 
                                         disabled={isSubmitting}
-                                        className="w-full bg-[#19355e] text-[#ffffff] border border-[#19355e] py-4 rounded-xl text-xs uppercase tracking-[0.15em] font-medium hover:bg-[#ffda8d] hover:border-[#ffda8d] transition-colors duration-300 disabled:opacity-50 flex items-center justify-center space-x-2"
+                                        className="w-full bg-[#19355e] text-[#ffffff] border border-[#19355e] py-4 rounded-xl text-xs uppercase tracking-[0.15em] font-medium hover:bg-[#64620B] hover:border-[#64620B] transition-colors duration-300 disabled:opacity-50 flex items-center justify-center space-x-2"
                                     >
                                         {isSubmitting ? (
                                             <>
@@ -326,7 +326,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                                 setAgreedToTerms(true);
                                                 setShowTerms(false);
                                             }}
-                                            className="mt-8 bg-[#19355e] text-white px-8 py-4 rounded-xl text-xs uppercase tracking-widest hover:bg-[#ffda8d] transition-colors w-full"
+                                            className="mt-8 bg-[#19355e] text-white px-8 py-4 rounded-xl text-xs uppercase tracking-widest hover:bg-[#64620B] transition-colors w-full"
                                         >
                                             I Agree to these Terms
                                         </button>

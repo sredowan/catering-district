@@ -89,7 +89,7 @@ export default function Gallery() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <p className="text-xs uppercase tracking-[0.3em] font-medium text-[#ffda8d] mb-4">Portfolio</p>
+                        <p className="text-xs uppercase tracking-[0.3em] font-medium text-[#64620B] mb-4">Portfolio</p>
                         <h1 className="text-6xl md:text-8xl font-serif font-light mb-4 text-[#ffffff] leading-none">
                             Our <span className="italic">Gallery</span>
                         </h1>
@@ -147,7 +147,7 @@ export default function Gallery() {
                             <ZoomIn className="w-8 h-8 text-[#19355e]/20" />
                         </div>
                         <p className="text-lg text-[#19355e]/50 font-light">No photos in this category yet.</p>
-                        <button onClick={() => setSelectedCategory('All')} className="mt-4 text-sm text-[#ffda8d] underline underline-offset-4 hover:text-[#19355e] transition-colors">
+                        <button onClick={() => setSelectedCategory('All')} className="mt-4 text-sm text-[#64620B] underline underline-offset-4 hover:text-[#19355e] transition-colors">
                             View all photos
                         </button>
                     </motion.div>

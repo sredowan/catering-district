@@ -82,16 +82,16 @@ function About() {
                     transition={{ duration: 0.8 }}
                     className="md:w-1/2 relative z-10"
                 >
-                    <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-4">Our Story</p>
+                    <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-4">Our Story</p>
                     <h2 className="text-4xl md:text-5xl font-serif font-light mb-8 leading-tight">
                         {siteData.about.heading.split(' ').slice(0, 2).join(' ')} <br />
                         <span className="italic">{siteData.about.heading.split(' ').slice(2).join(' ')}</span>
                     </h2>
-                    <div className="w-12 h-px bg-[#ffda8d]/30 mb-8"></div>
+                    <div className="w-12 h-px bg-[#64620B]/30 mb-8"></div>
                     <p className="text-lg text-[#19355e]/70 font-light leading-relaxed mb-8">
                         {siteData.about.description}
                     </p>
-                    <Link to="/about" className="inline-flex items-center space-x-3 text-[#ffda8d] hover:text-[#19355e] transition-colors border-b border-transparent hover:border-[#19355e] pb-1 uppercase text-xs tracking-[0.15em] font-medium">
+                    <Link to="/about" className="inline-flex items-center space-x-3 text-[#64620B] hover:text-[#19355e] transition-colors border-b border-transparent hover:border-[#19355e] pb-1 uppercase text-xs tracking-[0.15em] font-medium">
                         <span>Read Our Full Story</span>
                         <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -120,7 +120,7 @@ function About() {
                         transition={{ delay: 0.6, duration: 0.8 }}
                         className="absolute -bottom-8 -left-8 bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/20 max-w-xs"
                     >
-                        <div className="text-4xl font-serif mb-2 text-[#ffda8d]">18+ Years</div>
+                        <div className="text-4xl font-serif mb-2 text-[#64620B]">18+ Years</div>
                         <p className="text-sm font-light text-[#19355e]/70">Of transforming spaces into vibrant community hubs.</p>
                     </motion.div>
                 </motion.div>
@@ -223,7 +223,7 @@ function Approach() {
 
                 {/* Sticky Text Section */}
                 <div className="lg:w-1/2 lg:sticky lg:top-32">
-                    <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-4">Our Approach</p>
+                    <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-4">Our Approach</p>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-tight mb-8">
                         Hospitality <br />
                         <span className="italic">beyond food</span> service.
@@ -354,7 +354,7 @@ function Future() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-6">Future Direction</p>
+                        <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-6">Future Direction</p>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light mb-8 leading-tight">
                             Expanding our <span className="italic">Horizons</span>
                         </h2>
@@ -371,7 +371,7 @@ function Future() {
                                     transition={{ duration: 0.5, delay: 0.4 + (i * 0.1) }}
                                     className="flex items-center space-x-4 text-[#19355e]/80"
                                 >
-                                    <ArrowRight className="w-4 h-4 text-[#ffda8d]" />
+                                    <ArrowRight className="w-4 h-4 text-[#64620B]" />
                                     <span className="font-medium text-lg">{item}</span>
                                 </motion.li>
                             ))}
@@ -401,7 +401,7 @@ function WhyUs() {
                 <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                     {reasons.map((reason, index) => (
                         <div key={index} className="flex items-center space-x-2 bg-white/10 rounded-full px-6 py-3 backdrop-blur-sm border border-white/5">
-                            <Check className="w-4 h-4 text-[#ffda8d]" />
+                            <Check className="w-4 h-4 text-[#64620B]" />
                             <span className="text-sm tracking-wide">{reason}</span>
                         </div>
                     ))}

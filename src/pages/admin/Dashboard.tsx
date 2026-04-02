@@ -199,7 +199,7 @@ export default function AdminDashboard() {
             <nav className="bg-[#19355e] text-white px-6 py-4 sticky top-0 z-50 shadow-lg">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-[#ffda8d] rounded-lg flex items-center justify-center text-white font-serif text-sm font-bold">CD</div>
+                        <div className="w-8 h-8 bg-[#64620B] rounded-lg flex items-center justify-center text-white font-serif text-sm font-bold">CD</div>
                         <span className="font-serif text-lg tracking-wide">Admin Portal</span>
                     </div>
                     <div className="flex items-center space-x-3">
@@ -220,7 +220,7 @@ export default function AdminDashboard() {
                         <button onClick={() => window.location.reload()} className="bg-blue-500/20 text-blue-400 border border-blue-500/50 hover:bg-blue-500/30 px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 transition-colors">
                             <span>Update Cache</span>
                         </button>
-                        <button onClick={handleSave} disabled={isSaving} className="bg-[#ffda8d] text-white px-5 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 hover:bg-[#6b6b4d] transition-colors disabled:opacity-50">
+                        <button onClick={handleSave} disabled={isSaving} className="bg-[#64620B] text-white px-5 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 hover:bg-[#6b6b4d] transition-colors disabled:opacity-50">
                             <Save className="w-4 h-4" />
                             <span>{isSaving ? 'Saving...' : 'Save All'}</span>
                         </button>
@@ -255,19 +255,19 @@ export default function AdminDashboard() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                                 <div className="bg-white p-6 rounded-xl border border-[#19355e]/5 shadow-sm">
                                     <p className="text-[10px] uppercase tracking-[0.2em] text-[#19355e]/40 font-medium mb-2">Gallery Photos</p>
-                                    <p className="text-3xl font-serif text-[#ffda8d]">{formData.galleryImages.length}</p>
+                                    <p className="text-3xl font-serif text-[#64620B]">{formData.galleryImages.length}</p>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl border border-[#19355e]/5 shadow-sm">
                                     <p className="text-[10px] uppercase tracking-[0.2em] text-[#19355e]/40 font-medium mb-2">Services</p>
-                                    <p className="text-3xl font-serif text-[#ffda8d]">{formData.services.length}</p>
+                                    <p className="text-3xl font-serif text-[#64620B]">{formData.services.length}</p>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl border border-[#19355e]/5 shadow-sm">
                                     <p className="text-[10px] uppercase tracking-[0.2em] text-[#19355e]/40 font-medium mb-2">Hero Slides</p>
-                                    <p className="text-3xl font-serif text-[#ffda8d]">{formData.hero.images.length}</p>
+                                    <p className="text-3xl font-serif text-[#64620B]">{formData.hero.images.length}</p>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl border border-[#19355e]/5 shadow-sm">
                                     <p className="text-[10px] uppercase tracking-[0.2em] text-[#19355e]/40 font-medium mb-2">Social Links</p>
-                                    <p className="text-3xl font-serif text-[#ffda8d]">{Object.keys(formData.socialLinks).length}</p>
+                                    <p className="text-3xl font-serif text-[#64620B]">{Object.keys(formData.socialLinks).length}</p>
                                 </div>
                             </div>
 
@@ -290,7 +290,7 @@ export default function AdminDashboard() {
                                     <button onClick={() => setActiveTab('services')} className="px-4 py-2 text-sm rounded-lg bg-[#ffffff] hover:bg-[#19355e] hover:text-white transition-colors border border-[#19355e]/10">Edit Services</button>
                                     <button onClick={() => setActiveTab('contact')} className="px-4 py-2 text-sm rounded-lg bg-[#ffffff] hover:bg-[#19355e] hover:text-white transition-colors border border-[#19355e]/10">Update Contact</button>
                                     <button onClick={() => setActiveTab('hero')} className="px-4 py-2 text-sm rounded-lg bg-[#ffffff] hover:bg-[#19355e] hover:text-white transition-colors border border-[#19355e]/10">Manage Hero</button>
-                                    <a href="/" target="_blank" className="px-4 py-2 text-sm rounded-lg bg-[#ffda8d] text-white hover:bg-[#6b6b4d] transition-colors inline-flex items-center space-x-2">
+                                    <a href="/" target="_blank" className="px-4 py-2 text-sm rounded-lg bg-[#64620B] text-white hover:bg-[#6b6b4d] transition-colors inline-flex items-center space-x-2">
                                         <Eye className="w-3.5 h-3.5" />
                                         <span>View Live Site</span>
                                     </a>
@@ -348,7 +348,7 @@ export default function AdminDashboard() {
                                                             rows={4}
                                                             value={replyMessage}
                                                             onChange={(e) => setReplyMessage(e.target.value)}
-                                                            className="w-full bg-white border border-[#19355e]/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#ffda8d]"
+                                                            className="w-full bg-white border border-[#19355e]/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#64620B]"
                                                             placeholder="Type your reply here. It will be sent via email to the customer."
                                                         />
                                                         <div className="flex items-center space-x-3 mt-4">
@@ -395,7 +395,7 @@ export default function AdminDashboard() {
                                                             setReplyToBooking(booking.id);
                                                             setReplyMessage('');
                                                         }}
-                                                        className="mt-2 text-[#ffda8d] border border-[#ffda8d] px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:bg-[#ffda8d] hover:text-white transition-colors"
+                                                        className="mt-2 text-[#64620B] border border-[#64620B] px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:bg-[#64620B] hover:text-white transition-colors"
                                                     >
                                                         Reply via Email
                                                     </button>
@@ -416,11 +416,11 @@ export default function AdminDashboard() {
                                 <div className="grid gap-5">
                                     <div>
                                         <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Main Heading</label>
-                                        <input type="text" value={formData.hero.heading} onChange={(e) => handleChange('hero', 'heading', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                        <input type="text" value={formData.hero.heading} onChange={(e) => handleChange('hero', 'heading', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                     </div>
                                     <div>
                                         <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Sub-heading</label>
-                                        <input type="text" value={formData.hero.subheading} onChange={(e) => handleChange('hero', 'subheading', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                        <input type="text" value={formData.hero.subheading} onChange={(e) => handleChange('hero', 'subheading', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                     </div>
                                 </div>
                             </div>
@@ -467,11 +467,11 @@ export default function AdminDashboard() {
                                 <h3 className="text-xl font-serif">About Section Content</h3>
                                 <div>
                                     <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Heading</label>
-                                    <textarea rows={3} value={formData.about.heading} onChange={(e) => handleChange('about', 'heading', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                    <textarea rows={3} value={formData.about.heading} onChange={(e) => handleChange('about', 'heading', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                 </div>
                                 <div>
                                     <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Description</label>
-                                    <textarea rows={6} value={formData.about.description} onChange={(e) => handleChange('about', 'description', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                    <textarea rows={6} value={formData.about.description} onChange={(e) => handleChange('about', 'description', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                 </div>
                             </div>
                         </motion.div>
@@ -488,7 +488,7 @@ export default function AdminDashboard() {
                                         type="text" 
                                         id="new-category-input"
                                         placeholder="New Category Name" 
-                                        className="flex-1 bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-2 text-sm outline-none border"
+                                        className="flex-1 bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-2 text-sm outline-none border"
                                         onKeyDown={(e) => {
                                             if (e.key === 'Enter') {
                                                 const val = e.currentTarget.value.trim();
@@ -518,7 +518,7 @@ export default function AdminDashboard() {
                                 <div className="flex flex-wrap gap-2">
                                     {(formData.galleryCategories || ['Events', 'Dining', 'Venues']).map((cat) => (
                                         editingCategory === cat ? (
-                                            <div key={cat} className="flex items-center space-x-2 bg-white border border-[#ffda8d] px-2 py-1 rounded-full text-sm">
+                                            <div key={cat} className="flex items-center space-x-2 bg-white border border-[#64620B] px-2 py-1 rounded-full text-sm">
                                                 <input 
                                                     type="text"
                                                     value={editCategoryName}
@@ -545,7 +545,7 @@ export default function AdminDashboard() {
                                                         setEditingCategory(cat);
                                                         setEditCategoryName(cat);
                                                     }}
-                                                    className="text-[#19355e]/40 hover:text-[#ffda8d] transition-colors ml-1 opacity-0 group-hover:opacity-100"
+                                                    className="text-[#19355e]/40 hover:text-[#64620B] transition-colors ml-1 opacity-0 group-hover:opacity-100"
                                                     title="Edit Category Name"
                                                 >
                                                     <Pencil className="w-3 h-3" />
@@ -571,9 +571,9 @@ export default function AdminDashboard() {
                             </div>
 
                             {/* Upload Area */}
-                            <div className="bg-white rounded-xl border-2 border-dashed border-[#ffda8d]/30 hover:border-[#ffda8d] transition-colors p-8 shadow-sm text-center cursor-pointer" onClick={() => galleryUploadRef.current?.click()}>
+                            <div className="bg-white rounded-xl border-2 border-dashed border-[#64620B]/30 hover:border-[#64620B] transition-colors p-8 shadow-sm text-center cursor-pointer" onClick={() => galleryUploadRef.current?.click()}>
                                 <input ref={galleryUploadRef} type="file" accept="image/*" multiple onChange={handleGalleryUpload} className="hidden" />
-                                <Upload className="w-10 h-10 mx-auto mb-3 text-[#ffda8d]/50" />
+                                <Upload className="w-10 h-10 mx-auto mb-3 text-[#64620B]/50" />
                                 <p className="text-sm font-medium text-[#19355e]">Click to upload gallery photos</p>
                                 <p className="text-xs text-[#19355e]/50 mt-1">Supports JPG, PNG, WebP — multiple files at once</p>
                             </div>
@@ -590,7 +590,7 @@ export default function AdminDashboard() {
 
                                 <div className="space-y-3">
                                     {formData.galleryImages.map((img, index) => (
-                                        <div key={img.id} className="flex items-center gap-4 p-3 bg-[#ffffff]/60 rounded-xl border border-[#19355e]/5 group hover:border-[#ffda8d]/30 transition-colors">
+                                        <div key={img.id} className="flex items-center gap-4 p-3 bg-[#ffffff]/60 rounded-xl border border-[#19355e]/5 group hover:border-[#64620B]/30 transition-colors">
                                             {/* Thumbnail */}
                                             <div className="w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-gray-200 border border-black/5">
                                                 {img.src ? (
@@ -608,7 +608,7 @@ export default function AdminDashboard() {
                                                         const newImgs = [...formData.galleryImages];
                                                         newImgs[index].title = e.target.value;
                                                         setFormData({ ...formData, galleryImages: newImgs });
-                                                    }} className="w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#ffda8d]" />
+                                                    }} className="w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#64620B]" />
                                                 </div>
                                                 <div>
                                                     <label className="block text-[10px] uppercase tracking-widest text-[#19355e]/50 mb-1">Category</label>
@@ -616,7 +616,7 @@ export default function AdminDashboard() {
                                                         const newImgs = [...formData.galleryImages];
                                                         newImgs[index].category = e.target.value;
                                                         setFormData({ ...formData, galleryImages: newImgs });
-                                                    }} className="w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#ffda8d]">
+                                                    }} className="w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#64620B]">
                                                         {(formData.galleryCategories || ['Events', 'Dining', 'Venues']).map(cat => (
                                                             <option key={cat} value={cat}>{cat}</option>
                                                         ))}
@@ -630,7 +630,7 @@ export default function AdminDashboard() {
                                                             newImgs[index].src = e.target.value;
                                                             setFormData({ ...formData, galleryImages: newImgs });
                                                         }
-                                                    }} className={`w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#ffda8d] ${img.src.startsWith('data:') ? 'text-[#19355e]/40 italic' : ''}`} />
+                                                    }} className={`w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#64620B] ${img.src.startsWith('data:') ? 'text-[#19355e]/40 italic' : ''}`} />
                                                 </div>
                                             </div>
 
@@ -690,7 +690,7 @@ export default function AdminDashboard() {
                                                 const newServices = [...formData.services];
                                                 newServices[index] = { ...newServices[index], title: e.target.value };
                                                 setFormData({ ...formData, services: newServices });
-                                            }} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                            }} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                         </div>
                                         <div>
                                             <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Description</label>
@@ -698,7 +698,7 @@ export default function AdminDashboard() {
                                                 const newServices = [...formData.services];
                                                 newServices[index] = { ...newServices[index], description: e.target.value };
                                                 setFormData({ ...formData, services: newServices });
-                                            }} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                            }} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                         </div>
                                         <div>
                                             <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Key Points <span className="normal-case text-[#19355e]/40">(comma separated)</span></label>
@@ -706,7 +706,7 @@ export default function AdminDashboard() {
                                                 const newServices = [...formData.services];
                                                 newServices[index] = { ...newServices[index], items: e.target.value.split(',').map(s => s.trim()).filter(Boolean) };
                                                 setFormData({ ...formData, services: newServices });
-                                            }} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                            }} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                         </div>
                                     </div>
                                 </div>
@@ -722,15 +722,15 @@ export default function AdminDashboard() {
                                 <div className="grid gap-5">
                                     <div>
                                         <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Email Address</label>
-                                        <input type="email" value={formData.contactDetails.email} onChange={(e) => handleChange('contactDetails', 'email', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                        <input type="email" value={formData.contactDetails.email} onChange={(e) => handleChange('contactDetails', 'email', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                     </div>
                                     <div>
                                         <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Phone Number</label>
-                                        <input type="text" value={formData.contactDetails.phone} onChange={(e) => handleChange('contactDetails', 'phone', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                        <input type="text" value={formData.contactDetails.phone} onChange={(e) => handleChange('contactDetails', 'phone', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                     </div>
                                     <div>
                                         <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Physical Address</label>
-                                        <textarea rows={3} value={formData.contactDetails.address} onChange={(e) => handleChange('contactDetails', 'address', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                        <textarea rows={3} value={formData.contactDetails.address} onChange={(e) => handleChange('contactDetails', 'address', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                     </div>
                                 </div>
                             </div>
@@ -741,7 +741,7 @@ export default function AdminDashboard() {
                                     {Object.entries(formData.socialLinks).map(([key, value]) => (
                                         <div key={key}>
                                             <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium capitalize">{key} URL</label>
-                                            <input type="url" value={value} onChange={(e) => handleChange('socialLinks', key, e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                            <input type="url" value={value} onChange={(e) => handleChange('socialLinks', key, e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                         </div>
                                     ))}
                                 </div>

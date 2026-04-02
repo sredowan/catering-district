@@ -28,7 +28,7 @@ export default function AdminLogin() {
                 className="w-full max-w-md bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-[#19355e]/10"
             >
                 <div className="flex justify-center mb-6">
-                    <div className="w-12 h-12 bg-[#ffda8d]/10 rounded-full flex items-center justify-center text-[#ffda8d]">
+                    <div className="w-12 h-12 bg-[#64620B]/10 rounded-full flex items-center justify-center text-[#64620B]">
                         <Lock className="w-6 h-6" />
                     </div>
                 </div>
@@ -52,7 +52,7 @@ export default function AdminLogin() {
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm transition-all outline-none border"
+                            className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm transition-all outline-none border"
                             placeholder="admin@cateringdistrict.com.au"
                         />
                     </div>
@@ -64,14 +64,14 @@ export default function AdminLogin() {
                             required
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm transition-all outline-none border"
+                            className="w-full bg-[#ffffff] border-transparent focus:border-[#64620B] focus:ring-0 rounded-lg px-4 py-3 text-sm transition-all outline-none border"
                             placeholder="••••••••"
                         />
                     </div>
 
                     <button
                         type="submit"
-                        className="w-full bg-[#19355e] text-white rounded-lg py-4 text-sm uppercase tracking-widest font-medium hover:bg-[#ffda8d] transition-colors mt-4"
+                        className="w-full bg-[#19355e] text-white rounded-lg py-4 text-sm uppercase tracking-widest font-medium hover:bg-[#64620B] transition-colors mt-4"
                     >
                         Sign In
                     </button>

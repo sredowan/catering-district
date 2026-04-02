@@ -112,7 +112,31 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
         const saved = localStorage.getItem('catering-site-data');
         if (saved) {
             try {
-                return { ...defaultData, ...JSON.parse(saved) };
+                const parsed = JSON.parse(saved);
+                const merged = { ...defaultData, ...parsed };
+                
+                // Ensure new default services are added if missing from cache (by ID or Title)
+                if (parsed.services && Array.isArray(parsed.services)) {
+                    const missingServices = defaultData.services.filter(ds => 
+                        !parsed.services.some((ps: any) => ps.id === ds.id || ps.title === ds.title)
+                    );
+                    if (missingServices.length > 0) {
+                        merged.services = [...parsed.services, ...missingServices];
+                    }
+                }
+                
+                // Self-heal: Deduplicate services by title to clean up accidental cache duplicates
+                if (merged.services && Array.isArray(merged.services)) {
+                    const seenTitles = new Set();
+                    merged.services = merged.services.filter((s: ServiceItem) => {
+                        const titleLower = s.title.toLowerCase().trim();
+                        if (seenTitles.has(titleLower)) return false;
+                        seenTitles.add(titleLower);
+                        return true;
+                    });
+                }
+                
+                return merged;
             } catch (e) {
                 console.error("Failed to parse site data from localStorage", e);
             }

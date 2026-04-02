@@ -32,15 +32,16 @@ function Navbar() {
                 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-8 text-xs uppercase tracking-[0.15em] font-medium">
-                    <Link to="/about" className="hover:text-[#ffda8d] transition-colors">About</Link>
-                    <Link to="/services" className="hover:text-[#ffda8d] transition-colors">Services</Link>
-                    <Link to="/gallery" className="hover:text-[#ffda8d] transition-colors">Gallery</Link>
-                    <Link to="/contact" className="hover:text-[#ffda8d] transition-colors">Contact</Link>
+                    <Link to="/about" className="hover:text-[#64620B] transition-colors">About</Link>
+                    <Link to="/team" className="hover:text-[#64620B] transition-colors">Team</Link>
+                    <Link to="/services" className="hover:text-[#64620B] transition-colors">Services</Link>
+                    <Link to="/gallery" className="hover:text-[#64620B] transition-colors">Gallery</Link>
+                    <Link to="/contact" className="hover:text-[#64620B] transition-colors">Contact</Link>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <button 
-                    className="md:hidden p-2 -mr-2 text-[#19355e] hover:text-[#ffda8d] transition-colors"
+                    className="md:hidden p-2 -mr-2 text-[#19355e] hover:text-[#64620B] transition-colors"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
                 >
@@ -54,12 +55,13 @@ function Navbar() {
                     isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
             >
-                <div className="flex flex-col items-center space-y-10 text-xl tracking-[0.2em] uppercase font-light">
-                    <Link to="/" className="hover:text-[#ffda8d] transition-colors" onClick={() => setIsOpen(false)}>Home</Link>
-                    <Link to="/about" className="hover:text-[#ffda8d] transition-colors" onClick={() => setIsOpen(false)}>About</Link>
-                    <Link to="/services" className="hover:text-[#ffda8d] transition-colors" onClick={() => setIsOpen(false)}>Services</Link>
-                    <Link to="/gallery" className="hover:text-[#ffda8d] transition-colors" onClick={() => setIsOpen(false)}>Gallery</Link>
-                    <Link to="/contact" className="hover:text-[#ffda8d] transition-colors" onClick={() => setIsOpen(false)}>Contact</Link>
+                <div className="flex flex-col items-center space-y-10 text-xl tracking-[0.2em] uppercase font-light text-[#ffffff]">
+                    <Link to="/" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>Home</Link>
+                    <Link to="/about" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>About</Link>
+                    <Link to="/team" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>Team</Link>
+                    <Link to="/services" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>Services</Link>
+                    <Link to="/gallery" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>Gallery</Link>
+                    <Link to="/contact" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>Contact</Link>
                 </div>
             </div>
         </nav>
@@ -91,6 +93,7 @@ function Footer() {
                     <ul className="space-y-4 text-sm font-light text-[#ffffff]/70">
                         <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                         <li><Link to="/about" className="hover:text-white transition-colors">Our Story</Link></li>
+                        <li><Link to="/team" className="hover:text-white transition-colors">Our Team</Link></li>
                         <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
                         <li><Link to="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
                         <li><a href="/#approach" className="hover:text-white transition-colors">Approach</a></li>

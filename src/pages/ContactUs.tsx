@@ -13,7 +13,7 @@ export default function ContactUs() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-4">Get In Touch</p>
+                        <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-4">Get In Touch</p>
                         <h1 className="text-5xl md:text-7xl font-serif font-light mb-8 text-[#19355e]">
                             Let's <span className="italic">Connect</span>
                         </h1>
@@ -38,20 +38,20 @@ export default function ContactUs() {
                             <h3 className="text-2xl font-serif font-light text-[#19355e] mb-8 border-b border-[#19355e]/10 pb-4">Our Details</h3>
                             <ul className="space-y-8">
                                 <li className="flex items-start space-x-4">
-                                    <Mail className="w-6 h-6 text-[#ffda8d] mt-1 flex-shrink-0" />
+                                    <Mail className="w-6 h-6 text-[#64620B] mt-1 flex-shrink-0" />
                                     <div>
                                         <h4 className="text-sm uppercase tracking-widest text-[#19355e]/50 font-medium mb-1">Email</h4>
-                                        <a href="mailto:contact@cateringdistrict.com.au" className="text-lg text-[#19355e] hover:text-[#ffda8d] transition-colors overflow-wrap break-word">
+                                        <a href="mailto:contact@cateringdistrict.com.au" className="text-lg text-[#19355e] hover:text-[#64620B] transition-colors overflow-wrap break-word">
                                             contact@cateringdistrict.com.au
                                         </a>
                                     </div>
                                 </li>
 
                                 <li className="flex items-start space-x-4">
-                                    <Phone className="w-6 h-6 text-[#ffda8d] mt-1 flex-shrink-0" />
+                                    <Phone className="w-6 h-6 text-[#64620B] mt-1 flex-shrink-0" />
                                     <div>
                                         <h4 className="text-sm uppercase tracking-widest text-[#19355e]/50 font-medium mb-1">Phone</h4>
-                                        <a href="tel:0432591795" className="text-lg text-[#19355e] hover:text-[#ffda8d] transition-colors">
+                                        <a href="tel:0432591795" className="text-lg text-[#19355e] hover:text-[#64620B] transition-colors">
                                             0432 591 795
                                         </a>
                                     </div>
@@ -76,7 +76,7 @@ export default function ContactUs() {
                                     <input
                                         type="text"
                                         id="name"
-                                        className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#ffda8d] transition-colors"
+                                        className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors"
                                         placeholder="John Doe"
                                     />
                                 </div>
@@ -85,7 +85,7 @@ export default function ContactUs() {
                                     <input
                                         type="email"
                                         id="email"
-                                        className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#ffda8d] transition-colors"
+                                        className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors"
                                         placeholder="john@example.com"
                                     />
                                 </div>
@@ -96,7 +96,7 @@ export default function ContactUs() {
                                 <input
                                     type="text"
                                     id="subject"
-                                    className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#ffda8d] transition-colors"
+                                    className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors"
                                     placeholder="How can we help you?"
                                 />
                             </div>
@@ -106,7 +106,7 @@ export default function ContactUs() {
                                 <textarea
                                     id="message"
                                     rows={4}
-                                    className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#ffda8d] transition-colors resize-none"
+                                    className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors resize-none"
                                     placeholder="Tell us about your project..."
                                 ></textarea>
                             </div>
