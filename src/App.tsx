@@ -11,7 +11,7 @@ import AdminDashboard from './pages/admin/Dashboard';
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#f5f2ed] text-[#1a1a1a] font-sans selection:bg-[#5A5A40] selection:text-white overflow-x-hidden">
+      <div className="min-h-screen bg-[#ffffff] text-[#19355e] font-sans selection:bg-[#ffda8d] selection:text-white overflow-x-hidden">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

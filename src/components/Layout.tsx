@@ -24,9 +24,11 @@ function Navbar() {
     }, [isOpen]);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 text-white transition-all duration-300 ${isOpen ? 'bg-[#1a1a1a] mix-blend-normal' : 'mix-blend-difference'}`}>
+        <nav className={`fixed top-0 left-0 right-0 z-50 text-white transition-all duration-300 ${isOpen ? 'bg-[#19355e] mix-blend-normal' : 'mix-blend-difference'}`}>
             <div className="px-6 py-6 max-w-7xl mx-auto flex justify-between items-center relative z-50">
-                <Link to="/" className="font-serif text-2xl tracking-wide" onClick={() => setIsOpen(false)}>CD.</Link>
+                <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+                    <img src="/logo.png" alt="Catering District" className="h-16 w-auto object-contain bg-white/90 p-1 rounded drop-shadow-sm" />
+                </Link>
                 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-8 text-xs uppercase tracking-[0.15em]">
@@ -48,16 +50,16 @@ function Navbar() {
 
             {/* Mobile Menu Overlay */}
             <div 
-                className={`fixed inset-0 bg-[#1a1a1a] flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${
+                className={`fixed inset-0 bg-[#19355e] flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${
                     isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
             >
                 <div className="flex flex-col items-center space-y-10 text-xl tracking-[0.2em] uppercase font-light">
-                    <Link to="/" className="hover:text-[#5A5A40] transition-colors" onClick={() => setIsOpen(false)}>Home</Link>
-                    <Link to="/about" className="hover:text-[#5A5A40] transition-colors" onClick={() => setIsOpen(false)}>About</Link>
-                    <Link to="/services" className="hover:text-[#5A5A40] transition-colors" onClick={() => setIsOpen(false)}>Services</Link>
-                    <Link to="/gallery" className="hover:text-[#5A5A40] transition-colors" onClick={() => setIsOpen(false)}>Gallery</Link>
-                    <Link to="/contact" className="hover:text-[#5A5A40] transition-colors" onClick={() => setIsOpen(false)}>Contact</Link>
+                    <Link to="/" className="hover:text-[#ffda8d] transition-colors" onClick={() => setIsOpen(false)}>Home</Link>
+                    <Link to="/about" className="hover:text-[#ffda8d] transition-colors" onClick={() => setIsOpen(false)}>About</Link>
+                    <Link to="/services" className="hover:text-[#ffda8d] transition-colors" onClick={() => setIsOpen(false)}>Services</Link>
+                    <Link to="/gallery" className="hover:text-[#ffda8d] transition-colors" onClick={() => setIsOpen(false)}>Gallery</Link>
+                    <Link to="/contact" className="hover:text-[#ffda8d] transition-colors" onClick={() => setIsOpen(false)}>Contact</Link>
                 </div>
             </div>
         </nav>
@@ -72,21 +74,21 @@ function Footer() {
     const { contactDetails, socialLinks } = siteData;
 
     return (
-        <footer id="contact" className="bg-[#1a1a1a] text-[#f5f2ed] border-t border-white/10 pt-20 pb-12 px-6">
+        <footer id="contact" className="bg-[#19355e] text-[#ffffff] border-t border-white/10 pt-20 pb-12 px-6">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
 
                 {/* Brand Column */}
                 <div className="md:col-span-1 border-b border-white/10 md:border-none pb-8 md:pb-0">
                     <div className="font-serif text-3xl mb-4">Catering District</div>
-                    <p className="text-sm text-[#f5f2ed]/60 font-light leading-relaxed mb-8 pr-4">
+                    <p className="text-sm text-[#ffffff]/60 font-light leading-relaxed mb-8 pr-4">
                         Hospitality Experiences & Club Operations across Australia. Elevating community spaces through premium management.
                     </p>
                 </div>
 
                 {/* Quick Links Column */}
                 <div className="md:col-span-1">
-                    <h4 className="text-xs uppercase tracking-[0.2em] font-medium text-[#5A5A40] mb-6">Explore</h4>
-                    <ul className="space-y-4 text-sm font-light text-[#f5f2ed]/70">
+                    <h4 className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-6">Explore</h4>
+                    <ul className="space-y-4 text-sm font-light text-[#ffffff]/70">
                         <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                         <li><Link to="/about" className="hover:text-white transition-colors">Our Story</Link></li>
                         <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
@@ -97,15 +99,15 @@ function Footer() {
 
                 {/* Contact Column */}
                 <div className="md:col-span-2">
-                    <h4 className="text-xs uppercase tracking-[0.2em] font-medium text-[#5A5A40] mb-6">Get in Touch</h4>
-                    <div className="grid grid-cols-1 gap-6 text-sm font-light text-[#f5f2ed]/70">
+                    <h4 className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-6">Get in Touch</h4>
+                    <div className="grid grid-cols-1 gap-6 text-sm font-light text-[#ffffff]/70">
                         <div className="space-y-4">
                             <a href={`mailto:${contactDetails.email}`} className="flex items-center space-x-3 hover:text-white transition-colors group">
-                                <Mail className="w-4 h-4 text-[#5A5A40] group-hover:text-white transition-colors" />
+                                <Mail className="w-4 h-4 text-[#ffda8d] group-hover:text-white transition-colors" />
                                 <span>{contactDetails.email}</span>
                             </a>
                             <a href={`tel:${contactDetails.phone.replace(/\s/g, '')}`} className="flex items-center space-x-3 hover:text-white transition-colors group">
-                                <Phone className="w-4 h-4 text-[#5A5A40] group-hover:text-white transition-colors" />
+                                <Phone className="w-4 h-4 text-[#ffda8d] group-hover:text-white transition-colors" />
                                 <span>{contactDetails.phone}</span>
                             </a>
                         </div>
@@ -114,7 +116,7 @@ function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="max-w-7xl mx-auto pt-8 border-t border-white/10 text-xs text-[#f5f2ed]/40 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="max-w-7xl mx-auto pt-8 border-t border-white/10 text-xs text-[#ffffff]/40 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p>&copy; {new Date().getFullYear()} Catering District. All rights reserved.</p>
                 <div className="flex space-x-6">
                     <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

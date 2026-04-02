@@ -194,12 +194,12 @@ export default function AdminDashboard() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#f5f2ed]">
+        <div className="min-h-screen bg-[#ffffff]">
             {/* Top Navbar */}
-            <nav className="bg-[#1a1a1a] text-white px-6 py-4 sticky top-0 z-50 shadow-lg">
+            <nav className="bg-[#19355e] text-white px-6 py-4 sticky top-0 z-50 shadow-lg">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-[#5A5A40] rounded-lg flex items-center justify-center text-white font-serif text-sm font-bold">CD</div>
+                        <div className="w-8 h-8 bg-[#ffda8d] rounded-lg flex items-center justify-center text-white font-serif text-sm font-bold">CD</div>
                         <span className="font-serif text-lg tracking-wide">Admin Portal</span>
                     </div>
                     <div className="flex items-center space-x-3">
@@ -220,7 +220,7 @@ export default function AdminDashboard() {
                         <button onClick={() => window.location.reload()} className="bg-blue-500/20 text-blue-400 border border-blue-500/50 hover:bg-blue-500/30 px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 transition-colors">
                             <span>Update Cache</span>
                         </button>
-                        <button onClick={handleSave} disabled={isSaving} className="bg-[#5A5A40] text-white px-5 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 hover:bg-[#6b6b4d] transition-colors disabled:opacity-50">
+                        <button onClick={handleSave} disabled={isSaving} className="bg-[#ffda8d] text-white px-5 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 hover:bg-[#6b6b4d] transition-colors disabled:opacity-50">
                             <Save className="w-4 h-4" />
                             <span>{isSaving ? 'Saving...' : 'Save All'}</span>
                         </button>
@@ -237,9 +237,9 @@ export default function AdminDashboard() {
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row mt-8 px-6 gap-8 pb-32">
                 {/* Sidebar */}
                 <div className="w-full md:w-56 shrink-0 space-y-1">
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/40 font-medium mb-3 px-3">Management</div>
+                    <div className="text-[10px] uppercase tracking-[0.2em] text-[#19355e]/40 font-medium mb-3 px-3">Management</div>
                     {tabs.map(tab => (
-                        <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`w-full flex items-center space-x-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${activeTab === tab.id ? 'bg-[#1a1a1a] text-white shadow-md' : 'text-[#1a1a1a]/60 hover:bg-[#1a1a1a]/5 hover:text-[#1a1a1a]'}`}>
+                        <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`w-full flex items-center space-x-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${activeTab === tab.id ? 'bg-[#19355e] text-white shadow-md' : 'text-[#19355e]/60 hover:bg-[#19355e]/5 hover:text-[#19355e]'}`}>
                             {tab.icon}
                             <span>{tab.label}</span>
                         </button>
@@ -253,26 +253,26 @@ export default function AdminDashboard() {
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
                             <h2 className="text-2xl font-serif">Dashboard Overview</h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                                <div className="bg-white p-6 rounded-xl border border-[#1a1a1a]/5 shadow-sm">
-                                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/40 font-medium mb-2">Gallery Photos</p>
-                                    <p className="text-3xl font-serif text-[#5A5A40]">{formData.galleryImages.length}</p>
+                                <div className="bg-white p-6 rounded-xl border border-[#19355e]/5 shadow-sm">
+                                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#19355e]/40 font-medium mb-2">Gallery Photos</p>
+                                    <p className="text-3xl font-serif text-[#ffda8d]">{formData.galleryImages.length}</p>
                                 </div>
-                                <div className="bg-white p-6 rounded-xl border border-[#1a1a1a]/5 shadow-sm">
-                                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/40 font-medium mb-2">Services</p>
-                                    <p className="text-3xl font-serif text-[#5A5A40]">{formData.services.length}</p>
+                                <div className="bg-white p-6 rounded-xl border border-[#19355e]/5 shadow-sm">
+                                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#19355e]/40 font-medium mb-2">Services</p>
+                                    <p className="text-3xl font-serif text-[#ffda8d]">{formData.services.length}</p>
                                 </div>
-                                <div className="bg-white p-6 rounded-xl border border-[#1a1a1a]/5 shadow-sm">
-                                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/40 font-medium mb-2">Hero Slides</p>
-                                    <p className="text-3xl font-serif text-[#5A5A40]">{formData.hero.images.length}</p>
+                                <div className="bg-white p-6 rounded-xl border border-[#19355e]/5 shadow-sm">
+                                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#19355e]/40 font-medium mb-2">Hero Slides</p>
+                                    <p className="text-3xl font-serif text-[#ffda8d]">{formData.hero.images.length}</p>
                                 </div>
-                                <div className="bg-white p-6 rounded-xl border border-[#1a1a1a]/5 shadow-sm">
-                                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/40 font-medium mb-2">Social Links</p>
-                                    <p className="text-3xl font-serif text-[#5A5A40]">{Object.keys(formData.socialLinks).length}</p>
+                                <div className="bg-white p-6 rounded-xl border border-[#19355e]/5 shadow-sm">
+                                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#19355e]/40 font-medium mb-2">Social Links</p>
+                                    <p className="text-3xl font-serif text-[#ffda8d]">{Object.keys(formData.socialLinks).length}</p>
                                 </div>
                             </div>
 
                             {/* Quick preview */}
-                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-6 shadow-sm">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-6 shadow-sm">
                                 <h3 className="text-lg font-serif mb-4">Gallery Preview</h3>
                                 <div className="grid grid-cols-4 md:grid-cols-6 gap-2">
                                     {formData.galleryImages.slice(0, 12).map(img => (
@@ -283,14 +283,14 @@ export default function AdminDashboard() {
                                 </div>
                             </div>
 
-                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-6 shadow-sm">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-6 shadow-sm">
                                 <h3 className="text-lg font-serif mb-4">Quick Actions</h3>
                                 <div className="flex flex-wrap gap-3">
-                                    <button onClick={() => setActiveTab('gallery')} className="px-4 py-2 text-sm rounded-lg bg-[#f5f2ed] hover:bg-[#1a1a1a] hover:text-white transition-colors border border-[#1a1a1a]/10">Upload Photos</button>
-                                    <button onClick={() => setActiveTab('services')} className="px-4 py-2 text-sm rounded-lg bg-[#f5f2ed] hover:bg-[#1a1a1a] hover:text-white transition-colors border border-[#1a1a1a]/10">Edit Services</button>
-                                    <button onClick={() => setActiveTab('contact')} className="px-4 py-2 text-sm rounded-lg bg-[#f5f2ed] hover:bg-[#1a1a1a] hover:text-white transition-colors border border-[#1a1a1a]/10">Update Contact</button>
-                                    <button onClick={() => setActiveTab('hero')} className="px-4 py-2 text-sm rounded-lg bg-[#f5f2ed] hover:bg-[#1a1a1a] hover:text-white transition-colors border border-[#1a1a1a]/10">Manage Hero</button>
-                                    <a href="/" target="_blank" className="px-4 py-2 text-sm rounded-lg bg-[#5A5A40] text-white hover:bg-[#6b6b4d] transition-colors inline-flex items-center space-x-2">
+                                    <button onClick={() => setActiveTab('gallery')} className="px-4 py-2 text-sm rounded-lg bg-[#ffffff] hover:bg-[#19355e] hover:text-white transition-colors border border-[#19355e]/10">Upload Photos</button>
+                                    <button onClick={() => setActiveTab('services')} className="px-4 py-2 text-sm rounded-lg bg-[#ffffff] hover:bg-[#19355e] hover:text-white transition-colors border border-[#19355e]/10">Edit Services</button>
+                                    <button onClick={() => setActiveTab('contact')} className="px-4 py-2 text-sm rounded-lg bg-[#ffffff] hover:bg-[#19355e] hover:text-white transition-colors border border-[#19355e]/10">Update Contact</button>
+                                    <button onClick={() => setActiveTab('hero')} className="px-4 py-2 text-sm rounded-lg bg-[#ffffff] hover:bg-[#19355e] hover:text-white transition-colors border border-[#19355e]/10">Manage Hero</button>
+                                    <a href="/" target="_blank" className="px-4 py-2 text-sm rounded-lg bg-[#ffda8d] text-white hover:bg-[#6b6b4d] transition-colors inline-flex items-center space-x-2">
                                         <Eye className="w-3.5 h-3.5" />
                                         <span>View Live Site</span>
                                     </a>
@@ -302,25 +302,25 @@ export default function AdminDashboard() {
                     {/* ───── BOOKINGS TAB ───── */}
                     {activeTab === 'bookings' && (
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-6 shadow-sm">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-6 shadow-sm">
                                 <div className="flex items-center justify-between mb-6">
                                     <h3 className="text-xl font-serif">Booking Requests</h3>
                                 </div>
                                 {isLoadingBookings ? (
-                                    <div className="text-center py-12 text-[#1a1a1a]/40">Loading bookings...</div>
+                                    <div className="text-center py-12 text-[#19355e]/40">Loading bookings...</div>
                                 ) : bookings.length === 0 ? (
-                                    <div className="text-center py-12 text-[#1a1a1a]/40">
+                                    <div className="text-center py-12 text-[#19355e]/40">
                                         <Calendar className="w-12 h-12 mx-auto mb-3 opacity-30" />
                                         <p className="text-sm">No bookings yet.</p>
                                     </div>
                                 ) : (
                                     <div className="space-y-4">
                                         {bookings.map((booking) => (
-                                            <div key={booking.id} className="p-5 border border-[#1a1a1a]/10 rounded-xl bg-white shadow-sm">
+                                            <div key={booking.id} className="p-5 border border-[#19355e]/10 rounded-xl bg-white shadow-sm">
                                                 <div className="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-4">
                                                     <div>
                                                         <h4 className="text-lg font-bold">{booking.name} <span className="text-sm font-normal text-gray-500 ml-2">{booking.email} {booking.phone && `• ${booking.phone}`}</span></h4>
-                                                        <div className="flex items-center space-x-3 text-sm text-[#1a1a1a]/70 mt-1">
+                                                        <div className="flex items-center space-x-3 text-sm text-[#19355e]/70 mt-1">
                                                             <span className="font-semibold">{new Date(booking.date).toLocaleDateString()} at {booking.time}</span>
                                                             <span>• {booking.guests} Guests</span>
                                                             <span className="capitalize">• {booking.type}</span>
@@ -334,21 +334,21 @@ export default function AdminDashboard() {
                                                 </div>
                                                 {booking.specialReqs && booking.specialReqs !== 'null' && (
                                                     <div className="mb-4">
-                                                        <span className="text-xs uppercase tracking-widest text-[#1a1a1a]/50 font-bold block mb-1">Special Requirements:</span>
-                                                        <p className="text-sm text-[#1a1a1a]/80">
+                                                        <span className="text-xs uppercase tracking-widest text-[#19355e]/50 font-bold block mb-1">Special Requirements:</span>
+                                                        <p className="text-sm text-[#19355e]/80">
                                                             {Object.entries(JSON.parse(booking.specialReqs)).filter(([K,v])=>v).map(([k])=>k).join(', ') || 'None'}
                                                         </p>
                                                     </div>
                                                 )}
                                                 
                                                 {replyToBooking === booking.id ? (
-                                                    <div className="mt-4 bg-[#f5f2ed] p-4 rounded-xl border border-[#1a1a1a]/10">
-                                                        <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Your Reply Email</label>
+                                                    <div className="mt-4 bg-[#ffffff] p-4 rounded-xl border border-[#19355e]/10">
+                                                        <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Your Reply Email</label>
                                                         <textarea 
                                                             rows={4}
                                                             value={replyMessage}
                                                             onChange={(e) => setReplyMessage(e.target.value)}
-                                                            className="w-full bg-white border border-[#1a1a1a]/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#5A5A40]"
+                                                            className="w-full bg-white border border-[#19355e]/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#ffda8d]"
                                                             placeholder="Type your reply here. It will be sent via email to the customer."
                                                         />
                                                         <div className="flex items-center space-x-3 mt-4">
@@ -376,14 +376,14 @@ export default function AdminDashboard() {
                                                                         setIsSendingReply(false);
                                                                     }
                                                                 }}
-                                                                className="bg-[#1a1a1a] text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 disabled:opacity-50"
+                                                                className="bg-[#19355e] text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 disabled:opacity-50"
                                                             >
                                                                 <span>{isSendingReply ? 'Sending...' : 'Send Reply'}</span>
                                                                 <Send className="w-3 h-3" />
                                                             </button>
                                                             <button 
                                                                 onClick={() => { setReplyToBooking(null); setReplyMessage(''); }}
-                                                                className="text-[#1a1a1a]/60 hover:text-[#1a1a1a] text-sm font-medium"
+                                                                className="text-[#19355e]/60 hover:text-[#19355e] text-sm font-medium"
                                                             >
                                                                 Cancel
                                                             </button>
@@ -395,7 +395,7 @@ export default function AdminDashboard() {
                                                             setReplyToBooking(booking.id);
                                                             setReplyMessage('');
                                                         }}
-                                                        className="mt-2 text-[#5A5A40] border border-[#5A5A40] px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:bg-[#5A5A40] hover:text-white transition-colors"
+                                                        className="mt-2 text-[#ffda8d] border border-[#ffda8d] px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:bg-[#ffda8d] hover:text-white transition-colors"
                                                     >
                                                         Reply via Email
                                                     </button>
@@ -411,24 +411,24 @@ export default function AdminDashboard() {
                     {/* ───── HERO TAB ───── */}
                     {activeTab === 'hero' && (
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-8 shadow-sm">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-8 shadow-sm">
                                 <h3 className="text-xl font-serif mb-6">Hero Content</h3>
                                 <div className="grid gap-5">
                                     <div>
-                                        <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Main Heading</label>
-                                        <input type="text" value={formData.hero.heading} onChange={(e) => handleChange('hero', 'heading', e.target.value)} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                        <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Main Heading</label>
+                                        <input type="text" value={formData.hero.heading} onChange={(e) => handleChange('hero', 'heading', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                     </div>
                                     <div>
-                                        <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Sub-heading</label>
-                                        <input type="text" value={formData.hero.subheading} onChange={(e) => handleChange('hero', 'subheading', e.target.value)} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                        <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Sub-heading</label>
+                                        <input type="text" value={formData.hero.subheading} onChange={(e) => handleChange('hero', 'subheading', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-8 shadow-sm">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-8 shadow-sm">
                                 <div className="flex items-center justify-between mb-6">
                                     <h3 className="text-xl font-serif">Hero Slideshow Images</h3>
-                                    <label className="bg-[#1a1a1a] text-white px-4 py-2 rounded-lg text-xs font-medium flex items-center space-x-2 cursor-pointer hover:bg-[#333] transition-colors">
+                                    <label className="bg-[#19355e] text-white px-4 py-2 rounded-lg text-xs font-medium flex items-center space-x-2 cursor-pointer hover:bg-[#333] transition-colors">
                                         <Upload className="w-3.5 h-3.5" />
                                         <span>Upload</span>
                                         <input ref={heroUploadRef} type="file" accept="image/*" multiple onChange={handleHeroUpload} className="hidden" />
@@ -436,7 +436,7 @@ export default function AdminDashboard() {
                                 </div>
                                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                     {formData.hero.images.map((src, index) => (
-                                        <div key={index} className="relative group aspect-video rounded-lg overflow-hidden border border-[#1a1a1a]/10 bg-gray-100">
+                                        <div key={index} className="relative group aspect-video rounded-lg overflow-hidden border border-[#19355e]/10 bg-gray-100">
                                             <img src={src} alt={`Hero ${index + 1}`} className="w-full h-full object-cover" />
                                             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                                 <button onClick={() => {
@@ -451,7 +451,7 @@ export default function AdminDashboard() {
                                     ))}
                                 </div>
                                 {formData.hero.images.length === 0 && (
-                                    <div className="text-center py-12 text-[#1a1a1a]/40">
+                                    <div className="text-center py-12 text-[#19355e]/40">
                                         <ImageIcon className="w-12 h-12 mx-auto mb-3 opacity-30" />
                                         <p className="text-sm">No hero images. Click Upload to add slideshow images.</p>
                                     </div>
@@ -463,15 +463,15 @@ export default function AdminDashboard() {
                     {/* ───── ABOUT TAB ───── */}
                     {activeTab === 'about' && (
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-8 shadow-sm space-y-6">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-8 shadow-sm space-y-6">
                                 <h3 className="text-xl font-serif">About Section Content</h3>
                                 <div>
-                                    <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Heading</label>
-                                    <textarea rows={3} value={formData.about.heading} onChange={(e) => handleChange('about', 'heading', e.target.value)} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                    <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Heading</label>
+                                    <textarea rows={3} value={formData.about.heading} onChange={(e) => handleChange('about', 'heading', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                 </div>
                                 <div>
-                                    <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Description</label>
-                                    <textarea rows={6} value={formData.about.description} onChange={(e) => handleChange('about', 'description', e.target.value)} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                    <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Description</label>
+                                    <textarea rows={6} value={formData.about.description} onChange={(e) => handleChange('about', 'description', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                 </div>
                             </div>
                         </motion.div>
@@ -481,14 +481,14 @@ export default function AdminDashboard() {
                     {activeTab === 'gallery' && (
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
                             {/* Category Management */}
-                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-6 shadow-sm mb-6">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-6 shadow-sm mb-6">
                                 <h3 className="text-xl font-serif mb-4">Manage Categories</h3>
                                 <div className="flex gap-2 mb-4">
                                     <input 
                                         type="text" 
                                         id="new-category-input"
                                         placeholder="New Category Name" 
-                                        className="flex-1 bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-2 text-sm outline-none border"
+                                        className="flex-1 bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-2 text-sm outline-none border"
                                         onKeyDown={(e) => {
                                             if (e.key === 'Enter') {
                                                 const val = e.currentTarget.value.trim();
@@ -510,7 +510,7 @@ export default function AdminDashboard() {
                                                 input.value = '';
                                             }
                                         }}
-                                        className="bg-[#1a1a1a] text-white px-4 py-2 rounded-lg text-xs font-medium"
+                                        className="bg-[#19355e] text-white px-4 py-2 rounded-lg text-xs font-medium"
                                     >
                                         Add
                                     </button>
@@ -518,7 +518,7 @@ export default function AdminDashboard() {
                                 <div className="flex flex-wrap gap-2">
                                     {(formData.galleryCategories || ['Events', 'Dining', 'Venues']).map((cat) => (
                                         editingCategory === cat ? (
-                                            <div key={cat} className="flex items-center space-x-2 bg-white border border-[#5A5A40] px-2 py-1 rounded-full text-sm">
+                                            <div key={cat} className="flex items-center space-x-2 bg-white border border-[#ffda8d] px-2 py-1 rounded-full text-sm">
                                                 <input 
                                                     type="text"
                                                     value={editCategoryName}
@@ -538,14 +538,14 @@ export default function AdminDashboard() {
                                                 </button>
                                             </div>
                                         ) : (
-                                            <div key={cat} className="flex items-center space-x-2 bg-[#f5f2ed] px-3 py-1.5 rounded-full text-sm group">
+                                            <div key={cat} className="flex items-center space-x-2 bg-[#ffffff] px-3 py-1.5 rounded-full text-sm group">
                                                 <span>{cat}</span>
                                                 <button 
                                                     onClick={() => {
                                                         setEditingCategory(cat);
                                                         setEditCategoryName(cat);
                                                     }}
-                                                    className="text-[#1a1a1a]/40 hover:text-[#5A5A40] transition-colors ml-1 opacity-0 group-hover:opacity-100"
+                                                    className="text-[#19355e]/40 hover:text-[#ffda8d] transition-colors ml-1 opacity-0 group-hover:opacity-100"
                                                     title="Edit Category Name"
                                                 >
                                                     <Pencil className="w-3 h-3" />
@@ -559,7 +559,7 @@ export default function AdminDashboard() {
                                                             setFormData({ ...formData, galleryCategories: (formData.galleryCategories || []).filter(c => c !== cat) });
                                                         }
                                                     }}
-                                                    className="text-[#1a1a1a]/40 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+                                                    className="text-[#19355e]/40 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
                                                     title="Delete Category"
                                                 >
                                                     <X className="w-3 h-3" />
@@ -571,18 +571,18 @@ export default function AdminDashboard() {
                             </div>
 
                             {/* Upload Area */}
-                            <div className="bg-white rounded-xl border-2 border-dashed border-[#5A5A40]/30 hover:border-[#5A5A40] transition-colors p-8 shadow-sm text-center cursor-pointer" onClick={() => galleryUploadRef.current?.click()}>
+                            <div className="bg-white rounded-xl border-2 border-dashed border-[#ffda8d]/30 hover:border-[#ffda8d] transition-colors p-8 shadow-sm text-center cursor-pointer" onClick={() => galleryUploadRef.current?.click()}>
                                 <input ref={galleryUploadRef} type="file" accept="image/*" multiple onChange={handleGalleryUpload} className="hidden" />
-                                <Upload className="w-10 h-10 mx-auto mb-3 text-[#5A5A40]/50" />
-                                <p className="text-sm font-medium text-[#1a1a1a]">Click to upload gallery photos</p>
-                                <p className="text-xs text-[#1a1a1a]/50 mt-1">Supports JPG, PNG, WebP — multiple files at once</p>
+                                <Upload className="w-10 h-10 mx-auto mb-3 text-[#ffda8d]/50" />
+                                <p className="text-sm font-medium text-[#19355e]">Click to upload gallery photos</p>
+                                <p className="text-xs text-[#19355e]/50 mt-1">Supports JPG, PNG, WebP — multiple files at once</p>
                             </div>
 
                             {/* Gallery Items */}
-                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-6 shadow-sm">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-6 shadow-sm">
                                 <div className="flex items-center justify-between mb-6">
-                                    <h3 className="text-xl font-serif">Gallery Photos <span className="text-sm font-light text-[#1a1a1a]/50">({formData.galleryImages.length})</span></h3>
-                                    <button onClick={() => galleryUploadRef.current?.click()} className="bg-[#1a1a1a] text-white px-3 py-1.5 rounded-lg text-xs font-medium flex items-center space-x-2">
+                                    <h3 className="text-xl font-serif">Gallery Photos <span className="text-sm font-light text-[#19355e]/50">({formData.galleryImages.length})</span></h3>
+                                    <button onClick={() => galleryUploadRef.current?.click()} className="bg-[#19355e] text-white px-3 py-1.5 rounded-lg text-xs font-medium flex items-center space-x-2">
                                         <Plus className="w-3 h-3" />
                                         <span>Add Photo</span>
                                     </button>
@@ -590,7 +590,7 @@ export default function AdminDashboard() {
 
                                 <div className="space-y-3">
                                     {formData.galleryImages.map((img, index) => (
-                                        <div key={img.id} className="flex items-center gap-4 p-3 bg-[#f5f2ed]/60 rounded-xl border border-[#1a1a1a]/5 group hover:border-[#5A5A40]/30 transition-colors">
+                                        <div key={img.id} className="flex items-center gap-4 p-3 bg-[#ffffff]/60 rounded-xl border border-[#19355e]/5 group hover:border-[#ffda8d]/30 transition-colors">
                                             {/* Thumbnail */}
                                             <div className="w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-gray-200 border border-black/5">
                                                 {img.src ? (
@@ -603,34 +603,34 @@ export default function AdminDashboard() {
                                             {/* Fields */}
                                             <div className="flex-1 min-w-0 grid grid-cols-1 sm:grid-cols-3 gap-3">
                                                 <div>
-                                                    <label className="block text-[10px] uppercase tracking-widest text-[#1a1a1a]/50 mb-1">Title</label>
+                                                    <label className="block text-[10px] uppercase tracking-widest text-[#19355e]/50 mb-1">Title</label>
                                                     <input type="text" value={img.title} onChange={(e) => {
                                                         const newImgs = [...formData.galleryImages];
                                                         newImgs[index].title = e.target.value;
                                                         setFormData({ ...formData, galleryImages: newImgs });
-                                                    }} className="w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#5A5A40]" />
+                                                    }} className="w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#ffda8d]" />
                                                 </div>
                                                 <div>
-                                                    <label className="block text-[10px] uppercase tracking-widest text-[#1a1a1a]/50 mb-1">Category</label>
+                                                    <label className="block text-[10px] uppercase tracking-widest text-[#19355e]/50 mb-1">Category</label>
                                                     <select value={img.category} onChange={(e) => {
                                                         const newImgs = [...formData.galleryImages];
                                                         newImgs[index].category = e.target.value;
                                                         setFormData({ ...formData, galleryImages: newImgs });
-                                                    }} className="w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#5A5A40]">
+                                                    }} className="w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#ffda8d]">
                                                         {(formData.galleryCategories || ['Events', 'Dining', 'Venues']).map(cat => (
                                                             <option key={cat} value={cat}>{cat}</option>
                                                         ))}
                                                     </select>
                                                 </div>
                                                 <div>
-                                                    <label className="block text-[10px] uppercase tracking-widest text-[#1a1a1a]/50 mb-1">Image URL</label>
+                                                    <label className="block text-[10px] uppercase tracking-widest text-[#19355e]/50 mb-1">Image URL</label>
                                                     <input type="text" value={img.src.startsWith('data:') ? '(uploaded file)' : img.src} readOnly={img.src.startsWith('data:')} onChange={(e) => {
                                                         if (!img.src.startsWith('data:')) {
                                                             const newImgs = [...formData.galleryImages];
                                                             newImgs[index].src = e.target.value;
                                                             setFormData({ ...formData, galleryImages: newImgs });
                                                         }
-                                                    }} className={`w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#5A5A40] ${img.src.startsWith('data:') ? 'text-[#1a1a1a]/40 italic' : ''}`} />
+                                                    }} className={`w-full bg-white rounded px-3 py-1.5 text-xs outline-none border border-transparent focus:border-[#ffda8d] ${img.src.startsWith('data:') ? 'text-[#19355e]/40 italic' : ''}`} />
                                                 </div>
                                             </div>
 
@@ -649,7 +649,7 @@ export default function AdminDashboard() {
                                 </div>
 
                                 {formData.galleryImages.length === 0 && (
-                                    <div className="text-center py-16 text-[#1a1a1a]/40">
+                                    <div className="text-center py-16 text-[#19355e]/40">
                                         <ImageIcon className="w-16 h-16 mx-auto mb-4 opacity-20" />
                                         <p className="text-sm">No gallery photos yet</p>
                                         <p className="text-xs mt-1">Upload some photos or add them manually</p>
@@ -669,44 +669,44 @@ export default function AdminDashboard() {
                                         ...formData,
                                         services: [...formData.services, { id: `svc-${Date.now()}`, title: 'New Service', description: '', items: [] }]
                                     });
-                                }} className="bg-[#1a1a1a] text-white px-3 py-1.5 rounded-lg text-xs font-medium flex items-center space-x-2">
+                                }} className="bg-[#19355e] text-white px-3 py-1.5 rounded-lg text-xs font-medium flex items-center space-x-2">
                                     <Plus className="w-3 h-3" />
                                     <span>Add Service</span>
                                 </button>
                             </div>
 
                             {formData.services.map((service, index) => (
-                                <div key={service.id} className="bg-white rounded-xl border border-[#1a1a1a]/5 p-6 shadow-sm group relative">
+                                <div key={service.id} className="bg-white rounded-xl border border-[#19355e]/5 p-6 shadow-sm group relative">
                                     <div className="absolute top-4 right-4 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <button onClick={() => moveServiceItem(index, 'up')} disabled={index === 0} className="p-1.5 rounded hover:bg-[#f5f2ed] disabled:opacity-20"><ChevronUp className="w-4 h-4" /></button>
-                                        <button onClick={() => moveServiceItem(index, 'down')} disabled={index === formData.services.length - 1} className="p-1.5 rounded hover:bg-[#f5f2ed] disabled:opacity-20"><ChevronDown className="w-4 h-4" /></button>
+                                        <button onClick={() => moveServiceItem(index, 'up')} disabled={index === 0} className="p-1.5 rounded hover:bg-[#ffffff] disabled:opacity-20"><ChevronUp className="w-4 h-4" /></button>
+                                        <button onClick={() => moveServiceItem(index, 'down')} disabled={index === formData.services.length - 1} className="p-1.5 rounded hover:bg-[#ffffff] disabled:opacity-20"><ChevronDown className="w-4 h-4" /></button>
                                         <button onClick={() => setFormData({ ...formData, services: formData.services.filter((_, i) => i !== index) })} className="p-1.5 rounded text-red-400 hover:bg-red-50 hover:text-red-600"><Trash2 className="w-4 h-4" /></button>
                                     </div>
 
                                     <div className="space-y-4">
                                         <div>
-                                            <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Service Title</label>
+                                            <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Service Title</label>
                                             <input type="text" value={service.title} onChange={(e) => {
                                                 const newServices = [...formData.services];
                                                 newServices[index] = { ...newServices[index], title: e.target.value };
                                                 setFormData({ ...formData, services: newServices });
-                                            }} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                            }} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                         </div>
                                         <div>
-                                            <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Description</label>
+                                            <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Description</label>
                                             <textarea rows={2} value={service.description} onChange={(e) => {
                                                 const newServices = [...formData.services];
                                                 newServices[index] = { ...newServices[index], description: e.target.value };
                                                 setFormData({ ...formData, services: newServices });
-                                            }} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                            }} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                         </div>
                                         <div>
-                                            <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Key Points <span className="normal-case text-[#1a1a1a]/40">(comma separated)</span></label>
+                                            <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Key Points <span className="normal-case text-[#19355e]/40">(comma separated)</span></label>
                                             <textarea rows={2} value={service.items.join(', ')} onChange={(e) => {
                                                 const newServices = [...formData.services];
                                                 newServices[index] = { ...newServices[index], items: e.target.value.split(',').map(s => s.trim()).filter(Boolean) };
                                                 setFormData({ ...formData, services: newServices });
-                                            }} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                            }} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                         </div>
                                     </div>
                                 </div>
@@ -717,31 +717,31 @@ export default function AdminDashboard() {
                     {/* ───── CONTACT TAB ───── */}
                     {activeTab === 'contact' && (
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-8 shadow-sm space-y-6">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-8 shadow-sm space-y-6">
                                 <h3 className="text-xl font-serif">Contact Information</h3>
                                 <div className="grid gap-5">
                                     <div>
-                                        <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Email Address</label>
-                                        <input type="email" value={formData.contactDetails.email} onChange={(e) => handleChange('contactDetails', 'email', e.target.value)} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                        <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Email Address</label>
+                                        <input type="email" value={formData.contactDetails.email} onChange={(e) => handleChange('contactDetails', 'email', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                     </div>
                                     <div>
-                                        <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Phone Number</label>
-                                        <input type="text" value={formData.contactDetails.phone} onChange={(e) => handleChange('contactDetails', 'phone', e.target.value)} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                        <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Phone Number</label>
+                                        <input type="text" value={formData.contactDetails.phone} onChange={(e) => handleChange('contactDetails', 'phone', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                     </div>
                                     <div>
-                                        <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Physical Address</label>
-                                        <textarea rows={3} value={formData.contactDetails.address} onChange={(e) => handleChange('contactDetails', 'address', e.target.value)} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                        <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Physical Address</label>
+                                        <textarea rows={3} value={formData.contactDetails.address} onChange={(e) => handleChange('contactDetails', 'address', e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="bg-white rounded-xl border border-[#1a1a1a]/5 p-8 shadow-sm space-y-6">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-8 shadow-sm space-y-6">
                                 <h3 className="text-xl font-serif">Social Media Links</h3>
                                 <div className="grid gap-5">
                                     {Object.entries(formData.socialLinks).map(([key, value]) => (
                                         <div key={key}>
-                                            <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium capitalize">{key} URL</label>
-                                            <input type="url" value={value} onChange={(e) => handleChange('socialLinks', key, e.target.value)} className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
+                                            <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium capitalize">{key} URL</label>
+                                            <input type="url" value={value} onChange={(e) => handleChange('socialLinks', key, e.target.value)} className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm outline-none border" />
                                         </div>
                                     ))}
                                 </div>

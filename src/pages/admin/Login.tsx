@@ -21,20 +21,20 @@ export default function AdminLogin() {
     };
 
     return (
-        <div className="min-h-screen bg-[#f5f2ed] flex flex-col justify-center items-center px-6">
+        <div className="min-h-screen bg-[#ffffff] flex flex-col justify-center items-center px-6">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="w-full max-w-md bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-[#1a1a1a]/10"
+                className="w-full max-w-md bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-[#19355e]/10"
             >
                 <div className="flex justify-center mb-6">
-                    <div className="w-12 h-12 bg-[#5A5A40]/10 rounded-full flex items-center justify-center text-[#5A5A40]">
+                    <div className="w-12 h-12 bg-[#ffda8d]/10 rounded-full flex items-center justify-center text-[#ffda8d]">
                         <Lock className="w-6 h-6" />
                     </div>
                 </div>
 
                 <h2 className="text-3xl font-serif text-center mb-2">Admin Portal</h2>
-                <p className="text-[#1a1a1a]/60 text-center mb-8 font-light text-sm">
+                <p className="text-[#19355e]/60 text-center mb-8 font-light text-sm">
                     Enter your credentials to access the dashboard.
                 </p>
 
@@ -46,32 +46,32 @@ export default function AdminLogin() {
 
                 <form onSubmit={handleLogin} className="space-y-5">
                     <div>
-                        <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Email Address</label>
+                        <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Email Address</label>
                         <input
                             type="email"
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm transition-all outline-none border"
+                            className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm transition-all outline-none border"
                             placeholder="admin@cateringdistrict.com.au"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-xs uppercase tracking-widest text-[#1a1a1a]/70 mb-2 font-medium">Password</label>
+                        <label className="block text-xs uppercase tracking-widest text-[#19355e]/70 mb-2 font-medium">Password</label>
                         <input
                             type="password"
                             required
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="w-full bg-[#f5f2ed] border-transparent focus:border-[#5A5A40] focus:ring-0 rounded-lg px-4 py-3 text-sm transition-all outline-none border"
+                            className="w-full bg-[#ffffff] border-transparent focus:border-[#ffda8d] focus:ring-0 rounded-lg px-4 py-3 text-sm transition-all outline-none border"
                             placeholder="••••••••"
                         />
                     </div>
 
                     <button
                         type="submit"
-                        className="w-full bg-[#1a1a1a] text-white rounded-lg py-4 text-sm uppercase tracking-widest font-medium hover:bg-[#5A5A40] transition-colors mt-4"
+                        className="w-full bg-[#19355e] text-white rounded-lg py-4 text-sm uppercase tracking-widest font-medium hover:bg-[#ffda8d] transition-colors mt-4"
                     >
                         Sign In
                     </button>

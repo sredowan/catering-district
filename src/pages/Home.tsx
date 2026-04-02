@@ -21,7 +21,7 @@ function Hero() {
 
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-[#1a1a1a]">
+            <div className="absolute inset-0 z-0 bg-[#19355e]">
                 <AnimatePresence>
                     <motion.img
                         key={currentImageIndex}
@@ -35,7 +35,7 @@ function Hero() {
                         referrerPolicy="no-referrer"
                     />
                 </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1a1a1a]/50 to-[#1a1a1a]"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#19355e]/50 to-[#19355e]"></div>
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-20">
@@ -44,14 +44,14 @@ function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    <div className="flex items-center justify-center space-x-2 mb-8 text-[#f5f2ed] opacity-80">
+                    <div className="flex items-center justify-center space-x-2 mb-8 text-[#ffffff] opacity-80">
                         <MapPin className="w-4 h-4" />
                         <p className="text-xs uppercase tracking-[0.2em] font-medium">Australia</p>
                     </div>
-                    <h1 className="text-7xl md:text-9xl font-serif font-light leading-none mb-6 tracking-tight text-[#f5f2ed]">
+                    <h1 className="text-7xl md:text-9xl font-serif font-light leading-none mb-6 tracking-tight text-[#ffffff]">
                         {siteData.hero.heading.includes(' ') ? (<>{siteData.hero.heading.split(' ').slice(0, -1).join(' ')} <span className="italic">{siteData.hero.heading.split(' ').slice(-1)[0]}</span></>) : siteData.hero.heading}
                     </h1>
-                    <p className="text-lg md:text-2xl max-w-2xl mx-auto font-light text-[#f5f2ed]/90 mb-12">
+                    <p className="text-lg md:text-2xl max-w-2xl mx-auto font-light text-[#ffffff]/90 mb-12">
                         {siteData.hero.subheading}
                     </p>
                     <motion.button
@@ -59,7 +59,7 @@ function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 1 }}
-                        className="inline-flex items-center space-x-3 border border-[#f5f2ed]/30 rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] text-[#1a1a1a] bg-[#f5f2ed] hover:bg-transparent hover:text-[#f5f2ed] transition-all duration-500"
+                        className="inline-flex items-center space-x-3 border border-[#ffffff]/30 rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] text-[#19355e] bg-[#ffffff] hover:bg-transparent hover:text-[#ffffff] transition-all duration-500"
                     >
                         <span>Book Now</span>
                         <ArrowRight className="w-4 h-4" />
@@ -76,7 +76,7 @@ function About() {
     const { siteData } = useSiteData();
 
     return (
-        <section id="about" className="py-32 px-6 bg-[#f5f2ed] relative overflow-hidden">
+        <section id="about" className="py-32 px-6 bg-[#ffffff] relative overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
@@ -85,16 +85,16 @@ function About() {
                     transition={{ duration: 0.8 }}
                     className="md:w-1/2 relative z-10"
                 >
-                    <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#5A5A40] mb-4">Our Story</p>
+                    <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-4">Our Story</p>
                     <h2 className="text-4xl md:text-5xl font-serif font-light mb-8 leading-tight">
                         {siteData.about.heading.split(' ').slice(0, 2).join(' ')} <br />
                         <span className="italic">{siteData.about.heading.split(' ').slice(2).join(' ')}</span>
                     </h2>
-                    <div className="w-12 h-px bg-[#5A5A40]/30 mb-8"></div>
-                    <p className="text-lg text-[#1a1a1a]/70 font-light leading-relaxed mb-8">
+                    <div className="w-12 h-px bg-[#ffda8d]/30 mb-8"></div>
+                    <p className="text-lg text-[#19355e]/70 font-light leading-relaxed mb-8">
                         {siteData.about.description}
                     </p>
-                    <Link to="/about" className="inline-flex items-center space-x-3 text-[#5A5A40] hover:text-[#1a1a1a] transition-colors border-b border-transparent hover:border-[#1a1a1a] pb-1 uppercase text-xs tracking-[0.15em] font-medium">
+                    <Link to="/about" className="inline-flex items-center space-x-3 text-[#ffda8d] hover:text-[#19355e] transition-colors border-b border-transparent hover:border-[#19355e] pb-1 uppercase text-xs tracking-[0.15em] font-medium">
                         <span>Read Our Full Story</span>
                         <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -113,7 +113,7 @@ function About() {
                             alt="Catering District Team"
                             className="w-full h-full object-cover object-top"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[#1a1a1a]/30 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-tr from-[#19355e]/30 to-transparent"></div>
                     </div>
                     {/* Floating stat card */}
                     <motion.div
@@ -123,8 +123,8 @@ function About() {
                         transition={{ delay: 0.6, duration: 0.8 }}
                         className="absolute -bottom-8 -left-8 bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/20 max-w-xs"
                     >
-                        <div className="text-4xl font-serif mb-2 text-[#5A5A40]">18+ Years</div>
-                        <p className="text-sm font-light text-[#1a1a1a]/70">Of transforming spaces into vibrant community hubs.</p>
+                        <div className="text-4xl font-serif mb-2 text-[#ffda8d]">18+ Years</div>
+                        <p className="text-sm font-light text-[#19355e]/70">Of transforming spaces into vibrant community hubs.</p>
                     </motion.div>
                 </motion.div>
             </div>
@@ -145,20 +145,20 @@ function Services() {
     return (
         <section id="services" className="relative py-32 px-6 overflow-hidden min-h-screen flex flex-col justify-center">
             {/* Parallax Background */}
-            <div className="absolute inset-0 z-0 bg-[#1a1a1a]">
+            <div className="absolute inset-0 z-0 bg-[#19355e]">
                 <img
                     src="/images/home-cafe-1.jpg"
                     alt="Cafe operations"
                     className="absolute inset-0 w-full h-full object-cover opacity-30 fixed-bg"
                     style={{ backgroundAttachment: 'fixed' }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/80 to-[#1a1a1a]/40"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#19355e] via-[#19355e]/80 to-[#19355e]/40"></div>
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto w-full">
                 <div className="mb-20 text-center">
-                    <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#f5f2ed]/50 mb-4">What We Do</p>
-                    <h2 className="text-5xl md:text-6xl font-serif font-light text-[#f5f2ed]">Our <span className="italic">Expertise</span></h2>
+                    <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffffff]/50 mb-4">What We Do</p>
+                    <h2 className="text-5xl md:text-6xl font-serif font-light text-[#ffffff]">Our <span className="italic">Expertise</span></h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -171,17 +171,17 @@ function Services() {
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/10 transition-colors duration-500 group"
                         >
-                            <div className="w-16 h-16 rounded-2xl bg-[#5A5A40]/20 flex items-center justify-center mb-8 text-[#f5f2ed] group-hover:bg-[#5A5A40] group-hover:scale-110 transition-all duration-500">
+                            <div className="w-16 h-16 rounded-2xl bg-[#ffda8d]/20 flex items-center justify-center mb-8 text-[#ffffff] group-hover:bg-[#ffda8d] group-hover:scale-110 transition-all duration-500">
                                 {serviceIcons[index % serviceIcons.length]}
                             </div>
-                            <h3 className="text-2xl font-serif mb-4 text-[#f5f2ed]">{service.title}</h3>
-                            <p className="text-[#f5f2ed]/70 font-light mb-8 h-20">
+                            <h3 className="text-2xl font-serif mb-4 text-[#ffffff]">{service.title}</h3>
+                            <p className="text-[#ffffff]/70 font-light mb-8 h-20">
                                 {service.description}
                             </p>
                             <ul className="space-y-3">
                                 {service.items.map((item, i) => (
-                                    <li key={i} className="flex items-start space-x-3 text-sm text-[#f5f2ed]/80">
-                                        <Check className="w-4 h-4 text-[#5A5A40] mt-0.5 shrink-0" />
+                                    <li key={i} className="flex items-start space-x-3 text-sm text-[#ffffff]/80">
+                                        <Check className="w-4 h-4 text-[#ffda8d] mt-0.5 shrink-0" />
                                         <span>{item}</span>
                                     </li>
                                 ))}
@@ -191,7 +191,7 @@ function Services() {
                 </div>
 
                 <div className="mt-20 text-center">
-                    <Link to="/services" className="inline-flex items-center space-x-3 border border-[#f5f2ed]/30 rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] text-[#f5f2ed] hover:bg-[#f5f2ed] hover:text-[#1a1a1a] transition-all duration-300">
+                    <Link to="/services" className="inline-flex items-center space-x-3 border border-[#ffffff]/30 rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#19355e] transition-all duration-300">
                         <span>Explore All Services</span>
                         <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -226,12 +226,12 @@ function Approach() {
 
                 {/* Sticky Text Section */}
                 <div className="lg:w-1/2 lg:sticky lg:top-32">
-                    <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#5A5A40] mb-4">Our Approach</p>
+                    <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-4">Our Approach</p>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-tight mb-8">
                         Hospitality <br />
                         <span className="italic">beyond food</span> service.
                     </h2>
-                    <p className="text-lg text-[#1a1a1a]/70 font-light mb-12 max-w-lg">
+                    <p className="text-lg text-[#19355e]/70 font-light mb-12 max-w-lg">
                         We blend culinary craft with thoughtful, community-focused operations to transform ordinary venues into thriving social ecosystems.
                     </p>
 
@@ -241,7 +241,7 @@ function Approach() {
                             alt="Culinary prep"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/40 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#19355e]/40 to-transparent"></div>
                     </div>
                 </div>
 
@@ -254,13 +254,13 @@ function Approach() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8 }}
-                            className="bg-[#f5f2ed] p-10 md:p-12 rounded-3xl"
+                            className="bg-[#ffffff] p-10 md:p-12 rounded-3xl"
                         >
                             <div className="flex items-baseline space-x-6 mb-6">
-                                <span className="text-6xl font-serif font-light text-[#1a1a1a]/10">{pillar.num}</span>
+                                <span className="text-6xl font-serif font-light text-[#19355e]/10">{pillar.num}</span>
                                 <h3 className="text-3xl font-serif">{pillar.title}</h3>
                             </div>
-                            <p className="text-[#1a1a1a]/70 font-light text-lg leading-relaxed ml-[5.5rem]">
+                            <p className="text-[#19355e]/70 font-light text-lg leading-relaxed ml-[5.5rem]">
                                 {pillar.desc}
                             </p>
                         </motion.div>
@@ -282,16 +282,16 @@ function GalleryPreview() {
     const marqueeImages = [...images, ...images, ...images];
 
     return (
-        <section className="py-32 bg-[#1a1a1a] overflow-hidden">
+        <section className="py-32 bg-[#19355e] overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-                <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#f5f2ed]/50 mb-4">Portfolio</p>
-                <h2 className="text-4xl md:text-5xl font-serif font-light text-[#f5f2ed]">Visual <span className="italic">Journey</span></h2>
+                <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffffff]/50 mb-4">Portfolio</p>
+                <h2 className="text-4xl md:text-5xl font-serif font-light text-[#ffffff]">Visual <span className="italic">Journey</span></h2>
             </div>
 
             <div className="relative w-full pb-8">
                 {/* Gradient overlays for smooth fading edges */}
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#1a1a1a] to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#1a1a1a] to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#19355e] to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#19355e] to-transparent z-10 pointer-events-none"></div>
 
                 <div className="flex w-[200vw] sm:w-[300vw] overflow-hidden">
                     <motion.div
@@ -310,7 +310,7 @@ function GalleryPreview() {
                                     alt={img.title || "Gallery image"}
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#19355e]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                         ))}
                     </motion.div>
@@ -318,7 +318,7 @@ function GalleryPreview() {
             </div>
 
             <div className="mt-12 text-center">
-                <Link to="/gallery" className="inline-flex items-center space-x-3 border border-[#f5f2ed]/30 rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] text-[#f5f2ed] hover:bg-[#f5f2ed] hover:text-[#1a1a1a] transition-all duration-300">
+                <Link to="/gallery" className="inline-flex items-center space-x-3 border border-[#ffffff]/30 rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#19355e] transition-all duration-300">
                     <span>View Full Gallery</span>
                     <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -329,7 +329,7 @@ function GalleryPreview() {
 
 function Future() {
     return (
-        <section className="py-32 bg-[#f5f2ed] relative overflow-hidden flex items-center min-h-[80vh]">
+        <section className="py-32 bg-[#ffffff] relative overflow-hidden flex items-center min-h-[80vh]">
             <div className="absolute inset-0 z-0">
                 <picture className="w-full h-full">
                     <source media="(min-width: 768px)" srcSet="/images/future-new.jpg" />
@@ -342,7 +342,7 @@ function Future() {
             </div>
 
             {/* Exactly recreating the masking linear gradient effect requested */}
-            <div className="absolute inset-0 z-10 bg-[#f5f2ed]"
+            <div className="absolute inset-0 z-10 bg-[#ffffff]"
                 style={{
                     maskImage: 'linear-gradient(to right, black 30%, transparent 65%)',
                     WebkitMaskImage: 'linear-gradient(to right, black 30%, transparent 65%)'
@@ -357,11 +357,11 @@ function Future() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#5A5A40] mb-6">Future Direction</p>
+                        <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-6">Future Direction</p>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light mb-8 leading-tight">
                             Expanding our <span className="italic">Horizons</span>
                         </h2>
-                        <p className="text-lg text-[#1a1a1a]/70 font-light mb-10 leading-relaxed max-w-lg">
+                        <p className="text-lg text-[#19355e]/70 font-light mb-10 leading-relaxed max-w-lg">
                             Catering District is building the foundation to expand into full contract catering services. Our extensive experience in operational systems and community-driven hospitality provides the perfect springboard for this evolution.
                         </p>
                         <ul className="space-y-5">
@@ -372,9 +372,9 @@ function Future() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.4 + (i * 0.1) }}
-                                    className="flex items-center space-x-4 text-[#1a1a1a]/80"
+                                    className="flex items-center space-x-4 text-[#19355e]/80"
                                 >
-                                    <ArrowRight className="w-4 h-4 text-[#5A5A40]" />
+                                    <ArrowRight className="w-4 h-4 text-[#ffda8d]" />
                                     <span className="font-medium text-lg">{item}</span>
                                 </motion.li>
                             ))}
@@ -396,7 +396,7 @@ function WhyUs() {
     ];
 
     return (
-        <section className="py-24 px-6 bg-[#5A5A40] text-[#f5f2ed]">
+        <section className="py-24 px-6 bg-[#ffda8d] text-[#ffffff]">
             <div className="max-w-5xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-serif font-light mb-12">
                     Why Work With <span className="italic">Catering District</span>
@@ -404,7 +404,7 @@ function WhyUs() {
                 <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                     {reasons.map((reason, index) => (
                         <div key={index} className="flex items-center space-x-2 bg-white/10 rounded-full px-6 py-3 backdrop-blur-sm border border-white/5">
-                            <Check className="w-4 h-4 text-[#f5f2ed]/70" />
+                            <Check className="w-4 h-4 text-[#ffffff]/70" />
                             <span className="text-sm tracking-wide">{reason}</span>
                         </div>
                     ))}
