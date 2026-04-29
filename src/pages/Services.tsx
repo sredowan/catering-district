@@ -110,7 +110,7 @@ export default function Services() {
             {/* ─── Hero ─── */}
             <section className="relative pt-24 md:pt-28 pb-14 px-6 overflow-hidden">
                 <div className="absolute inset-0 z-0 bg-[#19355e]">
-                    <img src="/images/home-cafe-1.jpg" alt="Hospitality Services" className="w-full h-full object-cover mix-blend-luminosity opacity-40" />
+                    <img src="/images/home-cafe-1.jpg" alt="Hospitality Services" className="w-full h-full object-cover mix-blend-luminosity opacity-40" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#19355e]/90 via-[#19355e]/80 to-[#ffffff]"></div>
                 </div>
                 <div className="relative z-10 max-w-7xl mx-auto">
@@ -186,7 +186,7 @@ export default function Services() {
 
             {/* ─── Image Band ─── */}
             <section className="relative h-[30vh] min-h-[220px] overflow-hidden mx-6 rounded-xl">
-                <img src="/images/about-team-1.jpeg" alt="Chef preparing dishes" className="absolute inset-0 w-full h-full object-cover" />
+                <img src="/images/about-team-1.jpeg" alt="Chef preparing dishes" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#19355e]/70 via-[#19355e]/30 to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19355e]/40 via-transparent to-transparent"></div>
                 <div className="relative z-10 h-full flex items-center px-8">

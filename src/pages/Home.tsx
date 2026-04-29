@@ -109,6 +109,7 @@ function About() {
                             src="/images/home-team.jpg"
                             alt="Catering District Team"
                             className="w-full h-full object-cover object-top"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-tr from-[#19355e]/30 to-transparent"></div>
                     </div>
@@ -148,6 +149,7 @@ function Services() {
                     alt="Cafe operations"
                     className="absolute inset-0 w-full h-full object-cover opacity-30 fixed-bg"
                     style={{ backgroundAttachment: 'fixed' }}
+                    loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19355e] via-[#19355e]/80 to-[#19355e]/40"></div>
             </div>
@@ -237,6 +239,7 @@ function Approach() {
                             src="/images/home-pastry.jpg"
                             alt="Culinary prep"
                             className="w-full h-full object-cover"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#19355e]/40 to-transparent"></div>
                     </div>
@@ -275,8 +278,8 @@ function GalleryPreview() {
 
     if (!images || images.length === 0) return null;
 
-    // Duplicate images for infinite scrolling effect
-    const marqueeImages = [...images, ...images, ...images];
+    // Duplicate images once for seamless infinite scrolling (not 3x)
+    const marqueeImages = [...images, ...images];
 
     return (
         <section className="py-32 bg-[#19355e] overflow-hidden">
@@ -306,6 +309,7 @@ function GalleryPreview() {
                                     src={img.src}
                                     alt={img.title || "Gallery image"}
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                                    loading="lazy"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#19355e]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
@@ -334,6 +338,7 @@ function Future() {
                         src="/images/future-new.jpg"
                         alt="Future Direction"
                         className="w-full h-full object-cover object-center md:object-right"
+                        loading="lazy"
                     />
                 </picture>
             </div>

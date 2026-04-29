@@ -52,6 +52,7 @@ export default function AboutUs() {
                                     src="/images/about-team-1.jpeg"
                                     alt="Chef Maz and team preparing dishes"
                                     className="w-full h-full object-cover"
+                                    loading="lazy"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#ffffff]/60"></div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#ffffff]/40 via-transparent to-[#ffffff]/20"></div>
@@ -138,6 +139,7 @@ export default function AboutUs() {
                     src="/images/about-team-2.jpeg"
                     alt="Chef Maz training team in professional kitchen"
                     className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#ffffff] via-[#ffffff]/30 to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#ffffff]/50 via-transparent to-[#ffffff]/30"></div>
@@ -315,7 +317,7 @@ export default function AboutUs() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: i * 0.08 }}
                         >
-                            <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                            <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#19355e]/30 via-transparent to-[#ffffff]/10"></div>
                         </motion.div>
                     ))}

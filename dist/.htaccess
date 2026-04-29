@@ -3,3 +3,52 @@
   # Redirect all traffic starting with /api to the PHP proxy file located in the same root
   RewriteRule ^api/(.*)$ /api/index.php [L,QSA]
 </IfModule>
+
+# ─── Gzip / Brotli Compression ───
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml application/xhtml+xml application/rss+xml
+  AddOutputFilterByType DEFLATE font/woff2 font/woff font/ttf application/font-woff
+</IfModule>
+
+# ─── Browser Caching ───
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Images — cache for 1 year (hashed filenames bust cache automatically)
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+
+  # CSS & JS — cache for 1 year (Vite includes content hash in filenames)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+
+  # Fonts — cache for 1 year
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+
+  # HTML — short cache to pick up new deploys
+  ExpiresByType text/html "access plus 10 minutes"
+
+  # JSON/API — no cache
+  ExpiresByType application/json "access plus 0 seconds"
+</IfModule>
+
+# ─── Security & Performance Headers ───
+<IfModule mod_headers.c>
+  # Immutable assets (Vite hashed files)
+  <FilesMatch "\.(js|css|woff2|woff|ttf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML — revalidate on every request
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

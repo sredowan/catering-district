@@ -3,11 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catering District</title>
+    <title>Catering District — Hospitality Experiences & Club Operations</title>
+    <meta name="description" content="Catering District delivers premium hospitality experiences, club operations, and professional catering services across Australia." />
+
+    <!-- Preconnect to Google Fonts to eliminate DNS/TLS latency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Non-blocking font load: preload as style, swap to stylesheet on load -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" />
+    </noscript>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Inline loading skeleton — visible immediately while JS downloads & parses -->
+    <div id="root">
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#fff;font-family:'Inter',sans-serif;">
+        <img src="/logo-wide.png" alt="Catering District" width="200" height="50" style="animation:cdPulse 1.8s ease-in-out infinite;margin-bottom:24px;" />
+        <div style="width:28px;height:28px;border:2px solid rgba(25,53,94,0.12);border-top-color:#19355e;border-radius:50%;animation:cdSpin .8s linear infinite;"></div>
+      </div>
+      <style>
+        @keyframes cdPulse{0%,100%{opacity:1}50%{opacity:.35}}
+        @keyframes cdSpin{to{transform:rotate(360deg)}}
+      </style>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

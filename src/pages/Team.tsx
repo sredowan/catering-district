@@ -42,6 +42,7 @@ export default function Team() {
                                     src="/images/maz-portrait.jpeg"
                                     alt="Maz Islam - Founder & Director"
                                     className="w-full h-full object-cover object-center"
+                                    loading="lazy"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#19355e]/60 via-transparent to-transparent"></div>
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#ffffff]/15"></div>
@@ -114,6 +115,7 @@ export default function Team() {
                     src="/images/about-team-2.jpeg"
                     alt="Team in action in the kitchen"
                     className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#ffffff]/70 via-[#ffffff]/20 to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#ffffff]/30 via-transparent to-[#ffffff]/20"></div>
@@ -199,6 +201,7 @@ export default function Team() {
                                     src="/images/kim-portrait.png"
                                     alt="Kimberly May Abing - Operations & Logistics Manager"
                                     className="w-full h-full object-cover object-top"
+                                    loading="lazy"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#19355e]/50 via-transparent to-transparent"></div>
                                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#ffffff]/15"></div>
