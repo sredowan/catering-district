@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Check, Users, Utensils, Building2, Leaf, GlassWater, UtensilsCrossed, PartyPopper, Star, TrendingUp, Shield, Heart, Calendar, ChefHat } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import BookingModal from '../components/BookingModal';
+import SEO, { breadcrumbSchema } from '../components/SEO';
 
 export default function Services() {
     const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -106,6 +107,42 @@ export default function Services() {
 
     return (
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
+            <SEO
+                title="Our Services — Club Operations, Experience Clubs & Hospitality Partnerships"
+                description="Full-service club management, curated dining experiences, and venue partnership programs. Explore Catering District's operational expertise across Australia."
+                path="/services"
+                ogImage="/images/home-cafe-1.jpg"
+                jsonLd={[
+                    breadcrumbSchema([
+                        { name: 'Home', url: '/' },
+                        { name: 'Services', url: '/services' },
+                    ]),
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'Service',
+                        name: 'Club Operations',
+                        description: 'Full-service management for social clubs, private clubs, and experience-driven venues.',
+                        provider: { '@type': 'Organization', name: 'Catering District Pty Ltd' },
+                        areaServed: { '@type': 'Country', name: 'Australia' },
+                    },
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'Service',
+                        name: 'Experience Clubs',
+                        description: 'Designing and operating experience-focused clubs that combine hospitality, events, and lifestyle activities.',
+                        provider: { '@type': 'Organization', name: 'Catering District Pty Ltd' },
+                        areaServed: { '@type': 'Country', name: 'Australia' },
+                    },
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'Service',
+                        name: 'Hospitality Partnerships',
+                        description: 'Collaborating with venues, property owners, and organisations to manage or activate hospitality spaces.',
+                        provider: { '@type': 'Organization', name: 'Catering District Pty Ltd' },
+                        areaServed: { '@type': 'Country', name: 'Australia' },
+                    },
+                ]}
+            />
 
             {/* ─── Hero ─── */}
             <section className="relative pt-24 md:pt-28 pb-14 px-6 overflow-hidden">

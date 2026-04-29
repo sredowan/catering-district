@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight, ZoomIn, Grid3X3, LayoutGrid } from 'lucide-react';
 import { useSiteData } from '../context/SiteContext';
+import SEO, { breadcrumbSchema } from '../components/SEO';
 
 export default function Gallery() {
     const { siteData } = useSiteData();
@@ -70,6 +71,25 @@ export default function Gallery() {
 
     return (
         <div className="min-h-screen bg-[#ffffff]">
+            <SEO
+                title="Gallery — Events, Dining & Venues | Catering District"
+                description="Browse photos from Catering District's events, premium dining experiences, and managed venues across Australia."
+                path="/gallery"
+                ogImage="/images/1.jpeg"
+                jsonLd={[
+                    breadcrumbSchema([
+                        { name: 'Home', url: '/' },
+                        { name: 'Gallery', url: '/gallery' },
+                    ]),
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'ImageGallery',
+                        name: 'Catering District Gallery',
+                        description: 'Photos from events, dining experiences, and managed venues across Australia.',
+                        url: 'https://cateringdistrict.com.au/gallery',
+                    }
+                ]}
+            />
             {/* Hero Banner */}
             <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-[#19355e]">
                 {galleryData.length > 0 && (

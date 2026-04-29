@@ -1,9 +1,28 @@
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Globe } from 'lucide-react';
+import SEO, { breadcrumbSchema } from '../components/SEO';
 
 export default function ContactUs() {
     return (
         <div className="pt-32 pb-24 bg-white min-h-screen">
+            <SEO
+                title="Contact Us — Catering District"
+                description="Get in touch with Catering District. Email contact@cateringdistrict.com.au or call 0432 591 795 for hospitality and catering inquiries."
+                path="/contact"
+                jsonLd={[
+                    breadcrumbSchema([
+                        { name: 'Home', url: '/' },
+                        { name: 'Contact', url: '/contact' },
+                    ]),
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'ContactPage',
+                        name: 'Contact Catering District',
+                        description: 'Get in touch with Catering District for hospitality and catering inquiries.',
+                        url: 'https://cateringdistrict.com.au/contact',
+                    }
+                ]}
+            />
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Header Section */}

@@ -1,10 +1,35 @@
 import { motion } from 'motion/react';
 import { ChefHat, ClipboardList, Calendar, Building2, Award, Users, Briefcase, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO, { breadcrumbSchema, personSchema } from '../components/SEO';
 
 export default function Team() {
     return (
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
+            <SEO
+                title="Our Team — Meet the Leaders of Catering District"
+                description="Meet Chef Maz Islam (Founder & Director) and Kimberly May Abing (Operations & Logistics Manager) — the professionals behind Catering District's excellence."
+                path="/team"
+                ogImage="/images/maz-portrait.jpeg"
+                jsonLd={[
+                    breadcrumbSchema([
+                        { name: 'Home', url: '/' },
+                        { name: 'Our Team', url: '/team' },
+                    ]),
+                    personSchema({
+                        name: 'Maz Islam',
+                        jobTitle: 'Founder & Director',
+                        image: '/images/maz-portrait.jpeg',
+                        description: 'With 19+ years in the hospitality and catering industry, Maz is the visionary behind Catering District Pty Ltd.',
+                    }),
+                    personSchema({
+                        name: 'Kimberly May Abing',
+                        jobTitle: 'Operations & Logistics Manager',
+                        image: '/images/kim-portrait.png',
+                        description: 'With 10+ years in Operations and Human Resources, Kim ensures seamless execution of all Catering District operations.',
+                    }),
+                ]}
+            />
 
             {/* ─── Hero: Compact ─── */}
             <section className="pt-24 md:pt-28 pb-10 px-6">

@@ -1,10 +1,30 @@
 import { motion } from 'motion/react';
 import { Target, Compass, Shield, Users, ChefHat, Building2, Utensils, HandshakeIcon, ArrowRight, Check, Briefcase, ClipboardCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO, { breadcrumbSchema } from '../components/SEO';
 
 export default function AboutUs() {
     return (
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
+            <SEO
+                title="About Us — Catering District Pty Ltd"
+                description="Learn about Catering District's 18+ years delivering exceptional catering, club operations, and community-driven hospitality across Australia. ABN: 29 695 591 943."
+                path="/about"
+                ogImage="/images/about-team-1.jpeg"
+                jsonLd={[
+                    breadcrumbSchema([
+                        { name: 'Home', url: '/' },
+                        { name: 'About Us', url: '/about' },
+                    ]),
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'AboutPage',
+                        name: 'About Catering District',
+                        description: 'Learn about Catering District Pty Ltd — premium hospitality and club operations provider across Australia since 2006.',
+                        url: 'https://cateringdistrict.com.au/about',
+                    }
+                ]}
+            />
 
             {/* ─── Hero: Compact Split Layout ─── */}
             <section className="relative pt-24 md:pt-28 overflow-hidden">

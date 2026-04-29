@@ -4,6 +4,7 @@ import { Users, Utensils, Building, Check, ArrowRight, MapPin } from 'lucide-rea
 import { Link } from 'react-router-dom';
 import { useSiteData } from '../context/SiteContext';
 import BookingModal from '../components/BookingModal';
+import SEO, { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, LOCAL_BUSINESS_SCHEMA } from '../components/SEO';
 
 function Hero() {
     const { siteData } = useSiteData();
@@ -419,6 +420,13 @@ function WhyUs() {
 export default function Home() {
     return (
         <>
+            <SEO
+                title="Catering District — Premium Hospitality & Club Operations in Australia"
+                description="Premium hospitality experiences, club operations, and professional catering services across Australia. 19+ years of culinary excellence and community-driven management."
+                path="/"
+                ogImage="/images/home-team.jpg"
+                jsonLd={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, LOCAL_BUSINESS_SCHEMA]}
+            />
             <Hero />
             <About />
             <Services />
