@@ -236,9 +236,9 @@ function Footer() {
                             &copy; {new Date().getFullYear()} Catering District. All rights reserved.
                         </p>
                         <div className="flex items-center gap-6 text-xs text-[#ffffff]/30 font-light">
-                            <a href="#" className="hover:text-[#ffffff]/60 transition-colors duration-200">Privacy Policy</a>
+                            <Link to="/privacy-policy" className="hover:text-[#ffffff]/60 transition-colors duration-200">Privacy Policy</Link>
                             <span className="w-px h-3 bg-white/10" />
-                            <a href="#" className="hover:text-[#ffffff]/60 transition-colors duration-200">Terms of Service</a>
+                            <Link to="/terms-of-service" className="hover:text-[#ffffff]/60 transition-colors duration-200">Terms of Service</Link>
                         </div>
                     </div>
                 </div>

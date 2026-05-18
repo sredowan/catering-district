@@ -9,6 +9,8 @@ const ContactUs = lazy(() => import('./pages/ContactUs'));
 const Services = lazy(() => import('./pages/Services'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const Team = lazy(() => import('./pages/Team'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const AdminLogin = lazy(() => import('./pages/admin/Login'));
 const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
 
@@ -34,6 +36,8 @@ export default function App() {
               <Route path="contact" element={<ContactUs />} />
               <Route path="gallery" element={<Gallery />} />
               <Route path="team" element={<Team />} />
+              <Route path="privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="terms-of-service" element={<TermsOfService />} />
             </Route>
 
             <Route path="/admin/login" element={<AdminLogin />} />
