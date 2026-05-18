@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Instagram, Facebook, Twitter, Mail, Phone, MapPin, Menu, X } from 'lucide-react';
+import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin, Menu, X, ArrowUpRight, ChevronRight } from 'lucide-react';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -68,62 +68,179 @@ function Navbar() {
     );
 }
 
-// Removed duplicate lucide-react import
 import { useSiteData } from '../context/SiteContext';
+
+const FOOTER_EMAIL = 'contact@cateringdistrict.com.au';
+
+const SOCIAL_LINKS = [
+    {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/people/Catering-District/61587745174197/',
+        icon: Facebook,
+    },
+    {
+        name: 'Instagram',
+        url: 'https://www.instagram.com/catering_district/',
+        icon: Instagram,
+    },
+    {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/company/catering-district/',
+        icon: Linkedin,
+    },
+];
 
 function Footer() {
     const { siteData } = useSiteData();
-    const { contactDetails, socialLinks } = siteData;
+    const { contactDetails } = siteData;
 
     return (
-        <footer id="contact" className="bg-[#19355e] text-[#ffffff] border-t border-white/10 pt-20 pb-12 px-6">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
+        <footer id="footer" className="relative bg-gradient-to-b from-[#0f2340] to-[#0a1929] text-[#ffffff] overflow-hidden">
 
-                {/* Brand Column */}
-                <div className="md:col-span-1 border-b border-white/10 md:border-none pb-8 md:pb-0">
-                    <div className="font-serif text-3xl mb-4">Catering District</div>
-                    <p className="text-sm text-[#ffffff]/60 font-light leading-relaxed mb-8 pr-4">
-                        Hospitality Experiences & Club Operations across Australia. Elevating community spaces through premium management.
-                    </p>
+            {/* Subtle decorative background elements */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffda8d]/[0.03] rounded-full blur-3xl" />
+                <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-[#19355e]/30 rounded-full blur-3xl" />
+            </div>
+
+            {/* CTA Strip */}
+            <div className="relative border-b border-white/[0.06]">
+                <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+                        <div>
+                            <h3 className="font-serif text-3xl md:text-4xl mb-3 tracking-tight">
+                                Ready to elevate your space?
+                            </h3>
+                            <p className="text-[#ffffff]/50 font-light text-sm md:text-base max-w-md leading-relaxed">
+                                Let's discuss how Catering District can transform your hospitality experience.
+                            </p>
+                        </div>
+                        <Link
+                            to="/contact"
+                            className="group inline-flex items-center gap-3 bg-[#ffda8d] text-[#0f2340] px-8 py-4 text-sm uppercase tracking-[0.15em] font-semibold hover:bg-[#ffe8b3] transition-all duration-300 rounded-sm"
+                        >
+                            Get in Touch
+                            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </Link>
+                    </div>
                 </div>
+            </div>
 
-                {/* Quick Links Column */}
-                <div className="md:col-span-1">
-                    <h4 className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-6">Explore</h4>
-                    <ul className="space-y-4 text-sm font-light text-[#ffffff]/70">
-                        <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-                        <li><Link to="/about" className="hover:text-white transition-colors">Our Story</Link></li>
-                        <li><Link to="/team" className="hover:text-white transition-colors">Our Team</Link></li>
-                        <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
-                        <li><Link to="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
-                        <li><a href="/#approach" className="hover:text-white transition-colors">Approach</a></li>
-                    </ul>
-                </div>
+            {/* Main Footer Grid */}
+            <div className="relative max-w-7xl mx-auto px-6 md:px-8 pt-16 pb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
 
-                {/* Contact Column */}
-                <div className="md:col-span-2">
-                    <h4 className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffda8d] mb-6">Get in Touch</h4>
-                    <div className="grid grid-cols-1 gap-6 text-sm font-light text-[#ffffff]/70">
-                        <div className="space-y-4">
-                            <a href={`mailto:${contactDetails.email}`} className="flex items-center space-x-3 hover:text-white transition-colors group">
-                                <Mail className="w-4 h-4 text-[#ffda8d] group-hover:text-white transition-colors" />
-                                <span>{contactDetails.email}</span>
+                    {/* Brand Column */}
+                    <div className="lg:col-span-4">
+                        <img src="/logo-white.png" alt="Catering District" className="h-14 w-auto mb-6 opacity-95 object-contain" />
+                        <p className="text-sm text-[#ffffff]/50 font-light leading-[1.8] mb-8 max-w-xs">
+                            Premium hospitality experiences &amp; club operations across Australia. Elevating community spaces through exceptional management.
+                        </p>
+
+                        {/* Social Icons */}
+                        <div className="flex items-center gap-3">
+                            {SOCIAL_LINKS.map((social) => (
+                                <a
+                                    key={social.name}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Follow us on ${social.name}`}
+                                    className="group relative w-10 h-10 flex items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.04] hover:bg-[#ffda8d] hover:border-[#ffda8d] transition-all duration-300"
+                                >
+                                    <social.icon className="w-[18px] h-[18px] text-[#ffffff]/70 group-hover:text-[#0f2340] transition-colors duration-300" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div className="lg:col-span-2 lg:col-start-5">
+                        <h4 className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#ffda8d] mb-6">
+                            Explore
+                        </h4>
+                        <ul className="space-y-3.5">
+                            {[
+                                { to: '/', label: 'Home' },
+                                { to: '/about', label: 'Our Story' },
+                                { to: '/team', label: 'Our Team' },
+                                { to: '/services', label: 'Services' },
+                                { to: '/gallery', label: 'Gallery' },
+                            ].map((link) => (
+                                <li key={link.to}>
+                                    <Link
+                                        to={link.to}
+                                        className="group flex items-center text-sm font-light text-[#ffffff]/55 hover:text-white transition-colors duration-200"
+                                    >
+                                        <ChevronRight className="w-3 h-3 mr-2 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-[#ffda8d]" />
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Services */}
+                    <div className="lg:col-span-3">
+                        <h4 className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#ffda8d] mb-6">
+                            Services
+                        </h4>
+                        <ul className="space-y-3.5">
+                            {[
+                                'Club Operations',
+                                'Experience Clubs',
+                                'Hospitality Partnerships',
+                                'Event Coordination',
+                            ].map((item) => (
+                                <li key={item}>
+                                    <Link
+                                        to="/services"
+                                        className="group flex items-center text-sm font-light text-[#ffffff]/55 hover:text-white transition-colors duration-200"
+                                    >
+                                        <ChevronRight className="w-3 h-3 mr-2 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-[#ffda8d]" />
+                                        {item}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Contact Column */}
+                    <div className="lg:col-span-3">
+                        <h4 className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#ffda8d] mb-6">
+                            Contact
+                        </h4>
+                        <div className="space-y-5">
+                            <a
+                                href={`mailto:${FOOTER_EMAIL}`}
+                                className="group flex items-start gap-3 text-sm font-light text-[#ffffff]/55 hover:text-white transition-colors duration-200"
+                            >
+                                <Mail className="w-4 h-4 mt-0.5 text-[#ffda8d]/80 shrink-0" />
+                                <span>{FOOTER_EMAIL}</span>
                             </a>
-                            <a href={`tel:${contactDetails.phone.replace(/\s/g, '')}`} className="flex items-center space-x-3 hover:text-white transition-colors group">
-                                <Phone className="w-4 h-4 text-[#ffda8d] group-hover:text-white transition-colors" />
+                            <a
+                                href={`tel:${contactDetails.phone.replace(/\s/g, '')}`}
+                                className="group flex items-start gap-3 text-sm font-light text-[#ffffff]/55 hover:text-white transition-colors duration-200"
+                            >
+                                <Phone className="w-4 h-4 mt-0.5 text-[#ffda8d]/80 shrink-0" />
                                 <span>{contactDetails.phone}</span>
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Bottom Bar */}
-            <div className="max-w-7xl mx-auto pt-8 border-t border-white/10 text-xs text-[#ffffff]/40 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>&copy; {new Date().getFullYear()} Catering District. All rights reserved.</p>
-                <div className="flex space-x-6">
-                    <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                {/* Bottom Bar */}
+                <div className="pt-8 border-t border-white/[0.06]">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p className="text-xs text-[#ffffff]/30 font-light tracking-wide">
+                            &copy; {new Date().getFullYear()} Catering District. All rights reserved.
+                        </p>
+                        <div className="flex items-center gap-6 text-xs text-[#ffffff]/30 font-light">
+                            <a href="#" className="hover:text-[#ffffff]/60 transition-colors duration-200">Privacy Policy</a>
+                            <span className="w-px h-3 bg-white/10" />
+                            <a href="#" className="hover:text-[#ffffff]/60 transition-colors duration-200">Terms of Service</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
