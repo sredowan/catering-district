@@ -109,6 +109,10 @@ const SiteContext = createContext<SiteContextType | undefined>(undefined);
 
 export function SiteProvider({ children }: { children: React.ReactNode }) {
     const [siteData, setSiteData] = useState<SiteData>(() => {
+        // Build-time prerendering runs this in Node, where localStorage does not
+        // exist. Static HTML is always generated from defaultData.
+        if (typeof window === 'undefined') return defaultData;
+
         const saved = localStorage.getItem('catering-site-data');
         if (saved) {
             try {

@@ -1,19 +1,13 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useMemo } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import { PUBLIC_ROUTES } from './routes';
 
-// Route-level code-splitting: each page is loaded only when visited
-const Home = lazy(() => import('./pages/Home'));
-const AboutUs = lazy(() => import('./pages/AboutUs'));
-const ContactUs = lazy(() => import('./pages/ContactUs'));
-const Services = lazy(() => import('./pages/Services'));
-const Gallery = lazy(() => import('./pages/Gallery'));
-const Team = lazy(() => import('./pages/Team'));
-const MazIslam = lazy(() => import('./pages/MazIslam'));
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+// Admin is not part of the public route manifest — it must never be prerendered
+// or indexed (see PRIVATE_ROUTE_PREFIXES).
 const AdminLogin = lazy(() => import('./pages/admin/Login'));
 const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Minimal loading fallback — keeps perceived load instant
 function PageLoader() {
@@ -25,21 +19,27 @@ function PageLoader() {
 }
 
 export default function App() {
+  // Route-level code-splitting, driven by the shared manifest so client routing,
+  // prerendering, and the sitemap can never drift apart.
+  const routes = useMemo(
+    () => PUBLIC_ROUTES.map((r) => ({ ...r, Component: lazy(r.load) })),
+    []
+  );
+
   return (
     <Router>
       <div className="min-h-screen bg-[#ffffff] text-[#19355e] font-sans selection:bg-[#64620B] selection:text-white overflow-x-hidden">
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="about" element={<AboutUs />} />
-              <Route path="about/maz-islam" element={<MazIslam />} />
-              <Route path="services" element={<Services />} />
-              <Route path="contact" element={<ContactUs />} />
-              <Route path="gallery" element={<Gallery />} />
-              <Route path="team" element={<Team />} />
-              <Route path="privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="terms-of-service" element={<TermsOfService />} />
+              {routes.map(({ path, Component }) =>
+                path === '/' ? (
+                  <Route key={path} index element={<Component />} />
+                ) : (
+                  <Route key={path} path={path.slice(1)} element={<Component />} />
+                )
+              )}
+              <Route path="*" element={<NotFound />} />
             </Route>
 
             <Route path="/admin/login" element={<AdminLogin />} />
