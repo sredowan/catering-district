@@ -14,11 +14,13 @@ API and the built frontend. `dist/` is committed, so **no build runs on the serv
 ## Step 1 — Build locally
 
 ```bash
-npm run build        # build:ui -> dist/ , build:api -> dist-server/
+npm run build:local   # build:ui -> dist/ , build:api -> dist-server/
 ```
 
-If `build:api` fails on the server with `tsc: command not found`, that is expected:
-`typescript` is a devDependency. Build locally instead — `dist-server/` is committed.
+Commit both `dist/` and `dist-server/`. Hostinger runs `npm run build`, which is
+**`build:ui` only** — `tsc` never runs on the server, matching the Intech pattern
+where the build artifacts ship in the repo.
+
 
 ## Step 2 — Upload
 
@@ -56,9 +58,9 @@ Do **not** set `PORT` — Passenger injects it and `server.ts` reads `process.en
 ## Updating after a code change
 
 ```bash
-npm run build
+npm run build:local
 ```
-Re-upload `dist/` and `dist-server/`, then **Restart** the Node app.
+Commit and push, or re-upload `dist/` and `dist-server/`, then **Restart** the Node app.
 Run **npm install** again only if `package.json` changed.
 
 ## Notes

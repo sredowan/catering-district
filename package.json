@@ -8,11 +8,12 @@
     "dev:api": "tsx watch src/server.ts",
     "build:ui": "vite build",
     "build:api": "tsc src/server.ts --outDir dist-server --module ESNext --moduleResolution node --esModuleInterop --skipLibCheck",
-    "build": "npm run build:ui && npm run build:api",
+    "build": "npm run build:ui",
     "start": "node dist-server/server.js",
     "preview": "vite preview",
     "clean": "rm -rf dist dist-server",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "build:local": "npm run build:ui && npm run build:api"
   },
   "dependencies": {
     "@better-auth/utils": "^0.3.1",
