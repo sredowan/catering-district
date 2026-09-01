@@ -1,3 +1,7 @@
+// Must run before any module that reads process.env at import time
+// (db/index.ts and lib/auth.ts both do).
+import 'dotenv/config';
+
 import express from 'express';
 import cors from 'cors';
 import { auth } from './lib/auth.js';
