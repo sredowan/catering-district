@@ -9,6 +9,7 @@ const ContactUs = lazy(() => import('./pages/ContactUs'));
 const Services = lazy(() => import('./pages/Services'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const Team = lazy(() => import('./pages/Team'));
+const MazIslam = lazy(() => import('./pages/MazIslam'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const AdminLogin = lazy(() => import('./pages/admin/Login'));
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="about" element={<AboutUs />} />
+              <Route path="about/maz-islam" element={<MazIslam />} />
               <Route path="services" element={<Services />} />
               <Route path="contact" element={<ContactUs />} />
               <Route path="gallery" element={<Gallery />} />

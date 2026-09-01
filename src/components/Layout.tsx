@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin, Menu, X, ArrowUpRight, ChevronRight } from 'lucide-react';
+import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin, Menu, X, ArrowUpRight, ChevronRight, ChevronDown } from 'lucide-react';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +32,23 @@ function Navbar() {
                 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-8 text-xs uppercase tracking-[0.15em] font-medium">
-                    <Link to="/about" className="hover:text-[#64620B] transition-colors">About</Link>
+                    {/* About + founder sub-page */}
+                    <div className="relative group">
+                        <Link to="/about" className="flex items-center gap-1 hover:text-[#64620B] transition-colors">
+                            About
+                            <ChevronDown className="w-3 h-3 opacity-40 group-hover:opacity-100 group-hover:rotate-180 transition-all duration-300" />
+                        </Link>
+                        <div className="absolute left-0 top-full pt-4 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 focus-within:opacity-100 focus-within:visible focus-within:translate-y-0 transition-all duration-200">
+                            <div className="min-w-[210px] bg-[#ffffff] border border-[#19355e]/10 rounded-lg shadow-lg py-2">
+                                <Link to="/about" className="block px-4 py-2.5 text-[11px] tracking-[0.12em] text-[#19355e]/70 hover:text-[#64620B] hover:bg-[#fafaf8] transition-colors">
+                                    Our Story
+                                </Link>
+                                <Link to="/about/maz-islam" className="block px-4 py-2.5 text-[11px] tracking-[0.12em] text-[#19355e]/70 hover:text-[#64620B] hover:bg-[#fafaf8] transition-colors">
+                                    Maz Islam — Founder
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                     <Link to="/team" className="hover:text-[#64620B] transition-colors">Team</Link>
                     <Link to="/services" className="hover:text-[#64620B] transition-colors">Services</Link>
                     <Link to="/gallery" className="hover:text-[#64620B] transition-colors">Gallery</Link>
@@ -58,6 +74,7 @@ function Navbar() {
                 <div className="flex flex-col items-center space-y-10 text-xl tracking-[0.2em] uppercase font-light text-[#ffffff]">
                     <Link to="/" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>Home</Link>
                     <Link to="/about" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>About</Link>
+                    <Link to="/about/maz-islam" className="text-base tracking-[0.15em] text-[#ffffff]/50 hover:text-[#64620B] transition-colors -mt-6" onClick={() => setIsOpen(false)}>Maz Islam</Link>
                     <Link to="/team" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>Team</Link>
                     <Link to="/services" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>Services</Link>
                     <Link to="/gallery" className="hover:text-[#64620B] transition-colors" onClick={() => setIsOpen(false)}>Gallery</Link>

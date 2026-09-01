@@ -320,6 +320,51 @@ export default function AboutUs() {
                 </div>
             </section>
 
+            {/* ─── Founder Spotlight ─── */}
+            <section className="py-14 md:py-20 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 18 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <Link
+                            to="/about/maz-islam"
+                            className="group grid grid-cols-1 md:grid-cols-12 gap-8 items-center rounded-xl border border-[#19355e]/8 p-6 md:p-8 hover:border-[#64620B]/30 hover:bg-[#fafaf8] transition-all duration-300"
+                        >
+                            <div className="md:col-span-3">
+                                <div className="aspect-[4/5] md:aspect-square rounded-lg overflow-hidden max-w-[220px]">
+                                    <img
+                                        src="/images/maz-portrait.jpeg"
+                                        alt="Maz Islam, Founder & Director"
+                                        className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+                                        loading="lazy"
+                                    />
+                                </div>
+                            </div>
+                            <div className="md:col-span-9">
+                                <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-3">
+                                    Meet the Founder
+                                </p>
+                                <h2 className="text-2xl md:text-3xl font-serif font-light mb-3 tracking-tight">
+                                    Maz Islam — Founder &amp; Director
+                                </h2>
+                                <p className="text-[14.5px] text-[#19355e]/60 font-light leading-relaxed max-w-2xl mb-5">
+                                    Nineteen years across club catering, commercial kitchens, and high-volume events —
+                                    from Qantas airline catering and Crossroads Hotel to founding three hospitality
+                                    ventures. Read the full profile: career track, expertise, and qualifications.
+                                </p>
+                                <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] font-medium text-[#19355e] group-hover:text-[#64620B] transition-colors">
+                                    View Full Profile
+                                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
+                                </span>
+                            </div>
+                        </Link>
+                    </motion.div>
+                </div>
+            </section>
+
             {/* ─── Industry Gallery Strip ─── */}
             <section className="py-3 bg-[#ffffff]">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-3">

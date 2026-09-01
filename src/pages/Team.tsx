@@ -128,6 +128,14 @@ export default function Team() {
                                         </div>
                                     ))}
                                 </div>
+
+                                <Link
+                                    to="/about/maz-islam"
+                                    className="group inline-flex items-center gap-2 mt-6 text-xs uppercase tracking-[0.15em] font-medium text-[#19355e] hover:text-[#64620B] transition-colors"
+                                >
+                                    View Full Profile
+                                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
+                                </Link>
                             </div>
                         </motion.div>
                     </div>
