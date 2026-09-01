@@ -10,16 +10,18 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "dev:api": "tsx watch src/server.ts",
-    "build:ui": "vite build && npm run build:ssr && npm run sitemap && npm run prerender",
+    "build:frontend": "vite build && npm run build:ssr && npm run sitemap && npm run prerender",
+    "build:ui": "npm run build:frontend && npm run build:api && npm run verify:deploy",
     "build:api": "tsc src/server.ts --outDir dist-server --module ESNext --moduleResolution node --esModuleInterop --skipLibCheck",
-    "build": "npm run build:ui && npm run build:api",
+    "build": "npm run build:ui",
     "start": "node dist-server/server.js",
     "preview": "vite preview",
     "clean": "rm -rf dist dist-ssr dist-server",
     "lint": "tsc --noEmit",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
     "prerender": "node scripts/prerender.mjs",
-    "sitemap": "node scripts/generate-sitemap.mjs"
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "verify:deploy": "node scripts/verify-deploy.mjs"
   },
   "dependencies": {
     "@better-auth/utils": "^0.3.1",

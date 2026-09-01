@@ -11,7 +11,7 @@ history, build output, or production configuration.
 - Hosting platform: Hostinger Node.js application
 - Node.js version: `20`
 - Install command: `npm install`
-- Build command: `npm run build`
+- Build command: `npm run build` (legacy `npm run build:ui` is also safe)
 - Startup file: `dist-server/server.js`
 - Health endpoint: `https://cateringdistrict.com.au/api/health`
 - Production site: `https://cateringdistrict.com.au`
@@ -63,7 +63,9 @@ In hPanel, open the Node.js application and configure:
 4. Set Node.js to version `20`.
 5. Set application mode to `Production`.
 6. Set the install command to `npm install`.
-7. Set the build command to `npm run build`.
+7. Set the build command to `npm run build`. If the existing Hostinger application
+   is fixed to `npm run build:ui`, that command now runs the same complete deployment
+   build, including `dist-server/server.js`.
 8. Set the startup file to `dist-server/server.js`.
 9. Add all environment variables listed below.
 10. Save the configuration and restart the application.
@@ -147,15 +149,25 @@ npm run build
 Successful `npm run build` must complete the full pipeline:
 
 ```text
-build:ui  -> Vite browser bundle           -> dist/
+frontend  -> Vite browser bundle           -> dist/
 build:ssr -> Vite server-rendering bundle  -> dist-ssr/
 sitemap   -> public and production sitemap -> public/sitemap.xml, dist/sitemap.xml
 prerender -> static HTML for public routes -> dist/<route>/index.html
 build:api -> TypeScript Express build      -> dist-server/
+verify    -> required deployment artifacts -> pass or fail the build
 ```
 
 The prerender step must report that all public routes include an H1, canonical
 URL, and at least 100 words of indexable body copy.
+
+The final deployment check must report:
+
+```text
+[deploy] Frontend, prerendered routes, and server startup file are ready.
+```
+
+Do not treat a frontend-only build as successful. Hostinger cannot start the
+application unless `dist-server/server.js` exists.
 
 For the closest simulation of Hostinger production, use a clean temporary Git
 worktree and install production dependencies only:
@@ -329,9 +341,12 @@ submit real bookings or send test email without explicit user approval.
 
 1. Confirm startup file is `dist-server/server.js`.
 2. Confirm `npm run build` produced `dist-server/server.js`.
-3. Check Hostinger application logs for a missing environment variable.
-4. Confirm all variables from `.env.example` exist in hPanel.
-5. Restart the Node.js application.
+3. Check the build log contains the `build:api` and `[deploy]` success lines.
+4. Confirm Hostinger runs `npm run build` or the supported `npm run build:ui`,
+   not the frontend-only `npm run build:frontend`.
+5. Check Hostinger application logs for a missing environment variable.
+6. Confirm all variables from `.env.example` exist in hPanel.
+7. Restart the Node.js application.
 
 ### Homepage Is Blank Or Assets Return 404
 
