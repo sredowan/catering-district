@@ -1,7 +1,0 @@
-# Catering District — robots.txt
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /api/
-
-Sitemap: https://cateringdistrict.com.au/sitemap.xml

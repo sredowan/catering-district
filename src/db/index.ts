@@ -3,11 +3,20 @@ import mysql from 'mysql2/promise';
 
 import * as schema from './schema.js';
 
+function requiredEnv(name: string) {
+    const value = process.env[name];
+    if (!value) {
+        throw new Error(`Missing required environment variable: ${name}`);
+    }
+    return value;
+}
+
 const poolConnection = mysql.createPool({
-    host: process.env.DB_HOST || 'srv2045.hstgr.io',
-    user: process.env.DB_USER || 'u632925822_cduser',
-    password: process.env.DB_PASSWORD || 'Redowan173123@',
-    database: process.env.DB_NAME || 'u632925822_cddb',
+    host: requiredEnv('DB_HOST'),
+    port: Number(process.env.DB_PORT || 3306),
+    user: requiredEnv('DB_USER'),
+    password: requiredEnv('DB_PASSWORD'),
+    database: requiredEnv('DB_NAME'),
 });
 
 export const db = drizzle({ client: poolConnection, schema, mode: 'default' });

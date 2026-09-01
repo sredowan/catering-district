@@ -1,51 +1,36 @@
-# Deployment Guide (Hostinger Node.js App)
+# Deployment Guide (Hostinger Git Deployment)
 
-Same pattern as Intech Properties and Seventh Sky: one Node app serves both the
-API and the built frontend. `dist/` is committed, so **no build runs on the server**.
+Hostinger deploys the `main` branch. One Node app serves both the API and the
+built frontend. Hostinger installs dependencies and builds both targets on deploy.
 
 ## What the app needs
 
-- `dist-server/server.js` — startup file (compiled from `src/server.ts`)
-- `dist/` — built frontend. `server.js` serves it from `../dist`, so `dist/` and
-  `dist-server/` must sit **side by side** in the app root.
-- `package.json` + `package-lock.json` — for `npm install` on the server
-- `.env` — DB, SMTP, and auth config (never committed)
+- `npm run build` creates `dist/` and `dist-server/` side by side.
+- `dist-server/server.js` is the application startup file.
+- Environment variables are configured in hPanel and are never committed.
 
-## Step 1 — Build locally
+## Step 1 — Connect Git
 
-```bash
-npm run build:local   # build:ui -> dist/ , build:api -> dist-server/
-```
+- Repository: `https://github.com/sredowan/catering-district`
+- Branch: `main`
+- Enable automatic deployment after pushes if available.
 
-Commit both `dist/` and `dist-server/`. Hostinger runs `npm run build`, which is
-**`build:ui` only** — `tsc` never runs on the server, matching the Intech pattern
-where the build artifacts ship in the repo.
-
-
-## Step 2 — Upload
-
-Upload `deployment.zip` through hPanel → Files → File Manager and extract it into
-the Node app's **Application Root** (currently `nodejs/`). Files must land directly
-in that folder, not in a nested subfolder:
-
-```
-nodejs/
-├── .env
-├── dist/              ← frontend (index.html, assets, images)
-├── dist-server/       ← backend (server.js is the startup file)
-├── package.json
-└── package-lock.json
-```
-
-## Step 3 — Node.js app settings (hPanel → Advanced → Node.js)
+## Step 2 — Node.js app settings (hPanel → Advanced → Node.js)
 
 - Node version: **20**
 - Application mode: **Production**
-- Application root: the folder from step 2
+- Install command: `npm install`
+- Build command: `npm run build`
 - **Application startup file: `dist-server/server.js`**
-- Click **Run NPM Install**, then **Restart**
+- Restart the app after each deployment.
 
 Do **not** set `PORT` — Passenger injects it and `server.ts` reads `process.env.PORT`.
+
+## Step 3 — Environment variables
+
+Add every variable from `.env.example` to the Node.js app's hPanel environment
+settings. Use production values, keep `BETTER_AUTH_SECRET` stable across deploys,
+and never upload or commit `.env` files.
 
 ## Step 4 — Verify
 
@@ -57,21 +42,18 @@ Do **not** set `PORT` — Passenger injects it and `server.ts` reads `process.en
 
 ## Updating after a code change
 
-```bash
-npm run build:local
-```
-Commit and push, or re-upload `dist/` and `dist-server/`, then **Restart** the Node app.
-Run **npm install** again only if `package.json` changed.
+Commit and push to `main`. Hostinger pulls the commit, runs `npm install`, runs
+`npm run build`, and restarts the application.
 
 ## Notes
 
-- `node_modules` is never uploaded. `better-sqlite3` is a native addon and must be
-  compiled on the server by **Run NPM Install**.
+- `node_modules` is never committed. Hostinger installs native dependencies for
+  its own Node.js runtime.
 - If the site is instead served statically from `public_html` with the PHP proxy
   (`public/api/index.php` → `localhost:3001`), that setup needs a fixed
   `PORT=3001` in `.env`. Pick one approach; the single Node app above is simpler.
-- `src/db/index.ts` still hardcodes production DB credentials as fallbacks. Once
-  `.env` is confirmed working on the server, remove them and rotate the password.
+- Database, authentication, and SMTP credentials have no source-code fallbacks;
+  missing variables stop startup with a clear error.
 
 ## Troubleshooting
 
