@@ -167,3 +167,119 @@ export function personSchema(opts: {
         },
     };
 }
+
+export function faqSchema(faqs: { question: string; answer: string }[]) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    };
+}
+
+export function serviceSchema(opts: {
+    name: string;
+    description: string;
+    serviceType?: string;
+    url?: string;
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: opts.name,
+        serviceType: opts.serviceType || opts.name,
+        description: opts.description,
+        provider: {
+            '@type': 'Organization',
+            name: 'Catering District Pty Ltd',
+            url: SITE_URL,
+        },
+        areaServed: {
+            '@type': 'State',
+            name: 'New South Wales',
+        },
+        ...(opts.url ? { url: `${SITE_URL}${opts.url}` } : {}),
+    };
+}
+
+export function articleSchema(opts: {
+    title: string;
+    description: string;
+    path: string;
+    datePublished: string;
+    dateModified?: string;
+    authorName?: string;
+    image?: string;
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: opts.title,
+        description: opts.description,
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `${SITE_URL}${opts.path}`,
+        },
+        author: {
+            '@type': 'Person',
+            name: opts.authorName || 'Maz Islam',
+            jobTitle: 'Founder & Certified Food Safety Auditor',
+            url: `${SITE_URL}/about/maz-islam`,
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'Catering District Pty Ltd',
+            logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_URL}/logo.png`,
+            },
+        },
+        datePublished: opts.datePublished,
+        dateModified: opts.dateModified || opts.datePublished,
+        image: opts.image ? (opts.image.startsWith('http') ? opts.image : `${SITE_URL}${opts.image}`) : `${SITE_URL}/images/home-team.jpg`,
+    };
+}
+
+export function locationBusinessSchema(opts: {
+    suburb: string;
+    region: string;
+    description: string;
+    path: string;
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: `Catering District — ${opts.suburb} & ${opts.region} Club Catering`,
+        url: `${SITE_URL}${opts.path}`,
+        description: opts.description,
+        telephone: '+61432591795',
+        email: 'contact@cateringdistrict.com.au',
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: opts.suburb,
+            addressRegion: 'NSW',
+            addressCountry: 'AU',
+        },
+        areaServed: [
+            {
+                '@type': 'AdministrativeArea',
+                name: opts.region,
+            },
+            {
+                '@type': 'City',
+                name: opts.suburb,
+            },
+        ],
+        parentOrganization: {
+            '@type': 'Organization',
+            name: 'Catering District Pty Ltd',
+            url: SITE_URL,
+        },
+    };
+}

@@ -63,6 +63,7 @@ app.use(express.urlencoded({ extended: true }));
 import { transactionRouter } from './api/routes/transactions.js';
 import { categoryRouter } from './api/routes/categories.js';
 import { bookingRouter } from './api/routes/bookings.js';
+import { enquiryRouter } from './api/routes/enquiry.js';
 
 // Better Auth API routes handling
 app.all("/api/auth/*", (req, res, next) => {
@@ -75,6 +76,7 @@ app.all("/api/auth/*", (req, res, next) => {
 app.use('/api/transactions', transactionRouter);
 app.use('/api/categories', categoryRouter);
 app.use('/api/bookings', bookingRouter);
+app.use('/api/enquiries', enquiryRouter);
 
 // Hello world endpoint for testing
 app.get('/api/health', (req, res) => {

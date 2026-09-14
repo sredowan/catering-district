@@ -1,115 +1,160 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Check, Users, Utensils, Building2, Leaf, GlassWater, UtensilsCrossed, PartyPopper, Star, TrendingUp, Shield, Heart, Calendar, ChefHat } from 'lucide-react';
+import { ArrowRight, Check, Users, Utensils, Building2, ShieldCheck, Calendar, Star, TrendingUp, Shield, Heart, FileText, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import BookingModal from '../components/BookingModal';
-import SEO, { breadcrumbSchema } from '../components/SEO';
+import SEO, { breadcrumbSchema, serviceSchema } from '../components/SEO';
 
 export default function Services() {
     const [isBookingOpen, setIsBookingOpen] = useState(false);
 
     const capabilities = [
         {
-            icon: <Leaf className="w-5 h-5" />,
-            title: "Fresh Produce",
-            description: "Catering District is dedicated to offering fresh, sustainable ingredients to create high-quality meals. Our commitment to freshness starts with sourcing locally grown produce and working closely with trusted suppliers to ensure every dish is made with the best ingredients available. This focus on sustainability helps reduce our carbon footprint, while supporting local farmers and businesses.",
-            highlights: ['Locally sourced ingredients', 'Sustainable practices', 'Trusted supplier network', 'Reduced carbon footprint']
+            icon: <Users className="w-5 h-5" />,
+            title: "Whole-of-Kitchen Catering",
+            description: "End-to-end management of club bistros, cafes, and restaurants. We assume complete employer and operational liability, staffing, menu engineering, and daily service delivery.",
+            highlights: ['Turnkey kitchen operations', 'Subsidies eliminated', 'Award-compliant rostering', 'Consistent member dining']
         },
         {
-            icon: <GlassWater className="w-5 h-5" />,
-            title: "Dining Event Experience",
-            description: "Catering District ensures a seamless dining experience from start to finish, whether it's a casual meal or a large event. We focus on creating a welcoming atmosphere that suits each occasion, making guests feel comfortable and relaxed. The friendly and professional staff provide personalized service, ensuring every need is met and every guest feels valued.",
-            highlights: ['End-to-end event management', 'Personalised guest service', 'Welcoming atmosphere design', 'Impeccable attention to detail']
+            icon: <FileText className="w-5 h-5" />,
+            title: "Tender & EOI Execution",
+            description: "Commercially rigorous tender submissions prepared specifically for Club Boards, Chief Executives, and independent tender advisory consultants across NSW.",
+            highlights: ['Formal EOI submissions', 'Audited 3-year P&L forecasts', 'Seamless 30-day transitions', 'Direct board presentations']
         },
         {
-            icon: <UtensilsCrossed className="w-5 h-5" />,
-            title: "Dish Selection",
-            description: "Catering District offers a wide variety of menu options to suit any occasion, from casual meals like sandwiches and buffets to elegant fine dining for special events. We prioritize flexibility by offering options that cater to different dietary needs, including vegan, gluten-free, and allergy-friendly dishes. With a focus on seasonal ingredients and innovative dishes, we ensure every meal is fresh, flavorful, and tailored to create a memorable experience.",
-            highlights: ['Casual to fine dining menus', 'Dietary-friendly options', 'Seasonal & innovative dishes', 'Fully customised menus']
+            icon: <ShieldCheck className="w-5 h-5" />,
+            title: "HACCP & Regulatory Compliance",
+            description: "Food safety oversight led by an accredited Quality & HACCP Food Safety Auditor (Maz Islam, JP). Daily digital logging and 100% NSW Food Authority audit readiness.",
+            highlights: ['Certified HACCP systems', 'NSW Food Authority compliance', 'Allergen safety protocols', 'Clean council audit logs']
         },
         {
-            icon: <PartyPopper className="w-5 h-5" />,
-            title: "Functions & Catering",
-            description: "Catering District specializes in catering for all types of events, including birthdays, weddings, corporate functions, and social gatherings. We offer customized catering packages tailored to fit any budget, ensuring that each event is perfectly suited to the client's needs. Our event coordinators work closely with clients to ensure the food, atmosphere, and service exceed expectations.",
-            highlights: ['Weddings & birthdays', 'Corporate functions', 'Custom budget packages', 'Full event coordination']
+            icon: <Calendar className="w-5 h-5" />,
+            title: "Club Event & Function Yields",
+            description: "Maximizing the revenue potential of idle function spaces through corporate seminars, barefoot bowls packages, wakes, birthday milestones, and presentation banquets.",
+            highlights: ['Barefoot bowls packages', 'Large seated banquets', 'Auditorium galas & wakes', 'Zero-waste event catering']
         }
     ];
 
     const services = [
         {
-            id: "club-operations",
+            id: "club-catering",
+            path: "/services/club-catering",
             icon: <Users className="w-5 h-5" />,
-            title: "Club Operations",
-            tagline: "Full-service management for social clubs, private clubs, and experience-driven venues.",
-            description: "We provide comprehensive operational management tailored to the unique atmosphere of your club. From conceptualisation to daily execution, our team ensures that every touchpoint is executed with precision and warmth.",
+            title: "Club Catering Operations",
+            tagline: "Turnkey kitchen, bistro, and dining room management for NSW licensed clubs.",
+            description: "We partner with RSLs, bowling clubs, golf clubs, and leagues venues across NSW to deliver high-volume bistro excellence, member satisfaction, and strict commercial margin control.",
             deliverables: [
-                "Club concept and identity development",
-                "Comprehensive daily operations management",
-                "Bespoke membership programs and retention strategies",
-                "Event coordination and execution",
-                "Strategic food & beverage partnerships",
-                "Proactive community engagement initiatives",
+                "Full commercial kitchen and bistro management",
+                "Classic club pantry favourites and modern blackboard specials",
+                "High-volume ticket pacing (under 15 minutes during peak rushes)",
+                "Transparent monthly P&L and operational reporting to Boards",
+                "Staff recruitment and performance management",
+                "Community and member demographic alignment",
             ],
             stats: [
-                { value: "18+", label: "Years Experience" },
-                { value: "95%", label: "Member Retention" },
-                { value: "24/7", label: "Operations Support" }
+                { value: "19+", label: "Years Experience" },
+                { value: "95%+", label: "Member Satisfaction" },
+                { value: "<15m", label: "Ticket Speed" }
             ]
         },
         {
-            id: "experience-clubs",
-            icon: <Utensils className="w-5 h-5" />,
-            title: "Experience Clubs",
-            tagline: "Designing and operating experience-focused clubs that combine hospitality, events, and lifestyle activities.",
-            description: "Modern hospitality is about more than just a meal — it's about the entire experience. We specialize in curating dynamic programmatic elements that transform a standard venue into a vibrant lifestyle destination.",
-            deliverables: [
-                "Curated multi-course dining experiences",
-                "Exclusive social events and networking nights",
-                "Themed gatherings and live entertainment",
-                "Holistic lifestyle and wellness programs",
-                "Seasonal calendar and programming strategy",
-                "Brand partnerships and sponsorship management"
-            ],
-            stats: [
-                { value: "200+", label: "Events Delivered" },
-                { value: "4.9★", label: "Avg. Rating" },
-                { value: "50+", label: "Active Programs" }
-            ]
-        },
-        {
-            id: "hospitality-partnerships",
+            id: "contract-catering",
+            path: "/services/contract-catering",
             icon: <Building2 className="w-5 h-5" />,
-            title: "Hospital Partnerships",
-            tagline: "Collaborating with venues, property owners, and organisations to manage or activate hospitality spaces.",
-            description: "Unlock the hidden potential of your property. We partner with venue owners and developers to activate underutilised spaces, turning them into thriving hospitality hubs that add lasting value to the community.",
+            title: "Contract Catering & Tenders",
+            tagline: "Risk-free commercial agreements tailored to club financial governance.",
+            description: "Eliminate the financial volatility of running an in-house kitchen. We offer turnover rental, hybrid profit-share, and management-fee models that remove subsidies from your balance sheet.",
             deliverables: [
-                "Strategic activation of underutilised venues",
-                "End-to-end management of hospitality operations",
-                "Designing tailored experience-driven programs",
-                "Building and nurturing local community engagement",
-                "Property enhancement and space optimisation",
-                "Revenue growth strategy and implementation"
+                "Turnover lease and hybrid profit-share agreements",
+                "Full transfer of employer and labour liabilities",
+                "Mitigation of 32% weekend award penalty rate spikes",
+                "Wholesale food procurement scale protecting gross margins",
+                "Formal response to club EOI and tender processes",
+                "Direct executive board meeting presentations",
             ],
             stats: [
-                { value: "12", label: "Venues Managed" },
-                { value: "40%", label: "Avg. Revenue Growth" },
-                { value: "100%", label: "Partner Retention" }
+                { value: "0%", label: "Club Food Losses" },
+                { value: "28-32%", label: "Target Food Cost" },
+                { value: "100%", label: "Fair Work Aligned" }
+            ]
+        },
+        {
+            id: "bistro-restaurant-management",
+            path: "/services/bistro-restaurant-management",
+            icon: <Utensils className="w-5 h-5" />,
+            title: "Bistro & Restaurant Management",
+            tagline: "High-volume dining room execution, menu engineering, and member loyalty.",
+            description: "Transforming tired club bistros into buzzing community dining destinations. We combine traditional member favourites (schnitzels, steaks, roasts) with contemporary blackboard creations.",
+            deliverables: [
+                "Menu engineering using Boston matrix popularity & margin scoring",
+                "Speed-line kitchen design for rapid raffle and bingo breaks",
+                "Mid-week seniors' lunches and family value dinner specials",
+                "Digital Kitchen Display System (KDS) integration",
+                "Bar beverage turnover synergy and food pairing",
+                "Dietary inclusivity (certified gluten-free & vegan options)",
+            ],
+            stats: [
+                { value: "500+", label: "Peak Covers/Shift" },
+                { value: "4.9★", label: "Dining Feedback" },
+                { value: "7 Days", label: "Reliable Service" }
+            ]
+        },
+        {
+            id: "kitchen-management-compliance",
+            path: "/services/kitchen-management-compliance",
+            icon: <ShieldCheck className="w-5 h-5" />,
+            title: "Kitchen Management & HACCP Compliance",
+            tagline: "Certified food safety auditing and Registered Clubs Award labour governance.",
+            description: "Led by Maz Islam (Diploma in Quality Auditing, Certified HACCP Food Safety Auditor), we protect Club Directors and General Managers from food safety and Fair Work statutory liabilities.",
+            deliverables: [
+                "Accredited HACCP food safety plan implementation",
+                "Digital temperature logging and automated cold-chain alerts",
+                "NSW Food Authority Standard 3.2.2A audit readiness",
+                "Fair Work Registered Clubs Award MA000058 roster auditing",
+                "Preventative equipment maintenance and asset protection",
+                "Comprehensive chemical handling and WHS compliance",
+            ],
+            stats: [
+                { value: "100%", label: "Audit Pass Rate" },
+                { value: "HACCP", label: "Auditor Certified" },
+                { value: "MA000058", label: "Award Mapped" }
+            ]
+        },
+        {
+            id: "club-event-function-catering",
+            path: "/services/club-event-function-catering",
+            icon: <Calendar className="w-5 h-5" />,
+            title: "Club Event & Function Catering",
+            tagline: "Monetizing club function spaces through high-margin corporate and private events.",
+            description: "From barefoot bowls barbecue feasts to 400-guest seated presentation banquets, we market, package, and execute profitable events in club function rooms.",
+            deliverables: [
+                "Tiered barefoot bowls packages (sliders, pizzas, BBQ grills)",
+                "Auditorium galas and sporting club presentation banquets",
+                "Corporate conference day-delegate and boardroom packages",
+                "Respectful, dignified catering for member memorial wakes",
+                "Fairway and clubhouse wedding banquet packages",
+                "Zero-waste pre-set banquet management",
+            ],
+            stats: [
+                { value: "400+", label: "Max Banquet Pax" },
+                { value: "40%+", label: "Avg Margin Yield" },
+                { value: "Turnkey", label: "Event Delivery" }
             ]
         }
     ];
 
     const processSteps = [
-        { num: "01", title: "Discovery", desc: "We immerse ourselves in your venue, audience, and goals through site visits, stakeholder interviews, and market analysis.", icon: <Star className="w-4 h-4" /> },
-        { num: "02", title: "Strategy", desc: "We develop detailed operational frameworks, culinary direction, experience programming, and financial models.", icon: <TrendingUp className="w-4 h-4" /> },
-        { num: "03", title: "Execution", desc: "Our team brings the vision to life — from recruiting staff to curating menus, designing spaces, and launching campaigns.", icon: <Shield className="w-4 h-4" /> },
-        { num: "04", title: "Growth", desc: "Continuous management, performance optimisation, and community-building ensure your venue thrives for years.", icon: <Heart className="w-4 h-4" /> }
+        { num: "01", title: "Feasibility & Audit", desc: "We inspect your club's kitchen plant, review historical covers, and analyze member demographics and current catering costs.", icon: <Star className="w-4 h-4" /> },
+        { num: "02", title: "Commercial Model", desc: "We structure a transparent contract (turnover lease, hybrid, or management fee) with board-ready financial projections.", icon: <TrendingUp className="w-4 h-4" /> },
+        { num: "03", title: "30-Day Transition", desc: "Our executive team conducts staff interviews under the Registered Clubs Award, deploys HACCP systems, and rolls out engineered menus with zero downtime.", icon: <Shield className="w-4 h-4" /> },
+        { num: "04", title: "Monthly Governance", desc: "Ongoing management, monthly P&L reviews, member feedback tracking, and direct reporting to the Club Board of Directors.", icon: <Heart className="w-4 h-4" /> }
     ];
 
     return (
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
-                title="Our Services — Club Operations, Experience Clubs & Hospitality Partnerships"
-                description="Full-service club management, curated dining experiences, and venue partnership programs. Explore Catering District's operational expertise across Australia."
+                title="Club Catering Services NSW — Bistro, Contract & Compliance Operations"
+                description="Comprehensive catering solutions for NSW registered clubs: turnkey club catering, contract catering, bistro management, HACCP compliance audits, and function catering."
                 path="/services"
                 ogImage="/images/home-cafe-1.jpg"
                 jsonLd={[
@@ -117,30 +162,12 @@ export default function Services() {
                         { name: 'Home', url: '/' },
                         { name: 'Services', url: '/services' },
                     ]),
-                    {
-                        '@context': 'https://schema.org',
-                        '@type': 'Service',
-                        name: 'Club Operations',
-                        description: 'Full-service management for social clubs, private clubs, and experience-driven venues.',
-                        provider: { '@type': 'Organization', name: 'Catering District Pty Ltd' },
-                        areaServed: { '@type': 'Country', name: 'Australia' },
-                    },
-                    {
-                        '@context': 'https://schema.org',
-                        '@type': 'Service',
-                        name: 'Experience Clubs',
-                        description: 'Designing and operating experience-focused clubs that combine hospitality, events, and lifestyle activities.',
-                        provider: { '@type': 'Organization', name: 'Catering District Pty Ltd' },
-                        areaServed: { '@type': 'Country', name: 'Australia' },
-                    },
-                    {
-                        '@context': 'https://schema.org',
-                        '@type': 'Service',
-                        name: 'Hospitality Partnerships',
-                        description: 'Collaborating with venues, property owners, and organisations to manage or activate hospitality spaces.',
-                        provider: { '@type': 'Organization', name: 'Catering District Pty Ltd' },
-                        areaServed: { '@type': 'Country', name: 'Australia' },
-                    },
+                    serviceSchema({
+                        name: 'Club Catering Services NSW',
+                        description: 'Turnkey food and beverage, bistro management, and commercial kitchen operations for registered clubs across New South Wales.',
+                        serviceType: 'Club Catering Hub',
+                        url: '/services',
+                    }),
                 ]}
             />
 
@@ -152,25 +179,52 @@ export default function Services() {
                 </div>
                 <div className="relative z-10 max-w-7xl mx-auto">
                     <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-                        <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#ffda8d] mb-3">Our Services</p>
+                        <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#ffda8d] mb-3">NSW Club Hospitality</p>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.1] mb-5 tracking-tight text-[#ffffff]">
-                            Elevated Operations
+                            Specialised Club Catering Services
                         </h1>
                     </motion.div>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.7 }}>
                         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-t border-[#ffffff]/15 pt-8">
                             <p className="text-[15px] md:text-lg text-[#ffffff]/75 font-light leading-relaxed max-w-2xl">
-                                We transform venues into dynamic spaces where people connect, relax, and enjoy curated experiences through professional management and a community-first approach.
+                                We partner with Club Boards, Chief Executives, and General Managers across New South Wales to eliminate kitchen subsidies, maintain strict regulatory compliance, and delight community members.
                             </p>
-                            <button
-                                onClick={() => setIsBookingOpen(true)}
-                                className="shrink-0 inline-flex items-center gap-2.5 border border-[#ffffff]/30 rounded-full px-7 py-3.5 text-xs uppercase tracking-[0.15em] font-medium text-[#ffffff] hover:bg-[#ffffff] hover:text-[#19355e] transition-all duration-300"
-                            >
-                                <span>Book a Consultation</span>
-                                <ArrowRight className="w-3.5 h-3.5" />
-                            </button>
+                            <div className="flex gap-3">
+                                <button
+                                    onClick={() => setIsBookingOpen(true)}
+                                    className="shrink-0 inline-flex items-center gap-2.5 bg-[#ffda8d] text-[#0f2340] rounded-full px-7 py-3.5 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[#ffe8b3] transition-all duration-300 shadow-md cursor-pointer"
+                                >
+                                    <span>Request Capability Statement</span>
+                                    <ArrowRight className="w-3.5 h-3.5" />
+                                </button>
+                                <Link
+                                    to="/tenders-eoi"
+                                    className="shrink-0 inline-flex items-center gap-2.5 border border-[#ffffff]/30 rounded-full px-7 py-3.5 text-xs uppercase tracking-[0.15em] font-medium text-[#ffffff] hover:bg-white/10 transition-all duration-300"
+                                >
+                                    <span>Tenders &amp; EOI</span>
+                                </Link>
+                            </div>
                         </div>
                     </motion.div>
+                </div>
+            </section>
+
+            {/* ─── Tender & EOI Banner ─── */}
+            <section className="py-6 px-6 bg-[#64620B] text-white">
+                <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                        <FileText className="w-5 h-5 text-[#ffda8d] shrink-0" />
+                        <span className="text-sm font-medium">
+                            Is your club preparing an Expression of Interest (EOI) or Request for Tender (RFT)?
+                        </span>
+                    </div>
+                    <Link
+                        to="/tenders-eoi"
+                        className="inline-flex items-center gap-2 bg-white text-[#19355e] px-5 py-2 text-xs font-semibold uppercase tracking-wider rounded hover:bg-gray-100 transition-all shrink-0"
+                    >
+                        <span>View Tender &amp; EOI Responses</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                 </div>
             </section>
 
@@ -184,8 +238,8 @@ export default function Services() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
                     >
-                        <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-2">What We Offer</p>
-                        <h2 className="text-3xl md:text-4xl font-serif font-light">Our Capabilities</h2>
+                        <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-2">Core Pillars</p>
+                        <h2 className="text-3xl md:text-4xl font-serif font-light">Operational Capabilities</h2>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -221,37 +275,21 @@ export default function Services() {
                 </div>
             </section>
 
-            {/* ─── Image Band ─── */}
-            <section className="relative h-[30vh] min-h-[220px] overflow-hidden mx-6 rounded-xl">
-                <img src="/images/about-team-1.jpeg" alt="Chef preparing dishes" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#19355e]/70 via-[#19355e]/30 to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#19355e]/40 via-transparent to-transparent"></div>
-                <div className="relative z-10 h-full flex items-center px-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="max-w-md"
-                    >
-                        <p className="text-3xl md:text-4xl font-serif font-light text-[#ffffff] mb-2">Culinary excellence, every single time.</p>
-                        <p className="text-xs text-[#ffffff]/50 font-light">From kitchen to table, we pursue perfection.</p>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* ─── Our Expertise (Operational Services) ─── */}
-            <section className="py-14 md:py-18 px-6">
+            {/* ─── Dedicated Service Lines ─── */}
+            <section className="py-14 md:py-18 px-6 bg-[#fafaf8]">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
-                        className="mb-10"
+                        className="mb-10 text-center max-w-3xl mx-auto"
                         initial={{ opacity: 0, y: 12 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
                     >
-                        <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-2">How We Operate</p>
-                        <h2 className="text-3xl md:text-4xl font-serif font-light">Our Expertise</h2>
+                        <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-2">Dedicated Service Lines</p>
+                        <h2 className="text-3xl md:text-4xl font-serif font-light">Explore Our Specialised Offerings</h2>
+                        <p className="text-sm text-[#19355e]/70 mt-3">
+                            Click any service below to explore comprehensive operational details, sample menus, compliance frameworks, and case studies.
+                        </p>
                     </motion.div>
 
                     {services.map((service, index) => (
@@ -264,7 +302,7 @@ export default function Services() {
                             viewport={{ once: true, margin: "-60px" }}
                             transition={{ duration: 0.6 }}
                         >
-                            <div className={`grid grid-cols-1 lg:grid-cols-5 gap-6 items-start rounded-xl border border-[#19355e]/6 overflow-hidden bg-[#fafaf8]`}>
+                            <div className={`grid grid-cols-1 lg:grid-cols-5 gap-6 items-start rounded-xl border border-[#19355e]/6 overflow-hidden bg-white shadow-sm`}>
                                 {/* Stats sidebar */}
                                 <div className={`lg:col-span-2 bg-[#19355e] p-7 md:p-8 text-white h-full flex flex-col justify-between ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
                                     <div>
@@ -274,7 +312,7 @@ export default function Services() {
                                         <h3 className="text-2xl font-serif mb-2">{service.title}</h3>
                                         <p className="text-[13px] text-white/55 font-light leading-relaxed mb-6">{service.tagline}</p>
                                     </div>
-                                    <div className="grid grid-cols-3 gap-3">
+                                    <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/10">
                                         {service.stats.map((stat, i) => (
                                             <div key={i} className="text-center">
                                                 <p className="text-xl md:text-2xl font-serif text-[#ffda8d] mb-0.5">{stat.value}</p>
@@ -285,19 +323,30 @@ export default function Services() {
                                 </div>
 
                                 {/* Content */}
-                                <div className={`lg:col-span-3 p-7 md:p-8 ${index % 2 !== 0 ? 'lg:order-1' : ''}`}>
-                                    <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-6">{service.description}</p>
-                                    <h4 className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#19355e]/40 mb-4 flex items-center gap-3">
-                                        <span className="w-5 h-px bg-[#64620B]"></span>
-                                        What We Deliver
-                                    </h4>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                                        {service.deliverables.map((item, i) => (
-                                            <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#19355e]/60">
-                                                <Check className="w-3.5 h-3.5 text-[#64620B] mt-0.5 shrink-0" />
-                                                <span>{item}</span>
-                                            </div>
-                                        ))}
+                                <div className={`lg:col-span-3 p-7 md:p-8 flex flex-col justify-between h-full ${index % 2 !== 0 ? 'lg:order-1' : ''}`}>
+                                    <div>
+                                        <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-6">{service.description}</p>
+                                        <h4 className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#19355e]/40 mb-4 flex items-center gap-3">
+                                            <span className="w-5 h-px bg-[#64620B]"></span>
+                                            Key Deliverables
+                                        </h4>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8">
+                                            {service.deliverables.map((item, i) => (
+                                                <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#19355e]/70">
+                                                    <Check className="w-3.5 h-3.5 text-[#64620B] mt-0.5 shrink-0" />
+                                                    <span>{item}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className="pt-4 border-t border-[#19355e]/10">
+                                        <Link
+                                            to={service.path}
+                                            className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-[#64620B] hover:text-[#19355e] transition-colors"
+                                        >
+                                            <span>Explore Detailed {service.title} Page</span>
+                                            <ArrowRight className="w-4 h-4" />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -317,12 +366,12 @@ export default function Services() {
                         transition={{ duration: 0.5 }}
                     >
                         <div className="md:w-1/2">
-                            <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#ffda8d] mb-2">How We Work</p>
-                            <h2 className="text-3xl md:text-4xl font-serif font-light text-white">Our Process</h2>
+                            <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#ffda8d] mb-2">Transition &amp; Execution</p>
+                            <h2 className="text-3xl md:text-4xl font-serif font-light text-white">Our 4-Stage Operational Model</h2>
                         </div>
                         <div className="md:w-1/2">
                             <p className="text-[13px] text-white/50 font-light leading-relaxed">
-                                A proven four-step framework from initial concept through to sustained operational excellence and community growth.
+                                A structured framework ensuring seamless kitchen takeovers, total regulatory compliance, and consistent monthly reporting to Club Boards.
                             </p>
                         </div>
                     </motion.div>
@@ -351,106 +400,32 @@ export default function Services() {
                 </div>
             </section>
 
-            {/* ─── Why Us ─── */}
-            <section className="py-14 md:py-18 px-6">
-                <div className="max-w-7xl mx-auto">
-                    <motion.div
-                        className="flex flex-col lg:flex-row gap-12"
-                        initial={{ opacity: 0, y: 12 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <div className="lg:w-2/5">
-                            <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-2">Why Us</p>
-                            <h2 className="text-3xl md:text-4xl font-serif font-light mb-4">
-                                The Catering District Difference
-                            </h2>
-                            <p className="text-[14px] text-[#19355e]/55 font-light leading-relaxed">
-                                We don't just manage venues — we build communities. Our approach combines deep operational expertise with genuine passion for creating spaces where people want to spend their time.
-                            </p>
-                        </div>
-                        <div className="lg:w-3/5">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                                {[
-                                    "Experienced in club operations across Australia",
-                                    "Focus on experience-based hospitality, not just food",
-                                    "Flexible venue partnership model suited to any scale",
-                                    "Community-driven approach that builds genuine loyalty",
-                                    "Designed for Australia's modern social culture",
-                                    "End-to-end management from concept to daily ops"
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={i}
-                                        className="flex items-start gap-3 py-3 border-b border-[#19355e]/8"
-                                        initial={{ opacity: 0, x: -8 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.4, delay: i * 0.06 }}
-                                    >
-                                        <Check className="w-4 h-4 text-[#64620B] mt-0.5 shrink-0" />
-                                        <span className="text-[13px] text-[#19355e]/60 font-light">{item}</span>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* ─── Testimonial ─── */}
-            <section className="py-12 md:py-16 px-6 bg-[#fafaf8] border-y border-[#19355e]/6">
-                <div className="max-w-3xl mx-auto text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 12 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <svg className="w-8 h-8 mx-auto mb-5 text-[#64620B]/30" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
-                        <blockquote className="text-xl md:text-2xl font-serif font-light text-[#19355e] leading-snug mb-5">
-                            Catering District transformed our underperforming club into a vibrant community hub. Their operational expertise and genuine care for our members has been extraordinary.
-                        </blockquote>
-                        <p className="text-[11px] text-[#19355e]/40 uppercase tracking-[0.15em] font-medium">
-                            Venue Partner — Sydney, NSW
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
-
             {/* ─── CTA ─── */}
-            <section className="py-16 md:py-20 px-6">
-                <div className="max-w-3xl mx-auto text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 12 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-3">Get Started</p>
-                        <h2 className="text-3xl md:text-4xl font-serif font-light mb-4">
-                            Ready to elevate your venue?
-                        </h2>
-                        <p className="text-[14px] text-[#19355e]/50 font-light max-w-lg mx-auto mb-8">
-                            Let's discuss how our operational expertise and community-driven approach can transform your space into a premier destination.
-                        </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <button
-                                onClick={() => setIsBookingOpen(true)}
-                                className="inline-flex items-center gap-2.5 bg-[#19355e] text-[#ffffff] rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] font-medium hover:bg-[#0d2240] transition-colors duration-300 group"
-                            >
-                                <span>Book a Consultation</span>
-                                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                            </button>
-                            <Link
-                                to="/contact"
-                                className="inline-flex items-center gap-2.5 text-[13px] uppercase tracking-[0.15em] font-medium text-[#19355e]/50 hover:text-[#19355e] transition-colors duration-300"
-                            >
-                                <span>Or Send Us a Message</span>
-                                <ArrowRight className="w-3.5 h-3.5" />
-                            </Link>
-                        </div>
-                    </motion.div>
+            <section className="py-16 md:py-20 px-6 bg-white text-center">
+                <div className="max-w-3xl mx-auto">
+                    <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-3">Executive Inquiry</p>
+                    <h2 className="text-3xl md:text-4xl font-serif font-light mb-4">
+                        Is your club reviewing its catering arrangements?
+                    </h2>
+                    <p className="text-[14px] text-[#19355e]/60 font-light max-w-lg mx-auto mb-8">
+                        Speak directly with Maz Islam (JP, Accredited Food Safety Auditor) for a confidential operational appraisal of your club's kitchen.
+                    </p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button
+                            onClick={() => setIsBookingOpen(true)}
+                            className="inline-flex items-center gap-2.5 bg-[#19355e] text-[#ffffff] rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[#0d2240] transition-colors duration-300 shadow-md cursor-pointer"
+                        >
+                            <span>Request Capability Statement</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                        <Link
+                            to="/tenders-eoi"
+                            className="inline-flex items-center gap-2.5 border border-[#19355e]/20 rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] font-semibold text-[#19355e] hover:bg-[#fafaf8] transition-colors duration-300"
+                        >
+                            <span>Submit Tender Brief</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                    </div>
                 </div>
             </section>
 

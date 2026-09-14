@@ -61,30 +61,30 @@ const defaultData: SiteData = {
     hero: {
         images: ["/images/1.jpeg", "/images/2.jpeg", "/images/3.jpeg", "/images/4.jpeg"],
         heading: "Catering District",
-        subheading: "Hospitality Experiences & Club Operations",
+        subheading: "NSW Club Catering & Contract Hospitality Operations",
     },
     about: {
-        heading: "Delivering memorable food, social, and community experiences through professionally managed spaces.",
-        description: "While traditional contract catering focuses on managing food services for offices and institutions, Catering District currently specialises in operating and facilitating experience-driven clubs and hospitality environments across Australia. Our expertise lies in creating vibrant communities, managing club operations, and delivering curated hospitality experiences.",
+        heading: "Transforming underperforming club kitchens into profitable, compliant, member-favourite operations.",
+        description: "Catering District specialises in full-service contract catering, bistro management, and commercial food & beverage operations for registered clubs across New South Wales. Led by Maz Islam, JP (19+ years experience, Certified HACCP Food Safety Auditor), we help Club CEOs, General Managers, and Boards eliminate kitchen subsidies, maintain strict regulatory compliance, and delight club members.",
     },
     services: [
         {
-            id: "club-ops",
-            title: "Club Operations",
-            description: "Full-service management for social clubs, private clubs, and experience-driven venues.",
-            items: ["Club concept development", "Daily operations management", "Membership programs", "Event coordination", "Food & beverage partnerships", "Community engagement"]
+            id: "club-catering",
+            title: "Club Catering Operations",
+            description: "Complete bistro, cafe, and dining management tailored to licensed clubs, RSLs, bowlos, and sporting venues across NSW.",
+            items: ["Full kitchen operations", "Member bistro & dining", "Daily service management", "High-volume ticket pacing", "Menu engineering & margin control", "Community & member engagement"]
         },
         {
-            id: "exp-clubs",
-            title: "Experience Clubs",
-            description: "Designing and operating experience-focused clubs that combine hospitality, events, and lifestyle activities.",
-            items: ["Curated dining experiences", "Social events and networking", "Themed gatherings and entertainment", "Lifestyle and community programs"]
+            id: "contract-catering",
+            title: "Contract Catering & Tenders",
+            description: "Commercially sustainable catering partnerships designed for club procurement committees, GMs, and formal EOI/tender evaluations.",
+            items: ["Formal tender & EOI responses", "Transparent commercial agreements", "Subsidies reduction framework", "Experienced brigade staffing", "Award-compliant rostering", "KPI-backed service delivery"]
         },
         {
-            id: "hosp-partnerships",
-            title: "Hospital Partnerships",
-            description: "Collaborating with venues, property owners, and organisations to manage or activate hospitality spaces.",
-            items: ["Activating underutilised venues", "Managing hospitality operations", "Designing experience-driven programs", "Building community engagement"]
+            id: "kitchen-compliance",
+            title: "Kitchen Management & Compliance",
+            description: "End-to-end commercial kitchen oversight, food safety audits, HACCP protocol implementation, and NSW Food Authority compliance.",
+            items: ["HACCP food safety systems", "NSW Food Authority compliance", "Workplace health & safety audits", "Waste minimization & cost control", "Registered Clubs Award rostering", "Executive board reporting"]
         }
     ],
     galleryCategories: ["Events", "Dining", "Venues"],
@@ -127,6 +127,11 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
                     if (missingServices.length > 0) {
                         merged.services = [...parsed.services, ...missingServices];
                     }
+                }
+
+                // Ensure about section uses the canonical executive bio phrasing
+                if (!parsed.about?.description?.includes('Led by Maz Islam, JP (19+ years experience, Certified HACCP Food Safety Auditor)')) {
+                    merged.about = defaultData.about;
                 }
                 
                 // Self-heal: Deduplicate services by title to clean up accidental cache duplicates

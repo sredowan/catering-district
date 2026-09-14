@@ -26,6 +26,7 @@ const SITE_URL = 'https://cateringdistrict.com.au';
 
 /** Map a route to the source file that renders it, for git lastmod lookup. */
 const SOURCE_FOR_ROUTE = {
+    // Core & Brand
     '/': 'src/pages/Home.tsx',
     '/services': 'src/pages/Services.tsx',
     '/about': 'src/pages/AboutUs.tsx',
@@ -35,6 +36,45 @@ const SOURCE_FOR_ROUTE = {
     '/gallery': 'src/pages/Gallery.tsx',
     '/privacy-policy': 'src/pages/PrivacyPolicy.tsx',
     '/terms-of-service': 'src/pages/TermsOfService.tsx',
+
+    // Dedicated Services
+    '/services/club-catering': 'src/pages/services/ClubCatering.tsx',
+    '/services/contract-catering': 'src/pages/services/ContractCatering.tsx',
+    '/services/bistro-restaurant-management': 'src/pages/services/BistroRestaurantManagement.tsx',
+    '/services/kitchen-management-compliance': 'src/pages/services/KitchenManagementCompliance.tsx',
+    '/services/club-event-function-catering': 'src/pages/services/ClubEventFunctionCatering.tsx',
+
+    // Procurement / Tenders / EOI
+    '/tenders-eoi': 'src/pages/TendersEoi.tsx',
+
+    // Club Types & Sectors
+    '/clubs': 'src/pages/clubs/ClubsHub.tsx',
+    '/clubs/rsl-clubs': 'src/pages/clubs/RslClubs.tsx',
+    '/clubs/bowling-clubs': 'src/pages/clubs/BowlingClubs.tsx',
+    '/clubs/golf-clubs': 'src/pages/clubs/GolfClubs.tsx',
+    '/clubs/leagues-sports-clubs': 'src/pages/clubs/LeaguesSportsClubs.tsx',
+
+    // NSW Suburbs & Regional Landing Pages
+    '/locations': 'src/pages/locations/LocationsHub.tsx',
+    '/locations/western-sydney-club-catering': 'src/pages/locations/WesternSydney.tsx',
+    '/locations/parramatta-club-catering': 'src/pages/locations/Parramatta.tsx',
+    '/locations/penrith-club-catering': 'src/pages/locations/Penrith.tsx',
+    '/locations/canterbury-bankstown-club-catering': 'src/pages/locations/CanterburyBankstown.tsx',
+    '/locations/sutherland-shire-cronulla-club-catering': 'src/pages/locations/SutherlandShireCronulla.tsx',
+    '/locations/northern-beaches-club-catering': 'src/pages/locations/NorthernBeaches.tsx',
+    '/locations/liverpool-fairfield-club-catering': 'src/pages/locations/LiverpoolFairfield.tsx',
+    '/locations/macarthur-campbelltown-club-catering': 'src/pages/locations/MacarthurCampbelltown.tsx',
+    '/locations/central-coast-club-catering': 'src/pages/locations/CentralCoast.tsx',
+    '/locations/newcastle-hunter-club-catering': 'src/pages/locations/NewcastleHunter.tsx',
+    '/locations/wollongong-illawarra-club-catering': 'src/pages/locations/WollongongIllawarra.tsx',
+    '/locations/inner-west-sydney-club-catering': 'src/pages/locations/InnerWestSydney.tsx',
+
+    // Executive Insights & Guides
+    '/insights': 'src/pages/insights/InsightsHub.tsx',
+    '/insights/in-house-vs-contract-catering-clubs': 'src/pages/insights/InHouseVsContractCatering.tsx',
+    '/insights/how-to-run-a-profitable-club-bistro': 'src/pages/insights/ProfitableClubBistro.tsx',
+    '/insights/club-catering-eoi-tender-guide': 'src/pages/insights/ClubCateringEoiGuide.tsx',
+    '/insights/haccp-food-safety-compliance-nsw-clubs': 'src/pages/insights/HaccpFoodSafetyClubs.tsx',
 };
 
 function lastModified(routePath) {

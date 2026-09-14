@@ -40,8 +40,8 @@ bookingRouter.post('/', async (req, res) => {
 
         // Send email to admin
         await sendEmail({
-            to: process.env.SMTP_USER || 'contact@cateringdistrict.com.au',
-            subject: `New Booking Request: ${name} - ${date}`,
+            to: 'contact@cateringdistrict.com.au',
+            subject: `New Website Booking Enquiry: ${name} - ${date}`,
             html: `
                 <h2>New Booking Details</h2>
                 <p><strong>Name:</strong> ${name}</p>

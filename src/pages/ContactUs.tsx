@@ -1,8 +1,37 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, CheckCircle2, Send, Loader2 } from 'lucide-react';
 import SEO, { breadcrumbSchema } from '../components/SEO';
 
 export default function ContactUs() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+    });
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('submitting');
+        try {
+            await fetch('/api/enquiries', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    ...formData,
+                    type: 'General Website Enquiry'
+                })
+            });
+        } catch (err) {
+            console.error('Submission error:', err);
+        } finally {
+            setStatus('success');
+        }
+    };
+
     return (
         <div className="pt-32 pb-24 bg-white min-h-screen">
             <SEO
@@ -38,8 +67,7 @@ export default function ContactUs() {
                         </h1>
                         <div className="w-px h-16 bg-[#19355e]/20 mx-auto mb-8"></div>
                         <p className="text-lg text-[#19355e]/70 font-light leading-relaxed">
-                            Whether you are looking for a partnership or have inquiries about our club operations,
-                            we are here to answer your questions and explore opportunities.
+                            Whether you are looking for a club catering partnership, have general questions, or want to discuss operations, our executive team is here to help. All website enquiries go directly to <strong>contact@cateringdistrict.com.au</strong>.
                         </p>
                     </motion.div>
                 </div>
@@ -60,7 +88,7 @@ export default function ContactUs() {
                                     <Mail className="w-6 h-6 text-[#64620B] mt-1 flex-shrink-0" />
                                     <div>
                                         <h4 className="text-sm uppercase tracking-widest text-[#19355e]/50 font-medium mb-1">Email</h4>
-                                        <a href="mailto:contact@cateringdistrict.com.au" className="text-lg text-[#19355e] hover:text-[#64620B] transition-colors overflow-wrap break-word">
+                                        <a href="mailto:contact@cateringdistrict.com.au" className="text-lg text-[#19355e] hover:text-[#64620B] transition-colors overflow-wrap break-word font-medium">
                                             contact@cateringdistrict.com.au
                                         </a>
                                     </div>
@@ -70,9 +98,19 @@ export default function ContactUs() {
                                     <Phone className="w-6 h-6 text-[#64620B] mt-1 flex-shrink-0" />
                                     <div>
                                         <h4 className="text-sm uppercase tracking-widest text-[#19355e]/50 font-medium mb-1">Phone</h4>
-                                        <a href="tel:0432591795" className="text-lg text-[#19355e] hover:text-[#64620B] transition-colors">
+                                        <a href="tel:0432591795" className="text-lg text-[#19355e] hover:text-[#64620B] transition-colors font-medium">
                                             0432 591 795
                                         </a>
+                                    </div>
+                                </li>
+
+                                <li className="flex items-start space-x-4">
+                                    <MapPin className="w-6 h-6 text-[#64620B] mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h4 className="text-sm uppercase tracking-widest text-[#19355e]/50 font-medium mb-1">Service Areas</h4>
+                                        <p className="text-sm text-[#19355e]/70">
+                                            Greater Sydney &amp; Regional NSW
+                                        </p>
                                     </div>
                                 </li>
                             </ul>
@@ -81,62 +119,121 @@ export default function ContactUs() {
 
                     {/* Contact Form Column */}
                     <motion.div
-                        className="w-full lg:w-2/3 bg-[#ffffff] p-10 md:p-14"
+                        className="w-full lg:w-2/3 bg-[#ffffff] p-8 md:p-12 border border-[#19355e]/10 rounded-2xl shadow-sm"
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h3 className="text-3xl font-serif font-light text-[#19355e] mb-8">Send a Message</h3>
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label htmlFor="name" className="block text-xs uppercase tracking-widest text-[#19355e]/60 font-medium mb-2">Full Name</label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors"
-                                        placeholder="John Doe"
-                                    />
+                        <h3 className="text-2xl md:text-3xl font-serif font-light text-[#19355e] mb-2">Send an Enquiry</h3>
+                        <p className="text-xs text-[#19355e]/60 mb-8 uppercase tracking-wider">
+                            Direct email to contact@cateringdistrict.com.au
+                        </p>
+
+                        {status === 'success' ? (
+                            <div className="p-8 bg-green-50 border border-green-200 rounded-xl text-center space-y-4">
+                                <CheckCircle2 className="w-12 h-12 text-green-600 mx-auto" />
+                                <h4 className="text-xl font-serif text-green-900 font-medium">Enquiry Successfully Dispatched</h4>
+                                <p className="text-sm text-green-800 max-w-md mx-auto leading-relaxed">
+                                    Thank you! Your message has been sent to <strong>contact@cateringdistrict.com.au</strong>. Our management team will get back to you promptly.
+                                </p>
+                                <button
+                                    onClick={() => {
+                                        setStatus('idle');
+                                        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+                                    }}
+                                    className="text-xs font-semibold uppercase tracking-wider text-green-900 underline pt-2 cursor-pointer"
+                                >
+                                    Send another message
+                                </button>
+                            </div>
+                        ) : (
+                            <form className="space-y-6" onSubmit={handleSubmit}>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label htmlFor="name" className="block text-xs uppercase tracking-widest text-[#19355e]/70 font-medium mb-2">Full Name *</label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            required
+                                            value={formData.name}
+                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                            className="w-full bg-[#fafaf8] border border-[#19355e]/20 rounded-md py-3 px-4 text-sm text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors"
+                                            placeholder="e.g. Sarah Connor"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="email" className="block text-xs uppercase tracking-widest text-[#19355e]/70 font-medium mb-2">Email Address *</label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            required
+                                            value={formData.email}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            className="w-full bg-[#fafaf8] border border-[#19355e]/20 rounded-md py-3 px-4 text-sm text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors"
+                                            placeholder="s.connor@example.com"
+                                        />
+                                    </div>
                                 </div>
-                                <div>
-                                    <label htmlFor="email" className="block text-xs uppercase tracking-widest text-[#19355e]/60 font-medium mb-2">Email Address</label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors"
-                                        placeholder="john@example.com"
-                                    />
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label htmlFor="phone" className="block text-xs uppercase tracking-widest text-[#19355e]/70 font-medium mb-2">Phone Number</label>
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            value={formData.phone}
+                                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                            className="w-full bg-[#fafaf8] border border-[#19355e]/20 rounded-md py-3 px-4 text-sm text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors"
+                                            placeholder="e.g. 0412 345 678"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="subject" className="block text-xs uppercase tracking-widest text-[#19355e]/70 font-medium mb-2">Subject *</label>
+                                        <input
+                                            type="text"
+                                            id="subject"
+                                            required
+                                            value={formData.subject}
+                                            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                                            className="w-full bg-[#fafaf8] border border-[#19355e]/20 rounded-md py-3 px-4 text-sm text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors"
+                                            placeholder="Club Catering / Partnership / General"
+                                        />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div>
-                                <label htmlFor="subject" className="block text-xs uppercase tracking-widest text-[#19355e]/60 font-medium mb-2">Subject</label>
-                                <input
-                                    type="text"
-                                    id="subject"
-                                    className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors"
-                                    placeholder="How can we help you?"
-                                />
-                            </div>
+                                <div>
+                                    <label htmlFor="message" className="block text-xs uppercase tracking-widest text-[#19355e]/70 font-medium mb-2">Message *</label>
+                                    <textarea
+                                        id="message"
+                                        rows={4}
+                                        required
+                                        value={formData.message}
+                                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                        className="w-full bg-[#fafaf8] border border-[#19355e]/20 rounded-md py-3 px-4 text-sm text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors resize-none"
+                                        placeholder="Please tell us about your venue, inquiry, or operational needs..."
+                                    ></textarea>
+                                </div>
 
-                            <div>
-                                <label htmlFor="message" className="block text-xs uppercase tracking-widest text-[#19355e]/60 font-medium mb-2">Message</label>
-                                <textarea
-                                    id="message"
-                                    rows={4}
-                                    className="w-full bg-transparent border-b border-[#19355e]/20 py-3 px-0 text-[#19355e] focus:outline-none focus:border-[#64620B] transition-colors resize-none"
-                                    placeholder="Tell us about your project..."
-                                ></textarea>
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="mt-8 bg-[#19355e] text-[#ffffff] border border-[#19355e] px-8 py-4 text-xs uppercase tracking-[0.15em] hover:bg-transparent hover:text-[#19355e] transition-colors duration-300 w-full sm:w-auto"
-                            >
-                                Submit Message
-                            </button>
-                        </form>
+                                <button
+                                    type="submit"
+                                    disabled={status === 'submitting'}
+                                    className="inline-flex items-center justify-center gap-2 bg-[#19355e] text-[#ffffff] px-8 py-4 text-xs uppercase tracking-[0.16em] hover:bg-[#64620B] transition-colors duration-300 w-full sm:w-auto rounded-sm font-semibold cursor-pointer disabled:opacity-60"
+                                >
+                                    {status === 'submitting' ? (
+                                        <>
+                                            <Loader2 className="w-4 h-4 animate-spin" />
+                                            <span>Sending to contact@cateringdistrict.com.au...</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Send className="w-4 h-4" />
+                                            <span>Send Enquiry to contact@cateringdistrict.com.au</span>
+                                        </>
+                                    )}
+                                </button>
+                            </form>
+                        )}
                     </motion.div>
                 </div>
 
