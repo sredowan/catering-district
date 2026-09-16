@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSiteData } from '../../context/SiteContext';
 import type { SiteData } from '../../context/SiteContext';
-import { Save, LogOut, Check, Image as ImageIcon, Briefcase, Phone, Plus, Trash2, Upload, LayoutDashboard, Type, GripVertical, Eye, X, ChevronUp, ChevronDown, AlertTriangle, Pencil, Calendar, Send } from 'lucide-react';
+import { Save, LogOut, Check, Image as ImageIcon, Briefcase, Phone, Plus, Trash2, Upload, LayoutDashboard, Type, GripVertical, Eye, X, ChevronUp, ChevronDown, AlertTriangle, Pencil, Calendar, Send, Mail, Building2, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 // Compress image via canvas to fit within localStorage limits
@@ -33,7 +33,7 @@ function compressImage(file: File, maxWidth = 800, quality = 0.7): Promise<strin
     });
 }
 
-type TabType = 'overview' | 'bookings' | 'hero' | 'about' | 'gallery' | 'services' | 'contact';
+type TabType = 'overview' | 'leads' | 'bookings' | 'hero' | 'about' | 'gallery' | 'services' | 'contact';
 
 export default function AdminDashboard() {
     const navigate = useNavigate();
@@ -76,11 +76,30 @@ export default function AdminDashboard() {
         setEditingCategory(null);
     };
 
+    const [enquiries, setEnquiries] = useState<any[]>([]);
+    const [isLoadingEnquiries, setIsLoadingEnquiries] = useState(false);
+    const [enquiryError, setEnquiryError] = useState('');
+
     const [bookings, setBookings] = useState<any[]>([]);
     const [isLoadingBookings, setIsLoadingBookings] = useState(false);
     const [replyToBooking, setReplyToBooking] = useState<string | null>(null);
     const [replyMessage, setReplyMessage] = useState('');
     const [isSendingReply, setIsSendingReply] = useState(false);
+
+    useEffect(() => {
+        if (activeTab !== 'leads') return;
+        setIsLoadingEnquiries(true);
+        setEnquiryError('');
+        fetch('/api/enquiries')
+            .then(async (res) => {
+                if (res.status === 401) throw new Error('Your session has expired. Please sign in again.');
+                if (!res.ok) throw new Error('Could not load leads.');
+                return res.json();
+            })
+            .then((data) => setEnquiries(data.enquiries || []))
+            .catch((err) => setEnquiryError(err.message))
+            .finally(() => setIsLoadingEnquiries(false));
+    }, [activeTab]);
 
     useEffect(() => {
         if (activeTab === 'bookings') {
@@ -101,6 +120,20 @@ export default function AdminDashboard() {
             navigate('/admin/login');
         }
     }, [navigate]);
+
+    const updateEnquiryStatus = async (id: string, status: string) => {
+        try {
+            const res = await fetch('/api/enquiries/' + id + '/status', {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status }),
+            });
+            if (!res.ok) throw new Error('Could not update status');
+            setEnquiries((prev) => prev.map((e) => (e.id === id ? { ...e, status } : e)));
+        } catch (err) {
+            setEnquiryError(err instanceof Error ? err.message : 'Could not update status');
+        }
+    };
 
     const handleLogout = () => {
         localStorage.removeItem('isAdmin');
@@ -185,6 +218,7 @@ export default function AdminDashboard() {
 
     const tabs: { id: TabType; label: string; icon: React.ReactNode }[] = [
         { id: 'overview', label: 'Dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
+        { id: 'leads', label: 'Enquiries & Leads', icon: <Mail className="w-4 h-4" /> },
         { id: 'bookings', label: 'Booking Requests', icon: <Calendar className="w-4 h-4" /> },
         { id: 'hero', label: 'Hero Section', icon: <Type className="w-4 h-4" /> },
         { id: 'about', label: 'About Section', icon: <Eye className="w-4 h-4" /> },
@@ -300,6 +334,126 @@ export default function AdminDashboard() {
                     )}
 
                     {/* ───── BOOKINGS TAB ───── */}
+                    {activeTab === 'leads' && (
+                        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
+                            <div className="bg-white rounded-xl border border-[#19355e]/5 p-6 shadow-sm">
+                                <div className="flex items-center justify-between mb-6">
+                                    <div>
+                                        <h3 className="text-xl font-serif">Enquiries &amp; Leads</h3>
+                                        <p className="text-xs text-[#19355e]/50 mt-1">
+                                            Every website submission, newest first. Contact forms and formal tender / EOI briefs.
+                                        </p>
+                                    </div>
+                                    {enquiries.length > 0 && (
+                                        <span className="text-xs uppercase tracking-widest text-[#19355e]/50 font-bold">
+                                            {enquiries.length} total
+                                        </span>
+                                    )}
+                                </div>
+
+                                {isLoadingEnquiries ? (
+                                    <div className="text-center py-12 text-[#19355e]/40">Loading leads...</div>
+                                ) : enquiryError ? (
+                                    <div className="text-center py-12">
+                                        <AlertTriangle className="w-12 h-12 mx-auto mb-3 text-amber-500 opacity-70" />
+                                        <p className="text-sm text-[#19355e]/70">{enquiryError}</p>
+                                    </div>
+                                ) : enquiries.length === 0 ? (
+                                    <div className="text-center py-12 text-[#19355e]/40">
+                                        <Mail className="w-12 h-12 mx-auto mb-3 opacity-30" />
+                                        <p className="text-sm">No enquiries yet.</p>
+                                    </div>
+                                ) : (
+                                    <div className="space-y-4">
+                                        {enquiries.map((enq) => (
+                                            <div key={enq.id} className="p-5 border border-[#19355e]/10 rounded-xl bg-white shadow-sm">
+                                                <div className="flex flex-col md:flex-row justify-between md:items-start mb-4 gap-3">
+                                                    <div>
+                                                        <div className="flex items-center gap-2 flex-wrap">
+                                                            <h4 className="text-lg font-bold">{enq.name || 'Unnamed enquiry'}</h4>
+                                                            <span className={`px-2.5 py-0.5 text-[10px] uppercase tracking-widest rounded-full font-bold ${enq.type === 'tender' ? 'bg-[#64620B]/15 text-[#64620B]' : 'bg-[#19355e]/10 text-[#19355e]'}`}>
+                                                                {enq.type === 'tender' ? 'Tender / EOI' : 'General'}
+                                                            </span>
+                                                        </div>
+                                                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[#19355e]/70 mt-1.5">
+                                                            {enq.email && (
+                                                                <a href={`mailto:${enq.email}`} className="hover:text-[#64620B] transition-colors">{enq.email}</a>
+                                                            )}
+                                                            {enq.phone && (
+                                                                <span className="text-[#19355e]/70">• {enq.phone}</span>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center gap-2 shrink-0">
+                                                        {enq.emailDelivered !== 'true' && (
+                                                            <span className="px-2.5 py-1 text-[10px] uppercase tracking-widest rounded-full font-bold bg-red-100 text-red-700" title="Saved, but the notification email did not send">
+                                                                Email failed
+                                                            </span>
+                                                        )}
+                                                        <span className={`px-3 py-1 text-xs uppercase tracking-widest rounded-full font-bold ${enq.status === 'replied' ? 'bg-green-100 text-green-700' : enq.status === 'read' ? 'bg-blue-100 text-blue-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                                                            {enq.status}
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 mb-4 text-sm">
+                                                    {enq.clubName && (
+                                                        <div className="flex items-center gap-2 text-[#19355e]/80">
+                                                            <Building2 className="w-3.5 h-3.5 text-[#64620B] shrink-0" />
+                                                            <span><span className="text-[#19355e]/50">Club:</span> {enq.clubName}</span>
+                                                        </div>
+                                                    )}
+                                                    {enq.tenderClosingDate && (
+                                                        <div className="flex items-center gap-2 text-[#19355e]/80">
+                                                            <Clock className="w-3.5 h-3.5 text-[#64620B] shrink-0" />
+                                                            <span><span className="text-[#19355e]/50">Tender closes:</span> {enq.tenderClosingDate}</span>
+                                                        </div>
+                                                    )}
+                                                    {enq.subject && (
+                                                        <div className="text-[#19355e]/80 sm:col-span-2">
+                                                            <span className="text-[#19355e]/50">Subject:</span> {enq.subject}
+                                                        </div>
+                                                    )}
+                                                </div>
+
+                                                {enq.message && (
+                                                    <div className="mb-4">
+                                                        <span className="text-xs uppercase tracking-widest text-[#19355e]/50 font-bold block mb-1">Message</span>
+                                                        <p className="text-sm text-[#19355e]/80 whitespace-pre-wrap leading-relaxed">{enq.message}</p>
+                                                    </div>
+                                                )}
+
+                                                <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-[#19355e]/8">
+                                                    <span className="text-xs text-[#19355e]/45">
+                                                        {new Date(enq.createdAt).toLocaleString('en-AU')}
+                                                    </span>
+                                                    <div className="flex items-center gap-2">
+                                                        {enq.email && (
+                                                            <a
+                                                                href={`mailto:${enq.email}`}
+                                                                className="px-3 py-1.5 text-xs rounded-lg bg-[#19355e] text-white hover:bg-[#0d2240] transition-colors font-medium"
+                                                            >
+                                                                Reply by email
+                                                            </a>
+                                                        )}
+                                                        {enq.status !== 'replied' && (
+                                                            <button
+                                                                onClick={() => updateEnquiryStatus(enq.id, enq.status === 'new' ? 'read' : 'replied')}
+                                                                className="px-3 py-1.5 text-xs rounded-lg border border-[#19355e]/15 hover:bg-[#19355e] hover:text-white transition-colors font-medium"
+                                                            >
+                                                                Mark {enq.status === 'new' ? 'read' : 'replied'}
+                                                            </button>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </motion.div>
+                    )}
+
                     {activeTab === 'bookings' && (
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
                             <div className="bg-white rounded-xl border border-[#19355e]/5 p-6 shadow-sm">

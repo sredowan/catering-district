@@ -69,6 +69,28 @@ export const transactions = mysqlTable('transaction', {
     updatedAt: timestamp('updatedAt').default(sql`CURRENT_TIMESTAMP`).onUpdateNow().notNull()
 });
 
+/**
+ * Website leads: general contact enquiries and formal tender/EOI briefs.
+ * Persisted so nothing is lost if email delivery fails, and so the admin
+ * dashboard can show every submission with full detail.
+ */
+export const enquiries = mysqlTable('enquiry', {
+    id: varchar('id', { length: 255 }).primaryKey(),
+    type: mysqlEnum('type', ['general', 'tender']).default('general').notNull(),
+    name: text('name'),
+    email: varchar('email', { length: 255 }),
+    phone: text('phone'),
+    clubName: text('clubName'),
+    subject: text('subject'),
+    message: text('message'),
+    tenderClosingDate: varchar('tenderClosingDate', { length: 64 }),
+    sourcePage: text('sourcePage'),
+    status: mysqlEnum('status', ['new', 'read', 'replied']).default('new').notNull(),
+    emailDelivered: varchar('emailDelivered', { length: 10 }).default('false'),
+    createdAt: timestamp('createdAt').default(sql`CURRENT_TIMESTAMP`).notNull(),
+    updatedAt: timestamp('updatedAt').default(sql`CURRENT_TIMESTAMP`).onUpdateNow().notNull()
+});
+
 export const bookings = mysqlTable('booking', {
     id: varchar('id', { length: 255 }).primaryKey(),
     name: text('name').notNull(),

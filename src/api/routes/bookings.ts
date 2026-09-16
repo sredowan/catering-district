@@ -9,6 +9,7 @@ import {
     createAdminBookingManualReplyEmail,
 } from '../../lib/emailTemplates.js';
 import { randomUUID } from 'crypto';
+import { requireAuth } from '../middleware/requireAuth.js';
 
 export const bookingRouter = express.Router();
 
@@ -98,7 +99,7 @@ bookingRouter.post('/', async (req, res) => {
     }
 });
 
-bookingRouter.get('/', async (req, res) => {
+bookingRouter.get('/', requireAuth, async (req, res) => {
     try {
         const allBookings = await db.select().from(bookings).orderBy(desc(bookings.createdAt));
         res.json({ success: true, bookings: allBookings });
@@ -108,7 +109,7 @@ bookingRouter.get('/', async (req, res) => {
     }
 });
 
-bookingRouter.post('/:id/reply', async (req, res) => {
+bookingRouter.post('/:id/reply', requireAuth, async (req, res) => {
     try {
         const { id } = req.params;
         const { replyMessage } = req.body;
