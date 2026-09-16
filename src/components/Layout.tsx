@@ -332,10 +332,6 @@ function Footer() {
                         </p>
                         <div className="space-y-2.5 mb-6 text-xs text-white/70">
                             <div className="flex items-center gap-2">
-                                <span className="text-[#ffda8d] font-semibold">ABN:</span>
-                                <span>39 676 052 052</span>
-                            </div>
-                            <div className="flex items-center gap-2">
                                 <span className="text-[#ffda8d] font-semibold">Executive:</span>
                                 <span>Maz Islam JP, Managing Director</span>
                             </div>
@@ -495,7 +491,7 @@ function Footer() {
                 <div className="pt-8 border-t border-white/[0.06]">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-xs text-[#ffffff]/40 font-light tracking-wide">
-                            &copy; {new Date().getFullYear()} Catering District (ABN 39 676 052 052). All rights reserved. NSW Registered Commercial Food Business.
+                            &copy; {new Date().getFullYear()} Catering District Pty Ltd. All rights reserved. NSW Registered Commercial Food Business.
                         </p>
                         <div className="flex items-center gap-6 text-xs text-[#ffffff]/40 font-light">
                             <Link to="/about/maz-islam" className="hover:text-[#ffffff]/70 transition-colors duration-200">Maz Islam JP</Link>

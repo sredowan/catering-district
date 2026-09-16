@@ -8,7 +8,7 @@ export default function AboutUs() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="About Us — Catering District Pty Ltd"
-                description="Learn about Catering District's 18+ years delivering exceptional catering, club operations, and community-driven hospitality across Australia. ABN: 29 695 591 943."
+                description="Learn about Catering District's 19+ years delivering exceptional catering, club operations, and community-driven hospitality across Australia."
                 path="/about"
                 ogImage="/images/about-team-1.jpeg"
                 jsonLd={[
@@ -56,7 +56,7 @@ export default function AboutUs() {
                             <div className="flex items-center gap-6 text-xs text-[#19355e]/50 font-medium">
                                 <span>Catering District Pty Ltd</span>
                                 <span className="w-px h-3 bg-[#19355e]/20"></span>
-                                <span>ABN: 29 695 591 943</span>
+                                <span>NSW Registered Hospitality Business</span>
                             </div>
                         </motion.div>
 
@@ -86,7 +86,7 @@ export default function AboutUs() {
             <section className="py-10 px-6 border-y border-[#19355e]/8">
                 <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
                     {[
-                        { value: '18+', label: 'Years Experience' },
+                        { value: '19+', label: 'Years Experience' },
                         { value: '50+', label: 'Events Hosted' },
                         { value: '12+', label: 'Venues Managed' },
                         { value: '10K+', label: 'Happy Guests' },
