@@ -221,18 +221,32 @@ export default function TendersEoi() {
                     </div>
 
                     {submitted ? (
-                        <div className="p-8 bg-green-50 border border-green-200 rounded-xl text-center">
-                            <Check className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                            <h3 className="text-xl font-serif text-green-900 mb-2">Tender Brief Received</h3>
-                            <p className="text-sm text-green-800 max-w-md mx-auto mb-6">
-                                Thank you for including Catering District in your procurement process. Maz Islam will review your documentation and get in touch within 24 hours.
+                        <div className="p-8 md:p-12 bg-[#fafaf8] border border-[#64620B]/30 rounded-2xl text-center space-y-4">
+                            <div className="w-16 h-16 bg-[#64620B]/10 rounded-full flex items-center justify-center mx-auto text-[#64620B]">
+                                <Check className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-2xl md:text-3xl font-serif text-[#19355e] font-normal">Tender Brief Formally Logged</h3>
+                            <p className="text-sm text-[#19355e]/75 max-w-lg mx-auto leading-relaxed">
+                                Thank you for including Catering District in your procurement process. Your brief has been dispatched directly to <strong>contact@cateringdistrict.com.au</strong>, and a formal receipt has been delivered to your email.
                             </p>
-                            <button
-                                onClick={() => setSubmitted(false)}
-                                className="text-xs font-semibold text-green-900 uppercase tracking-wider underline"
-                            >
-                                Submit another inquiry
-                            </button>
+                            <div className="p-4 bg-white rounded-xl border border-[#19355e]/10 max-w-md mx-auto text-left space-y-2">
+                                <p className="text-xs font-semibold text-[#19355e] uppercase tracking-wider">
+                                    Next Procurement Milestones:
+                                </p>
+                                <ul className="text-xs text-[#19355e]/70 space-y-1.5 list-disc list-inside">
+                                    <li>Maz Islam, JP will conduct an initial review within 24 hours.</li>
+                                    <li>Confidential NDA execution available immediately upon request.</li>
+                                    <li>Expedited 72-hour board-ready tender responses available.</li>
+                                </ul>
+                            </div>
+                            <div className="pt-2">
+                                <button
+                                    onClick={() => setSubmitted(false)}
+                                    className="text-xs font-semibold text-[#19355e] uppercase tracking-wider underline hover:text-[#64620B] transition-colors cursor-pointer"
+                                >
+                                    Submit another tender brief
+                                </button>
+                            </div>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-[#19355e]/10 space-y-6">

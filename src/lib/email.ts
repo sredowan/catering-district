@@ -21,18 +21,29 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-export const sendEmail = async ({ to, subject, html }: { to: string; subject: string; html: string }) => {
+export const sendEmail = async ({
+    to,
+    subject,
+    html,
+    replyTo,
+}: {
+    to: string;
+    subject: string;
+    html: string;
+    replyTo?: string;
+}) => {
     try {
         const info = await transporter.sendMail({
             from: `"Catering District" <${requiredEnv('SMTP_USER')}>`,
             to,
+            replyTo: replyTo || requiredEnv('SMTP_USER'),
             subject,
             html,
         });
-        console.log('Message sent: %s', info.messageId);
+        console.log('Message sent: %s to %s', info.messageId, to);
         return { success: true, messageId: info.messageId };
     } catch (error) {
-        console.error('Error sending email:', error);
+        console.error('Error sending email to ' + to + ':', error);
         return { success: false, error };
     }
 };

@@ -3,9 +3,16 @@ import { db } from '../../db/index.js';
 import { bookings } from '../../db/schema.js';
 import { eq, desc } from 'drizzle-orm';
 import { sendEmail } from '../../lib/email.js';
+import {
+    createAdminLeadNotificationEmail,
+    createBookingClientEmail,
+    createAdminBookingManualReplyEmail,
+} from '../../lib/emailTemplates.js';
 import { randomUUID } from 'crypto';
 
 export const bookingRouter = express.Router();
+
+const TARGET_EMAIL = 'contact@cateringdistrict.com.au';
 
 bookingRouter.post('/', async (req, res) => {
     try {
@@ -38,24 +45,51 @@ bookingRouter.post('/', async (req, res) => {
             }
         }
 
-        // Send email to admin
-        await sendEmail({
-            to: 'contact@cateringdistrict.com.au',
-            subject: `New Website Booking Enquiry: ${name} - ${date}`,
-            html: `
-                <h2>New Booking Details</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
-                <p><strong>Date:</strong> ${date}</p>
-                <p><strong>Time:</strong> ${time}</p>
-                <p><strong>Guests:</strong> ${guests}</p>
-                <p><strong>Type:</strong> ${type}</p>
-                <p><strong>Special Requirements:</strong> ${specialReqsText}</p>
-                <p><strong>Agreed to Terms:</strong> ${agreedToTerms ? 'Yes' : 'No'}</p>
-                <p><strong>Send Updates:</strong> ${agreedToUpdates ? 'Yes' : 'No'}</p>
-            `,
+        // 1. Send Branded Lead Notification to Admin (contact@cateringdistrict.com.au)
+        const adminEmail = createAdminLeadNotificationEmail({
+            sourceType: 'Table / Event Booking',
+            name: name || 'Prospective Guest',
+            email: email || 'No email provided',
+            phone,
+            date,
+            time,
+            guests,
+            diningType: type,
+            specialReqs: specialReqsText,
+            message: `Agreed to marketing updates: ${agreedToUpdates ? 'Yes' : 'No'} | Agreed to terms: ${agreedToTerms ? 'Yes' : 'No'}`,
         });
+
+        await sendEmail({
+            to: TARGET_EMAIL,
+            subject: adminEmail.subject,
+            html: adminEmail.html,
+            replyTo: email || TARGET_EMAIL,
+        });
+
+        // 2. Send Branded Auto-Reply to Client
+        if (email && email.includes('@')) {
+            try {
+                const clientEmail = createBookingClientEmail({
+                    name: name || 'Valued Guest',
+                    email,
+                    phone,
+                    date,
+                    time,
+                    guests,
+                    type,
+                    specialReqs: specialReqsText,
+                });
+
+                await sendEmail({
+                    to: email,
+                    subject: clientEmail.subject,
+                    html: clientEmail.html,
+                    replyTo: TARGET_EMAIL,
+                });
+            } catch (autoReplyErr) {
+                console.error('Failed to dispatch booking client auto-reply email:', autoReplyErr);
+            }
+        }
 
         res.status(201).json({ success: true, message: 'Booking submitted successfully' });
     } catch (error) {
@@ -85,24 +119,17 @@ bookingRouter.post('/:id/reply', async (req, res) => {
             return res.status(404).json({ success: false, error: 'Booking not found' });
         }
 
-        // Send reply email to user
+        // Send branded reply email to user
+        const brandedReply = createAdminBookingManualReplyEmail({
+            clientName: booking.name,
+            replyMessage,
+        });
+
         await sendEmail({
             to: booking.email,
-            subject: 'Re: Your Booking Request with Catering District',
-            html: `
-                <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-                    <p style="font-size: 16px;">Hi ${booking.name},</p>
-                    <div style="margin: 24px 0;">
-                        <p style="font-size: 16px; line-height: 1.5;">${replyMessage.replace(/\n/g, '<br>')}</p>
-                    </div>
-                    <p style="font-size: 14px; color: #555;">
-                        <br>
-                        Best Regards,<br>
-                        <strong>Catering District Team</strong><br>
-                        <a href="https://cateringdistrict.com.au" style="color: #555;">cateringdistrict.com.au</a>
-                    </p>
-                </div>
-            `
+            subject: brandedReply.subject,
+            html: brandedReply.html,
+            replyTo: TARGET_EMAIL,
         });
 
         // Update booking status

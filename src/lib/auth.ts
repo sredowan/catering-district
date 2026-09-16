@@ -15,6 +15,8 @@ const rawBaseUrl = process.env.BETTER_AUTH_URL || process.env.FRONTEND_URL || "h
 const validBaseUrl = rawBaseUrl.startsWith('http') ? rawBaseUrl : `https://${rawBaseUrl}`;
 
 export const auth = betterAuth({
+    // Never fall back to a literal: this signs admin session tokens, and a
+    // committed default would let anyone forge one. Fail loudly instead.
     secret: requiredEnv('BETTER_AUTH_SECRET'),
     database: drizzleAdapter(db, {
         provider: "mysql",

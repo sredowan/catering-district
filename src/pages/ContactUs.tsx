@@ -131,18 +131,25 @@ export default function ContactUs() {
                         </p>
 
                         {status === 'success' ? (
-                            <div className="p-8 bg-green-50 border border-green-200 rounded-xl text-center space-y-4">
-                                <CheckCircle2 className="w-12 h-12 text-green-600 mx-auto" />
-                                <h4 className="text-xl font-serif text-green-900 font-medium">Enquiry Successfully Dispatched</h4>
-                                <p className="text-sm text-green-800 max-w-md mx-auto leading-relaxed">
-                                    Thank you! Your message has been sent to <strong>contact@cateringdistrict.com.au</strong>. Our management team will get back to you promptly.
+                            <div className="p-8 bg-[#fafaf8] border border-[#64620B]/30 rounded-xl text-center space-y-4">
+                                <div className="w-14 h-14 bg-[#64620B]/10 rounded-full flex items-center justify-center mx-auto text-[#64620B]">
+                                    <CheckCircle2 className="w-7 h-7" />
+                                </div>
+                                <h4 className="text-2xl font-serif text-[#19355e] font-normal">Enquiry Successfully Received</h4>
+                                <p className="text-sm text-[#19355e]/75 max-w-md mx-auto leading-relaxed">
+                                    Thank you! Your details have been dispatched directly to <strong>contact@cateringdistrict.com.au</strong>. A branded confirmation receipt has been sent to your email.
                                 </p>
+                                <div className="p-3 bg-white rounded-lg border border-[#19355e]/10 max-w-sm mx-auto">
+                                    <p className="text-xs text-[#64620B] font-medium">
+                                        Executive Response Guarantee: Maz Islam, JP and our team will review and respond within 24 hours.
+                                    </p>
+                                </div>
                                 <button
                                     onClick={() => {
                                         setStatus('idle');
                                         setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
                                     }}
-                                    className="text-xs font-semibold uppercase tracking-wider text-green-900 underline pt-2 cursor-pointer"
+                                    className="text-xs font-semibold uppercase tracking-wider text-[#19355e] underline pt-2 cursor-pointer hover:text-[#64620B] transition-colors"
                                 >
                                     Send another message
                                 </button>

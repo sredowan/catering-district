@@ -133,13 +133,18 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                     <div className="w-20 h-20 bg-[#64620B]/10 rounded-full flex items-center justify-center mb-6 text-[#64620B]">
                                         <Check className="w-10 h-10" />
                                     </div>
-                                    <h3 className="text-3xl font-serif mb-4">Reservation Requested</h3>
-                                    <p className="text-[#19355e]/70 font-light mb-8 max-w-sm">
-                                        Thank you for your request. Our team will review your details and send you a confirmation email shortly.
+                                    <h3 className="text-3xl font-serif mb-3 text-[#19355e]">Reservation Requested</h3>
+                                    <p className="text-[#19355e]/70 font-light mb-4 max-w-sm text-sm leading-relaxed">
+                                        Thank you for your request. Your booking enquiry has been dispatched directly to <strong>contact@cateringdistrict.com.au</strong>, and a confirmation receipt has been sent to your email.
                                     </p>
+                                    <div className="p-3.5 bg-[#fafaf8] rounded-xl border border-[#19355e]/10 mb-8 max-w-sm text-center">
+                                        <p className="text-xs text-[#64620B] font-medium">
+                                            Our team will review kitchen capacity and venue availability, and reach out to you within 24 hours.
+                                        </p>
+                                    </div>
                                     <button 
                                         onClick={onClose}
-                                        className="bg-[#19355e] text-[#ffffff] px-8 py-3 text-xs uppercase tracking-[0.15em] hover:bg-[#64620B] transition-colors"
+                                        className="bg-[#19355e] text-[#ffffff] px-8 py-3 text-xs uppercase tracking-[0.15em] hover:bg-[#64620B] transition-colors rounded-full font-semibold cursor-pointer"
                                     >
                                         Close Window
                                     </button>
