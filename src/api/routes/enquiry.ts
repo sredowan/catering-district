@@ -19,7 +19,9 @@ enquiryRouter.post('/', async (req, res) => {
     try {
         const { name, email, phone, subject, message, clubName, tenderClosingDate, type, sourcePage } = req.body;
 
-        const isTender = type === 'Formal Tender / EOI Brief' || !!clubName || !!tenderClosingDate;
+        // Quick contact (floating button) carries a club name but is not a tender brief.
+        const isQuickContact = type === 'Quick Contact';
+        const isTender = !isQuickContact && (type === 'Formal Tender / EOI Brief' || !!clubName || !!tenderClosingDate);
 
         // Persist before sending. Email delivery is the unreliable step, so the
         // lead must be recorded first — a queued message that never lands must
@@ -49,7 +51,7 @@ enquiryRouter.post('/', async (req, res) => {
 
         // 1. Generate Admin Lead Notification
         const adminEmail = createAdminLeadNotificationEmail({
-            sourceType: isTender ? 'Formal Tender / EOI Brief' : 'General Website Enquiry',
+            sourceType: isTender ? 'Formal Tender / EOI Brief' : isQuickContact ? 'Quick Contact Request' : 'General Website Enquiry',
             name: name || 'Prospective Client',
             email: email || 'No email provided',
             phone,

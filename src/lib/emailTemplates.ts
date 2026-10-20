@@ -440,7 +440,7 @@ export function createBookingClientEmail(data: {
 // 4. ADMIN NOTIFICATION: Dispatched to contact@cateringdistrict.com.au
 // ─────────────────────────────────────────────────────────────────────────────
 export function createAdminLeadNotificationEmail(data: {
-    sourceType: 'General Website Enquiry' | 'Formal Tender / EOI Brief' | 'Table / Event Booking';
+    sourceType: 'General Website Enquiry' | 'Formal Tender / EOI Brief' | 'Table / Event Booking' | 'Quick Contact Request';
     name: string;
     email: string;
     phone?: string;
@@ -461,6 +461,8 @@ export function createAdminLeadNotificationEmail(data: {
         emailSubject = `📋 [NEW TENDER / EOI] ${data.clubName || 'Club Venue'} - ${data.name}`;
     } else if (data.sourceType === 'Table / Event Booking') {
         emailSubject = `📅 [NEW BOOKING REQUEST] ${data.name} - ${data.date || 'Upcoming'} (${data.guests || 'N/A'} Guests)`;
+    } else if (data.sourceType === 'Quick Contact Request') {
+        emailSubject = `📞 [QUICK CONTACT] ${data.clubName || 'Club'} - ${data.name}`;
     } else {
         emailSubject = `💬 [NEW WEBSITE ENQUIRY] ${data.name}${data.subject ? ` - ${data.subject}` : ''}`;
     }

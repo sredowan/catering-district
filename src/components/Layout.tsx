@@ -1,5 +1,6 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import ContactNowButton from './ContactNowButton';
 import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin, Menu, X, ArrowUpRight, ChevronRight, ChevronDown } from 'lucide-react';
 
 function Navbar() {
@@ -517,6 +518,7 @@ export default function Layout() {
                 <Outlet />
             </main>
             <Footer />
+            <ContactNowButton />
         </>
     );
 }
