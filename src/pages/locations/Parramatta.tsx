@@ -97,7 +97,7 @@ export default function Parramatta() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Audited Food Safety:</strong> HACCP certification guaranteeing spotless health inspection records.</span>
+                                    <span><strong>Food Safety Systems:</strong> HACCP-based procedures built for council health inspections.</span>
                                 </li>
                             </ul>
                         </div>

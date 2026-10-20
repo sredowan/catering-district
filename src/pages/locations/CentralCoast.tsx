@@ -11,7 +11,7 @@ const FAQS = [
     },
     {
         question: "Can Catering District handle large multi-precinct leisure clubs on the Central Coast?",
-        answer: "Yes. We have experience operating concurrent dining concepts: sports bars, family bistros, cafe kiosks, and banquet event spaces under one roof."
+        answer: "Yes. Our leadership has experience running concurrent dining concepts: sports bars, family bistros, cafe kiosks, and banquet event spaces under one roof."
     }
 ];
 
@@ -22,7 +22,7 @@ export default function CentralCoast() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Central Coast & Gosford Club Catering NSW — Catering District"
-                description="Specialised catering solutions for Central Coast registered clubs. Turnkey bistro operations, holiday surge management, and certified food safety across Gosford and Wyong."
+                description="Specialised catering solutions for Central Coast registered clubs. Turnkey bistro operations, holiday surge management, and HACCP-based food safety across Gosford and Wyong."
                 path="/locations/central-coast-club-catering"
                 ogImage="/images/home-cafe-1.jpg"
                 jsonLd={[

@@ -11,11 +11,11 @@ const FAQS = [
     },
     {
         question: "Who employs the kitchen staff under a contract catering model?",
-        answer: "Catering District assumes full employer liability for the kitchen brigade. We handle recruitment, compliance with the Registered Clubs Award MA000058, superannuation, workers compensation, and performance management, lifting the labour risk directly off the club's balance sheet."
+        answer: "Catering District assumes full employer liability for the kitchen brigade. We handle recruitment, compliance with the Registered Clubs Award, superannuation, workers compensation, and performance management, lifting the labour risk directly off the club's balance sheet."
     },
     {
         question: "How does contract catering protect our club's cash flow?",
-        answer: "In-house kitchens expose clubs to fixed chef salaries, volatile ingredient spikes, and unbudgeted penalty rates during low-turnover shifts. Our contract models shift kitchen operational risk to us while guaranteeing predictable commercial returns and consistent service."
+        answer: "In-house kitchens expose clubs to fixed chef salaries, volatile ingredient spikes, and unbudgeted penalty rates during low-turnover shifts. Our contract models shift kitchen operational risk to us, with commercial returns agreed up front and consistent service."
     },
     {
         question: "How often do you report to the Club Board?",
@@ -30,7 +30,7 @@ export default function ContractCatering() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Contract Catering for Clubs & Venues NSW — Risk-Free Hospitality Management"
-                description="Professional contract catering solutions for NSW licensed clubs and commercial venues. Proven commercial structures, labour risk transfer, and margin guarantees by Catering District."
+                description="Professional contract catering solutions for NSW licensed clubs and commercial venues. Clear commercial structures, labour risk transfer, and margin protection by Catering District."
                 path="/services/contract-catering"
                 ogImage="/images/home-cafe-1.jpg"
                 jsonLd={[
@@ -103,7 +103,7 @@ export default function ContractCatering() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Guaranteed Kitchen Standards:</strong> Dedicated head chefs and sous chefs trained in high-volume hospitality.</span>
+                                    <span><strong>Consistent Kitchen Standards:</strong> Dedicated head chefs and sous chefs trained in high-volume hospitality.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
@@ -138,12 +138,12 @@ export default function ContractCatering() {
                                 <Calculator className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-serif mb-2">Turnover Rental Model</h3>
-                            <p className="text-xs uppercase tracking-wider text-[#64620B] font-semibold mb-4">Zero Risk for Club</p>
+                            <p className="text-xs uppercase tracking-wider text-[#64620B] font-semibold mb-4">Lower Risk for Club</p>
                             <p className="text-sm text-[#19355e]/70 leading-relaxed mb-6">
                                 The club provides kitchen premises; Catering District handles 100% of staff, food, and operating costs, paying the club an agreed percentage of gross food turnover.
                             </p>
                             <ul className="space-y-2 text-xs text-[#19355e]/80 mb-8">
-                                <li>✓ Zero direct catering losses for the club</li>
+                                <li>✓ Catering operating costs carried by Catering District</li>
                                 <li>✓ Direct revenue stream tied to bistro volume</li>
                                 <li>✓ Full operational risk transferred to operator</li>
                             </ul>
@@ -238,12 +238,12 @@ export default function ContractCatering() {
                                 <tr>
                                     <td className="py-4 pr-6 font-semibold">Regulatory Compliance</td>
                                     <td className="py-4 px-6 text-white/70">Board and GM personally liable for food safety breaches</td>
-                                    <td className="py-4 pl-6 font-medium text-white">Certified HACCP food safety audit systems &amp; full compliance</td>
+                                    <td className="py-4 pl-6 font-medium text-white">HACCP-based food safety systems &amp; full compliance</td>
                                 </tr>
                                 <tr>
                                     <td className="py-4 pr-6 font-semibold">Bottom Line Impact</td>
                                     <td className="py-4 px-6 text-white/70">70% of club kitchens run at an unbudgeted loss</td>
-                                    <td className="py-4 pl-6 font-medium text-white">Guaranteed revenue or sustainable margin model</td>
+                                    <td className="py-4 pl-6 font-medium text-white">Agreed revenue share or sustainable margin model</td>
                                 </tr>
                             </tbody>
                         </table>

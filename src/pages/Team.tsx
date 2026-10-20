@@ -100,10 +100,10 @@ export default function Team() {
 
                                 <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-4">
                                     With a career that spans over 19+ years in the hospitality and catering
-                                    industry, Maz is the visionary behind Catering District Pty Ltd. His
+                                    industry, Maz founded Catering District Pty Ltd in 2026. He brings
                                     extensive experience in kitchen management, event coordination, and
-                                    large-scale catering services has established the company as a trusted
-                                    name in the industry.
+                                    large-scale catering, alongside founding Future Chefs and Industry
+                                    Placement Solutions.
                                 </p>
                                 <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-6">
                                     Chef Maz has successfully managed kitchens, led event coordination teams,

@@ -7,7 +7,7 @@ import SEO, { breadcrumbSchema, serviceSchema, faqSchema } from '../../component
 const FAQS = [
     {
         question: "How do you handle massive order surges before and after matches?",
-        answer: "Match days require specialised preparation. We pre-engineer high-speed game-day menus, stage prep stations, and deploy rapid multi-pass order firing so that hundreds of fans receive their meals before kick-off with zero bottlenecking."
+        answer: "Match days require specialised preparation. We pre-engineer high-speed game-day menus, stage prep stations, and deploy rapid multi-pass order firing so that hundreds of fans receive their meals before kick-off."
     },
     {
         question: "What style of food works best for sports and leagues clubs?",

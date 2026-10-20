@@ -34,7 +34,7 @@ export default function HaccpFoodSafetyClubs() {
                     ]),
                     articleSchema({
                         title: 'HACCP & NSW Food Authority Compliance: Kitchen Risk Management for Clubs',
-                        description: 'Detailed analysis of director statutory liabilities, Food Standard 3.2.2A, and certified auditing systems for registered clubs.',
+                        description: 'Detailed analysis of director statutory liabilities, Food Standard 3.2.2A, and food safety auditing systems for registered clubs.',
                         path: '/insights/haccp-food-safety-compliance-nsw-clubs',
                         datePublished: '2026-09-10T08:00:00+10:00',
                         authorName: 'Maz Islam',
@@ -64,7 +64,7 @@ export default function HaccpFoodSafetyClubs() {
                     <div className="flex flex-wrap items-center gap-4 text-xs text-[#19355e]/70 pb-6 border-b border-[#19355e]/10">
                         <span className="flex items-center gap-1 font-medium">
                             <User className="w-3.5 h-3.5 text-[#64620B]" />
-                            Maz Islam, JP &amp; Food Safety Auditor
+                            Maz Islam, JP · Founder &amp; Director
                         </span>
                         <span>•</span>
                         <span className="flex items-center gap-1">
@@ -120,7 +120,7 @@ export default function HaccpFoodSafetyClubs() {
                 <div className="mt-12 p-8 bg-[#fafaf8] border border-[#19355e]/10 rounded-2xl text-center">
                     <h3 className="text-xl font-serif mb-2 text-[#19355e]">Request a Confidential Kitchen Compliance Review</h3>
                     <p className="text-sm text-[#19355e]/70 max-w-lg mx-auto mb-6">
-                        Maz Islam (Diploma in Quality Auditing, Certified HACCP Auditor) conducts independent kitchen audits for Club Boards across NSW.
+                        Maz Islam, JP (Diploma in Quality Auditing) offers kitchen food safety reviews for Club Boards across NSW.
                     </p>
                     <button
                         onClick={() => setIsBookingOpen(true)}

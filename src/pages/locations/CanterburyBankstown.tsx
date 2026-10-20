@@ -11,7 +11,7 @@ const FAQS = [
     },
     {
         question: "What scale of dining capacity can you manage in Bankstown venues?",
-        answer: "Our leadership has managed operations executing over 1,000 covers daily across concurrent dining rooms, cafes, and multi-room banquet facilities."
+        answer: "Our founder has led high-volume kitchen and function operations, including as Head Chef at Crossroads Hotel, large-scale catering at Jesmond Aged Care, and time-critical production at Qantas Airline Catering."
     }
 ];
 
@@ -89,7 +89,7 @@ export default function CanterburyBankstown() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>High-Volume Capacity:</strong> Built to serve large-scale community memberships with zero queue delays.</span>
+                                    <span><strong>High-Volume Capacity:</strong> Planned to serve large-scale community memberships efficiently.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
@@ -97,7 +97,7 @@ export default function CanterburyBankstown() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Certified Compliance:</strong> Maz Islam provides verified HACCP food safety audit systems on site.</span>
+                                    <span><strong>Food Safety Compliance:</strong> HACCP-based food safety systems overseen by Maz Islam on site.</span>
                                 </li>
                             </ul>
                         </div>

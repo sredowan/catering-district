@@ -229,7 +229,7 @@ export function articleSchema(opts: {
         author: {
             '@type': 'Person',
             name: opts.authorName || 'Maz Islam',
-            jobTitle: 'Founder & Certified Food Safety Auditor',
+            jobTitle: 'Founder & Director',
             url: `${SITE_URL}/about/maz-islam`,
         },
         publisher: {

@@ -13,7 +13,7 @@ export default function Services() {
             icon: <Users className="w-5 h-5" />,
             title: "Whole-of-Kitchen Catering",
             description: "End-to-end management of club bistros, cafes, and restaurants. We assume complete employer and operational liability, staffing, menu engineering, and daily service delivery.",
-            highlights: ['Turnkey kitchen operations', 'Subsidies eliminated', 'Award-compliant rostering', 'Consistent member dining']
+            highlights: ['Turnkey kitchen operations', 'Kitchen cost control', 'Award-compliant rostering', 'Consistent member dining']
         },
         {
             icon: <FileText className="w-5 h-5" />,
@@ -24,8 +24,8 @@ export default function Services() {
         {
             icon: <ShieldCheck className="w-5 h-5" />,
             title: "HACCP & Regulatory Compliance",
-            description: "Food safety oversight led by an accredited Quality & HACCP Food Safety Auditor (Maz Islam, JP). Daily digital logging and 100% NSW Food Authority audit readiness.",
-            highlights: ['Certified HACCP systems', 'NSW Food Authority compliance', 'Allergen safety protocols', 'Clean council audit logs']
+            description: "Food safety oversight led by Maz Islam, JP (Diploma in Quality Auditing). Daily digital logging and NSW Food Authority audit preparation.",
+            highlights: ['HACCP-based food safety plans', 'NSW Food Authority compliance', 'Allergen safety protocols', 'Clean council audit logs']
         },
         {
             icon: <Calendar className="w-5 h-5" />,
@@ -42,19 +42,14 @@ export default function Services() {
             icon: <Users className="w-5 h-5" />,
             title: "Club Catering Operations",
             tagline: "Turnkey kitchen, bistro, and dining room management for NSW licensed clubs.",
-            description: "We partner with RSLs, bowling clubs, golf clubs, and leagues venues across NSW to deliver high-volume bistro excellence, member satisfaction, and strict commercial margin control.",
+            description: "We partner with RSLs, bowling clubs, golf clubs, and leagues venues across NSW to deliver high-volume bistro service, member-focused dining, and strict commercial margin control.",
             deliverables: [
                 "Full commercial kitchen and bistro management",
                 "Classic club pantry favourites and modern blackboard specials",
-                "High-volume ticket pacing (under 15 minutes during peak rushes)",
+                "High-volume ticket pacing during peak rushes",
                 "Transparent monthly P&L and operational reporting to Boards",
                 "Staff recruitment and performance management",
                 "Community and member demographic alignment",
-            ],
-            stats: [
-                { value: "19+", label: "Years Experience" },
-                { value: "95%+", label: "Member Satisfaction" },
-                { value: "<15m", label: "Ticket Speed" }
             ]
         },
         {
@@ -63,7 +58,7 @@ export default function Services() {
             icon: <Building2 className="w-5 h-5" />,
             title: "Contract Catering & Tenders",
             tagline: "Risk-free commercial agreements tailored to club financial governance.",
-            description: "Eliminate the financial volatility of running an in-house kitchen. We offer turnover rental, hybrid profit-share, and management-fee models that remove subsidies from your balance sheet.",
+            description: "Eliminate the financial volatility of running an in-house kitchen. We offer turnover rental, hybrid profit-share, and management-fee models designed to reduce kitchen losses on your balance sheet.",
             deliverables: [
                 "Turnover lease and hybrid profit-share agreements",
                 "Full transfer of employer and labour liabilities",
@@ -71,11 +66,6 @@ export default function Services() {
                 "Wholesale food procurement scale protecting gross margins",
                 "Formal response to club EOI and tender processes",
                 "Direct executive board meeting presentations",
-            ],
-            stats: [
-                { value: "0%", label: "Club Food Losses" },
-                { value: "28-32%", label: "Target Food Cost" },
-                { value: "100%", label: "Fair Work Aligned" }
             ]
         },
         {
@@ -91,12 +81,7 @@ export default function Services() {
                 "Mid-week seniors' lunches and family value dinner specials",
                 "Digital Kitchen Display System (KDS) integration",
                 "Bar beverage turnover synergy and food pairing",
-                "Dietary inclusivity (certified gluten-free & vegan options)",
-            ],
-            stats: [
-                { value: "500+", label: "Peak Covers/Shift" },
-                { value: "4.9★", label: "Dining Feedback" },
-                { value: "7 Days", label: "Reliable Service" }
+                "Dietary inclusivity (gluten-free & vegan options)",
             ]
         },
         {
@@ -104,20 +89,15 @@ export default function Services() {
             path: "/services/kitchen-management-compliance",
             icon: <ShieldCheck className="w-5 h-5" />,
             title: "Kitchen Management & HACCP Compliance",
-            tagline: "Certified food safety auditing and Registered Clubs Award labour governance.",
-            description: "Led by Maz Islam (Diploma in Quality Auditing, Certified HACCP Food Safety Auditor), we protect Club Directors and General Managers from food safety and Fair Work statutory liabilities.",
+            tagline: "Food safety management and Registered Clubs Award labour governance.",
+            description: "Led by Maz Islam (Diploma in Quality Auditing), we help protect Club Directors and General Managers from food safety and Fair Work statutory liabilities.",
             deliverables: [
-                "Accredited HACCP food safety plan implementation",
+                "HACCP-based food safety plan implementation",
                 "Digital temperature logging and automated cold-chain alerts",
                 "NSW Food Authority Standard 3.2.2A audit readiness",
-                "Fair Work Registered Clubs Award MA000058 roster auditing",
+                "Registered Clubs Award roster reviews",
                 "Preventative equipment maintenance and asset protection",
                 "Comprehensive chemical handling and WHS compliance",
-            ],
-            stats: [
-                { value: "100%", label: "Audit Pass Rate" },
-                { value: "HACCP", label: "Auditor Certified" },
-                { value: "MA000058", label: "Award Mapped" }
             ]
         },
         {
@@ -126,7 +106,7 @@ export default function Services() {
             icon: <Calendar className="w-5 h-5" />,
             title: "Club Event & Function Catering",
             tagline: "Monetizing club function spaces through high-margin corporate and private events.",
-            description: "From barefoot bowls barbecue feasts to 400-guest seated presentation banquets, we market, package, and execute profitable events in club function rooms.",
+            description: "From barefoot bowls barbecue feasts to large seated presentation banquets, we market, package, and execute profitable events in club function rooms.",
             deliverables: [
                 "Tiered barefoot bowls packages (sliders, pizzas, BBQ grills)",
                 "Auditorium galas and sporting club presentation banquets",
@@ -134,11 +114,6 @@ export default function Services() {
                 "Respectful, dignified catering for member memorial wakes",
                 "Fairway and clubhouse wedding banquet packages",
                 "Zero-waste pre-set banquet management",
-            ],
-            stats: [
-                { value: "400+", label: "Max Banquet Pax" },
-                { value: "40%+", label: "Avg Margin Yield" },
-                { value: "Turnkey", label: "Event Delivery" }
             ]
         }
     ];
@@ -154,7 +129,7 @@ export default function Services() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Club Catering Services NSW — Bistro, Contract & Compliance Operations"
-                description="Comprehensive catering solutions for NSW registered clubs: turnkey club catering, contract catering, bistro management, HACCP compliance audits, and function catering."
+                description="Comprehensive catering solutions for NSW registered clubs: turnkey club catering, contract catering, bistro management, HACCP food safety management, and function catering."
                 path="/services"
                 ogImage="/images/home-cafe-1.jpg"
                 jsonLd={[
@@ -187,7 +162,7 @@ export default function Services() {
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.7 }}>
                         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-t border-[#ffffff]/15 pt-8">
                             <p className="text-[15px] md:text-lg text-[#ffffff]/75 font-light leading-relaxed max-w-2xl">
-                                We partner with Club Boards, Chief Executives, and General Managers across New South Wales to eliminate kitchen subsidies, maintain strict regulatory compliance, and delight community members.
+                                We partner with Club Boards, Chief Executives, and General Managers across New South Wales to reduce kitchen losses, maintain strict regulatory compliance, and delight community members.
                             </p>
                             <div className="flex gap-3">
                                 <button
@@ -312,14 +287,6 @@ export default function Services() {
                                         <h3 className="text-2xl font-serif mb-2">{service.title}</h3>
                                         <p className="text-[13px] text-white/55 font-light leading-relaxed mb-6">{service.tagline}</p>
                                     </div>
-                                    <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/10">
-                                        {service.stats.map((stat, i) => (
-                                            <div key={i} className="text-center">
-                                                <p className="text-xl md:text-2xl font-serif text-[#ffda8d] mb-0.5">{stat.value}</p>
-                                                <p className="text-[9px] uppercase tracking-[0.15em] text-white/35 font-medium">{stat.label}</p>
-                                            </div>
-                                        ))}
-                                    </div>
                                 </div>
 
                                 {/* Content */}
@@ -408,7 +375,7 @@ export default function Services() {
                         Is your club reviewing its catering arrangements?
                     </h2>
                     <p className="text-[14px] text-[#19355e]/60 font-light max-w-lg mx-auto mb-8">
-                        Speak directly with Maz Islam (JP, Accredited Food Safety Auditor) for a confidential operational appraisal of your club's kitchen.
+                        Speak directly with Maz Islam, JP for a confidential operational appraisal of your club's kitchen.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <button

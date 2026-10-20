@@ -103,7 +103,7 @@ function emailWrapper({
                                 Email: <a href="mailto:${BRAND.email}" style="color: ${BRAND.secondaryColor}; text-decoration: none; font-weight: 600;">${BRAND.email}</a>
                             </p>
                             <p style="margin: 0 0 14px 0; font-size: 11px; color: #94a3b8;">
-                                19+ Years Experience &bull; Certified HACCP Food Safety Auditor &bull; Registered NSW Commercial Food Business
+                                19+ Years Experience &bull; Registered NSW Commercial Food Business
                             </p>
                             <div style="font-size: 11px; color: #94a3b8; border-top: 1px solid #edf2f7; padding-top: 12px;">
                                 &copy; ${new Date().getFullYear()} ${BRAND.name} Pty Ltd. All rights reserved. &bull; <a href="${BRAND.website}" style="color: #64748b; text-decoration: underline;">cateringdistrict.com.au</a>
@@ -208,7 +208,7 @@ export function createGeneralEnquiryClientEmail(data: {
             Maz Islam, JP
         </p>
         <p style="margin: 2px 0 0 0; font-size: 13px; color: #64748b;">
-            Founder &amp; Managing Director &bull; Certified HACCP Food Safety Auditor<br>
+            Founder &amp; Managing Director<br>
             <strong>Catering District Pty Ltd</strong>
         </p>
     `;
@@ -246,7 +246,7 @@ export function createTenderEoiClientEmail(data: {
         </p>
 
         <p style="margin: 0 0 20px 0;">
-            Our Managing Director, <strong>Maz Islam, JP</strong> (Certified HACCP Food Safety Auditor, 19+ years club catering executive), personally oversees all commercial feasibility modeling, board presentations, and tender submissions.
+            Our Managing Director, <strong>Maz Islam, JP</strong> (19+ years club catering executive), personally oversees all commercial feasibility modeling, board presentations, and tender submissions.
         </p>
 
         <!-- Summary Box -->
@@ -297,7 +297,7 @@ export function createTenderEoiClientEmail(data: {
                 <strong>Direct Contact Within 24 Hours:</strong> Maz Islam will reach out to confirm receipt and discuss scope specifications or site inspection arrangements.
             </li>
             <li style="margin-bottom: 8px;">
-                <strong>Board-Ready Presentations:</strong> We provide full 3-year P&amp;L forecasting, Award MA000058 compliant rostering models, and certified HACCP food safety audit systems.
+                <strong>Board-Ready Presentations:</strong> We provide full 3-year P&amp;L forecasting, Registered Clubs Award rostering models, and HACCP-based food safety plans.
             </li>
             <li>
                 <strong>Fast-Track Turnaround:</strong> For tight tender deadlines, our executive team can deliver comprehensive, board-ready submissions within <strong>72 hours</strong>.
@@ -319,7 +319,7 @@ export function createTenderEoiClientEmail(data: {
             Maz Islam, JP
         </p>
         <p style="margin: 2px 0 0 0; font-size: 13px; color: #64748b;">
-            Founder &amp; Managing Director &bull; Certified HACCP Food Safety Auditor<br>
+            Founder &amp; Managing Director<br>
             <strong>Catering District Pty Ltd &mdash; Executive Procurement Desk</strong>
         </p>
     `;

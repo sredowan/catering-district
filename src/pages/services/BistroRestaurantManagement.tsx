@@ -7,7 +7,7 @@ import SEO, { breadcrumbSchema, serviceSchema, faqSchema } from '../../component
 const FAQS = [
     {
         question: "How do you maintain fast ticket times during peak club rushes?",
-        answer: "We deploy modern kitchen line design, mise-en-place prep protocols, and digital kitchen display systems (KDS) configured for rapid order firing. During peak bingo sessions, poker machine breaks, and Friday night raffles, our ticket times average under 15 minutes."
+        answer: "We deploy modern kitchen line design, mise-en-place prep protocols, and digital kitchen display systems (KDS) configured for rapid order firing. This keeps tickets moving during peak bingo sessions, poker machine breaks, and Friday night raffles."
     },
     {
         question: "How do you balance traditional club favourites with modern dining trends?",
@@ -26,7 +26,7 @@ export default function BistroRestaurantManagement() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Club Bistro & Restaurant Management NSW — High-Volume Dining Operations"
-                description="Professional club bistro and restaurant operator across Sydney and NSW. Menu engineering, fast service times, member dining loyalty, and proven kitchen management by Catering District."
+                description="Professional club bistro and restaurant operator across Sydney and NSW. Menu engineering, fast service times, member dining loyalty, and experienced kitchen management by Catering District."
                 path="/services/bistro-restaurant-management"
                 ogImage="/images/home-cafe-1.jpg"
                 jsonLd={[
@@ -95,11 +95,11 @@ export default function BistroRestaurantManagement() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Clock className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>&lt; 15 Min Ticket Times:</strong> Even during peak 300+ cover Saturday dinner rushes.</span>
+                                    <span><strong>Efficient Ticket Times:</strong> Kitchen pacing planned for peak Saturday dinner rushes.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Sparkles className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>95%+ Member Satisfaction:</strong> Consistent portions, premium presentation, and hot meals.</span>
+                                    <span><strong>Member Satisfaction:</strong> Consistent portions, premium presentation, and hot meals.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <HeartHandshake className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
@@ -143,7 +143,7 @@ export default function BistroRestaurantManagement() {
                     <div className="p-8 rounded-2xl border border-[#19355e]/10 bg-[#fafaf8]">
                         <h3 className="text-xl font-serif mb-3 text-[#19355e]">Dietary Inclusivity</h3>
                         <p className="text-sm text-[#19355e]/70 leading-relaxed mb-4">
-                            Dedicated gluten-free preparation areas, vegan selections, and certified allergen logging to ensure every family member can dine safely and without hesitation.
+                            Dedicated gluten-free preparation areas, vegan selections, and documented allergen logging to ensure every family member can dine safely and without hesitation.
                         </p>
                         <span className="text-xs text-[#64620B] font-semibold uppercase tracking-wider">Modern Compliance</span>
                     </div>

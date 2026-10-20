@@ -13,11 +13,11 @@ const HOME_FAQS = [
     },
     {
         question: "How does Catering District respond to formal Club Catering EOIs and Tenders?",
-        answer: "We deliver comprehensive, board-ready submissions including 3-year P&L modeling, engineered demographic menus, certified HACCP food safety systems, Fair Work award compliance frameworks, and seamless 30-day transition plans."
+        answer: "We deliver comprehensive, board-ready submissions including 3-year P&L modeling, engineered demographic menus, HACCP-based food safety plans, Registered Clubs Award rostering models, and seamless 30-day transition plans."
     },
     {
         question: "Who oversees Catering District's kitchen operations and compliance?",
-        answer: "Our operations are personally led by Maz Islam, a Justice of the Peace (JP) holding an Advanced Diploma in Hospitality Management, a Diploma in Quality Auditing, and certified HACCP Food Safety Auditor accreditation with 19+ years of industry experience."
+        answer: "Our operations are personally led by Maz Islam, a Justice of the Peace (JP) holding an Advanced Diploma of Hospitality Management, a Diploma of Quality Auditing, and a Certificate IV in Kitchen Management, with 19+ years of industry experience."
     }
 ];
 
@@ -104,22 +104,10 @@ function Hero() {
                     </div>
 
                     {/* Trust Badges */}
-                    <div className="mt-14 pt-8 border-t border-white/15 grid grid-cols-2 md:grid-cols-4 gap-4 text-white/80 text-xs">
+                    <div className="mt-14 pt-8 border-t border-white/15 flex justify-center gap-4 text-white/80 text-xs">
                         <div className="flex items-center justify-center gap-2">
                             <Check className="w-4 h-4 text-[#ffda8d]" />
                             <span>19+ Years Experience</span>
-                        </div>
-                        <div className="flex items-center justify-center gap-2">
-                            <Check className="w-4 h-4 text-[#ffda8d]" />
-                            <span>Certified HACCP Auditor</span>
-                        </div>
-                        <div className="flex items-center justify-center gap-2">
-                            <Check className="w-4 h-4 text-[#ffda8d]" />
-                            <span>Zero Subsidies Contract</span>
-                        </div>
-                        <div className="flex items-center justify-center gap-2">
-                            <Check className="w-4 h-4 text-[#ffda8d]" />
-                            <span>Award MA000058 Compliant</span>
                         </div>
                     </div>
                 </motion.div>
@@ -155,7 +143,7 @@ function About() {
                         <ShieldCheck className="w-5 h-5 text-[#64620B] shrink-0 mt-0.5" />
                         <div>
                             <p className="text-sm font-semibold text-[#19355e]">
-                                Led by Maz Islam, JP <span className="font-normal text-[#19355e]/80">(19+ years experience, Certified HACCP Food Safety Auditor)</span>
+                                Led by Maz Islam, JP <span className="font-normal text-[#19355e]/80">(19+ years experience)</span>
                             </p>
                         </div>
                     </div>
@@ -164,7 +152,7 @@ function About() {
                         {siteData.about.description}
                     </p>
                     <p className="text-sm text-[#19355e]/70 leading-relaxed mb-8">
-                        Unlike remote corporate franchises where your venue becomes just another number, Catering District delivers hands-on executive oversight. We sit directly with Club Boards, General Managers, and Secretary Managers to align menus with community demographics, optimize ticket speed, and eliminate kitchen subsidies.
+                        Unlike remote corporate franchises where your venue becomes just another number, Catering District delivers hands-on executive oversight. We sit directly with Club Boards, General Managers, and Secretary Managers to align menus with community demographics, improve ticket speed, and reduce kitchen losses.
                     </p>
                     <div className="flex flex-wrap items-center gap-6">
                         <Link to="/about" className="inline-flex items-center space-x-2 text-[#64620B] hover:text-[#19355e] transition-colors uppercase text-xs tracking-[0.15em] font-semibold border-b border-[#64620B] pb-1">
@@ -292,19 +280,19 @@ function DedicatedCapabilities() {
         {
             title: "Contract Catering & Tenders",
             path: "/services/contract-catering",
-            desc: "Risk-free commercial agreements that remove kitchen subsidies and transfer labour liabilities.",
+            desc: "Clear commercial agreements designed to reduce kitchen losses and transfer labour liabilities.",
             tag: "Turnover Lease"
         },
         {
             title: "Bistro & Restaurant Management",
             path: "/services/bistro-restaurant-management",
-            desc: "Menu engineering, sub-15 minute ticket speeds, and high-volume member dining execution.",
+            desc: "Menu engineering, efficient ticket times, and high-volume member dining execution.",
             tag: "Bistro Operations"
         },
         {
             title: "Kitchen Compliance & HACCP",
             path: "/services/kitchen-management-compliance",
-            desc: "Accredited food safety audits, Standard 3.2.2A readiness, and award roster governance.",
+            desc: "HACCP-based food safety systems, Standard 3.2.2A readiness, and award roster governance.",
             tag: "Certified Auditing"
         },
         {
@@ -441,7 +429,7 @@ function ClubSectors() {
             title: "Bowling Clubs (Bowlos)",
             path: "/clubs/bowling-clubs",
             share: "24% of Industry",
-            desc: "Barefoot bowls BBQs, community family nights, and elimination of kitchen operating subsidies."
+            desc: "Barefoot bowls BBQs, community family nights, and tighter kitchen cost control."
         },
         {
             title: "RSL & Memorial Clubs",
@@ -844,7 +832,7 @@ export default function Home() {
         <>
             <SEO
                 title="NSW Club Catering & Contract Hospitality Operations | Catering District"
-                description="NSW club catering, contract dining, and bistro operations. Led by Maz Islam, JP (19+ years experience, Certified HACCP Food Safety Auditor). 100% compliant, zero subsidies."
+                description="NSW club catering, contract dining, and bistro operations. Led by Maz Islam, JP (19+ years experience)."
                 path="/"
                 ogImage="/images/home-team.jpg"
                 jsonLd={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, LOCAL_BUSINESS_SCHEMA, faqSchema(HOME_FAQS)]}

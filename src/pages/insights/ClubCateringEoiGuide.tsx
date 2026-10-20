@@ -64,7 +64,7 @@ export default function ClubCateringEoiGuide() {
                     <div className="flex flex-wrap items-center gap-4 text-xs text-[#19355e]/70 pb-6 border-b border-[#19355e]/10">
                         <span className="flex items-center gap-1 font-medium">
                             <User className="w-3.5 h-3.5 text-[#64620B]" />
-                            Maz Islam, JP &amp; Food Safety Auditor
+                            Maz Islam, JP · Founder &amp; Director
                         </span>
                         <span>•</span>
                         <span className="flex items-center gap-1">
@@ -110,7 +110,7 @@ export default function ClubCateringEoiGuide() {
                         </div>
                         <div className="p-4 bg-[#fafaf8] border border-[#19355e]/10 rounded-xl">
                             <strong className="text-[#19355e] block mb-1">Compliance &amp; Systems (25%)</strong>
-                            Certified HACCP food safety protocols, Fair Work award compliance, and $20M liability coverage.
+                            HACCP-based food safety protocols, Fair Work award compliance, and $20M liability coverage.
                         </div>
                         <div className="p-4 bg-[#fafaf8] border border-[#19355e]/10 rounded-xl">
                             <strong className="text-[#19355e] block mb-1">Track Record &amp; Leadership (20%)</strong>

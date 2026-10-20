@@ -43,13 +43,13 @@ export default function AboutUs() {
                             </h1>
                             <div className="w-10 h-[2px] bg-[#64620B] mb-6"></div>
                             <p className="text-[15px] text-[#19355e]/70 font-light leading-relaxed mb-4">
-                                Catering District Pty Ltd is a leading provider of professional catering services
-                                that have been at the forefront of delivering high-quality culinary experiences for a
-                                variety of events, ranging from community gatherings to large-scale corporate functions.
+                                Catering District Pty Ltd is a NSW catering management company founded in 2026 by
+                                Maz Islam JP. It brings his experience across clubs, hotels, and large-scale catering to
+                                club kitchens, functions, and events, from community gatherings to corporate functions.
                             </p>
                             <p className="text-[15px] text-[#19355e]/70 font-light leading-relaxed mb-6">
                                 Our dedication to excellence is rooted in our passion for fresh, high-quality
-                                food, and exceptional service. With years of experience in the hospitality and catering
+                                food, and exceptional service. Drawing on our founder's 19+ years in the hospitality and catering
                                 industry, we specialize in providing comprehensive, tailored solutions to meet
                                 the needs of our clients.
                             </p>
@@ -79,30 +79,6 @@ export default function AboutUs() {
                             </div>
                         </motion.div>
                     </div>
-                </div>
-            </section>
-
-            {/* ─── Stats Strip ─── */}
-            <section className="py-10 px-6 border-y border-[#19355e]/8">
-                <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {[
-                        { value: '19+', label: 'Years Experience' },
-                        { value: '50+', label: 'Events Hosted' },
-                        { value: '12+', label: 'Venues Managed' },
-                        { value: '10K+', label: 'Happy Guests' },
-                    ].map((stat, i) => (
-                        <motion.div
-                            key={i}
-                            className="text-center py-2"
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: i * 0.08 }}
-                        >
-                            <p className="text-3xl md:text-4xl font-serif text-[#19355e] mb-1">{stat.value}</p>
-                            <p className="text-[10px] uppercase tracking-[0.2em] text-[#19355e]/40 font-medium">{stat.label}</p>
-                        </motion.div>
-                    ))}
                 </div>
             </section>
 

@@ -97,7 +97,7 @@ export default function SutherlandShireCronulla() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Zero Food Losses:</strong> Commercially disciplined contracts that guarantee positive returns.</span>
+                                    <span><strong>Commercial Discipline:</strong> Contracts structured to protect the club's returns.</span>
                                 </li>
                             </ul>
                         </div>

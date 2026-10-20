@@ -11,11 +11,11 @@ const FAQS = [
     },
     {
         question: "What information is included in your formal tender submission?",
-        answer: "Our submissions include complete corporate background, executive CVs, certified HACCP food safety manuals, sample bistro & function menus with price points, projected 3-year P&L forecasts, award-compliant rostering models, marketing & member promotion strategies, and insurance certificates ($20M Public Liability)."
+        answer: "Our submissions include complete corporate background, executive CVs, HACCP-based food safety plans, sample bistro & function menus with price points, projected 3-year P&L forecasts, award-compliant rostering models, marketing & member promotion strategies, and insurance certificates ($20M Public Liability)."
     },
     {
         question: "Can club boards request a formal presentation from Maz Islam?",
-        answer: "Yes. Maz Islam and our senior operational team frequently present in person to Board of Directors meetings, Club Secretary Managers, and tender evaluation sub-committees across New South Wales."
+        answer: "Yes. Maz Islam is available to present in person to Board of Directors meetings, Club Secretary Managers, and tender evaluation sub-committees across New South Wales."
     },
     {
         question: "How do we send our EOI or Tender specification documents to Catering District?",
@@ -132,15 +132,15 @@ export default function TendersEoi() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Complete Compliance:</strong> Transparent financials, audited P&amp;Ls, and certified HACCP systems.</span>
+                                    <span><strong>Complete Compliance:</strong> Transparent financials, P&amp;L forecasting, and HACCP-based food safety plans.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Award-Mapped Rosters:</strong> Zero Fair Work grey areas; full compliance with Registered Clubs Award.</span>
+                                    <span><strong>Award-Based Rosters:</strong> Rostering models built around the Registered Clubs Award.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Turnover Certainty:</strong> Commercial models that eliminate subsidies and safeguard cash flow.</span>
+                                    <span><strong>Turnover Certainty:</strong> Commercial models designed to reduce kitchen losses and safeguard cash flow.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
@@ -201,7 +201,7 @@ export default function TendersEoi() {
                         </div>
                         <h3 className="text-lg font-serif mb-2 text-[#19355e]">Smooth Transition Plan</h3>
                         <p className="text-xs text-[#19355e]/70 leading-relaxed">
-                            Seamless 30-day changeover plan guaranteeing zero downtime for members, full staff transfer protocols, and instant HACCP rollout.
+                            Structured 30-day changeover plan designed to minimise disruption for members, full staff transfer protocols, and instant HACCP rollout.
                         </p>
                     </div>
                 </div>

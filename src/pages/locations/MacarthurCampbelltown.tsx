@@ -22,7 +22,7 @@ export default function MacarthurCampbelltown() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Macarthur, Campbelltown & Camden Club Catering NSW — Catering District"
-                description="Professional club catering across Campbelltown, Camden, and the Macarthur region. High-volume family bistros, golf club dining, and certified kitchen management."
+                description="Professional club catering across Campbelltown, Camden, and the Macarthur region. High-volume family bistros, golf club dining, and professional kitchen management."
                 path="/locations/macarthur-campbelltown-club-catering"
                 ogImage="/images/home-team.jpg"
                 jsonLd={[
@@ -97,7 +97,7 @@ export default function MacarthurCampbelltown() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Subsidies Removed:</strong> Converting kitchen losses into positive commercial returns.</span>
+                                    <span><strong>Commercial Focus:</strong> Working to turn kitchen losses into positive commercial returns.</span>
                                 </li>
                             </ul>
                         </div>

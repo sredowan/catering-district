@@ -26,7 +26,7 @@ export default function RslClubs() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="RSL Club Catering Services NSW — Bistro, Carvery & Memorial Banquets"
-                description="Specialised catering for NSW RSL and Memorial Clubs. Respecting tradition with high-volume bistro operations, ANZAC Day catering, and certified food safety."
+                description="Specialised catering for NSW RSL and Memorial Clubs. Respecting tradition with high-volume bistro operations, ANZAC Day catering, and HACCP-based food safety."
                 path="/clubs/rsl-clubs"
                 ogImage="/images/home-team.jpg"
                 jsonLd={[
@@ -93,7 +93,7 @@ export default function RslClubs() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>ANZAC Day &amp; Remembrance Day:</strong> Precision catering for thousands of patrons with zero logistical delays.</span>
+                                    <span><strong>ANZAC Day &amp; Remembrance Day:</strong> Carefully planned catering for large crowds of patrons.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

@@ -33,7 +33,7 @@ export const INSIGHTS_ARTICLES = [
         readTime: "6 min read",
         date: "September 2026",
         category: "Compliance & Safety",
-        excerpt: "Director statutory liability under the NSW Food Act, digital temperature monitoring, allergen management, and how certified auditing protects your liquor and gaming license."
+        excerpt: "Director statutory liability under the NSW Food Act, digital temperature monitoring, allergen management, and how food safety auditing protects your liquor and gaming license."
     }
 ];
 
@@ -107,7 +107,7 @@ export default function InsightsHub() {
                             <div className="pt-4 border-t border-[#19355e]/10 flex items-center justify-between">
                                 <div className="flex items-center gap-2 text-xs text-[#19355e]/60">
                                     <User className="w-3.5 h-3.5 text-[#64620B]" />
-                                    <span>Maz Islam, JP &amp; Auditor</span>
+                                    <span>Maz Islam, JP</span>
                                 </div>
                                 <Link
                                     to={`/insights/${article.slug}`}

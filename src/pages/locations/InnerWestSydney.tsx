@@ -97,7 +97,7 @@ export default function InnerWestSydney() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Commercial Reliability:</strong> Eliminating kitchen subsidies through disciplined cost control.</span>
+                                    <span><strong>Commercial Reliability:</strong> Reducing kitchen losses through disciplined cost control.</span>
                                 </li>
                             </ul>
                         </div>

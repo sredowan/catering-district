@@ -97,7 +97,7 @@ export default function Penrith() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Subsidies Eliminated:</strong> Clear commercial agreements that safeguard community club cash reserves.</span>
+                                    <span><strong>Protect Cash Reserves:</strong> Clear commercial agreements that safeguard community club cash reserves.</span>
                                 </li>
                             </ul>
                         </div>

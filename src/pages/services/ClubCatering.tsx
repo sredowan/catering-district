@@ -10,8 +10,8 @@ const FAQS = [
         answer: "We execute a structured 30-to-60 day handover plan. This includes assessing existing kitchen plant, cross-interviewing and retaining key kitchen personnel under the Registered Clubs Award, auditing inventory, and rolling out engineered menus with full staff training prior to Day 1 go-live."
     },
     {
-        question: "Can Catering District help our club eliminate F&B operating losses?",
-        answer: "Yes. In the Australian club industry, ~70% of venues subsidise food operations. We operate on proven food cost ratios (28–32%) and dynamic Award-compliant rostering models, transforming kitchen subsidies into sustainable commercial returns while maintaining member price-value expectations."
+        question: "Can Catering District help our club reduce F&B operating losses?",
+        answer: "Yes. In the Australian club industry, ~70% of venues subsidise food operations. We target food cost ratios of 28–32% and use rostering models built around the Registered Clubs Award, aiming to turn kitchen losses into sustainable commercial returns while maintaining member price-value expectations."
     },
     {
         question: "Are your menus customized for each club's demographics?",
@@ -19,7 +19,7 @@ const FAQS = [
     },
     {
         question: "How do you ensure food safety and HACCP compliance?",
-        answer: "Our operations are overseen by Maz Islam, an accredited Quality & HACCP Food Safety Auditor. Every kitchen maintains rigorous digital temperature monitoring, sanitation schedules, allergen protocols, and full NSW Food Authority audit readiness."
+        answer: "Our operations are overseen by Maz Islam, JP (Diploma in Quality Auditing). Every kitchen maintains rigorous digital temperature monitoring, sanitation schedules, allergen protocols, and full NSW Food Authority audit readiness."
     }
 ];
 
@@ -30,7 +30,7 @@ export default function ClubCatering() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Club Catering Services NSW — Commercial Kitchen & Bistro Management"
-                description="Professional club catering services for NSW licensed clubs, RSLs, bowling and golf clubs. Proven bistro operations, margin turnaround, and HACCP compliance by Catering District."
+                description="Professional club catering services for NSW licensed clubs, RSLs, bowling and golf clubs. Bistro operations, margin improvement, and HACCP-based food safety by Catering District."
                 path="/services/club-catering"
                 ogImage="/images/home-cafe-1.jpg"
                 jsonLd={[
@@ -73,7 +73,7 @@ export default function ClubCatering() {
                             <span className="italic font-normal text-[#ffda8d]">Tailored for Community &amp; Profit</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            We partner with Club Boards, CEOs, and General Managers across New South Wales to deliver high-volume bistro excellence, member satisfaction, and strict commercial margin control.
+                            We partner with Club Boards, CEOs, and General Managers across New South Wales to deliver high-volume bistro service, member-focused dining, and strict commercial margin control.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -98,15 +98,15 @@ export default function ClubCatering() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Eliminate Food Subsidies:</strong> Engineered menus and strict food cost management (28-32%).</span>
+                                    <span><strong>Reduce Kitchen Losses:</strong> Engineered menus and strict food cost management (28-32% target).</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Award-Compliant Rostering:</strong> Mitigate 32% penalty rate pressures under Registered Clubs Award MA000058.</span>
+                                    <span><strong>Award-Based Rostering:</strong> Manage penalty rate pressures under the Registered Clubs Award.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Certified Food Safety:</strong> Managed by an accredited Quality &amp; HACCP Food Safety Auditor.</span>
+                                    <span><strong>Food Safety Management:</strong> HACCP-based systems overseen by Maz Islam, JP.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
@@ -153,7 +153,7 @@ export default function ClubCatering() {
                         <ul className="space-y-2 text-xs text-[#19355e]/80">
                             <li>• Digital temperature and sanitisation logs</li>
                             <li>• Allergen management protocols</li>
-                            <li>• 100% audit readiness for council inspectors</li>
+                            <li>• Audit preparation for council inspectors</li>
                         </ul>
                     </div>
 
@@ -161,7 +161,7 @@ export default function ClubCatering() {
                         <TrendingUp className="w-10 h-10 text-[#64620B] mb-6" />
                         <h3 className="text-xl font-serif mb-3">F&amp;B Margin Protection</h3>
                         <p className="text-sm text-[#19355e]/70 leading-relaxed mb-6">
-                            Turning kitchen subsidies into sustainable commercial performance through portion control, wholesale procurement terms, and intelligent menu engineering.
+                            Working to turn kitchen losses into sustainable commercial performance through portion control, wholesale procurement terms, and intelligent menu engineering.
                         </p>
                         <ul className="space-y-2 text-xs text-[#19355e]/80">
                             <li>• Target food cost percentage 28–32%</li>

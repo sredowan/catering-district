@@ -329,12 +329,12 @@ function Footer() {
                     <div className="lg:col-span-3">
                         <img src="/logo-white.png" alt="Catering District" className="h-12 w-auto mb-5 opacity-95 object-contain" />
                         <p className="text-xs text-[#ffffff]/60 font-light leading-relaxed mb-6">
-                            NSW's premier club catering, contract dining management, and bistro hospitality partner. Led by Maz Islam, JP (19+ years experience, Certified HACCP Food Safety Auditor).
+                            NSW club catering, contract dining management, and bistro hospitality partner. Led by Maz Islam, JP (19+ years experience).
                         </p>
                         <div className="space-y-2.5 mb-6 text-xs text-white/70">
                             <div className="flex items-center gap-2">
                                 <span className="text-[#ffda8d] font-semibold">Executive:</span>
-                                <span>Maz Islam JP, Managing Director</span>
+                                <span>Maz Islam JP, Founder &amp; Director</span>
                             </div>
                         </div>
 

@@ -63,7 +63,7 @@ export default function LiverpoolFairfield() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering Services</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            High-capacity dining, multi-generational family value, and certified kitchen compliance tailored for Liverpool and Fairfield's bustling community club precincts.
+                            High-capacity dining, multi-generational family value, and rigorous kitchen compliance tailored for Liverpool and Fairfield's bustling community club precincts.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -97,7 +97,7 @@ export default function LiverpoolFairfield() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Zero Food Safety Breach:</strong> Audited by Maz Islam under accredited HACCP guidelines.</span>
+                                    <span><strong>Food Safety First:</strong> HACCP-based systems overseen by Maz Islam.</span>
                                 </li>
                             </ul>
                         </div>

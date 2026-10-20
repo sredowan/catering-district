@@ -15,7 +15,7 @@ const FAQS = [
     },
     {
         question: "How does contract catering protect the Club Board's governance?",
-        answer: "By contractually transferring employer liabilities, WHS responsibilities, and day-to-day food safety compliance to a professional, accredited operator with specialized operational systems."
+        answer: "By contractually transferring employer liabilities, WHS responsibilities, and day-to-day food safety compliance to a professional operator with specialised operational systems."
     }
 ];
 
@@ -68,7 +68,7 @@ export default function InHouseVsContractCatering() {
                     <div className="flex flex-wrap items-center gap-4 text-xs text-[#19355e]/70 pb-6 border-b border-[#19355e]/10">
                         <span className="flex items-center gap-1 font-medium">
                             <User className="w-3.5 h-3.5 text-[#64620B]" />
-                            Maz Islam, JP &amp; Food Safety Auditor
+                            Maz Islam, JP · Founder &amp; Director
                         </span>
                         <span>•</span>
                         <span className="flex items-center gap-1">
@@ -106,19 +106,19 @@ export default function InHouseVsContractCatering() {
                     </p>
                     <ul className="space-y-2 list-disc pl-6 text-sm">
                         <li><strong>Fixed Labour Costs:</strong> Head chefs, sous chefs, and kitchen attendants are permanent club employees. When trade drops due to poor weather or midweek lulls, wages remain fixed.</li>
-                        <li><strong>Award Penalties:</strong> Under the Registered Clubs Award [MA000058], weekend and public holiday penalty rates push kitchen wage costs up to 32% higher than standalone restaurants.</li>
+                        <li><strong>Award Penalties:</strong> Under the Registered Clubs Award, weekend and public holiday penalty rates push kitchen wage costs up to 32% higher than standalone restaurants.</li>
                         <li><strong>Recruitment Fatigue:</strong> In an industry with severe chef shortages, finding and retaining talented culinary staff drains hours of GM and HR time.</li>
                         <li><strong>Procurement Squeeze:</strong> Single-venue clubs lack the bargaining power to secure wholesale tier-one supplier rebates, resulting in food costs escalating past 36%.</li>
                     </ul>
 
                     <h2 className="text-2xl font-serif text-[#19355e] pt-4">How Contract Catering Restructures the Equation</h2>
                     <p>
-                        Contract catering is not merely outsourcing cooking; it is a structured financial risk transfer. When a club engages an accredited operator like Catering District, the financial dynamic shifts:
+                        Contract catering is not merely outsourcing cooking; it is a structured financial risk transfer. When a club engages a specialist operator like Catering District, the financial dynamic shifts:
                     </p>
                     <ul className="space-y-2 list-disc pl-6 text-sm">
                         <li><strong>Labour Liability Transferred:</strong> Staff are employed directly by the caterer, removing workers comp, leave accruals, and unfair dismissal exposures from the club balance sheet.</li>
                         <li><strong>Predictable Revenue:</strong> Under a turnover lease or hybrid agreement, the club receives a predictable return on food turnover rather than absorbing weekly losses.</li>
-                        <li><strong>Accredited Food Safety:</strong> Operations are audited by certified HACCP auditors, giving the board absolute confidence during local council health inspections.</li>
+                        <li><strong>Food Safety Responsibility:</strong> Day-to-day HACCP-based food safety management sits with the caterer, giving the board greater confidence during local council health inspections.</li>
                     </ul>
 
                     <h2 className="text-2xl font-serif text-[#19355e] pt-4">Key Questions for the Next Board Meeting</h2>
@@ -136,7 +136,7 @@ export default function InHouseVsContractCatering() {
                 <div className="mt-12 p-8 bg-[#fafaf8] border border-[#19355e]/10 rounded-2xl text-center">
                     <h3 className="text-xl font-serif mb-2 text-[#19355e]">Request a Confidential Board Appraisal</h3>
                     <p className="text-sm text-[#19355e]/70 max-w-lg mx-auto mb-6">
-                        Maz Islam regularly assists Club General Managers and Boards with independent operational reviews and contract feasibility comparisons.
+                        Maz Islam offers Club General Managers and Boards independent operational reviews and contract feasibility comparisons.
                     </p>
                     <button
                         onClick={() => setIsBookingOpen(true)}

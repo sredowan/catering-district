@@ -67,7 +67,7 @@ export default function BowlingClubs() {
                             <span className="italic font-normal text-[#ffda8d]">&amp; Bowlo Bistro Operations</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            We transform bowling club bistros into thriving community hubs. From tournament mornings to sunny weekend barefoot bowls, we drive foot traffic and eliminate kitchen subsidies.
+                            We transform bowling club bistros into thriving community hubs. From tournament mornings to sunny weekend barefoot bowls, we work to drive foot traffic and reduce kitchen losses.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -93,7 +93,7 @@ export default function BowlingClubs() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Zero Food Losses:</strong> Protect club reserves by transferring kitchen overheads to Catering District.</span>
+                                    <span><strong>Protect Club Reserves:</strong> Transfer kitchen overheads to Catering District.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

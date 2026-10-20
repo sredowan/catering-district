@@ -65,7 +65,7 @@ const defaultData: SiteData = {
     },
     about: {
         heading: "Transforming underperforming club kitchens into profitable, compliant, member-favourite operations.",
-        description: "Catering District specialises in full-service contract catering, bistro management, and commercial food & beverage operations for registered clubs across New South Wales. Led by Maz Islam, JP (19+ years experience, Certified HACCP Food Safety Auditor), we help Club CEOs, General Managers, and Boards eliminate kitchen subsidies, maintain strict regulatory compliance, and delight club members.",
+        description: "Catering District specialises in full-service contract catering, bistro management, and commercial food & beverage operations for registered clubs across New South Wales. Led by Maz Islam, JP (19+ years experience), we help Club CEOs, General Managers, and Boards reduce kitchen losses, stay on top of regulatory compliance, and delight club members.",
     },
     services: [
         {
@@ -78,12 +78,12 @@ const defaultData: SiteData = {
             id: "contract-catering",
             title: "Contract Catering & Tenders",
             description: "Commercially sustainable catering partnerships designed for club procurement committees, GMs, and formal EOI/tender evaluations.",
-            items: ["Formal tender & EOI responses", "Transparent commercial agreements", "Subsidies reduction framework", "Experienced brigade staffing", "Award-compliant rostering", "KPI-backed service delivery"]
+            items: ["Formal tender & EOI responses", "Transparent commercial agreements", "Subsidies reduction framework", "Experienced brigade staffing", "Award-compliant rostering", "Clear service KPIs"]
         },
         {
             id: "kitchen-compliance",
             title: "Kitchen Management & Compliance",
-            description: "End-to-end commercial kitchen oversight, food safety audits, HACCP protocol implementation, and NSW Food Authority compliance.",
+            description: "End-to-end commercial kitchen oversight, internal food safety checks, HACCP protocol implementation, and NSW Food Authority compliance.",
             items: ["HACCP food safety systems", "NSW Food Authority compliance", "Workplace health & safety audits", "Waste minimization & cost control", "Registered Clubs Award rostering", "Executive board reporting"]
         }
     ],
@@ -130,7 +130,7 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
                 }
 
                 // Ensure about section uses the canonical executive bio phrasing
-                if (!parsed.about?.description?.includes('Led by Maz Islam, JP (19+ years experience, Certified HACCP Food Safety Auditor)')) {
+                if (!parsed.about?.description?.includes('Led by Maz Islam, JP (19+ years experience), we help')) {
                     merged.about = defaultData.about;
                 }
                 

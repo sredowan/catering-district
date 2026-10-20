@@ -64,7 +64,7 @@ export default function ProfitableClubBistro() {
                     <div className="flex flex-wrap items-center gap-4 text-xs text-[#19355e]/70 pb-6 border-b border-[#19355e]/10">
                         <span className="flex items-center gap-1 font-medium">
                             <User className="w-3.5 h-3.5 text-[#64620B]" />
-                            Maz Islam, JP &amp; Food Safety Auditor
+                            Maz Islam, JP · Founder &amp; Director
                         </span>
                         <span>•</span>
                         <span className="flex items-center gap-1">
@@ -97,7 +97,7 @@ export default function ProfitableClubBistro() {
 
                     <h2 className="text-2xl font-serif text-[#19355e] pt-4">2. Navigating the 32% Award Penalty Squeeze</h2>
                     <p>
-                        The Registered Clubs Award [MA000058] imposes substantial penalty multipliers for weekend, evening, and public holiday work. Profitable operators do not fight the award; they engineer around it:
+                        The Registered Clubs Award imposes substantial penalty multipliers for weekend, evening, and public holiday work. Profitable operators do not fight the award; they engineer around it:
                     </p>
                     <ul className="space-y-2 list-disc pl-6 text-sm">
                         <li><strong>Batch Prep at Base Rates:</strong> High-labor tasks (sauces, jus, peeling, crumbing, smoking) are performed during standard weekday morning shifts when base pay applies.</li>

@@ -11,7 +11,7 @@ const FAQS = [
     },
     {
         question: "How does Catering District support Western Sydney clubs?",
-        answer: "We provide complete kitchen outsourcing, turnkey bistro operations, and award-compliant rostering to mitigate penalty rates while maintaining 7-day high-volume service."
+        answer: "We provide complete kitchen outsourcing, turnkey bistro operations, and award-compliant rostering to manage penalty rates while maintaining high-volume service."
     }
 ];
 
@@ -89,7 +89,7 @@ export default function WesternSydney() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>High Cover Velocity:</strong> Operating kitchens capable of serving 500+ covers during peak weekend shifts.</span>
+                                    <span><strong>High Cover Velocity:</strong> Kitchens set up for busy peak weekend shifts.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

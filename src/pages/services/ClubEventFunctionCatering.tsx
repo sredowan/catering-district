@@ -11,7 +11,7 @@ const FAQS = [
     },
     {
         question: "Can Catering District handle barefoot bowls catering packages?",
-        answer: "Yes. Barefoot bowls is a proven gateway for community and corporate bookings at bowling and recreation clubs. We offer gourmet barbecue platters, grazing tables, pizza ovens, and craft burger stations that convert casual weekend players into repeat club visitors."
+        answer: "Yes. Barefoot bowls is a popular gateway for community and corporate bookings at bowling and recreation clubs. We offer gourmet barbecue platters, grazing tables, pizza ovens, and craft burger stations that convert casual weekend players into repeat club visitors."
     },
     {
         question: "Do you provide sensitive catering for wakes and memorial services?",
@@ -99,7 +99,7 @@ export default function ClubEventFunctionCatering() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Auditorium Banquets &amp; Presentation Dinners:</strong> 2-course and 3-course alternate drops for up to 500 guests.</span>
+                                    <span><strong>Auditorium Banquets &amp; Presentation Dinners:</strong> 2-course and 3-course alternate drops for large seated events.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
