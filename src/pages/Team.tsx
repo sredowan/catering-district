@@ -8,7 +8,7 @@ export default function Team() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Our Team — Meet the Leaders of Catering District"
-                description="Meet Chef Maz Islam (Founder & Director) and Kimberly May Abing (Operations & Logistics Manager) — the professionals behind Catering District's excellence."
+                description="Meet the owner-led team behind Catering District: Chef Maz Islam (Founder), Kimberly May Abing (Operations, Administration & Front of House Manager), consultant Mitch Walton and our Back of House team."
                 path="/team"
                 ogImage="/images/maz-portrait.jpeg"
                 jsonLd={[
@@ -18,15 +18,15 @@ export default function Team() {
                     ]),
                     personSchema({
                         name: 'Maz Islam',
-                        jobTitle: 'Founder & Director',
+                        jobTitle: 'Founder & Managing Director',
                         image: '/images/maz-portrait.jpeg',
-                        description: 'With 19+ years in the hospitality and catering industry, Maz is the visionary behind Catering District Pty Ltd.',
+                        description: 'With 19+ years in hospitality and catering, Maz Islam is the founder of Catering District Pty Ltd and leads every partnership personally.',
                     }),
                     personSchema({
                         name: 'Kimberly May Abing',
-                        jobTitle: 'Operations & Logistics Manager',
+                        jobTitle: 'Operations, Administration & Front of House Manager',
                         image: '/images/kim-portrait.png',
-                        description: 'With 10+ years in Operations and Human Resources, Kim ensures seamless execution of all Catering District operations.',
+                        description: 'Kimberly oversees HR administration, recruitment, rostering, procurement, inventory and operational coordination at Catering District.',
                     }),
                 ]}
             />
@@ -41,10 +41,10 @@ export default function Team() {
                     >
                         <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-3">Our People</p>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.1] mb-4 tracking-tight">
-                            The Team Behind Catering District
+                            Experienced People. Dedicated Service.
                         </h1>
                         <p className="text-[15px] text-[#19355e]/60 font-light max-w-2xl leading-relaxed">
-                            Meet the dedicated professionals who bring passion, expertise, and operational excellence to every venue we manage.
+                            An owner-led team with real hospitality experience, personally committed to the clubs and communities we work with.
                         </p>
                     </motion.div>
                 </div>
@@ -65,7 +65,7 @@ export default function Team() {
                             <div className="relative h-full min-h-[400px] rounded-xl overflow-hidden">
                                 <img
                                     src="/images/maz-portrait.jpeg"
-                                    alt="Maz Islam - Founder & Director"
+                                    alt="Maz Islam - Founder & Managing Director"
                                     className="w-full h-full object-cover object-center"
                                     loading="lazy"
                                 />
@@ -74,7 +74,7 @@ export default function Team() {
                                 {/* Name overlay at bottom */}
                                 <div className="absolute bottom-0 left-0 right-0 p-6">
                                     <p className="text-2xl font-serif text-[#ffffff] mb-1">Maz Islam</p>
-                                    <p className="text-xs uppercase tracking-[0.2em] text-[#ffffff]/60 font-medium">Founder & Director</p>
+                                    <p className="text-xs uppercase tracking-[0.2em] text-[#ffffff]/60 font-medium">Founder & Managing Director</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -94,29 +94,30 @@ export default function Team() {
                                     </div>
                                     <div>
                                         <h2 className="text-xl font-serif">Maz Islam</h2>
-                                        <p className="text-[11px] uppercase tracking-[0.2em] text-[#64620B] font-medium">Founder & Director</p>
+                                        <p className="text-[11px] uppercase tracking-[0.2em] text-[#64620B] font-medium">Founder & Managing Director</p>
                                     </div>
                                 </div>
 
                                 <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-4">
-                                    With a career that spans over 19+ years in the hospitality and catering
-                                    industry, Maz founded Catering District Pty Ltd in 2026. He brings
-                                    extensive experience in kitchen management, event coordination, and
-                                    large-scale catering, alongside founding Future Chefs and Industry
-                                    Placement Solutions.
+                                    With over 19 years of experience in hospitality and catering, Maz Islam is the
+                                    founder of Catering District Pty Ltd. His professional background includes
+                                    commercial kitchen management, hospitality operations, event coordination and
+                                    large-scale catering. Through Industry Placement Solutions he has supported
+                                    1,500+ students and 700+ placements across a network of 300+ industry venues.
                                 </p>
                                 <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-6">
                                     Chef Maz has successfully managed kitchens, led event coordination teams,
-                                    and delivered large-scale catering services at renowned venues such as
-                                    Five Dock RSL, Crossroads Hotel, and EBP RSL. He is committed to excellence,
-                                    ensuring that every event is delivered with culinary brilliance and seamless execution.
+                                    and delivered large-scale catering services at renowned venues, including
+                                    Moorebank Sports Club in collaboration with On Point Catering Solutions,
+                                    Crossroads Hotel and EBP RSL. His extensive experience has equipped him with
+                                    strong operational leadership, food service management and hospitality expertise.
                                 </p>
 
                                 {/* Key highlights */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     {[
                                         { icon: <Calendar className="w-4 h-4" />, text: '19+ Years in Hospitality' },
-                                        { icon: <Building2 className="w-4 h-4" />, text: 'Five Dock RSL, Crossroads Hotel' },
+                                        { icon: <Building2 className="w-4 h-4" />, text: 'Moorebank Sports Club, Crossroads Hotel' },
                                         { icon: <Award className="w-4 h-4" />, text: 'Kitchen Management Expert' },
                                         { icon: <Users className="w-4 h-4" />, text: 'Team Leadership & Training' },
                                     ].map((item, i) => (
@@ -160,7 +161,7 @@ export default function Team() {
                         transition={{ duration: 0.6 }}
                     >
                         <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-1">Kitchen Leadership</p>
-                        <p className="text-xl md:text-2xl font-serif text-[#19355e]">Where Precision Meets Passion</p>
+                        <p className="text-xl md:text-2xl font-serif text-[#19355e]">Hands-On. From Day One.</p>
                     </motion.div>
                 </div>
             </section>
@@ -184,30 +185,28 @@ export default function Team() {
                                     </div>
                                     <div>
                                         <h2 className="text-xl font-serif">Kimberly May Abing</h2>
-                                        <p className="text-[11px] uppercase tracking-[0.2em] text-[#64620B] font-medium">Operations & Logistics Manager</p>
+                                        <p className="text-[11px] uppercase tracking-[0.2em] text-[#64620B] font-medium">Operations, Administration & Front of House Manager</p>
                                     </div>
                                 </div>
 
                                 <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-4">
-                                    Kim leads Operations & Logistics, ensuring the smooth
-                                    execution of daily operations and efficient service delivery. With her
-                                    expertise in managing inventory, coordinating deliveries, and
-                                    overseeing on-site setups, she ensures every event runs seamlessly
-                                    from start to finish.
+                                    Kimberly oversees HR administration, recruitment, rostering, procurement,
+                                    inventory and operational coordination. She works closely with the Head Chef,
+                                    kitchen team, club management and beverage operations to ensure smooth daily
+                                    service, function coordination and efficient use of resources.
                                 </p>
                                 <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-6">
-                                    With over 10 years of experience in Operations
-                                    and Human Resources, Kim has developed an extensive
-                                    understanding of both operational management and human resource
-                                    coordination, making her an invaluable part of the Catering District leadership.
+                                    She also supports front of house operations, staff training, customer service,
+                                    facilities coordination and relief management as required, with over 10 years of
+                                    experience in operations and human resources behind her.
                                 </p>
 
                                 {/* Key highlights */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     {[
                                         { icon: <Briefcase className="w-4 h-4" />, text: '10+ Years in Operations & HR' },
-                                        { icon: <ClipboardList className="w-4 h-4" />, text: 'Inventory & Logistics Expert' },
-                                        { icon: <Calendar className="w-4 h-4" />, text: 'On-Site Setup Coordination' },
+                                        { icon: <ClipboardList className="w-4 h-4" />, text: 'Rostering, Procurement & Inventory' },
+                                        { icon: <Calendar className="w-4 h-4" />, text: 'Front of House & Functions' },
                                         { icon: <Users className="w-4 h-4" />, text: 'Human Resources Management' },
                                     ].map((item, i) => (
                                         <div key={i} className="flex items-center gap-2.5 text-[13px] text-[#19355e]/60">
@@ -232,7 +231,7 @@ export default function Team() {
                             <div className="relative h-full min-h-[400px] rounded-xl overflow-hidden bg-[#f0efe8]">
                                 <img
                                     src="/images/kim-portrait.png"
-                                    alt="Kimberly May Abing - Operations & Logistics Manager"
+                                    alt="Kimberly May Abing - Operations, Administration & Front of House Manager"
                                     className="w-full h-full object-cover object-top"
                                     loading="lazy"
                                 />
@@ -241,11 +240,67 @@ export default function Team() {
                                 {/* Name overlay at bottom */}
                                 <div className="absolute bottom-0 left-0 right-0 p-6">
                                     <p className="text-2xl font-serif text-[#ffffff] mb-1">Kimberly May Abing</p>
-                                    <p className="text-xs uppercase tracking-[0.2em] text-[#ffffff]/60 font-medium">Operations & Logistics Manager</p>
+                                    <p className="text-xs uppercase tracking-[0.2em] text-[#ffffff]/60 font-medium">Operations, Administration &amp; Front of House</p>
                                 </div>
                             </div>
                         </motion.div>
                     </div>
+                </div>
+            </section>
+
+            {/* ─── Mitch Walton + Back of House ─── */}
+            <section className="py-10 md:py-14 px-6">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <motion.div
+                        className="rounded-xl overflow-hidden border border-[#19355e]/6 bg-[#fafaf8] flex flex-col"
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <div className="aspect-[16/9] overflow-hidden">
+                            <img src="/images/mitch-portrait.jpg" alt="Mitch Walton, Hospitality Operations Consultant" className="w-full h-full object-cover object-[50%_25%]" loading="lazy" />
+                        </div>
+                        <div className="p-7 md:p-9">
+                        <h2 className="text-xl font-serif mb-1">Mitch Walton</h2>
+                        <p className="text-[11px] uppercase tracking-[0.2em] text-[#64620B] font-medium mb-4">Hospitality Operations Consultant</p>
+                        <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-4">
+                            As an external consultant, Mitch provides strategic and operational guidance to Catering District,
+                            working closely with clients, staff and stakeholders to support consistently high-quality catering.
+                            His practical knowledge, culinary expertise and leadership experience strengthen our ability to
+                            deliver efficient, reliable and customer-focused hospitality.
+                        </p>
+                        <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed">
+                            Mitch is the Managing Director of On Point Catering Solutions Pty Ltd, with over 20 years&apos;
+                            experience as a chef, including more than 15 years as an Executive Chef and contract caterer.
+                        </p>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        className="rounded-xl overflow-hidden border border-[#19355e]/6 bg-white flex flex-col"
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                    >
+                        <div className="aspect-[16/9] overflow-hidden">
+                            <img src="/images/team-meeting.jpg" alt="Chef Maz with the Catering District Back of House team" className="w-full h-full object-cover" loading="lazy" />
+                        </div>
+                        <div className="p-7 md:p-9">
+                            <h2 className="text-xl font-serif mb-1">Back of House Team</h2>
+                            <p className="text-[11px] uppercase tracking-[0.2em] text-[#64620B] font-medium mb-4">Chefs &amp; Kitchen Team</p>
+                            <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed mb-4">
+                                Our Back of House team brings experience across bistro dining, catering, events and high-volume
+                                hospitality, committed to quality, consistency and excellent presentation.
+                            </p>
+                            <p className="text-[14px] text-[#19355e]/65 font-light leading-relaxed">
+                                Supported by strong kitchen leadership, the team follows HACCP, food safety, hygiene and WHS
+                                requirements, with clear systems for food preparation, stock control, portioning, cost
+                                management and waste reduction.
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
@@ -264,10 +319,10 @@ export default function Team() {
                     </motion.div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {[
-                            { icon: <Award className="w-5 h-5" />, title: 'Excellence', desc: 'Highest standards in every delivery' },
-                            { icon: <Users className="w-5 h-5" />, title: 'Teamwork', desc: 'Collaborative, united approach' },
-                            { icon: <ChefHat className="w-5 h-5" />, title: 'Craft', desc: 'Culinary precision and creativity' },
-                            { icon: <Building2 className="w-5 h-5" />, title: 'Integrity', desc: 'Transparent and trustworthy' },
+                            { icon: <Award className="w-5 h-5" />, title: 'Personally Involved', desc: 'Owner-led and accessible' },
+                            { icon: <Users className="w-5 h-5" />, title: 'Member-First', desc: 'Welcoming, community hospitality' },
+                            { icon: <ChefHat className="w-5 h-5" />, title: 'Quality', desc: 'Consistent food and service' },
+                            { icon: <Building2 className="w-5 h-5" />, title: 'Accountability', desc: 'Clear responsibility, built on trust' },
                         ].map((val, i) => (
                             <motion.div
                                 key={i}
@@ -299,10 +354,10 @@ export default function Team() {
                     >
                         <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-3">Join Us</p>
                         <h2 className="text-2xl md:text-3xl font-serif font-light mb-3">
-                            Want to work with our team?
+                            Growing together
                         </h2>
                         <p className="text-[14px] text-[#19355e]/50 font-light mb-6 max-w-md mx-auto">
-                            We're always looking for passionate professionals to join Catering District.
+                            Whether you are a club looking for a partner or a hospitality professional who shares our values, we'd love to hear from you.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                             <Link to="/contact" className="inline-flex items-center gap-2 bg-[#19355e] text-[#ffffff] rounded-full px-7 py-3 text-xs uppercase tracking-[0.15em] hover:bg-[#0d2240] transition-colors duration-300 font-medium group">

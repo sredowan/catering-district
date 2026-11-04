@@ -15,7 +15,7 @@ const FAQS = [
     },
     {
         question: "Can you cater large auditorium events and memorial wakes?",
-        answer: "Yes. From 400-guest military association anniversary dinners to discreet, respectful wakes in member lounges, our brigade provides seamless banquet catering."
+        answer: "Yes. From 400-guest military association anniversary dinners to discreet, respectful wakes in member lounges, we provide careful, dignified banquet catering."
     }
 ];
 
@@ -32,7 +32,7 @@ export default function RslClubs() {
                 jsonLd={[
                     breadcrumbSchema([
                         { name: 'Home', url: '/' },
-                        { name: 'Clubs We Serve', url: '/clubs' },
+                        { name: 'Clubs We Support', url: '/clubs' },
                         { name: 'RSL & Memorial Clubs', url: '/clubs/rsl-clubs' },
                     ]),
                     serviceSchema({
@@ -67,7 +67,7 @@ export default function RslClubs() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering NSW</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            We understand the sacred traditions and community responsibilities of RSL clubs. We combine veteran respect and traditional hospitality with modern kitchen profitability.
+                            We understand the sacred traditions and community responsibilities of RSL clubs. We bring genuine respect for veterans and tradition, warm hospitality, and a commercially focused approach to the kitchen.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button

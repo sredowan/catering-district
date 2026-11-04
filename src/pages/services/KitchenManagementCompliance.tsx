@@ -69,7 +69,7 @@ export default function KitchenManagementCompliance() {
                             <span className="italic font-normal text-[#ffda8d]">&amp; HACCP Compliance</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            Reduce food safety risks and Fair Work exposure. Led by Maz Islam, JP (Diploma in Quality Auditing), we bring rigorous corporate compliance to licensed club kitchens.
+                            Food safety and fair rostering, done properly. Led by Maz Islam, JP (Diploma of Quality Auditing), we help licensed club kitchens stay safe, compliant and ready for inspection.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -123,7 +123,7 @@ export default function KitchenManagementCompliance() {
                         Protecting Club Directors &amp; <span className="italic">General Managers</span>
                     </h2>
                     <p className="text-base text-[#19355e]/70 mt-4 leading-relaxed">
-                        Under Australian food safety and workplace legislation, ignorance is no defense. We provide the institutional rigor necessary to keep your venue fully protected.
+                        Under Australian food safety and workplace legislation, ignorance is no defense. We bring the care and discipline needed to help keep your venue protected.
                     </p>
                 </div>
 

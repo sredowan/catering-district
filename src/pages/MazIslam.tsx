@@ -69,7 +69,7 @@ const DELIVERS = [
 
 const VENTURES = [
     {
-        role: 'Founder & Director',
+        role: 'Founder & Managing Director',
         org: 'Catering District Pty Ltd',
         period: '2026 — Present',
         url: 'https://cateringdistrict.com.au/',
@@ -85,7 +85,7 @@ const VENTURES = [
         period: '2023 — Present',
         url: 'https://futurechefs.com.au/',
         points: [
-            'Established and operates a Class 9B commercial kitchen facility.',
+            'Established and operates a purpose-built, 9B-compliant commercial training kitchen in Parramatta.',
             'Designed governance, WHS, and compliance systems from the ground up.',
             'Partners with RTOs and industry stakeholders for consistent utilisation.',
         ],
@@ -96,7 +96,7 @@ const VENTURES = [
         period: '2020 — 2025',
         url: 'https://ipsaustralia.com.au/',
         points: [
-            'Delivered workforce and training solutions across clubs and hospitality operators.',
+            'Connected RTOs, students and employers: 1,500+ students, 700+ placements, 300+ industry venues.',
             'Built compliance-driven induction and workforce readiness systems.',
             'Established reliable staffing pipelines through industry relationships.',
         ],
@@ -161,8 +161,8 @@ export default function MazIslam() {
     return (
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
-                title="Maz Islam — Founder & Director | Catering District"
-                description="Maz Islam JP, Founder & Director of Catering District Pty Ltd. 19+ years in club catering, commercial kitchen operations, and large-scale hospitality across NSW."
+                title="Maz Islam — Founder & Managing Director | Catering District"
+                description="Maz Islam JP, Founder & Managing Director of Catering District Pty Ltd. 19+ years in club catering, commercial kitchen operations, and large-scale hospitality across NSW."
                 path="/about/maz-islam"
                 ogImage="/images/maz-portrait.jpeg"
                 ogType="profile"
@@ -174,10 +174,10 @@ export default function MazIslam() {
                     ]),
                     personSchema({
                         name: 'Maz Islam',
-                        jobTitle: 'Founder & Director',
+                        jobTitle: 'Founder & Managing Director',
                         image: '/images/maz-portrait.jpeg',
                         description:
-                            'Hospitality executive and club catering specialist with 19+ years across clubs, large-scale catering, and commercial kitchen operations in NSW. Founder & Director of Catering District Pty Ltd.',
+                            'Hospitality executive and club catering specialist with 19+ years across clubs, large-scale catering, and commercial kitchen operations in NSW. Founder & Managing Director of Catering District Pty Ltd.',
                     }),
                 ]}
             />
@@ -207,7 +207,7 @@ export default function MazIslam() {
                             transition={{ duration: 0.7 }}
                         >
                             <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-5">
-                                Founder &amp; Director
+                                Founder &amp; Managing Director
                             </p>
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-[0.95] tracking-tight mb-6">
                                 Maz Islam
@@ -251,7 +251,7 @@ export default function MazIslam() {
                                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-[#fafaf8]">
                                     <img
                                         src="/images/maz-portrait.jpeg"
-                                        alt="Maz Islam, Founder & Director of Catering District"
+                                        alt="Maz Islam, Founder & Managing Director of Catering District"
                                         className="w-full h-full object-cover object-center"
                                         width={800}
                                         height={1000}
@@ -303,16 +303,24 @@ export default function MazIslam() {
                                     Aligning food &amp; beverage performance with board-level expectations.
                                 </h2>
                                 <p className="text-[15px] text-[#19355e]/65 font-light leading-relaxed mb-5">
-                                    With a career spanning over 19 years in hospitality and catering, Maz is the
-                                    visionary behind Catering District Pty Ltd. His experience across kitchen
-                                    management, event coordination, and large-scale catering has established the
-                                    company as a trusted name in the industry.
+                                    With over 19 years of experience in hospitality and catering, Maz Islam is the
+                                    founder of Catering District Pty Ltd. His professional background includes
+                                    commercial kitchen management, hospitality operations, event coordination and
+                                    large-scale catering.
                                 </p>
                                 <p className="text-[15px] text-[#19355e]/65 font-light leading-relaxed">
                                     Chef Maz has successfully managed kitchens, led event coordination teams, and
-                                    delivered large-scale catering at renowned venues including Five Dock RSL,
-                                    Crossroads Hotel, and EBP RSL. He is committed to excellence — ensuring every
-                                    event is delivered with culinary brilliance and seamless execution.
+                                    delivered large-scale catering at renowned venues, including Moorebank Sports
+                                    Club in collaboration with On Point Catering Solutions, Crossroads Hotel and
+                                    EBP RSL. His extensive experience has equipped him with strong operational
+                                    leadership, food service management and hospitality expertise.
+                                </p>
+                                <p className="text-[15px] text-[#19355e]/65 font-light leading-relaxed mt-4">
+                                    Maz has also played a key role in establishing businesses that support Australia&apos;s
+                                    hospitality and vocational education sectors. Through Industry Placement Solutions he
+                                    has helped connect RTOs, students and industry employers, supporting 1,500+ students,
+                                    700+ placements and a network of 300+ industry venues. He is also involved with Future
+                                    Chefs, a purpose-built, 9B-compliant commercial training kitchen in Parramatta.
                                 </p>
                             </div>
 

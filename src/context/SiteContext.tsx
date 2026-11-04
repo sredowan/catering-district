@@ -47,6 +47,9 @@ export type SiteData = {
     about: AboutData;
 };
 
+// Bump whenever default copy changes so cached copies in visitors' browsers are replaced.
+const CONTENT_VERSION = 2;
+
 const defaultData: SiteData = {
     socialLinks: {
         instagram: "https://instagram.com",
@@ -61,24 +64,24 @@ const defaultData: SiteData = {
     hero: {
         images: ["/images/1.jpeg", "/images/2.jpeg", "/images/3.jpeg", "/images/4.jpeg"],
         heading: "Catering District",
-        subheading: "NSW Club Catering & Contract Hospitality Operations",
+        subheading: "Owner-led club catering, community hospitality and operational accountability.",
     },
     about: {
-        heading: "Transforming underperforming club kitchens into profitable, compliant, member-favourite operations.",
-        description: "Catering District specialises in full-service contract catering, bistro management, and commercial food & beverage operations for registered clubs across New South Wales. Led by Maz Islam, JP (19+ years experience), we help Club CEOs, General Managers, and Boards reduce kitchen losses, stay on top of regulatory compliance, and delight club members.",
+        heading: "Hospitality Is Personal to Us.",
+        description: "Catering District was founded on a belief that great club hospitality deserves more than a standard catering arrangement. It deserves people who listen, understand the venue, take responsibility and genuinely care about the outcome. Our ambition is to build meaningful, long-term partnerships with clubs through experienced leadership, reliable operations and personal involvement.",
     },
     services: [
         {
             id: "club-catering",
             title: "Club Catering Operations",
-            description: "Complete bistro, cafe, and dining management tailored to licensed clubs, RSLs, bowlos, and sporting venues across NSW.",
-            items: ["Full kitchen operations", "Member bistro & dining", "Daily service management", "High-volume ticket pacing", "Menu engineering & margin control", "Community & member engagement"]
+            description: "Hands-on bistro, cafe and dining management for licensed clubs, RSLs, bowlos and sporting venues, built around your members.",
+            items: ["Full kitchen operations", "Member bistro & dining", "Daily service management", "Consistent quality & reliable service", "Menu engineering & margin control", "Community & member engagement"]
         },
         {
             id: "contract-catering",
             title: "Contract Catering & Tenders",
-            description: "Commercially sustainable catering partnerships designed for club procurement committees, GMs, and formal EOI/tender evaluations.",
-            items: ["Formal tender & EOI responses", "Transparent commercial agreements", "Subsidies reduction framework", "Experienced brigade staffing", "Award-compliant rostering", "Clear service KPIs"]
+            description: "Long-term catering partnerships built on trust, transparency and a commercially focused approach, including formal EOI and tender responses.",
+            items: ["Formal tender & EOI responses", "Transparent commercial agreements", "A commercially focused approach", "Experienced kitchen teams", "Award-compliant rostering", "Clear service KPIs"]
         },
         {
             id: "kitchen-compliance",
@@ -129,9 +132,9 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
                     }
                 }
 
-                // Ensure about section uses the canonical executive bio phrasing
-                if (!parsed.about?.description?.includes('Led by Maz Islam, JP (19+ years experience), we help')) {
-                    merged.about = defaultData.about;
+                // Site copy changed: drop the visitor's cached copy so they see the current wording.
+                if (parsed.contentVersion !== CONTENT_VERSION) {
+                    return defaultData;
                 }
                 
                 // Self-heal: Deduplicate services by title to clean up accidental cache duplicates

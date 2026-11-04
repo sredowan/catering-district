@@ -68,7 +68,7 @@ export default function InHouseVsContractCatering() {
                     <div className="flex flex-wrap items-center gap-4 text-xs text-[#19355e]/70 pb-6 border-b border-[#19355e]/10">
                         <span className="flex items-center gap-1 font-medium">
                             <User className="w-3.5 h-3.5 text-[#64620B]" />
-                            Maz Islam, JP · Founder &amp; Director
+                            Maz Islam, JP · Founder &amp; Managing Director
                         </span>
                         <span>•</span>
                         <span className="flex items-center gap-1">

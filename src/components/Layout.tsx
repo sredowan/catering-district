@@ -28,7 +28,7 @@ function Navbar() {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#ffffff] text-[#19355e] shadow-md border-b border-[#19355e]/10 transition-all duration-300 h-[60px] md:h-[70px]">
             <div className="px-4 h-full md:px-6 lg:px-8 max-w-7xl mx-auto flex justify-between items-center relative z-50">
                 <Link to="/" className="flex items-center h-full py-2 shrink-0 mr-4" onClick={() => setIsOpen(false)}>
-                    <img src="/logo-wide.png" alt="Catering District - Premier Club Catering Sydney" className="w-auto h-full max-h-[38px] md:max-h-[48px] object-contain drop-shadow-sm" />
+                    <img src="/logo-wide.png" alt="Catering District - Owner-Led Club Catering" className="w-auto h-full max-h-[38px] md:max-h-[48px] object-contain drop-shadow-sm" />
                 </Link>
                 
                 {/* Desktop Menu */}
@@ -45,10 +45,10 @@ function Navbar() {
                                     Our Story &amp; Values
                                 </Link>
                                 <Link to="/about/maz-islam" className="block px-4 py-2.5 text-[11px] tracking-[0.12em] text-[#19355e]/80 hover:text-[#64620B] hover:bg-[#fafaf8] transition-colors">
-                                    Maz Islam — Founder &amp; JP
+                                    Maz Islam — Founder
                                 </Link>
                                 <Link to="/team" className="block px-4 py-2.5 text-[11px] tracking-[0.12em] text-[#19355e]/80 hover:text-[#64620B] hover:bg-[#fafaf8] transition-colors">
-                                    Executive Team
+                                    Our Team
                                 </Link>
                                 <Link to="/gallery" className="block px-4 py-2.5 text-[11px] tracking-[0.12em] text-[#19355e]/80 hover:text-[#64620B] hover:bg-[#fafaf8] transition-colors">
                                     Culinary Gallery
@@ -240,7 +240,7 @@ function Navbar() {
                         <div className="flex flex-col space-y-2 pl-3 border-l border-white/15 text-xs text-white/80">
                             <Link to="/about" className="hover:text-white" onClick={() => setIsOpen(false)}>Our Story</Link>
                             <Link to="/about/maz-islam" className="hover:text-white" onClick={() => setIsOpen(false)}>Maz Islam JP (Founder)</Link>
-                            <Link to="/team" className="hover:text-white" onClick={() => setIsOpen(false)}>Executive Team</Link>
+                            <Link to="/team" className="hover:text-white" onClick={() => setIsOpen(false)}>Our Team</Link>
                             <Link to="/gallery" className="hover:text-white" onClick={() => setIsOpen(false)}>Culinary Gallery</Link>
                             <Link to="/insights" className="hover:text-white" onClick={() => setIsOpen(false)}>Executive Insights &amp; Guides</Link>
                             <Link to="/contact" className="hover:text-white" onClick={() => setIsOpen(false)}>Contact Us</Link>
@@ -293,13 +293,13 @@ function Footer() {
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                         <div>
                             <span className="text-[#ffda8d] text-xs uppercase tracking-[0.25em] font-semibold mb-2 block">
-                                Direct Board &amp; Executive Procurement
+                                Your Club. Our Commitment.
                             </span>
                             <h3 className="font-serif text-3xl md:text-4xl mb-3 tracking-tight">
-                                Ready to Transform Your Club Dining Operations?
+                                A Partnership Worth Building.
                             </h3>
                             <p className="text-[#ffffff]/60 font-light text-sm md:text-base max-w-xl leading-relaxed">
-                                Partner with Catering District for benchmark compliance, profitable bistro revenue shares, and bespoke dining that keeps club members loyal.
+                                Owner-led club catering with 19+ years of hands-on experience behind it. Talk to Maz about your club, your members and what you'd like your hospitality to become.
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-3 shrink-0">
@@ -329,12 +329,12 @@ function Footer() {
                     <div className="lg:col-span-3">
                         <img src="/logo-white.png" alt="Catering District" className="h-12 w-auto mb-5 opacity-95 object-contain" />
                         <p className="text-xs text-[#ffffff]/60 font-light leading-relaxed mb-6">
-                            NSW club catering, contract dining management, and bistro hospitality partner. Led by Maz Islam, JP (19+ years experience).
+                            Your Club. Our Commitment. Owner-led club catering, community hospitality and operational accountability, led by Maz Islam with 19+ years of hospitality experience.
                         </p>
                         <div className="space-y-2.5 mb-6 text-xs text-white/70">
                             <div className="flex items-center gap-2">
-                                <span className="text-[#ffda8d] font-semibold">Executive:</span>
-                                <span>Maz Islam JP, Founder &amp; Director</span>
+                                <span className="text-[#ffda8d] font-semibold">Founder:</span>
+                                <span>Maz Islam JP, Founder &amp; Managing Director</span>
                             </div>
                         </div>
 

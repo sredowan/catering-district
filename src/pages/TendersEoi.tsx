@@ -7,7 +7,7 @@ import SEO, { breadcrumbSchema, serviceSchema, faqSchema } from '../components/S
 const FAQS = [
     {
         question: "How quickly can Catering District respond to an active Club Catering EOI or Tender?",
-        answer: "We typically submit comprehensive, fully compliant tender responses within 7 to 14 business days. For urgent situations (such as sudden caterer liquidation or abandonment), our rapid-response team can review venue specifications and submit a commercial transition plan within 72 hours."
+        answer: "We aim to submit comprehensive, fully compliant tender responses within 7 to 14 business days. For urgent situations (such as sudden caterer liquidation or abandonment), Maz can review venue specifications and submit a commercial transition plan within 72 hours."
     },
     {
         question: "What information is included in your formal tender submission?",
@@ -106,7 +106,7 @@ export default function TendersEoi() {
                             <span className="italic font-normal text-[#ffda8d]">EOI Submissions NSW</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            Is your Board or Management Committee going to market for a club caterer? Catering District delivers institutional-grade, commercially verified tender responses tailored to your club's charter.
+                            Is your Board or Management Committee going to market for a club caterer? We'd welcome the chance to be considered. Maz prepares every response personally, tailored to your club, your members and your community.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
@@ -120,7 +120,7 @@ export default function TendersEoi() {
                                 onClick={() => setIsBookingOpen(true)}
                                 className="inline-flex items-center justify-center space-x-3 border border-white/30 text-white px-8 py-4 text-xs uppercase tracking-[0.15em] hover:bg-white/10 transition-all rounded-sm cursor-pointer"
                             >
-                                <span>Request Capability Statement</span>
+                                <span>Explore a Partnership</span>
                                 <ArrowRight className="w-4 h-4" />
                             </button>
                         </div>
@@ -160,7 +160,7 @@ export default function TendersEoi() {
                         The Tender Evaluation <span className="italic">Framework</span>
                     </h2>
                     <p className="text-base text-[#19355e]/70 mt-4 leading-relaxed">
-                        We respect the rigorous standards required by Club Boards, Chief Executives, and independent tender consultancies (such as Future Food Strategy and Tully Heard).
+                        We respect the standards Club Boards, Chief Executives and independent tender consultants expect, and prepare every part of our response with care.
                     </p>
                 </div>
 
@@ -201,7 +201,7 @@ export default function TendersEoi() {
                         </div>
                         <h3 className="text-lg font-serif mb-2 text-[#19355e]">Smooth Transition Plan</h3>
                         <p className="text-xs text-[#19355e]/70 leading-relaxed">
-                            Structured 30-day changeover plan designed to minimise disruption for members, full staff transfer protocols, and instant HACCP rollout.
+                            Structured 30-day changeover plan designed to minimise disruption for members, clear staff transfer arrangements, and HACCP-based food safety from day one.
                         </p>
                     </div>
                 </div>
@@ -211,12 +211,12 @@ export default function TendersEoi() {
             <section id="eoi-form" className="py-20 px-6 bg-[#fafaf8] border-y border-[#19355e]/10">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-12">
-                        <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-2 block">Direct Procurement Desk</span>
+                        <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-2 block">Your Club. Our Commitment.</span>
                         <h2 className="text-3xl md:text-4xl font-serif font-light mb-4">
                             Invite Catering District to Your <span className="italic">EOI / Tender</span>
                         </h2>
                         <p className="text-sm text-[#19355e]/70 max-w-lg mx-auto">
-                            Submit your tender brief details below for an immediate, confidential response from Maz Islam.
+                            Share your tender brief below and Maz Islam will respond personally and in confidence.
                         </p>
                     </div>
 
@@ -236,7 +236,7 @@ export default function TendersEoi() {
                                 <ul className="text-xs text-[#19355e]/70 space-y-1.5 list-disc list-inside">
                                     <li>Maz Islam, JP will conduct an initial review within 24 hours.</li>
                                     <li>Confidential NDA execution available immediately upon request.</li>
-                                    <li>Expedited 72-hour board-ready tender responses available.</li>
+                                    <li>Happy to meet your Board or evaluation committee in person.</li>
                                 </ul>
                             </div>
                             <div className="pt-2">
@@ -352,7 +352,7 @@ export default function TendersEoi() {
                     {/* Direct Contact Bar */}
                     <div className="mt-12 p-6 bg-white rounded-xl border border-[#19355e]/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
                         <div>
-                            <h4 className="font-serif font-medium text-base text-[#19355e]">Prefer direct executive contact?</h4>
+                            <h4 className="font-serif font-medium text-base text-[#19355e]">Prefer to talk directly?</h4>
                             <p className="text-xs text-[#19355e]/70">Contact Maz Islam directly for urgent tender questions.</p>
                         </div>
                         <div className="flex items-center gap-6">

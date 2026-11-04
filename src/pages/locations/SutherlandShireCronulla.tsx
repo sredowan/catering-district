@@ -63,7 +63,7 @@ export default function SutherlandShireCronulla() {
                             <span className="italic font-normal text-[#ffda8d]">&amp; Cronulla Club Catering</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            Elevating coastal club dining across Cronulla, Caringbah, and Gymea. From relaxed oceanfront surf clubs to prestigious RSLs and community bowlos.
+                            Genuine, community-focused club dining for Cronulla, Caringbah and Gymea. From relaxed oceanfront surf clubs to prestigious RSLs and community bowlos.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -85,7 +85,7 @@ export default function SutherlandShireCronulla() {
 
                     <div className="lg:col-span-5">
                         <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
-                            <h3 className="text-xl font-serif mb-4 text-[#ffda8d]">Shire Catering Excellence</h3>
+                            <h3 className="text-xl font-serif mb-4 text-[#ffda8d]">Shire Catering Focus</h3>
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

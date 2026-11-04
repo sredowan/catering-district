@@ -41,7 +41,7 @@ export default function ContractCatering() {
                     ]),
                     serviceSchema({
                         name: 'Contract Catering for Clubs & Hospitality Venues',
-                        description: 'Turnkey contract catering partnerships for licensed clubs and commercial venues across NSW.',
+                        description: 'Hands-on contract catering partnerships for licensed clubs and commercial venues across NSW.',
                         serviceType: 'Contract Catering',
                         url: '/services/contract-catering',
                     }),
@@ -66,14 +66,14 @@ export default function ContractCatering() {
                     <div className="lg:col-span-7">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#ffda8d] text-xs font-semibold uppercase tracking-wider mb-6">
                             <Briefcase className="w-3.5 h-3.5" />
-                            Commercial Partnership Models
+                            Long-Term Partnerships
                         </div>
                         <h1 className="text-4xl md:text-6xl font-serif font-light leading-tight mb-6">
                             Contract Catering <br />
                             <span className="italic font-normal text-[#ffda8d]">For NSW Clubs &amp; Venues</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            Eliminate the operational complexity and financial volatility of running an in-house kitchen. We take on the operational risk while you retain commercial clarity and member delight.
+                            A long-term catering partnership built on trust. We take on the day-to-day operational responsibility of your kitchen, with a commercially focused approach and clear, transparent agreements.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -95,7 +95,7 @@ export default function ContractCatering() {
 
                     <div className="lg:col-span-5">
                         <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
-                            <h3 className="text-xl font-serif mb-4 text-[#ffda8d]">The Contract Advantage</h3>
+                            <h3 className="text-xl font-serif mb-4 text-[#ffda8d]">What a Partnership Means</h3>
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

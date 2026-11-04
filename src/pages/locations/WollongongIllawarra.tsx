@@ -22,7 +22,7 @@ export default function WollongongIllawarra() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Wollongong & Illawarra Club Catering NSW — Catering District"
-                description="Specialised catering solutions for Wollongong, Shellharbour, and Illawarra registered clubs. Turnkey bistro operations, sports dining, and HACCP compliance."
+                description="Specialised catering solutions for Wollongong, Shellharbour, and Illawarra registered clubs. Hands-on bistro operations, sports dining, and HACCP compliance."
                 path="/locations/wollongong-illawarra-club-catering"
                 ogImage="/images/home-team.jpg"
                 jsonLd={[
@@ -34,7 +34,7 @@ export default function WollongongIllawarra() {
                     locationBusinessSchema({
                         suburb: 'Wollongong',
                         region: 'Illawarra & South Coast NSW',
-                        description: 'Turnkey club catering, sports club food operations, and tender management across Wollongong and Illawarra.',
+                        description: 'Hands-on club catering, sports club food operations, and tender management across Wollongong and Illawarra.',
                         path: '/locations/wollongong-illawarra-club-catering',
                     }),
                     faqSchema(FAQS),
@@ -63,7 +63,7 @@ export default function WollongongIllawarra() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering Services</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            Delivering high-volume bistro operations, traditional community hospitality, and sustainable commercial returns for Wollongong and Illawarra licensed clubs.
+                            Welcoming bistro dining, traditional community hospitality and a commercially focused approach for Wollongong and Illawarra licensed clubs.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -89,7 +89,7 @@ export default function WollongongIllawarra() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Community Sporting Focus:</strong> Rapid ticket pacing for pre-game and post-match crowds.</span>
+                                    <span><strong>Community Sporting Focus:</strong> Efficient ticket pacing for pre-game and post-match crowds.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

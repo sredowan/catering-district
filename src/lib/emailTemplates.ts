@@ -300,7 +300,7 @@ export function createTenderEoiClientEmail(data: {
                 <strong>Board-Ready Presentations:</strong> We provide full 3-year P&amp;L forecasting, Registered Clubs Award rostering models, and HACCP-based food safety plans.
             </li>
             <li>
-                <strong>Fast-Track Turnaround:</strong> For tight tender deadlines, our executive team can deliver comprehensive, board-ready submissions within <strong>72 hours</strong>.
+                <strong>Personally Prepared:</strong> Maz Islam reviews your brief himself and will work with your timeline, including tight tender deadlines.
             </li>
         </ul>
 

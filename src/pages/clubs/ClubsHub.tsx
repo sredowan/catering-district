@@ -28,7 +28,7 @@ const CLUB_TYPES = [
         title: "Leagues & Sporting Clubs",
         share: "24% of Industry",
         path: "/clubs/leagues-sports-clubs",
-        desc: "Rapid match-day ticket pacing, sports bar burgers, wood-fired pizzas, family dining specials, and seasonal presentation banquets.",
+        desc: "Match-day menus, sports bar burgers, wood-fired pizzas, family dining specials, and seasonal presentation banquets.",
         highlights: ["High-speed game day ticket pacing", "Sports bar & casual grill concepts", "Youth sports presentation nights"]
     }
 ];
@@ -37,14 +37,14 @@ export default function ClubsHub() {
     return (
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
-                title="Clubs We Serve — RSL, Bowling, Golf & Leagues Clubs NSW | Catering District"
+                title="Clubs We Support — RSL, Bowling, Golf & Leagues Clubs NSW | Catering District"
                 description="Specialised catering solutions for NSW licensed clubs. Discover our dedicated services for Bowling clubs, RSLs, Golf clubs, and Leagues clubs."
                 path="/clubs"
                 ogImage="/images/home-team.jpg"
                 jsonLd={[
                     breadcrumbSchema([
                         { name: 'Home', url: '/' },
-                        { name: 'Clubs We Serve', url: '/clubs' },
+                        { name: 'Clubs We Support', url: '/clubs' },
                     ])
                 ]}
             />
@@ -54,7 +54,7 @@ export default function ClubsHub() {
                 <div className="max-w-7xl mx-auto flex items-center space-x-2 text-xs text-[#19355e]/60">
                     <Link to="/" className="hover:text-[#64620B]">Home</Link>
                     <ChevronRight className="w-3 h-3" />
-                    <span className="text-[#19355e] font-medium">Clubs We Serve</span>
+                    <span className="text-[#19355e] font-medium">Clubs We Support</span>
                 </div>
             </div>
 
@@ -69,7 +69,7 @@ export default function ClubsHub() {
                         <span className="italic font-normal text-[#ffda8d]">Every NSW Registered Club</span>
                     </h1>
                     <p className="text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto">
-                        Different club types have entirely different membership profiles, peak operating hours, and community charters. We tailor our culinary and operational models to your specific venue.
+                        Every club has its own story, its own members and a community that makes it special. We take the time to understand yours and shape our approach around it.
                     </p>
                 </div>
             </section>

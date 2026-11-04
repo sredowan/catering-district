@@ -22,7 +22,7 @@ export default function Penrith() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Penrith Club Catering & Bistro Management NSW — Catering District"
-                description="Professional club catering across Penrith, Nepean, and the Blue Mountains foothills. Turnkey bistro operations, sports club presentation dinners, and tender responses."
+                description="Professional club catering across Penrith, Nepean, and the Blue Mountains foothills. Hands-on bistro operations, sports club presentation dinners, and tender responses."
                 path="/locations/penrith-club-catering"
                 ogImage="/images/home-team.jpg"
                 jsonLd={[
@@ -63,7 +63,7 @@ export default function Penrith() {
                             <span className="italic font-normal text-[#ffda8d]">&amp; Hospitality Operations</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            From riverside rowing and sports clubs to bustling community RSLs, we deliver fast, flavorful, and financially sustainable kitchen operations across the Nepean region.
+                            From riverside rowing and sports clubs to bustling community RSLs, we offer flavourful food, friendly service and financially sustainable kitchen partnerships across the Nepean region.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -89,11 +89,11 @@ export default function Penrith() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>High-Energy Sports Dining:</strong> Fast ticket velocity during local NRL game-days and community matches.</span>
+                                    <span><strong>High-Energy Sports Dining:</strong> Kitchens planned for busy NRL game-days and community matches.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Riverside Function Yields:</strong> Maximizing banquet revenues for weddings, corporate offsites, and regattas.</span>
+                                    <span><strong>Riverside Functions:</strong> Memorable banquets for weddings, corporate offsites, and regattas.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

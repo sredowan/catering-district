@@ -7,7 +7,7 @@ import SEO, { breadcrumbSchema, serviceSchema, faqSchema } from '../../component
 const FAQS = [
     {
         question: "How do you handle massive order surges before and after matches?",
-        answer: "Match days require specialised preparation. We pre-engineer high-speed game-day menus, stage prep stations, and deploy rapid multi-pass order firing so that hundreds of fans receive their meals before kick-off."
+        answer: "Match days require specialised preparation. We pre-engineer high-speed game-day menus, stage prep stations, and plan multi-pass order firing so fans receive their meals before kick-off."
     },
     {
         question: "What style of food works best for sports and leagues clubs?",
@@ -32,12 +32,12 @@ export default function LeaguesSportsClubs() {
                 jsonLd={[
                     breadcrumbSchema([
                         { name: 'Home', url: '/' },
-                        { name: 'Clubs We Serve', url: '/clubs' },
+                        { name: 'Clubs We Support', url: '/clubs' },
                         { name: 'Leagues & Sports Clubs', url: '/clubs/leagues-sports-clubs' },
                     ]),
                     serviceSchema({
                         name: 'Leagues & Sports Club Catering Services',
-                        description: 'Turnkey high-volume kitchen operations, sports bar catering, and match-day food services for NSW leagues and sporting clubs.',
+                        description: 'Hands-on high-volume kitchen operations, sports bar catering, and match-day food services for NSW leagues and sporting clubs.',
                         serviceType: 'Club Catering',
                         url: '/clubs/leagues-sports-clubs',
                     }),
@@ -67,7 +67,7 @@ export default function LeaguesSportsClubs() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering NSW</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            High-volume match day crowds demand rapid ticket delivery, electric sports bar energy, and family-friendly value. We power the kitchens behind NSW's busiest sporting clubs.
+                            Match day crowds deserve good food served quickly, a great sports bar atmosphere and family-friendly value. We bring the kitchen leadership to make it happen, week in, week out.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -93,7 +93,7 @@ export default function LeaguesSportsClubs() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Match Day Surge Speed:</strong> Rapid kitchen line design preventing pre-game queues.</span>
+                                    <span><strong>Match Day Surge Speed:</strong> Kitchen line design planned to keep pre-game queues moving.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

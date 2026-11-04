@@ -58,7 +58,7 @@ export default function InsightsHub() {
                 <div className="max-w-7xl mx-auto flex items-center space-x-2 text-xs text-[#19355e]/60">
                     <Link to="/" className="hover:text-[#64620B]">Home</Link>
                     <ChevronRight className="w-3 h-3" />
-                    <span className="text-[#19355e] font-medium">Executive Insights</span>
+                    <span className="text-[#19355e] font-medium">Insights</span>
                 </div>
             </div>
 
@@ -66,14 +66,14 @@ export default function InsightsHub() {
             <section className="py-20 px-6 bg-gradient-to-b from-[#0f2340] to-[#19355e] text-white">
                 <div className="max-w-4xl mx-auto text-center">
                     <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#ffda8d] mb-4 block">
-                        Executive Knowledge Hub
+                        Practical Guides
                     </span>
                     <h1 className="text-4xl md:text-6xl font-serif font-light leading-tight mb-6">
                         NSW Club Hospitality <br />
                         <span className="italic font-normal text-[#ffda8d]">Strategy, Margin &amp; Governance</span>
                     </h1>
                     <p className="text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto">
-                        In-depth operational analysis and regulatory roadmaps written specifically for Club General Managers, Secretary Managers, and Board Directors.
+                        Practical, plain-English guides from Maz Islam for Club General Managers, Secretary Managers and Board Directors.
                     </p>
                 </div>
             </section>

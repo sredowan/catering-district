@@ -15,7 +15,7 @@ const FAQS = [
     },
     {
         question: "Do you cater for special member promotions and seniors' deals?",
-        answer: "Yes. Mid-week seniors' lunches, member badge-draw dinner specials, kids-eat-free promotions, and themed steak nights are proven drivers of mid-week club visitation and beverage spend."
+        answer: "Yes. Mid-week seniors' lunches, member badge-draw dinner specials, kids-eat-free promotions, and themed steak nights are popular ways to bring members in mid-week."
     }
 ];
 
@@ -37,7 +37,7 @@ export default function BistroRestaurantManagement() {
                     ]),
                     serviceSchema({
                         name: 'Club Bistro & Restaurant Management',
-                        description: 'Turnkey club bistro management, menu engineering, kitchen operations, and high-volume member dining for NSW registered clubs.',
+                        description: 'Hands-on club bistro management, menu engineering, kitchen operations, and high-volume member dining for NSW registered clubs.',
                         serviceType: 'Bistro Management',
                         url: '/services/bistro-restaurant-management',
                     }),
@@ -69,7 +69,7 @@ export default function BistroRestaurantManagement() {
                             <span className="italic font-normal text-[#ffda8d]">Dining Room Management</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            Transforming club dining rooms into bustling community destinations. We deliver fresh, flavorful, high-volume dining that drives member loyalty and beverage revenue.
+                            Helping club dining rooms become places members love to return to: fresh, flavourful food, consistent quality and reliable service, from quiet weekday lunches to busy Saturday nights.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -91,7 +91,7 @@ export default function BistroRestaurantManagement() {
 
                     <div className="lg:col-span-5">
                         <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
-                            <h3 className="text-xl font-serif mb-4 text-[#ffda8d]">Bistro Performance Metrics</h3>
+                            <h3 className="text-xl font-serif mb-4 text-[#ffda8d]">What We Focus On</h3>
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Clock className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

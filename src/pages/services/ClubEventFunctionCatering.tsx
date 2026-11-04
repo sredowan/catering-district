@@ -37,7 +37,7 @@ export default function ClubEventFunctionCatering() {
                     ]),
                     serviceSchema({
                         name: 'Club Event & Function Catering',
-                        description: 'Turnkey event, banquet, conference, and private function catering for registered clubs and venues across NSW.',
+                        description: 'Hands-on event, banquet, conference, and private function catering for registered clubs and venues across NSW.',
                         serviceType: 'Event Catering',
                         url: '/services/club-event-function-catering',
                     }),
@@ -62,14 +62,14 @@ export default function ClubEventFunctionCatering() {
                     <div className="lg:col-span-7">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#ffda8d] text-xs font-semibold uppercase tracking-wider mb-6">
                             <PartyPopper className="w-3.5 h-3.5" />
-                            High-Margin Venue Activation
+                            Functions &amp; Celebrations
                         </div>
                         <h1 className="text-4xl md:text-6xl font-serif font-light leading-tight mb-6">
                             Club Event &amp; <br />
                             <span className="italic font-normal text-[#ffda8d]">Function Catering NSW</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            Unlock the true revenue potential of your club's function spaces. From barefoot bowls parties to 400-guest seated banquets, we maximize function room yields.
+                            Bring your club's function spaces to life. From barefoot bowls parties to seated presentation dinners, we plan every detail so your members and guests can simply enjoy the occasion.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -91,7 +91,7 @@ export default function ClubEventFunctionCatering() {
 
                     <div className="lg:col-span-5">
                         <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
-                            <h3 className="text-xl font-serif mb-4 text-[#ffda8d]">Function Packages We Deliver</h3>
+                            <h3 className="text-xl font-serif mb-4 text-[#ffda8d]">Function Packages We Offer</h3>
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

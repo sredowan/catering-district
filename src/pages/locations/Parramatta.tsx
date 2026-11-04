@@ -11,7 +11,7 @@ const FAQS = [
     },
     {
         question: "How do you capture both corporate and community club trade in Parramatta?",
-        answer: "Parramatta is Sydney's dual CBD. We engineer express 45-minute corporate lunch packages for mid-week trade, transitioning seamlessly into community raffles, member badge draws, and family dinners in the evening."
+        answer: "Parramatta is Sydney's dual CBD. We engineer express 45-minute corporate lunch packages for mid-week trade, moving smoothly into community raffles, member badge draws, and family dinners in the evening."
     }
 ];
 
@@ -22,7 +22,7 @@ export default function Parramatta() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Parramatta Club Catering & Bistro Management NSW — Catering District"
-                description="Turnkey club catering and bistro operations across Parramatta, Northmead, and Central Western Sydney. High-volume dining, express lunch pacing, and HACCP compliance."
+                description="Hands-on club catering and bistro operations across Parramatta, Northmead, and Central Western Sydney. High-volume dining, express lunch pacing, and HACCP compliance."
                 path="/locations/parramatta-club-catering"
                 ogImage="/images/home-team.jpg"
                 jsonLd={[
@@ -63,7 +63,7 @@ export default function Parramatta() {
                             <span className="italic font-normal text-[#ffda8d]">&amp; Bistro Operations</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            From express corporate workday lunches to vibrant weekend family dining, we operate club kitchens with precision across Parramatta, Northmead, and the Hills corridor.
+                            From express corporate workday lunches to vibrant weekend family dining, we want to help clubs across Parramatta, Northmead and the Hills corridor run kitchens members love.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button

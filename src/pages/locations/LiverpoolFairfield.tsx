@@ -22,7 +22,7 @@ export default function LiverpoolFairfield() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Liverpool & Fairfield Club Catering NSW — High-Volume Bistro Operations"
-                description="Turnkey club catering and bistro operations across Liverpool, Fairfield, and Mount Pritchard. High-volume dining, multicultural menus, and HACCP compliance."
+                description="Hands-on club catering and bistro operations across Liverpool, Fairfield, and Mount Pritchard. High-volume dining, multicultural menus, and HACCP compliance."
                 path="/locations/liverpool-fairfield-club-catering"
                 ogImage="/images/home-team.jpg"
                 jsonLd={[
@@ -63,7 +63,7 @@ export default function LiverpoolFairfield() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering Services</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            High-capacity dining, multi-generational family value, and rigorous kitchen compliance tailored for Liverpool and Fairfield's bustling community club precincts.
+                            Family value for every generation, menus that reflect the community, and careful kitchen compliance, for Liverpool and Fairfield's community clubs.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button

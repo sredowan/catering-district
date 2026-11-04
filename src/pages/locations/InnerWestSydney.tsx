@@ -11,7 +11,7 @@ const FAQS = [
     },
     {
         question: "How do you manage function and corporate golf days in the Inner West?",
-        answer: "Inner West golf and community clubs have high demand for corporate seminars, client golf days, and wedding receptions due to their close proximity to the Sydney CBD. We offer turnkey event packages that optimize room occupancy."
+        answer: "Inner West golf and community clubs have high demand for corporate seminars, client golf days, and wedding receptions due to their close proximity to the Sydney CBD. We offer complete event packages that help keep function rooms busy."
     }
 ];
 
@@ -34,7 +34,7 @@ export default function InnerWestSydney() {
                     locationBusinessSchema({
                         suburb: 'Strathfield',
                         region: 'Inner West Sydney NSW',
-                        description: 'Turnkey club catering, contemporary bistro operations, and golf clubhouse food services in Inner West Sydney.',
+                        description: 'Hands-on club catering, contemporary bistro operations, and golf clubhouse food services in Inner West Sydney.',
                         path: '/locations/inner-west-sydney-club-catering',
                     }),
                     faqSchema(FAQS),
@@ -63,7 +63,7 @@ export default function InnerWestSydney() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering Services</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            Combining contemporary restaurant standards with traditional club hospitality. Elevating dining across Strathfield, Five Dock, Concord, and the Inner West.
+                            Contemporary restaurant standards with genuine club hospitality, for clubs across Strathfield, Five Dock, Concord and the Inner West.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -93,7 +93,7 @@ export default function InnerWestSydney() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Corporate &amp; Fairway Events:</strong> Turnkey banqueting for corporate golf tournaments and private celebrations.</span>
+                                    <span><strong>Corporate &amp; Fairway Events:</strong> Complete banqueting for corporate golf tournaments and private celebrations.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

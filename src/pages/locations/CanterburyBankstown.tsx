@@ -34,7 +34,7 @@ export default function CanterburyBankstown() {
                     locationBusinessSchema({
                         suburb: 'Bankstown',
                         region: 'Canterbury-Bankstown NSW',
-                        description: 'Turnkey club catering, multicultural menu engineering, and high-volume bistro operations in Canterbury-Bankstown.',
+                        description: 'Hands-on club catering, multicultural menu engineering, and high-volume bistro operations in Canterbury-Bankstown.',
                         path: '/locations/canterbury-bankstown-club-catering',
                     }),
                     faqSchema(FAQS),
@@ -63,7 +63,7 @@ export default function CanterburyBankstown() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering Services</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            Powering large-scale club dining across Sydney's bustling south-west corridor. High-volume bistro execution, multicultural menus, and strict kitchen profitability.
+                            Ready to partner with clubs across Sydney's diverse south-west: welcoming bistro dining, multicultural menus that reflect the community, and a commercially focused approach.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button

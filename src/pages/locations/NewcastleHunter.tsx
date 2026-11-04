@@ -63,7 +63,7 @@ export default function NewcastleHunter() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering Services</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            From lakeside sailing and yacht clubs to major Newcastle sporting venues, we bring exceptional culinary standards, fast ticket velocity, and transparent commercial contracts.
+                            From lakeside sailing and yacht clubs to major Newcastle sporting venues, we bring high culinary standards, efficient service and transparent commercial agreements.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button

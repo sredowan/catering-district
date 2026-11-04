@@ -34,7 +34,7 @@ export default function MacarthurCampbelltown() {
                     locationBusinessSchema({
                         suburb: 'Campbelltown',
                         region: 'Macarthur & Camden NSW',
-                        description: 'Turnkey club catering, family bistro operations, and golf clubhouse management in Macarthur.',
+                        description: 'Hands-on club catering, family bistro operations, and golf clubhouse management in Macarthur.',
                         path: '/locations/macarthur-campbelltown-club-catering',
                     }),
                     faqSchema(FAQS),
@@ -63,7 +63,7 @@ export default function MacarthurCampbelltown() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering Services</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            Tailored for South-West Sydney's booming family communities. High-volume bistro dining, golf clubhouse hospitality, and commercially sustainable kitchen contracts.
+                            Close to home: our founder Maz Islam is based in the Macarthur area. For South-West Sydney's growing family communities: family-friendly bistro dining, golf clubhouse hospitality and commercially sustainable kitchen partnerships.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -89,7 +89,7 @@ export default function MacarthurCampbelltown() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Family-Friendly Menus:</strong> High-value kids specials, family share platters, and rapid service.</span>
+                                    <span><strong>Family-Friendly Menus:</strong> High-value kids specials, family share platters, and friendly, efficient service.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

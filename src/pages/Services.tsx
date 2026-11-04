@@ -12,14 +12,14 @@ export default function Services() {
         {
             icon: <Users className="w-5 h-5" />,
             title: "Whole-of-Kitchen Catering",
-            description: "End-to-end management of club bistros, cafes, and restaurants. We assume complete employer and operational liability, staffing, menu engineering, and daily service delivery.",
-            highlights: ['Turnkey kitchen operations', 'Kitchen cost control', 'Award-compliant rostering', 'Consistent member dining']
+            description: "Hands-on management of club bistros, cafes and restaurants. We take responsibility for staffing, menus and daily service, so your team can focus on members.",
+            highlights: ['Hands-on kitchen operations', 'Kitchen cost control', 'Award-compliant rostering', 'Consistent member dining']
         },
         {
             icon: <FileText className="w-5 h-5" />,
             title: "Tender & EOI Execution",
-            description: "Commercially rigorous tender submissions prepared specifically for Club Boards, Chief Executives, and independent tender advisory consultants across NSW.",
-            highlights: ['Formal EOI submissions', 'Audited 3-year P&L forecasts', 'Seamless 30-day transitions', 'Direct board presentations']
+            description: "Thoughtful, commercially sound tender submissions prepared personally by Maz for Club Boards, Chief Executives and tender advisors across NSW.",
+            highlights: ['Formal EOI submissions', '3-year P&L forecasts', 'Structured transition plans', 'Direct board presentations']
         },
         {
             icon: <ShieldCheck className="w-5 h-5" />,
@@ -30,8 +30,8 @@ export default function Services() {
         {
             icon: <Calendar className="w-5 h-5" />,
             title: "Club Event & Function Yields",
-            description: "Maximizing the revenue potential of idle function spaces through corporate seminars, barefoot bowls packages, wakes, birthday milestones, and presentation banquets.",
-            highlights: ['Barefoot bowls packages', 'Large seated banquets', 'Auditorium galas & wakes', 'Zero-waste event catering']
+            description: "Bringing function spaces to life with corporate seminars, barefoot bowls packages, wakes, milestone birthdays and presentation nights.",
+            highlights: ['Barefoot bowls packages', 'Large seated banquets', 'Auditorium galas & wakes', 'Low-waste event catering']
         }
     ];
 
@@ -41,8 +41,8 @@ export default function Services() {
             path: "/services/club-catering",
             icon: <Users className="w-5 h-5" />,
             title: "Club Catering Operations",
-            tagline: "Turnkey kitchen, bistro, and dining room management for NSW licensed clubs.",
-            description: "We partner with RSLs, bowling clubs, golf clubs, and leagues venues across NSW to deliver high-volume bistro service, member-focused dining, and strict commercial margin control.",
+            tagline: "Hands-on kitchen, bistro and dining room management for NSW licensed clubs.",
+            description: "We want to partner with RSLs, bowling clubs, golf clubs and leagues venues across NSW to deliver member-first dining, consistent quality and careful commercial management.",
             deliverables: [
                 "Full commercial kitchen and bistro management",
                 "Classic club pantry favourites and modern blackboard specials",
@@ -57,15 +57,15 @@ export default function Services() {
             path: "/services/contract-catering",
             icon: <Building2 className="w-5 h-5" />,
             title: "Contract Catering & Tenders",
-            tagline: "Risk-free commercial agreements tailored to club financial governance.",
-            description: "Eliminate the financial volatility of running an in-house kitchen. We offer turnover rental, hybrid profit-share, and management-fee models designed to reduce kitchen losses on your balance sheet.",
+            tagline: "Transparent commercial agreements built around your club's governance.",
+            description: "A commercially focused approach to hospitality operations. We offer turnover rental, hybrid profit-share and management-fee models designed to reduce the financial pressure of running an in-house kitchen.",
             deliverables: [
                 "Turnover lease and hybrid profit-share agreements",
                 "Full transfer of employer and labour liabilities",
-                "Mitigation of 32% weekend award penalty rate spikes",
-                "Wholesale food procurement scale protecting gross margins",
+                "Careful management of weekend award penalty rates",
+                "Supplier relationships that help protect food margins",
                 "Formal response to club EOI and tender processes",
-                "Direct executive board meeting presentations",
+                "Maz presents to your Board in person",
             ]
         },
         {
@@ -73,8 +73,8 @@ export default function Services() {
             path: "/services/bistro-restaurant-management",
             icon: <Utensils className="w-5 h-5" />,
             title: "Bistro & Restaurant Management",
-            tagline: "High-volume dining room execution, menu engineering, and member loyalty.",
-            description: "Transforming tired club bistros into buzzing community dining destinations. We combine traditional member favourites (schnitzels, steaks, roasts) with contemporary blackboard creations.",
+            tagline: "Welcoming dining rooms, menus members love, and reliable service.",
+            description: "Helping club bistros become places members love to return to, combining traditional favourites (schnitzels, steaks, roasts) with fresh, contemporary specials.",
             deliverables: [
                 "Menu engineering using Boston matrix popularity & margin scoring",
                 "Speed-line kitchen design for rapid raffle and bingo breaks",
@@ -90,7 +90,7 @@ export default function Services() {
             icon: <ShieldCheck className="w-5 h-5" />,
             title: "Kitchen Management & HACCP Compliance",
             tagline: "Food safety management and Registered Clubs Award labour governance.",
-            description: "Led by Maz Islam (Diploma in Quality Auditing), we help protect Club Directors and General Managers from food safety and Fair Work statutory liabilities.",
+            description: "Food safety and fair rostering, done properly. Led by Maz Islam (Diploma of Quality Auditing), we help Club Directors and General Managers meet their food safety and Fair Work obligations.",
             deliverables: [
                 "HACCP-based food safety plan implementation",
                 "Digital temperature logging and automated cold-chain alerts",
@@ -105,15 +105,15 @@ export default function Services() {
             path: "/services/club-event-function-catering",
             icon: <Calendar className="w-5 h-5" />,
             title: "Club Event & Function Catering",
-            tagline: "Monetizing club function spaces through high-margin corporate and private events.",
-            description: "From barefoot bowls barbecue feasts to large seated presentation banquets, we market, package, and execute profitable events in club function rooms.",
+            tagline: "Functions and celebrations that bring your community together.",
+            description: "From barefoot bowls barbecues to seated presentation dinners, we plan, package and deliver events your members and guests will remember.",
             deliverables: [
                 "Tiered barefoot bowls packages (sliders, pizzas, BBQ grills)",
                 "Auditorium galas and sporting club presentation banquets",
                 "Corporate conference day-delegate and boardroom packages",
                 "Respectful, dignified catering for member memorial wakes",
                 "Fairway and clubhouse wedding banquet packages",
-                "Zero-waste pre-set banquet management",
+                "Low-waste pre-set banquet planning",
             ]
         }
     ];
@@ -121,7 +121,7 @@ export default function Services() {
     const processSteps = [
         { num: "01", title: "Feasibility & Audit", desc: "We inspect your club's kitchen plant, review historical covers, and analyze member demographics and current catering costs.", icon: <Star className="w-4 h-4" /> },
         { num: "02", title: "Commercial Model", desc: "We structure a transparent contract (turnover lease, hybrid, or management fee) with board-ready financial projections.", icon: <TrendingUp className="w-4 h-4" /> },
-        { num: "03", title: "30-Day Transition", desc: "Our executive team conducts staff interviews under the Registered Clubs Award, deploys HACCP systems, and rolls out engineered menus with zero downtime.", icon: <Shield className="w-4 h-4" /> },
+        { num: "03", title: "30-Day Transition", desc: "Maz conducts staff interviews under the Registered Clubs Award, deploys HACCP systems, and rolls out engineered menus with zero downtime.", icon: <Shield className="w-4 h-4" /> },
         { num: "04", title: "Monthly Governance", desc: "Ongoing management, monthly P&L reviews, member feedback tracking, and direct reporting to the Club Board of Directors.", icon: <Heart className="w-4 h-4" /> }
     ];
 
@@ -129,7 +129,7 @@ export default function Services() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Club Catering Services NSW — Bistro, Contract & Compliance Operations"
-                description="Comprehensive catering solutions for NSW registered clubs: turnkey club catering, contract catering, bistro management, HACCP food safety management, and function catering."
+                description="Experienced People. Dedicated Service. Owner-led club catering, contract catering, bistro management, food safety and function catering for NSW registered clubs."
                 path="/services"
                 ogImage="/images/home-cafe-1.jpg"
                 jsonLd={[
@@ -139,7 +139,7 @@ export default function Services() {
                     ]),
                     serviceSchema({
                         name: 'Club Catering Services NSW',
-                        description: 'Turnkey food and beverage, bistro management, and commercial kitchen operations for registered clubs across New South Wales.',
+                        description: 'Hands-on food and beverage, bistro management, and commercial kitchen operations for registered clubs across New South Wales.',
                         serviceType: 'Club Catering Hub',
                         url: '/services',
                     }),
@@ -156,20 +156,20 @@ export default function Services() {
                     <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
                         <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#ffda8d] mb-3">NSW Club Hospitality</p>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.1] mb-5 tracking-tight text-[#ffffff]">
-                            Specialised Club Catering Services
+                            Experienced People. <span className="italic">Dedicated Service.</span>
                         </h1>
                     </motion.div>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.7 }}>
                         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-t border-[#ffffff]/15 pt-8">
                             <p className="text-[15px] md:text-lg text-[#ffffff]/75 font-light leading-relaxed max-w-2xl">
-                                We partner with Club Boards, Chief Executives, and General Managers across New South Wales to reduce kitchen losses, maintain strict regulatory compliance, and delight community members.
+                                From contract catering and bistro management to kitchen operations, food safety, staffing and member experiences, our approach combines practical hospitality knowledge with a commitment to doing things properly.
                             </p>
                             <div className="flex gap-3">
                                 <button
                                     onClick={() => setIsBookingOpen(true)}
                                     className="shrink-0 inline-flex items-center gap-2.5 bg-[#ffda8d] text-[#0f2340] rounded-full px-7 py-3.5 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[#ffe8b3] transition-all duration-300 shadow-md cursor-pointer"
                                 >
-                                    <span>Request Capability Statement</span>
+                                    <span>Explore a Partnership</span>
                                     <ArrowRight className="w-3.5 h-3.5" />
                                 </button>
                                 <Link
@@ -261,9 +261,9 @@ export default function Services() {
                         transition={{ duration: 0.5 }}
                     >
                         <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-2">Dedicated Service Lines</p>
-                        <h2 className="text-3xl md:text-4xl font-serif font-light">Explore Our Specialised Offerings</h2>
+                        <h2 className="text-3xl md:text-4xl font-serif font-light">Dedicated to Clubs</h2>
                         <p className="text-sm text-[#19355e]/70 mt-3">
-                            Click any service below to explore comprehensive operational details, sample menus, compliance frameworks, and case studies.
+                            Choose a service to see how we approach it, what is included and how Maz stays involved.
                         </p>
                     </motion.div>
 
@@ -334,11 +334,11 @@ export default function Services() {
                     >
                         <div className="md:w-1/2">
                             <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#ffda8d] mb-2">Transition &amp; Execution</p>
-                            <h2 className="text-3xl md:text-4xl font-serif font-light text-white">Our 4-Stage Operational Model</h2>
+                            <h2 className="text-3xl md:text-4xl font-serif font-light text-white">How a Partnership Begins</h2>
                         </div>
                         <div className="md:w-1/2">
                             <p className="text-[13px] text-white/50 font-light leading-relaxed">
-                                A structured framework ensuring seamless kitchen takeovers, total regulatory compliance, and consistent monthly reporting to Club Boards.
+                                A clear, collaborative process: we listen first, plan together and stay accountable with regular reporting to your Board.
                             </p>
                         </div>
                     </motion.div>
@@ -370,19 +370,19 @@ export default function Services() {
             {/* ─── CTA ─── */}
             <section className="py-16 md:py-20 px-6 bg-white text-center">
                 <div className="max-w-3xl mx-auto">
-                    <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-3">Executive Inquiry</p>
+                    <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-3">Your Club. Our Commitment.</p>
                     <h2 className="text-3xl md:text-4xl font-serif font-light mb-4">
                         Is your club reviewing its catering arrangements?
                     </h2>
                     <p className="text-[14px] text-[#19355e]/60 font-light max-w-lg mx-auto mb-8">
-                        Speak directly with Maz Islam, JP for a confidential operational appraisal of your club's kitchen.
+                        Speak directly with Maz Islam for a confidential conversation about your club's kitchen and what you'd like it to become.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <button
                             onClick={() => setIsBookingOpen(true)}
                             className="inline-flex items-center gap-2.5 bg-[#19355e] text-[#ffffff] rounded-full px-8 py-4 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[#0d2240] transition-colors duration-300 shadow-md cursor-pointer"
                         >
-                            <span>Request Capability Statement</span>
+                            <span>Explore a Partnership</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                         <Link

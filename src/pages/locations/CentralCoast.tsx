@@ -22,7 +22,7 @@ export default function CentralCoast() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Central Coast & Gosford Club Catering NSW — Catering District"
-                description="Specialised catering solutions for Central Coast registered clubs. Turnkey bistro operations, holiday surge management, and HACCP-based food safety across Gosford and Wyong."
+                description="Specialised catering solutions for Central Coast registered clubs. Hands-on bistro operations, holiday surge management, and HACCP-based food safety across Gosford and Wyong."
                 path="/locations/central-coast-club-catering"
                 ogImage="/images/home-cafe-1.jpg"
                 jsonLd={[
@@ -34,7 +34,7 @@ export default function CentralCoast() {
                     locationBusinessSchema({
                         suburb: 'Gosford',
                         region: 'Central Coast NSW',
-                        description: 'Turnkey club catering, coastal bistro operations, and tender responses across the Central Coast.',
+                        description: 'Hands-on club catering, coastal bistro operations, and tender responses across the Central Coast.',
                         path: '/locations/central-coast-club-catering',
                     }),
                     faqSchema(FAQS),
@@ -63,7 +63,7 @@ export default function CentralCoast() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering Services</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            From landmark leisure groups in Mingara to coastal bowling clubs in The Entrance and Gosford, we deliver fresh, reliable, high-volume dining all year round.
+                            From landmark leisure groups in Mingara to coastal bowling clubs in The Entrance and Gosford, we want to help clubs offer fresh, reliable dining all year round.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -89,7 +89,7 @@ export default function CentralCoast() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Seasonal Roster Scaling:</strong> Rapid adaptation to holiday visitor surges without fixed overhead blowouts.</span>
+                                    <span><strong>Seasonal Roster Scaling:</strong> Planned rostering for holiday visitor surges without fixed overhead blowouts.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
@@ -97,7 +97,7 @@ export default function CentralCoast() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>Waterfront Event Catering:</strong> Maximizing function room yields for weddings and reunions.</span>
+                                    <span><strong>Waterfront Event Catering:</strong> Memorable weddings, reunions and celebrations in your function rooms.</span>
                                 </li>
                             </ul>
                         </div>

@@ -7,11 +7,11 @@ import SEO, { breadcrumbSchema, locationBusinessSchema, faqSchema } from '../../
 const FAQS = [
     {
         question: "Why is Western Sydney critical for registered club catering?",
-        answer: "Western Sydney is Australia's largest club hospitality market, home to multi-precinct clubs serving tens of thousands of members weekly. Operating in this market requires immense ticket velocity, value pricing, and multicultural menu variety."
+        answer: "Western Sydney is Australia's largest club hospitality market, home to multi-precinct clubs serving tens of thousands of members weekly. Clubs here need efficient service, value pricing and menus that reflect a multicultural community."
     },
     {
         question: "How does Catering District support Western Sydney clubs?",
-        answer: "We provide complete kitchen outsourcing, turnkey bistro operations, and award-compliant rostering to manage penalty rates while maintaining high-volume service."
+        answer: "We provide complete kitchen outsourcing, hands-on bistro operations, and award-compliant rostering to manage penalty rates while maintaining high-volume service."
     }
 ];
 
@@ -34,7 +34,7 @@ export default function WesternSydney() {
                     locationBusinessSchema({
                         suburb: 'Western Sydney',
                         region: 'Greater Western Sydney',
-                        description: 'Turnkey club catering, bistro operations, and commercial kitchen management across Western Sydney.',
+                        description: 'Hands-on club catering, bistro operations, and commercial kitchen management across Western Sydney.',
                         path: '/locations/western-sydney-club-catering',
                     }),
                     faqSchema(FAQS),
@@ -63,7 +63,7 @@ export default function WesternSydney() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering Services</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            High-volume dining, family bistro value, and robust kitchen systems tailored for Western Sydney's premier registered clubs, leagues venues, and community bowlos.
+                            High-volume dining, family bistro value, and robust kitchen systems for Western Sydney's registered clubs, leagues venues and community bowlos.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -89,7 +89,7 @@ export default function WesternSydney() {
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
-                                    <span><strong>High Cover Velocity:</strong> Kitchens set up for busy peak weekend shifts.</span>
+                                    <span><strong>Busy Service Ready:</strong> Kitchens set up for busy peak weekend shifts.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />

@@ -64,7 +64,7 @@ export default function ClubCateringEoiGuide() {
                     <div className="flex flex-wrap items-center gap-4 text-xs text-[#19355e]/70 pb-6 border-b border-[#19355e]/10">
                         <span className="flex items-center gap-1 font-medium">
                             <User className="w-3.5 h-3.5 text-[#64620B]" />
-                            Maz Islam, JP · Founder &amp; Director
+                            Maz Islam, JP · Founder &amp; Managing Director
                         </span>
                         <span>•</span>
                         <span className="flex items-center gap-1">
@@ -127,7 +127,7 @@ export default function ClubCateringEoiGuide() {
                 <div className="mt-12 p-8 bg-[#fafaf8] border border-[#19355e]/10 rounded-2xl text-center">
                     <h3 className="text-xl font-serif mb-2 text-[#19355e]">Planning a Catering EOI for Your Club?</h3>
                     <p className="text-sm text-[#19355e]/70 max-w-lg mx-auto mb-6">
-                        Invite Catering District to participate in your upcoming tender or schedule a preliminary executive discussion with Maz Islam.
+                        Invite Catering District to participate in your upcoming tender or arrange a confidential conversation with Maz Islam.
                     </p>
                     <Link
                         to="/tenders-eoi"

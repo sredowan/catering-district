@@ -26,7 +26,7 @@ export default function NotFound() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto mb-10 text-left">
                         {[
                             { to: '/services', label: 'Our Services', note: 'Club operations & catering' },
-                            { to: '/about/maz-islam', label: 'Maz Islam', note: 'Founder & Director' },
+                            { to: '/about/maz-islam', label: 'Maz Islam', note: 'Founder & Managing Director' },
                             { to: '/contact', label: 'Contact', note: 'Talk to our team' },
                         ].map((item) => (
                             <Link

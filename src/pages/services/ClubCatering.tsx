@@ -41,7 +41,7 @@ export default function ClubCatering() {
                     ]),
                     serviceSchema({
                         name: 'Club Catering Services NSW',
-                        description: 'Turnkey food and beverage, bistro management, and commercial kitchen operations for registered clubs across New South Wales.',
+                        description: 'Hands-on food and beverage, bistro management, and commercial kitchen operations for registered clubs across New South Wales.',
                         serviceType: 'Club Catering',
                         url: '/services/club-catering',
                     }),
@@ -73,14 +73,14 @@ export default function ClubCatering() {
                             <span className="italic font-normal text-[#ffda8d]">Tailored for Community &amp; Profit</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            We partner with Club Boards, CEOs, and General Managers across New South Wales to deliver high-volume bistro service, member-focused dining, and strict commercial margin control.
+                            Owner-led club catering for Boards, CEOs and General Managers across New South Wales: member-first dining, consistent quality and careful commercial control.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
                                 onClick={() => setIsBookingOpen(true)}
                                 className="inline-flex items-center justify-center space-x-3 bg-[#ffda8d] text-[#0f2340] px-8 py-4 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[#ffe8b3] transition-all rounded-sm shadow-lg cursor-pointer"
                             >
-                                <span>Request Capability Statement</span>
+                                <span>Explore a Partnership</span>
                                 <ArrowRight className="w-4 h-4" />
                             </button>
                             <Link
@@ -94,7 +94,7 @@ export default function ClubCatering() {
                     </div>
                     <div className="lg:col-span-5">
                         <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
-                            <h3 className="text-xl font-serif mb-4 text-[#ffda8d]">Why Club Executives Choose Us</h3>
+                            <h3 className="text-xl font-serif mb-4 text-[#ffda8d]">Why Clubs Talk to Us</h3>
                             <ul className="space-y-4 text-sm text-white/90">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-[#ffda8d] shrink-0 mt-0.5" />
@@ -135,7 +135,7 @@ export default function ClubCatering() {
                         <UtensilsCrossed className="w-10 h-10 text-[#64620B] mb-6" />
                         <h3 className="text-xl font-serif mb-3">Bistro &amp; Member Dining</h3>
                         <p className="text-sm text-[#19355e]/70 leading-relaxed mb-6">
-                            From weekday lunches and seniors' specials to packed Saturday nights and Sunday family roasts, we deliver rapid ticket pacing without sacrificing culinary standards.
+                            From weekday lunches and seniors' specials to packed Saturday nights and Sunday family roasts, we plan for steady ticket pacing without sacrificing quality.
                         </p>
                         <ul className="space-y-2 text-xs text-[#19355e]/80">
                             <li>• High-volume bistro line efficiency</li>
@@ -203,7 +203,7 @@ export default function ClubCatering() {
                         </Link>
                         <Link to="/clubs/leagues-sports-clubs" className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all block group">
                             <h3 className="text-lg font-serif text-[#ffda8d] mb-2 group-hover:underline">Leagues &amp; Sporting Clubs</h3>
-                            <p className="text-xs text-white/70 leading-relaxed">Game-day ticket velocity, sports bar burgers and pizzas, family value packages, and presentation dinners.</p>
+                            <p className="text-xs text-white/70 leading-relaxed">Game-day menus, sports bar burgers and pizzas, family value packages, and presentation dinners.</p>
                         </Link>
                     </div>
                 </div>
@@ -214,7 +214,7 @@ export default function ClubCatering() {
                 <div className="text-center mb-16">
                     <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-3">Common Inquiries</p>
                     <h2 className="text-3xl md:text-4xl font-serif font-light">
-                        Frequently Asked Questions by <span className="italic">Club Executives</span>
+                        Questions Clubs <span className="italic">Often Ask Us</span>
                     </h2>
                 </div>
 
@@ -242,7 +242,7 @@ export default function ClubCatering() {
                             onClick={() => setIsBookingOpen(true)}
                             className="bg-white text-[#19355e] px-8 py-4 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-gray-100 transition-all rounded-sm shadow-md cursor-pointer"
                         >
-                            Request Capability Statement
+                            Explore a Partnership
                         </button>
                         <Link
                             to="/tenders-eoi"

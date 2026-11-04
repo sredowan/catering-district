@@ -32,12 +32,12 @@ export default function BowlingClubs() {
                 jsonLd={[
                     breadcrumbSchema([
                         { name: 'Home', url: '/' },
-                        { name: 'Clubs We Serve', url: '/clubs' },
+                        { name: 'Clubs We Support', url: '/clubs' },
                         { name: 'Bowling Clubs', url: '/clubs/bowling-clubs' },
                     ]),
                     serviceSchema({
                         name: 'Bowling Club Catering Services',
-                        description: 'Turnkey bistro operations, barefoot bowls catering, and tournament hospitality for NSW bowling clubs.',
+                        description: 'Hands-on bistro operations, barefoot bowls catering, and tournament hospitality for NSW bowling clubs.',
                         serviceType: 'Club Catering',
                         url: '/clubs/bowling-clubs',
                     }),
@@ -67,7 +67,7 @@ export default function BowlingClubs() {
                             <span className="italic font-normal text-[#ffda8d]">&amp; Bowlo Bistro Operations</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            We transform bowling club bistros into thriving community hubs. From tournament mornings to sunny weekend barefoot bowls, we work to drive foot traffic and reduce kitchen losses.
+                            Bowling clubs are the heart of so many communities. From tournament mornings to sunny weekend barefoot bowls, we want to help your bistro become a welcoming place members and families love to return to.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button

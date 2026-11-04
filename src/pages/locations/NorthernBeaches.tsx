@@ -22,7 +22,7 @@ export default function NorthernBeaches() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="Northern Beaches & Dee Why Club Catering NSW — Catering District"
-                description="Turnkey club catering and bistro operations across Dee Why, Manly, Mona Vale, and the Northern Beaches. Sustainable sourcing, high-volume dining, and HACCP compliance."
+                description="Hands-on club catering and bistro operations across Dee Why, Manly, Mona Vale, and the Northern Beaches. Sustainable sourcing, high-volume dining, and HACCP compliance."
                 path="/locations/northern-beaches-club-catering"
                 ogImage="/images/home-pastry.jpg"
                 jsonLd={[
@@ -63,7 +63,7 @@ export default function NorthernBeaches() {
                             <span className="italic font-normal text-[#ffda8d]">Club Catering Services</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            From landmark RSLs in Dee Why to oceanfront sailing and bowling clubs across Manly and Mona Vale, we bring culinary precision and commercial stability to Northern Beaches venues.
+                            From landmark RSLs in Dee Why to oceanfront sailing and bowling clubs across Manly and Mona Vale, we bring careful culinary standards and a commercially focused approach to Northern Beaches venues.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button

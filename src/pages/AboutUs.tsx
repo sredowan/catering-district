@@ -8,7 +8,7 @@ export default function AboutUs() {
         <div className="min-h-screen bg-[#ffffff] text-[#19355e]">
             <SEO
                 title="About Us — Catering District Pty Ltd"
-                description="Learn about Catering District's 19+ years delivering exceptional catering, club operations, and community-driven hospitality across Australia."
+                description="Catering District is an owner-led hospitality business founded by Chef Maz Islam, built on 19+ years of hands-on experience and a genuine commitment to clubs and their communities."
                 path="/about"
                 ogImage="/images/about-team-1.jpeg"
                 jsonLd={[
@@ -20,7 +20,7 @@ export default function AboutUs() {
                         '@context': 'https://schema.org',
                         '@type': 'AboutPage',
                         name: 'About Catering District',
-                        description: 'Learn about Catering District Pty Ltd — premium hospitality and club operations provider across Australia since 2006.',
+                        description: 'Catering District Pty Ltd is an owner-led club catering and hospitality business founded by Chef Maz Islam.',
                         url: 'https://cateringdistrict.com.au/about',
                     }
                 ]}
@@ -39,24 +39,24 @@ export default function AboutUs() {
                         >
                             <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-3">About Catering District</p>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.1] mb-6 tracking-tight">
-                                Premium Catering, Exceptional Experiences
+                                Hospitality Is <span className="italic">Personal</span> to Us.
                             </h1>
                             <div className="w-10 h-[2px] bg-[#64620B] mb-6"></div>
                             <p className="text-[15px] text-[#19355e]/70 font-light leading-relaxed mb-4">
-                                Catering District Pty Ltd is a NSW catering management company founded in 2026 by
-                                Maz Islam JP. It brings his experience across clubs, hotels, and large-scale catering to
-                                club kitchens, functions, and events, from community gatherings to corporate functions.
+                                Catering District was founded on a belief that great club hospitality deserves more
+                                than a standard catering arrangement. It deserves people who listen, understand the
+                                venue, take responsibility and genuinely care about the outcome.
                             </p>
                             <p className="text-[15px] text-[#19355e]/70 font-light leading-relaxed mb-6">
-                                Our dedication to excellence is rooted in our passion for fresh, high-quality
-                                food, and exceptional service. Drawing on our founder's 19+ years in the hospitality and catering
-                                industry, we specialize in providing comprehensive, tailored solutions to meet
-                                the needs of our clients.
+                                We are an owner-led hospitality business founded by Chef Maz Islam, drawing on more than
+                                19 years of his experience in kitchens, catering, hospitality workforce development and
+                                licensed-club environments. Our ambition is to build meaningful, long-term partnerships
+                                with clubs through experienced leadership, reliable operations and personal involvement.
                             </p>
                             <div className="flex items-center gap-6 text-xs text-[#19355e]/50 font-medium">
                                 <span>Catering District Pty Ltd</span>
                                 <span className="w-px h-3 bg-[#19355e]/20"></span>
-                                <span>NSW Registered Hospitality Business</span>
+                                <span>Your Club. Our Commitment.</span>
                             </div>
                         </motion.div>
 
@@ -99,10 +99,8 @@ export default function AboutUs() {
                         </div>
                         <h2 className="text-2xl font-serif mb-3">Our Vision</h2>
                         <p className="text-[14px] text-[#19355e]/60 font-light leading-relaxed">
-                            To redefine the landscape of managed spaces by integrating premium
-                            hospitality with community-driven environments. We envision a future where
-                            every club, venue, and workspace feels like a carefully curated destination —
-                            a place people genuinely love to be.
+                            Clubs where great food and genuine hospitality bring members together: welcoming,
+                            community-focused venues that feel like a place people genuinely love to return to.
                         </p>
                     </motion.div>
 
@@ -120,10 +118,9 @@ export default function AboutUs() {
                         </div>
                         <h2 className="text-2xl font-serif mb-3">Our Mission</h2>
                         <p className="text-[14px] text-[#ffffff]/60 font-light leading-relaxed">
-                            To deliver exceptional operational management and culinary excellence. We
-                            strive to be the invisible force that makes every event flow seamlessly and every
-                            space feel welcoming, ensuring unparalleled satisfaction for our partners and
-                            their guests.
+                            To support clubs with quality food, dependable service and accountable leadership.
+                            We work closely with Boards, managers and staff, stay personally involved, and
+                            commit to doing things properly, every service, every day.
                         </p>
                     </motion.div>
                 </div>
@@ -149,12 +146,12 @@ export default function AboutUs() {
                             transition={{ duration: 0.7 }}
                             className="max-w-sm"
                         >
-                            <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-2">Culinary Leadership</p>
+                            <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-2">Hands-On. From Day One.</p>
                             <h2 className="text-3xl md:text-4xl font-serif font-light mb-3 text-[#19355e]">
-                                Hands-On Training & Excellence
+                                Practical Kitchen Leadership
                             </h2>
                             <p className="text-sm text-[#19355e]/60 font-light leading-relaxed">
-                                Our Chef-led team brings precision, creativity and mentorship to every kitchen we manage.
+                                Chef Maz works alongside the team in the kitchen, bringing practical skills, mentoring and high standards to every service.
                             </p>
                         </motion.div>
                     </div>
@@ -172,7 +169,7 @@ export default function AboutUs() {
                         transition={{ duration: 0.5 }}
                     >
                         <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-2">What We Do</p>
-                        <h2 className="text-3xl md:text-4xl font-serif font-light">Our Expertise</h2>
+                        <h2 className="text-3xl md:text-4xl font-serif font-light">How We Can Help</h2>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -189,7 +186,7 @@ export default function AboutUs() {
                             </div>
                             <h3 className="text-lg font-serif mb-2">Club Operations</h3>
                             <p className="text-[13px] text-[#19355e]/55 font-light leading-relaxed mb-4">
-                                Full-service management for social clubs, private clubs, and experience-driven venues.
+                                Hands-on support for social clubs, private clubs and community venues, from daily operations to member programs.
                             </p>
                             <ul className="space-y-2">
                                 {['Club concept development', 'Daily operations management', 'Membership programs', 'Event coordination', 'Food & beverage partnerships', 'Community engagement'].map((item, i) => (
@@ -214,7 +211,7 @@ export default function AboutUs() {
                             </div>
                             <h3 className="text-lg font-serif mb-2">Experience Clubs</h3>
                             <p className="text-[13px] text-[#19355e]/55 font-light leading-relaxed mb-4">
-                                Designing and operating experience-focused clubs that combine hospitality, events, and lifestyle activities.
+                                Bringing members together through dining, events and social programs that build a sense of belonging.
                             </p>
                             <ul className="space-y-2">
                                 {['Curated dining experiences', 'Social events and networking', 'Themed gatherings and entertainment', 'Lifestyle and community programs'].map((item, i) => (
@@ -226,7 +223,7 @@ export default function AboutUs() {
                             </ul>
                         </motion.div>
 
-                        {/* Hospital Partnerships */}
+                        {/* Hospitality Partnerships */}
                         <motion.div
                             className="rounded-xl border border-[#19355e]/8 p-7 hover:border-[#64620B]/30 transition-colors duration-300 group bg-[#fafaf8]"
                             initial={{ opacity: 0, y: 20 }}
@@ -237,9 +234,9 @@ export default function AboutUs() {
                             <div className="w-10 h-10 rounded-lg bg-[#64620B]/10 flex items-center justify-center mb-4 text-[#64620B] group-hover:bg-[#64620B] group-hover:text-white transition-colors duration-300">
                                 <Building2 className="w-5 h-5" />
                             </div>
-                            <h3 className="text-lg font-serif mb-2">Hospital Partnerships</h3>
+                            <h3 className="text-lg font-serif mb-2">Hospitality Partnerships</h3>
                             <p className="text-[13px] text-[#19355e]/55 font-light leading-relaxed mb-4">
-                                Collaborating with venues, property owners, and organisations to manage or activate hospitality spaces.
+                                Working with venues, property owners and organisations to bring hospitality spaces to life, together.
                             </p>
                             <ul className="space-y-2">
                                 {['Activating underutilised venues', 'Managing hospitality operations', 'Designing experience-driven programs', 'Building community engagement'].map((item, i) => (
@@ -270,12 +267,12 @@ export default function AboutUs() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {[
-                            { icon: <Shield className="w-5 h-5" />, title: "Precision", desc: "Every detail meticulously planned and executed with flawless accuracy." },
-                            { icon: <ClipboardCheck className="w-5 h-5" />, title: "Excellence", desc: "Holding ourselves to the highest standards in everything we create." },
-                            { icon: <ChefHat className="w-5 h-5" />, title: "Hospitality", desc: "Genuine warmth and care define every interaction and service." },
-                            { icon: <HandshakeIcon className="w-5 h-5" />, title: "Collaboration", desc: "Working with partners to bring bold visions to life, together." },
-                            { icon: <Briefcase className="w-5 h-5" />, title: "Innovation", desc: "Pushing boundaries to create fresh, memorable experiences." },
-                            { icon: <Users className="w-5 h-5" />, title: "Community", desc: "Building meaningful connections through shared experiences." },
+                            { icon: <HandshakeIcon className="w-5 h-5" />, title: "Genuine & Personal", desc: "We genuinely care. Every partnership is built on trust and personal commitment." },
+                            { icon: <ChefHat className="w-5 h-5" />, title: "Experienced & Capable", desc: "19+ years of hands-on hospitality experience and practical kitchen leadership." },
+                            { icon: <Users className="w-5 h-5" />, title: "Community-Focused", desc: "Member-first hospitality that understands your community and its people." },
+                            { icon: <Shield className="w-5 h-5" />, title: "Accountable", desc: "Accessible leadership and clear responsibility. You always know who to call." },
+                            { icon: <ClipboardCheck className="w-5 h-5" />, title: "Doing Things Properly", desc: "Quality, consistency and food safety in every service." },
+                            { icon: <Briefcase className="w-5 h-5" />, title: "Growing Together", desc: "Building something meaningful with a shared vision and long-term partnerships." },
                         ].map((val, i) => (
                             <motion.div
                                 key={i}
@@ -313,7 +310,7 @@ export default function AboutUs() {
                                 <div className="aspect-[4/5] md:aspect-square rounded-lg overflow-hidden max-w-[220px]">
                                     <img
                                         src="/images/maz-portrait.jpeg"
-                                        alt="Maz Islam, Founder & Director"
+                                        alt="Maz Islam, Founder & Managing Director"
                                         className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
                                         loading="lazy"
                                     />
@@ -324,12 +321,12 @@ export default function AboutUs() {
                                     Meet the Founder
                                 </p>
                                 <h2 className="text-2xl md:text-3xl font-serif font-light mb-3 tracking-tight">
-                                    Maz Islam — Founder &amp; Director
+                                    Maz Islam — Founder &amp; Managing Director
                                 </h2>
                                 <p className="text-[14.5px] text-[#19355e]/60 font-light leading-relaxed max-w-2xl mb-5">
-                                    Nineteen years across club catering, commercial kitchens, and high-volume events —
-                                    from Qantas airline catering and Crossroads Hotel to founding three hospitality
-                                    ventures. Read the full profile: career track, expertise, and qualifications.
+                                    Nineteen years across club catering, commercial kitchens, and high-volume events,
+                                    from Qantas airline catering and Crossroads Hotel to founding Future Chefs and Industry
+                                    Placement Solutions. Maz leads every Catering District partnership personally.
                                 </p>
                                 <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] font-medium text-[#19355e] group-hover:text-[#64620B] transition-colors">
                                     View Full Profile
@@ -376,14 +373,14 @@ export default function AboutUs() {
                     >
                         <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#64620B] mb-3">Get Started</p>
                         <h2 className="text-3xl md:text-4xl font-serif font-light mb-4">
-                            Ready to create something extraordinary?
+                            A Partnership Worth Building.
                         </h2>
                         <p className="text-[15px] text-[#19355e]/55 font-light max-w-xl mx-auto mb-8">
-                            Let's collaborate and bring your vision to life. Our team is ready to craft an unforgettable experience.
+                            Tell us about your club. We'd love to understand your members, your community and what you want your hospitality to become.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link to="/contact" className="inline-flex items-center gap-2.5 bg-[#19355e] text-[#ffffff] rounded-full px-7 py-3.5 text-xs uppercase tracking-[0.15em] hover:bg-[#0d2240] transition-colors duration-300 font-medium group">
-                                <span>Get In Touch</span>
+                                <span>Explore a Partnership</span>
                                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                             </Link>
                             <Link to="/services" className="inline-flex items-center gap-2.5 border border-[#19355e]/15 text-[#19355e] rounded-full px-7 py-3.5 text-xs uppercase tracking-[0.15em] hover:bg-[#19355e] hover:text-white transition-all duration-300 font-medium">

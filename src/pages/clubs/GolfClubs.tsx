@@ -32,12 +32,12 @@ export default function GolfClubs() {
                 jsonLd={[
                     breadcrumbSchema([
                         { name: 'Home', url: '/' },
-                        { name: 'Clubs We Serve', url: '/clubs' },
+                        { name: 'Clubs We Support', url: '/clubs' },
                         { name: 'Golf Clubs', url: '/clubs/golf-clubs' },
                     ]),
                     serviceSchema({
                         name: 'Golf Club Catering Services',
-                        description: 'Turnkey clubhouse bistro management, halfway kiosks, and corporate golf day catering across NSW.',
+                        description: 'Hands-on clubhouse bistro management, halfway kiosks, and corporate golf day catering across NSW.',
                         serviceType: 'Club Catering',
                         url: '/clubs/golf-clubs',
                     }),
@@ -67,7 +67,7 @@ export default function GolfClubs() {
                             <span className="italic font-normal text-[#ffda8d]">&amp; 19th-Hole Hospitality</span>
                         </h1>
                         <p className="text-lg text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
-                            From dawn barista kiosks to lively 19th-hole clubhouse bistros and corporate tournament banquets, we provide golf clubs with seamless, profitable food and beverage management.
+                            From dawn barista kiosks to lively 19th-hole clubhouse bistros and corporate tournament banquets, we offer golf clubs hands-on, commercially focused food and beverage management.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button

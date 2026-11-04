@@ -3,21 +3,20 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Users, Utensils, Building, Check, ArrowRight, MapPin, ShieldCheck, TrendingUp, Calendar, FileText, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useSiteData } from '../context/SiteContext';
-import BookingModal from '../components/BookingModal';
 import SEO, { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, LOCAL_BUSINESS_SCHEMA, faqSchema } from '../components/SEO';
 
 const HOME_FAQS = [
     {
-        question: "Why should NSW club boards consider contract catering over in-house operations?",
-        answer: "Approximately 70% of registered clubs run their in-house kitchens at a loss due to penalty rates under the Registered Clubs Award (up to 32% higher on weekends) and chef turnover. Contract catering transfers employer liabilities and food cost risks to an experienced operator while delivering predictable revenue."
+        question: "Why should NSW club boards consider a catering partner over in-house operations?",
+        answer: "Many registered clubs find in-house kitchens hard to sustain, with penalty rates under the Registered Clubs Award (up to 32% higher on weekends) and chef turnover adding pressure. A catering partner takes on employer responsibilities and food cost risk, so your team can focus on members and the wider club."
     },
     {
         question: "How does Catering District respond to formal Club Catering EOIs and Tenders?",
-        answer: "We deliver comprehensive, board-ready submissions including 3-year P&L modeling, engineered demographic menus, HACCP-based food safety plans, Registered Clubs Award rostering models, and seamless 30-day transition plans."
+        answer: "Maz prepares every submission personally: a clear commercial model, menus built around your members, HACCP-based food safety plans, Registered Clubs Award rostering, and a structured transition plan, with an open invitation to meet your Board."
     },
     {
-        question: "Who oversees Catering District's kitchen operations and compliance?",
-        answer: "Our operations are personally led by Maz Islam, a Justice of the Peace (JP) holding an Advanced Diploma of Hospitality Management, a Diploma of Quality Auditing, and a Certificate IV in Kitchen Management, with 19+ years of industry experience."
+        question: "Who will we actually be dealing with?",
+        answer: "Maz Islam, our founder, personally. Catering District is owner-led, so you have direct access to the person accountable for your kitchen. Maz is a Justice of the Peace (JP) with an Advanced Diploma of Hospitality Management, a Diploma of Quality Auditing and a Certificate IV in Kitchen Management, and 19+ years of hands-on hospitality experience."
     }
 ];
 
@@ -25,7 +24,6 @@ function Hero() {
     const { siteData } = useSiteData();
     const heroImages = siteData.hero.images;
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [isBookingOpen, setIsBookingOpen] = useState(false);
 
     useEffect(() => {
         if (heroImages.length === 0) return;
@@ -37,12 +35,12 @@ function Hero() {
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16">
-            <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#0c1a2e] to-[#19355e]">
+            <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#111111] to-[#1c1c1c]">
                 <AnimatePresence>
                     <motion.img
                         key={currentImageIndex}
                         src={heroImages[currentImageIndex]}
-                        alt="NSW Club Catering & Hospitality"
+                        alt="Owner-led club catering in NSW"
                         initial={{ opacity: 0, scale: 1.05 }}
                         animate={{ opacity: 0.85, scale: 1 }}
                         exit={{ opacity: 0 }}
@@ -51,7 +49,7 @@ function Hero() {
                         referrerPolicy="no-referrer"
                     />
                 </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-b from-[#050a14]/90 via-[#19355e]/75 to-[#19355e]"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#0a0a0a]/65 to-[#0a0a0a]/85"></div>
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-12">
@@ -60,60 +58,124 @@ function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-serif font-light leading-tight mb-6 tracking-tight text-[#ffffff]">
-                        {siteData.hero.heading.includes(' ') ? (
-                            <>
-                                {siteData.hero.heading.split(' ').slice(0, -1).join(' ')}{' '}
-                                <span className="italic">{siteData.hero.heading.split(' ').slice(-1)[0]}</span>
-                            </>
-                        ) : (
-                            siteData.hero.heading
-                        )}
+                    <h1 className="font-serif font-light tracking-tight text-[#ffffff] leading-none mb-6 text-6xl sm:text-8xl md:text-9xl">
+                        Catering <span className="italic">District</span>
                     </h1>
 
-                    <p className="text-sm uppercase tracking-[0.25em] text-[#ffda8d] font-semibold mb-4">
-                        NSW Club Catering &amp; Hospitality Management
-                    </p>
-
-                    <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto font-light text-[#ffffff]/90 mb-10 leading-relaxed">
-                        {siteData.hero.subheading}
+                    <p className="font-serif font-light text-[#ffffff]/90 leading-snug mb-10 text-2xl sm:text-3xl md:text-4xl">
+                        Owner-Led Club Catering. <br className="hidden sm:block" />
+                        <span className="italic">Personally Committed.</span>
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button
-                            onClick={() => setIsBookingOpen(true)}
-                            className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-[#ffffff] text-[#19355e] px-8 py-4 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[#ffda8d] transition-all rounded-full shadow-xl cursor-pointer"
+                        <Link
+                            to="/contact"
+                            className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-[#ffffff] text-[#19355e] px-8 py-4 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[#ffda8d] transition-all rounded-full shadow-xl"
                         >
-                            <span>Book Now / Enquire</span>
+                            <span>Explore a Partnership</span>
                             <ArrowRight className="w-4 h-4" />
-                        </button>
-                        <button
-                            onClick={() => setIsBookingOpen(true)}
-                            className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-[#ffda8d] text-[#0f2340] px-8 py-4 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[#ffe8b3] transition-all rounded-full shadow-xl cursor-pointer"
-                        >
-                            <span>Request Capability Statement</span>
-                            <ArrowRight className="w-4 h-4" />
-                        </button>
+                        </Link>
                         <Link
                             to="/tenders-eoi"
                             className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 border border-white/40 text-white px-8 py-4 text-xs uppercase tracking-[0.15em] hover:bg-white/10 transition-all rounded-full backdrop-blur-sm font-medium"
                         >
-                            <span>Invite to EOI / Tender</span>
+                            <span>Invite Us to Your EOI / Tender</span>
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
+                </motion.div>
+            </div>
+        </section>
+    );
+}
 
-                    {/* Trust Badges */}
-                    <div className="mt-14 pt-8 border-t border-white/15 flex justify-center gap-4 text-white/80 text-xs">
-                        <div className="flex items-center justify-center gap-2">
-                            <Check className="w-4 h-4 text-[#ffda8d]" />
-                            <span>19+ Years Experience</span>
-                        </div>
+function MeetMaz() {
+    const background = [
+        { role: 'Head Chef', org: 'Crossroads Hotel, Casula' },
+        { role: 'Relief Kitchen Manager', org: 'Moorebank Sports Club, with On Point Catering Solutions' },
+        { role: 'Club Hospitality', org: 'EBP RSL' },
+        { role: 'Hospitality Manager', org: 'Jesmond Aged Care, Strathfield' },
+        { role: 'Large-scale production', org: 'Qantas Airline Catering, Mascot' },
+        { role: 'Training & Placements', org: 'Future Chefs and Industry Placement Solutions' },
+    ];
+
+    return (
+        <section id="meet-maz" className="py-24 md:py-28 px-6 bg-[#ffffff]">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8 }}
+                    className="lg:col-span-5 relative"
+                >
+                    <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                        <img
+                            src="/images/maz-portrait.jpeg"
+                            alt="Chef Maz Islam JP, Founder of Catering District"
+                            className="w-full h-full object-cover object-center"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div className="absolute -bottom-6 -right-4 sm:-right-6 bg-[#19355e] text-white px-6 py-5 rounded-2xl shadow-xl max-w-[15rem]">
+                        <div className="text-3xl font-serif text-[#ffda8d] leading-none mb-1">19+ Years</div>
+                        <p className="text-xs text-white/75 font-light">of hands-on hospitality experience</p>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.1 }}
+                    className="lg:col-span-7"
+                >
+                    <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-4">Meet the Founder</p>
+                    <h2 className="text-3xl md:text-5xl font-serif font-light leading-tight text-[#19355e] mb-3">
+                        Chef Maz Islam <span className="italic">JP</span>
+                    </h2>
+                    <p className="text-sm uppercase tracking-[0.15em] text-[#19355e]/60 mb-6">Founder &amp; Managing Director, Catering District</p>
+
+                    <blockquote className="border-l-4 border-[#64620B] pl-5 mb-6 text-lg md:text-xl font-serif italic text-[#19355e]/85 leading-relaxed">
+                        &ldquo;My goal is to help clubs build sustainable food and beverage operations that enhance the member experience while delivering long-term commercial success.&rdquo;
+                    </blockquote>
+
+                    <p className="text-base text-[#19355e]/70 font-light leading-relaxed mb-8">
+                        When you partner with Catering District, you work with Maz directly. He brings practical knowledge from commercial kitchens, licensed clubs, functions and large-scale catering, and stays personally involved from the first conversation to day-to-day service.
+                    </p>
+
+                    <p className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#19355e]/50 mb-3">Where Maz built his experience</p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                        {background.map((item) => (
+                            <li key={item.org} className="p-4 rounded-xl bg-[#fafaf8] border border-[#19355e]/10">
+                                <p className="text-sm font-semibold text-[#19355e]">{item.role}</p>
+                                <p className="text-xs text-[#19355e]/60 mt-0.5">{item.org}</p>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-sm text-[#19355e]/75">
+                        <p className="flex items-start gap-2.5">
+                            <Check className="w-4 h-4 text-[#64620B] mt-0.5 shrink-0" />
+                            <span><strong className="font-semibold text-[#19355e]">Industry Placement Solutions</strong> — founded by Maz, supporting 1,500+ students, 700+ placements and a network of 300+ industry venues.</span>
+                        </p>
+                        <p className="flex items-start gap-2.5">
+                            <Check className="w-4 h-4 text-[#64620B] mt-0.5 shrink-0" />
+                            <span><strong className="font-semibold text-[#19355e]">Future Chefs</strong> — a purpose-built, 9B-compliant commercial training kitchen in Parramatta.</span>
+                        </p>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-6">
+                        <Link to="/about/maz-islam" className="inline-flex items-center space-x-2 bg-[#19355e] text-white rounded-full px-7 py-3.5 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[#64620B] transition-colors">
+                            <span>Read Maz&apos;s Story</span>
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <a href="tel:0432591795" className="inline-flex items-center space-x-2 text-[#64620B] hover:text-[#19355e] transition-colors uppercase text-xs tracking-[0.15em] font-semibold border-b border-[#64620B] pb-1">
+                            <span>Speak with Maz &middot; 0432 591 795</span>
+                        </a>
                     </div>
                 </motion.div>
             </div>
-
-            <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
         </section>
     );
 }
@@ -138,29 +200,19 @@ function About() {
                     </h2>
                     <div className="w-12 h-px bg-[#64620B]/40 mb-6"></div>
 
-                    {/* Executive Leadership Highlight Card */}
-                    <div className="p-4 mb-6 rounded-xl bg-[#fafaf8] border-l-4 border-[#64620B] shadow-sm flex items-start gap-3">
-                        <ShieldCheck className="w-5 h-5 text-[#64620B] shrink-0 mt-0.5" />
-                        <div>
-                            <p className="text-sm font-semibold text-[#19355e]">
-                                Led by Maz Islam, JP <span className="font-normal text-[#19355e]/80">(19+ years experience)</span>
-                            </p>
-                        </div>
-                    </div>
-
                     <p className="text-base md:text-lg text-[#19355e]/70 font-light leading-relaxed mb-6">
                         {siteData.about.description}
                     </p>
                     <p className="text-sm text-[#19355e]/70 leading-relaxed mb-8">
-                        Unlike remote corporate franchises where your venue becomes just another number, Catering District delivers hands-on executive oversight. We sit directly with Club Boards, General Managers, and Secretary Managers to align menus with community demographics, improve ticket speed, and reduce kitchen losses.
+                        Your club is never just another venue to us. We listen first, take the time to understand your members and your community, and stay personally involved, working alongside your Board, General Manager and staff to build a dining experience people love to return to.
                     </p>
                     <div className="flex flex-wrap items-center gap-6">
                         <Link to="/about" className="inline-flex items-center space-x-2 text-[#64620B] hover:text-[#19355e] transition-colors uppercase text-xs tracking-[0.15em] font-semibold border-b border-[#64620B] pb-1">
                             <span>Read Our Full Story</span>
                             <ArrowRight className="w-4 h-4" />
                         </Link>
-                        <Link to="/about/maz-islam" className="inline-flex items-center space-x-2 text-[#19355e]/70 hover:text-[#64620B] transition-colors uppercase text-xs tracking-[0.15em] font-medium pb-1">
-                            <span>Maz Islam Professional Bio</span>
+                        <Link to="/team" className="inline-flex items-center space-x-2 text-[#19355e]/70 hover:text-[#64620B] transition-colors uppercase text-xs tracking-[0.15em] font-medium pb-1">
+                            <span>Meet Our Team</span>
                             <ChevronRight className="w-4 h-4" />
                         </Link>
                     </div>
@@ -190,8 +242,8 @@ function About() {
                         transition={{ delay: 0.6, duration: 0.8 }}
                         className="absolute -bottom-8 -left-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-[#19355e]/10 max-w-xs"
                     >
-                        <div className="text-3xl font-serif text-[#64620B] mb-1">19+ Years</div>
-                        <p className="text-xs font-light text-[#19355e]/70">Of transforming spaces into vibrant, profitable community hubs.</p>
+                        <div className="text-2xl font-serif text-[#64620B] mb-1">Your Club. Our Commitment.</div>
+                        <p className="text-xs font-light text-[#19355e]/70">Owner-led club catering, community hospitality and operational accountability.</p>
                     </motion.div>
                 </motion.div>
             </div>
@@ -226,7 +278,7 @@ function CoreServices() {
             <div className="relative z-10 max-w-7xl mx-auto w-full">
                 <div className="mb-20 text-center">
                     <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#ffffff]/50 mb-4">What We Do</p>
-                    <h2 className="text-5xl md:text-6xl font-serif font-light text-[#ffffff]">Our <span className="italic">Expertise</span></h2>
+                    <h2 className="text-5xl md:text-6xl font-serif font-light text-[#ffffff]">Experienced People. <span className="italic">Dedicated Service.</span></h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -274,38 +326,38 @@ function DedicatedCapabilities() {
         {
             title: "Club Catering Operations",
             path: "/services/club-catering",
-            desc: "Turnkey kitchen, bistro, and dining management tailored for registered clubs across NSW.",
-            tag: "Core Commercial"
+            desc: "Hands-on kitchen, bistro and dining management, shaped around your members and your community.",
+            tag: "Club Dining"
         },
         {
             title: "Contract Catering & Tenders",
             path: "/services/contract-catering",
-            desc: "Clear commercial agreements designed to reduce kitchen losses and transfer labour liabilities.",
-            tag: "Turnover Lease"
+            desc: "Clear, transparent agreements with a commercially focused approach to hospitality operations.",
+            tag: "Partnerships"
         },
         {
             title: "Bistro & Restaurant Management",
             path: "/services/bistro-restaurant-management",
-            desc: "Menu engineering, efficient ticket times, and high-volume member dining execution.",
-            tag: "Bistro Operations"
+            desc: "Menus members love, consistent quality and reliable service, from weekday lunches to busy Saturday nights.",
+            tag: "Bistro & Dining"
         },
         {
             title: "Kitchen Compliance & HACCP",
             path: "/services/kitchen-management-compliance",
-            desc: "HACCP-based food safety systems, Standard 3.2.2A readiness, and award roster governance.",
-            tag: "Certified Auditing"
+            desc: "HACCP-based food safety, Standard 3.2.2A readiness and fair, award-based rostering, done properly.",
+            tag: "Food Safety"
         },
         {
             title: "Club Event & Function Catering",
             path: "/services/club-event-function-catering",
-            desc: "Barefoot bowls packages, corporate seminars, auditoriums, and milestone presentation banquets.",
-            tag: "High-Margin Yields"
+            desc: "Barefoot bowls, birthdays, presentation nights and community celebrations your members will remember.",
+            tag: "Functions & Events"
         },
         {
             title: "Tender & EOI Responses",
             path: "/tenders-eoi",
-            desc: "Board-ready tender submissions, financial modeling, and 30-day transition playbooks.",
-            tag: "Procurement Portal"
+            desc: "Thoughtful, board-ready submissions prepared personally by Maz, with a structured transition plan.",
+            tag: "Tenders & EOI"
         }
     ];
 
@@ -313,12 +365,12 @@ function DedicatedCapabilities() {
         <section className="py-24 px-6 bg-[#fafaf8] border-y border-[#19355e]/10">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-3">Commercial Capabilities</p>
+                    <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-3">How We Can Help</p>
                     <h2 className="text-3xl md:text-5xl font-serif font-light text-[#19355e]">
-                        Specialised Services for <span className="italic">Registered Clubs</span>
+                        Dedicated to <span className="italic">Clubs</span>
                     </h2>
                     <p className="text-sm text-[#19355e]/70 mt-3">
-                        Tailored commercial models designed to meet the fiduciary, regulatory, and member requirements of NSW licensed clubs.
+                        From contract catering and bistro management to food safety, staffing and member experiences, our approach combines practical hospitality knowledge with a commitment to doing things properly.
                     </p>
                 </div>
 
@@ -355,18 +407,23 @@ function Approach() {
     const pillars = [
         {
             num: "01",
-            title: "Community",
-            desc: "Creating spaces where people connect, belong, and celebrate life's moments."
+            title: "Genuine & Personal",
+            desc: "We genuinely care about clubs and the communities around them. Every partnership we build is grounded in trust and personal commitment."
         },
         {
             num: "02",
-            title: "Experience",
-            desc: "Designing memorable events, gatherings, and lifestyle moments tailored to every group."
+            title: "Experienced & Capable",
+            desc: "19+ years of hands-on hospitality experience and kitchen leadership, applied with practical knowledge."
         },
         {
             num: "03",
-            title: "Professional Operations",
-            desc: "Running clubs efficiently with structured management, culinary mastery, and hospitality expertise."
+            title: "Community-Focused",
+            desc: "Member-first hospitality that understands your community: a welcoming place people love to return to."
+        },
+        {
+            num: "04",
+            title: "Accountable & Dedicated",
+            desc: "Accessible leadership, clear responsibility and dependable service, with a commitment to doing things properly."
         }
     ];
 
@@ -379,10 +436,10 @@ function Approach() {
                     <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-4">Our Approach</p>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-tight mb-8">
                         Hospitality <br />
-                        <span className="italic">beyond food</span> service.
+                        <span className="italic">with purpose.</span>
                     </h2>
                     <p className="text-lg text-[#19355e]/70 font-light mb-12 max-w-lg">
-                        We blend culinary craft with thoughtful, community-focused operations to transform ordinary venues into thriving social ecosystems.
+                        Great club hospitality deserves more than a standard catering arrangement. It deserves people who listen, understand the venue, take responsibility and genuinely care about the outcome.
                     </p>
 
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl lg:w-4/5">
@@ -435,7 +492,7 @@ function ClubSectors() {
             title: "RSL & Memorial Clubs",
             path: "/clubs/rsl-clubs",
             share: "15% of Industry",
-            desc: "ANZAC Day dawn service execution, traditional carvery service, and auditorium gala dinners."
+            desc: "ANZAC Day catering, traditional carvery service, and respectful commemorative functions."
         },
         {
             title: "Golf & Country Clubs",
@@ -447,7 +504,7 @@ function ClubSectors() {
             title: "Leagues & Sporting Clubs",
             path: "/clubs/leagues-sports-clubs",
             share: "24% of Industry",
-            desc: "High-speed match-day ticket pacing, sports bar grill concepts, and junior presentation banquets."
+            desc: "Match-day menus, sports bar grill favourites, and junior presentation nights."
         }
     ];
 
@@ -456,9 +513,9 @@ function ClubSectors() {
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
                     <div>
-                        <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#ffda8d] mb-3">Targeted Experience</p>
+                        <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#ffda8d] mb-3">Every Club Is Different</p>
                         <h2 className="text-3xl md:text-5xl font-serif font-light">
-                            Built for Every <span className="italic text-[#ffda8d]">Club Classification</span>
+                            Built Around <span className="italic text-[#ffda8d]">Members</span>
                         </h2>
                     </div>
                     <Link
@@ -579,15 +636,15 @@ function Future() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-6">Future Direction</p>
+                        <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-6">Growing Together</p>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light mb-8 leading-tight">
-                            Expanding our <span className="italic">Horizons</span>
+                            A Partnership <span className="italic">Worth Building</span>
                         </h2>
                         <p className="text-lg text-[#19355e]/70 font-light mb-10 leading-relaxed max-w-lg">
-                            Catering District is building the foundation to expand into full contract catering services. Our extensive experience in operational systems and community-driven hospitality provides the perfect springboard for this evolution.
+                            Our ambition is to build meaningful, long-term partnerships through experienced leadership, reliable operations and personal involvement, and to grow alongside the clubs and communities we serve.
                         </p>
                         <ul className="space-y-5">
-                            {['Workplace catering', 'Corporate dining', 'Venue hospitality management'].map((item, i) => (
+                            {['Club catering partnerships', 'Workplace and corporate dining', 'Venue hospitality management'].map((item, i) => (
                                 <motion.li
                                     key={i}
                                     initial={{ opacity: 0, x: -20 }}
@@ -628,12 +685,12 @@ function RegionalLocations() {
         <section className="py-24 px-6 bg-[#fafaf8] border-y border-[#19355e]/10">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-3xl mx-auto mb-14">
-                    <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-3">Regional Network</p>
+                    <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-3">Across NSW</p>
                     <h2 className="text-3xl md:text-4xl font-serif font-light text-[#19355e]">
-                        Serving NSW's Premier <span className="italic">Club Heartland</span>
+                        Local Connections. <span className="italic">Genuine Commitment.</span>
                     </h2>
                     <p className="text-xs text-[#19355e]/70 mt-2">
-                        Explore our localized club catering footprint, demographic considerations, and tender support across New South Wales.
+                        Ready to build trusted partnerships with clubs across New South Wales. See what we understand about your region and its members.
                     </p>
                 </div>
 
@@ -658,7 +715,7 @@ function RegionalLocations() {
                         to="/locations"
                         className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-[#64620B] hover:underline"
                     >
-                        <span>View Complete NSW Locations Directory</span>
+                        <span>View All NSW Regions</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                 </div>
@@ -669,18 +726,18 @@ function RegionalLocations() {
 
 function WhyUs() {
     const reasons = [
-        "Experienced in club operations",
-        "Focus on experience-based hospitality",
-        "Flexible venue partnership model",
-        "Community-driven approach",
-        "Designed for Australia's modern social culture"
+        "Owner-led and personally involved",
+        "19+ years of hands-on hospitality experience",
+        "Accessible leadership: talk directly to Maz",
+        "Member-first, community-focused hospitality",
+        "Food safety and accountability built in"
     ];
 
     return (
         <section className="py-24 px-6 bg-[#19355e] text-[#ffffff]">
             <div className="max-w-5xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-serif font-light mb-12">
-                    Why Work With <span className="italic">Catering District</span>
+                    Why Clubs Choose to <span className="italic">Talk With Us</span>
                 </h2>
                 <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                     {reasons.map((reason, index) => (
@@ -728,7 +785,7 @@ function ExecutiveInsights() {
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
                     <div>
-                        <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-2">Executive Thought Leadership</p>
+                        <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-2">Practical Guides</p>
                         <h2 className="text-3xl md:text-4xl font-serif font-light text-[#19355e]">
                             Insights for Club <span className="italic">Directors &amp; GMs</span>
                         </h2>
@@ -737,7 +794,7 @@ function ExecutiveInsights() {
                         to="/insights"
                         className="mt-4 md:mt-0 text-xs uppercase tracking-wider text-[#64620B] hover:underline inline-flex items-center gap-1 font-semibold"
                     >
-                        <span>Read all executive guides</span>
+                        <span>Read all guides</span>
                         <ArrowRight className="w-4 h-4" />
                     </Link>
                 </div>
@@ -777,7 +834,7 @@ function HomeFaqs() {
             <div className="text-center mb-16">
                 <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#64620B] mb-3">Common Inquiries</p>
                 <h2 className="text-3xl md:text-4xl font-serif font-light text-[#19355e]">
-                    Frequently Asked Questions by <span className="italic">Club Executives</span>
+                    Questions Clubs <span className="italic">Often Ask Us</span>
                 </h2>
             </div>
 
@@ -798,13 +855,13 @@ function DirectTenderCta() {
         <section className="py-20 px-6 bg-gradient-to-br from-[#0f2340] to-[#19355e] text-white text-center">
             <div className="max-w-4xl mx-auto">
                 <span className="text-xs uppercase tracking-[0.25em] text-[#ffda8d] font-semibold mb-3 block">
-                    Direct Board &amp; Executive Procurement
+                    Your Club. Our Commitment.
                 </span>
                 <h2 className="text-3xl md:text-5xl font-serif font-light mb-6">
                     Going to Market with an <span className="italic text-[#ffda8d]">EOI or Tender?</span>
                 </h2>
                 <p className="text-base text-white/80 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
-                    Send your tender documentation directly to our executive team. Maz Islam personally oversees all commercial modeling, board presentations, and compliance frameworks. All enquiries sent to <strong>contact@cateringdistrict.com.au</strong>.
+                    We'd welcome the chance to be considered. Maz reviews every brief personally and is happy to meet your Board. Send your documents to <strong>contact@cateringdistrict.com.au</strong>.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <Link
@@ -831,8 +888,8 @@ export default function Home() {
     return (
         <>
             <SEO
-                title="NSW Club Catering & Contract Hospitality Operations | Catering District"
-                description="NSW club catering, contract dining, and bistro operations. Led by Maz Islam, JP (19+ years experience)."
+                title="Owner-Led Club Catering NSW | Catering District"
+                description="Your Club. Our Commitment. Owner-led club catering, community hospitality and operational accountability, led by Maz Islam with 19+ years of hands-on hospitality experience."
                 path="/"
                 ogImage="/images/home-team.jpg"
                 jsonLd={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, LOCAL_BUSINESS_SCHEMA, faqSchema(HOME_FAQS)]}
@@ -840,7 +897,10 @@ export default function Home() {
             {/* 1. Original Hero with rotating images + Book Now + B2B Trust Badges */}
             <Hero />
 
-            {/* 2. Original About with 19+ Years Stat Card + Maz Islam Leadership */}
+            {/* 2. Meet the founder, directly under the hero */}
+            <MeetMaz />
+
+            {/* 3. Our story */}
             <About />
 
             {/* 3. Original Services with Parallax Background Image */}

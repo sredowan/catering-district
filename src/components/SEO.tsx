@@ -78,7 +78,7 @@ export const ORGANIZATION_SCHEMA = {
     legalName: 'Catering District Pty Ltd',
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
-    description: 'Premium hospitality experiences, club operations, and professional catering services across Australia.',
+    description: 'Owner-led club catering, community hospitality and operational accountability across NSW, led by Chef Maz Islam.',
     email: 'contact@cateringdistrict.com.au',
     telephone: '+61432591795',
     address: {
@@ -102,7 +102,7 @@ export const WEBSITE_SCHEMA = {
     '@type': 'WebSite',
     name: 'Catering District',
     url: SITE_URL,
-    description: 'Premium hospitality experiences, club operations, and professional catering services across Australia.',
+    description: 'Owner-led club catering, community hospitality and operational accountability across NSW, led by Chef Maz Islam.',
     publisher: {
         '@type': 'Organization',
         name: 'Catering District Pty Ltd',
@@ -229,7 +229,7 @@ export function articleSchema(opts: {
         author: {
             '@type': 'Person',
             name: opts.authorName || 'Maz Islam',
-            jobTitle: 'Founder & Director',
+            jobTitle: 'Founder & Managing Director',
             url: `${SITE_URL}/about/maz-islam`,
         },
         publisher: {

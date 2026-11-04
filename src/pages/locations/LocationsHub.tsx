@@ -28,7 +28,7 @@ export const NSW_LOCATIONS = [
         name: "Canterbury-Bankstown & Belmore",
         slug: "canterbury-bankstown-club-catering",
         region: "South Western Sydney",
-        description: "Premier multi-venue club heartland with major entertainment precincts and community workers clubs.",
+        description: "Major multi-venue club heartland with major entertainment precincts and community workers clubs.",
         keyClubs: "Bankstown Sports Club, Canterbury League Club, Revesby Workers Club"
     },
     {
@@ -125,7 +125,7 @@ export default function LocationsHub() {
                         <span className="italic font-normal text-[#ffda8d]">Across Greater Sydney &amp; Regional NSW</span>
                     </h1>
                     <p className="text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto">
-                        We deliver on-the-ground kitchen management and contract catering across New South Wales' premier club hubs, understanding the local demographics and operational dynamics of each region.
+                        Local connections, genuine commitment. Ready to build trusted partnerships with clubs across New South Wales, with an understanding of each region's members and communities.
                     </p>
                 </div>
             </section>
@@ -143,7 +143,7 @@ export default function LocationsHub() {
                                 <h2 className="text-2xl font-serif mb-2 text-[#19355e]">{loc.name}</h2>
                                 <p className="text-sm text-[#19355e]/70 leading-relaxed mb-4">{loc.description}</p>
                                 <div className="text-xs text-[#19355e]/60 mb-6 pb-4 border-b border-[#19355e]/10">
-                                    <strong className="text-[#19355e]">Notable Regional Venues:</strong><br />
+                                    <strong className="text-[#19355e]">Well-known clubs in the region:</strong><br />
                                     {loc.keyClubs}
                                 </div>
                             </div>

@@ -63,11 +63,11 @@ export default function ContactUs() {
                     >
                         <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#64620B] mb-4">Get In Touch</p>
                         <h1 className="text-5xl md:text-7xl font-serif font-light mb-8 text-[#19355e]">
-                            Let's <span className="italic">Connect</span>
+                            A Partnership <span className="italic">Worth Building</span>
                         </h1>
                         <div className="w-px h-16 bg-[#19355e]/20 mx-auto mb-8"></div>
                         <p className="text-lg text-[#19355e]/70 font-light leading-relaxed">
-                            Whether you are looking for a club catering partnership, have general questions, or want to discuss operations, our executive team is here to help. All website enquiries go directly to <strong>contact@cateringdistrict.com.au</strong>.
+                            Tell us about your club, your members and what you'd like your hospitality to become. Maz reads every enquiry personally. Write to <strong>contact@cateringdistrict.com.au</strong> or use the form below.
                         </p>
                     </motion.div>
                 </div>
@@ -141,7 +141,7 @@ export default function ContactUs() {
                                 </p>
                                 <div className="p-3 bg-white rounded-lg border border-[#19355e]/10 max-w-sm mx-auto">
                                     <p className="text-xs text-[#64620B] font-medium">
-                                        Executive Response Guarantee: Maz Islam, JP and our team will review and respond within 24 hours.
+                                        Maz Islam will personally review your message and aim to respond within 24 hours.
                                     </p>
                                 </div>
                                 <button

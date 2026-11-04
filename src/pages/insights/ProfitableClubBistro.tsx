@@ -11,7 +11,7 @@ const FAQS = [
     },
     {
         question: "How do you control labour costs against the Registered Clubs Award?",
-        answer: "By deploying tiered mise-en-place prep shifts during weekdays at standard hourly rates, minimizing overtime, and configuring high-speed ticket lines during peak weekend shifts to maximize revenue per staff hour."
+        answer: "By deploying tiered mise-en-place prep shifts during weekdays at standard hourly rates, minimizing overtime, and configuring high-speed ticket lines during peak weekend shifts to make the most of every staff hour."
     }
 ];
 
@@ -64,7 +64,7 @@ export default function ProfitableClubBistro() {
                     <div className="flex flex-wrap items-center gap-4 text-xs text-[#19355e]/70 pb-6 border-b border-[#19355e]/10">
                         <span className="flex items-center gap-1 font-medium">
                             <User className="w-3.5 h-3.5 text-[#64620B]" />
-                            Maz Islam, JP · Founder &amp; Director
+                            Maz Islam, JP · Founder &amp; Managing Director
                         </span>
                         <span>•</span>
                         <span className="flex items-center gap-1">
